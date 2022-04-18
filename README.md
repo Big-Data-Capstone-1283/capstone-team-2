@@ -14,3 +14,7 @@ Big Data capstone project utilizing Kafka and Spark Streaming
 - Md Tahmid Khan
 - Patrick Froerer 
 - Rudy Esquerra
+
+# Technologies
+
+# Schema
