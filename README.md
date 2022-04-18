@@ -1,9 +1,9 @@
-## Big Data Capstone Project
+# Big Data Capstone Project
 
-# Project Description
+## Project Description
 Big Data capstone project utilizing Kafka and Spark Streaming
 
-# Team Members
+## Team Members
 - Adam Gore
 - Alex White
 - Brandon Cho
@@ -15,6 +15,6 @@ Big Data capstone project utilizing Kafka and Spark Streaming
 - Patrick Froerer 
 - Rudy Esquerra
 
-# Technologies
+## Technologies
 
-# Schema
+## Schema
