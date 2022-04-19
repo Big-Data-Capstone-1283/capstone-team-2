@@ -3,7 +3,7 @@ import org.apache.kafka.clients.producer.{KafkaProducer, ProducerRecord}
 object kafkatest extends App {
 
   val props:Properties = new Properties()
-  //Replace ip with your ip
+  //Replace ip with your ip from server.config
   props.put("bootstrap.servers","10.251.1.166:9092")
   props.put("key.serializer",
     "org.apache.kafka.common.serialization.StringSerializer")

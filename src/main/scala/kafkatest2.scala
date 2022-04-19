@@ -6,7 +6,7 @@ object kafkatest2 extends App {
 
   val props:Properties = new Properties()
   props.put("group.id", "test")
-  //Replace ip with your ip
+  //Replace ip with your ip from server.config
   props.put("bootstrap.servers","10.251.1.166:9092")
   props.put("key.deserializer",
     "org.apache.kafka.common.serialization.StringDeserializer")
