@@ -153,11 +153,14 @@ def genID(fname:String,lname:String):String = {
 
 //basic toString that creates the string for the CSV input
   // the (d) is unused- not sure how to make the toString polymoph stuff without a var
-def toString(d:String): String =
-  {
+def toString(d:String): String = {
     val output = s"$customer_id,$customer_name,$country,$city"
+    println(output)
     output
   }
+
+
+
 
 
 }
