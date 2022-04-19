@@ -13,6 +13,11 @@ class personGen {
   private val cus_country:String = genRandomCountry
   private val cus_city:String =  genRandomCity
 
+// all CSV are in the input directory
+
+
+
+// creates a list of first names to be used in creating the full name// needs a string as a CSV file as input
 def createFnameList(fnameFile:String):ListBuffer[String]= {
 
   var fName = new ListBuffer[String]
@@ -25,7 +30,7 @@ def createFnameList(fnameFile:String):ListBuffer[String]= {
 
 return fName
 }
-
+// creates a list of last names to be used in creating the full name // needs CSV string as input
 def createLnameList(lnameFile:String):ListBuffer[String] ={
 
   var lName = new ListBuffer[String]
@@ -41,7 +46,7 @@ def createLnameList(lnameFile:String):ListBuffer[String] ={
 
   return lName
 }
-
+//creates a list of countries that will be used in creating the String for the csv // needs a CSV name as text
 def createCountryList(countryf:String):ListBuffer[String]={
   var country = new ListBuffer[String]
   val f = new File(countryf)
@@ -54,7 +59,7 @@ def createCountryList(countryf:String):ListBuffer[String]={
 
   return  country
 }
-
+//creates a list of cities that will be used in creating the String for csv needs a country name as input
 def createCityList(countryName:String):ListBuffer[String] = {
   var cities = new ListBuffer[String]
   var cityfileName = new String
@@ -75,6 +80,7 @@ def createCityList(countryName:String):ListBuffer[String] = {
   return cities
 }
 
+//generates a random country by using the Country list
 def genRandomCountry:String={
   var countryName = createCountryList("Country.csv")
   val rng = new Random()
@@ -83,7 +89,7 @@ def genRandomCountry:String={
 }
 
 
-
+//generates a random city by using the City List
 def genRandomCity:String={
   var cityName = createCityList(country)
   val rng = new Random()
@@ -93,7 +99,7 @@ def genRandomCity:String={
 
 
 
-
+//generate a random first name
   def genRandomFname: String = {
     val fname = createFnameList("FirstName.csv")
     var output = new String
@@ -102,7 +108,7 @@ def genRandomCity:String={
     output
   }
 
-
+//generate a random last night
   def genRandomLname: String = {
     val Lname = createLnameList("LastName.csv")
     var output = new String
@@ -111,13 +117,13 @@ def genRandomCity:String={
     output
   }
 
-
+//generates a full name string with first and last name separated by a space
 def fullNameGen(fname:String,lname:String):String={
   val fullname = s"$fname $lname"
   fullname
 }
 
-
+//generates a customer_id based on the first and last name and 7 numerical characters Ex: Alex White would be AW1234567
 def genID(fname:String,lname:String):String = {
   val fChar = fname.charAt(0)
   val lChar = lname.charAt(0)
@@ -126,7 +132,8 @@ def genID(fname:String,lname:String):String = {
     return ID
 }
 
-
+//-----------------------------------------
+  // Getters for Customer_name, customer_id, Country, and city
   def customer_name:String={
     val fullname = s"$firstName $lastName"
     fullname
@@ -144,6 +151,8 @@ def genID(fname:String,lname:String):String = {
     city
   }
 
+//basic toString that creates the string for the CSV input
+  // the (d) is unused- not sure how to make the toString polymoph stuff without a var
 def toString(d:String): String =
   {
     val output = s"$customer_id,$customer_name,$country,$city"
