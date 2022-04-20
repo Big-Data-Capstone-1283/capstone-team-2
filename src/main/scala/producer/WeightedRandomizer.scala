@@ -18,7 +18,7 @@ object WeightedRandomizer_Test {
 		val keys = items.keySet.toArray  // Get the key names from the map
 		var n = 0  // Current item
 		var weightTotal = 0  // Current total of all item's weights checked so far
-		while (weightTotal + items(keys(n)) < rnd) {  // Find the item for the random value's weight group
+		while (weightTotal + items(keys(n)) <= rnd) {  // Find the item for the random value's weight group
 			weightTotal += items(keys(n))
 			n += 1
 		}
