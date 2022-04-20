@@ -2,155 +2,92 @@ package producer
 
 class Products {
 
+  import java.io.{File, FileWriter}
+  import java.util.Scanner
+  import scala.collection.mutable.ListBuffer
+
+  object productsLists{
+
+    val pr = new Products
+
+    def foods_list(fileName:String):ListBuffer[String]= {
+        val foodList = new ListBuffer[String]
+        val f = new File(fileName)
+        val s = new Scanner(f)
 
 
+         while(s.hasNext())
+           {
+             foodList+=s.nextLine()
+           }
+        return foodList
+      }
 
-  object tool extends  Product{
-    override var product_id: String = ""
-    override var product_name: String = ""
-    override var product_category: String =""
-    override var price: String = ""
-    override var ecommerce_website_name: String = ""
 
-    override def setproduct_id(name: String): Unit = ???
-
-    override def setproduct_name(name: String): Unit = ???
-
-    override def setproduct_category(name: String): Unit = ???
-
-    override def setprice(name: String): Unit = ???
-
-    override def setecommerce_website_name(name: String): Unit = ???
-
-    override def getproduct_id: String = ???
-
-    override def getproduct_name: String = ???
-
-    override def getproduct_category: String = ???
-
-    override def getprice: String = ???
-
-    override def getecommerce_website_name: String = ???
-  }
-
-  object book extends Product{
-    override var product_id: String = ""
-    override var product_name: String = ""
-    override var product_category: String = ""
-    override var price: String = ""
-    override var ecommerce_website_name: String = ""
-
-    override def setproduct_id(name: String): Unit = ???
-
-    override def setproduct_name(name: String): Unit = ???
-
-    override def setproduct_category(name: String): Unit = ???
-
-    override def setprice(name: String): Unit = ???
-
-    override def setecommerce_website_name(name: String): Unit = ???
-
-    override def getproduct_id: String = ???
-
-    override def getproduct_name: String = ???
-
-    override def getproduct_category: String = ???
-
-    override def getprice: String = ???
-
-    override def getecommerce_website_name: String = ???
-  }
-
-  object clothing extends Product{
-    override var product_id: String = ""
-    override var product_name: String = ""
-    override var product_category: String = ""
-    override var price: String = ""
-    override var ecommerce_website_name: String = ""
-
-    override def setproduct_id(name: String): Unit = ???
-
-    override def setproduct_name(name: String): Unit = ???
-
-    override def setproduct_category(name: String): Unit = ???
-
-    override def setprice(name: String): Unit = ???
-
-    override def setecommerce_website_name(name: String): Unit = ???
-
-    override def getproduct_id: String = ???
-
-    override def getproduct_name: String = ???
-
-    override def getproduct_category: String = ???
-
-    override def getprice: String = ???
-
-    override def getecommerce_website_name: String = ???
   }
 
 
-  object electronic extends Product{
-    override var product_id: String =""
-    override val product_name: String =""
-    override val product_category: String = ""
-    override val price: String = ""
-    override val ecommerce_website_name: String = ""
+  object tool extends Product {
 
-    override def setproduct_id(name: String): Unit = {
-      this.product_id = name
-    }
 
-    override def setproduct_name(name: String): Unit = {
 
+    override var product_id: String = _
+    override var product_name: String = _
+    override var product_category: String = _
+    override var price: String = _
+    override var ecommerce_website_name: String = _
+
+  }
+
+  object book extends Product {
+    private val filename: String = "product_books.csv"
+    val f = new File(filename)
+    val s = new Scanner(f)
+
+    override var product_id: String = _
+    override var product_name: String = _
+    override var product_category: String = _
+    override var price: String = _
+    override var ecommerce_website_name: String = _
+  }
+
+    object clothing extends Product {
+      private val filename: String = "product_clothes.csv"
+      val f = new File(filename)
+      val s = new Scanner(f)
+
+      override var product_id: String = _
+      override var product_name: String = _
+      override var product_category: String = _
+      override var price: String = _
+      override var ecommerce_website_name: String = _
 
     }
 
-    override def setproduct_category(name: String): Unit = {
 
+    object electronic extends Product {
+      private val filename: String = "product_electronics.csv"
+      val f = new File(filename)
+      val s = new Scanner(f)
+
+      override var product_id: String = _
+      override var product_name: String = _
+      override var product_category: String = _
+      override var price: String = _
+      override var ecommerce_website_name: String = _
 
     }
 
-    override def setprice(name: String): Unit = ???
+    object food extends Product {
+      private val filename:String ="product_food"
+      val f = new File(filename)
+      val s = new Scanner(f)
 
-    override def setecommerce_website_name(name: String): Unit = ???
+      override var product_id: String = _
+      override var product_name: String = _
+      override var product_category: String = _
+      override var price: String = _
+      override var ecommerce_website_name: String = _
+    }
 
-    override def getproduct_id: String = ???
-
-    override def getproduct_name: String = ???
-
-    override def getproduct_category: String = ???
-
-    override def getprice: String = ???
-
-    override def getecommerce_website_name: String = ???
-  }
-
-  object  food extends Product{
-    override var product_id: String = ""
-    override var product_name: String = ""
-    override var product_category: String = ""
-    override var price: String = ""
-    override var ecommerce_website_name: String = ""
-
-    override def setproduct_id(name: String): Unit = ???
-
-    override def setproduct_name(name: String): Unit = ???
-
-    override def setproduct_category(name: String): Unit = ???
-
-    override def setprice(name: String): Unit = ???
-
-    override def setecommerce_website_name(name: String): Unit = ???
-
-    override def getproduct_id: String = ???
-
-    override def getproduct_name: String = ???
-
-    override def getproduct_category: String = ???
-
-    override def getprice: String = ???
-
-    override def getecommerce_website_name: String = ???
-  }
 }

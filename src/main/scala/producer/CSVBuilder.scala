@@ -14,7 +14,7 @@ class CSVBuilder {
     for(i <- 0 to arr)
     {
       var p = new personGen
-      output += p.toString("d")
+      output += p.toString()
     }
 
     output
