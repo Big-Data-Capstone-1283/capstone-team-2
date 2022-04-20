@@ -18,6 +18,7 @@ Big Data capstone project utilizing Kafka and Spark Streaming
 ## Technologies
 - Scala 2.13.8
 - Spark 3.2.0
+- Kafka 3.1.0
 
 ## Schema
 
