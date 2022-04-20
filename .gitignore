@@ -2,6 +2,32 @@
 # Created by https://www.toptal.com/developers/gitignore/api/scala,spark,sbt
 # Edit at https://www.toptal.com/developers/gitignore?templates=scala,spark,sbt
 
+
+### IntelliJ ###
+### added 4.20.22 by Brian after merge conflicts
+.idea/modules/untitled-build.iml                              
+.idea/modules/untitled.iml                                    
+'.idea/modules/untitled.iml'                                  
+.idea/sbt.xml                                                 
+.bsp/sbt.json                                                 
+target/.history3                                              
+target/streams/_global/_global/dumpStructure/_global/streams/o
+target/streams/_global/updateClassifiers/_global/streams/out  
+target/streams/compile/externalDependencyClasspath/_global/str
+target/streams/compile/managedClasspath/_global/streams/export
+target/streams/compile/unmanagedClasspath/_global/streams/expo
+target/streams/compile/unmanagedJars/_global/streams/export   
+target/streams/runtime/externalDependencyClasspath/_global/str
+target/streams/runtime/managedClasspath/_global/streams/export
+target/streams/runtime/unmanagedClasspath/_global/streams/expo
+target/streams/runtime/unmanagedJars/_global/streams/export   
+target/streams/test/externalDependencyClasspath/_global/stream
+target/streams/test/managedClasspath/_global/streams/export   
+target/streams/test/unmanagedClasspath/_global/streams/export 
+target/streams/test/unmanagedJars/_global/streams/export      
+
+
+
 ### SBT ###
 # Simple Build Tool
 # http://www.scala-sbt.org/release/docs/Getting-Started/Directories.html#configuring-version-control
