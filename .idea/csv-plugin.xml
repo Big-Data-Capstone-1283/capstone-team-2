@@ -24,6 +24,13 @@
             </Attribute>
           </value>
         </entry>
+        <entry key="\input\Customers.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
         <entry key="\input\FirstName.csv">
           <value>
             <Attribute>
@@ -45,6 +52,13 @@
             </Attribute>
           </value>
         </entry>
+        <entry key="\input\ProductsList.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
         <entry key="\input\UK10Cities.csv">
           <value>
             <Attribute>
@@ -53,6 +67,13 @@
           </value>
         </entry>
         <entry key="\input\US10Cities.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\input\electronic_products.csv">
           <value>
             <Attribute>
               <option name="separator" value="," />
