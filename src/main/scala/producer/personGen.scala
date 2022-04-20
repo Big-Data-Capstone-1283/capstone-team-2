@@ -64,11 +64,11 @@ def createCityList(countryName:String):ListBuffer[String] = {
   var cities = new ListBuffer[String]
   var cityfileName = new String
   countryName match{
-    case "Australia" => cityfileName = "AU10Cities.csv"
-    case "Canada"=> cityfileName = "CA10Cities.csv"
-    case "New_Zealand" => cityfileName = "NZ10Cities.csv"
-    case "United_States_of_America" => cityfileName ="US10Cities.csv"
-    case "United_Kingdom" => cityfileName = "UK10Cities.csv"
+    case "Australia" => cityfileName = "input/AU10Cities.csv"
+    case "Canada"=> cityfileName = "input/CA10Cities.csv"
+    case "New_Zealand" => cityfileName = "input/NZ10Cities.csv"
+    case "United_States_of_America" => cityfileName ="input/US10Cities.csv"
+    case "United_Kingdom" => cityfileName = "input/UK10Cities.csv"
   }
   val f = new File(cityfileName)
   var s = new Scanner(f)
@@ -82,7 +82,7 @@ def createCityList(countryName:String):ListBuffer[String] = {
 
 //generates a random country by using the Country list
 def genRandomCountry:String={
-  var countryName = createCountryList("Country.csv")
+  var countryName = createCountryList("input/Country.csv")
   val rng = new Random()
   val output:String = countryName(rng.nextInt(countryName.length - 1))
   output
@@ -101,7 +101,7 @@ def genRandomCity:String={
 
 //generate a random first name
   def genRandomFname: String = {
-    val fname = createFnameList("FirstName.csv")
+    val fname = createFnameList("input/FirstName.csv")
     var output = new String
     val rng = new Random()
     output = fname(rng.nextInt(fname.length))
@@ -110,7 +110,7 @@ def genRandomCity:String={
 
 //generate a random last night
   def genRandomLname: String = {
-    val Lname = createLnameList("LastName.csv")
+    val Lname = createLnameList("input/LastName.csv")
     var output = new String
     val rng = new Random()
     output = Lname(rng.nextInt(Lname.length))
@@ -153,11 +153,14 @@ def genID(fname:String,lname:String):String = {
 
 //basic toString that creates the string for the CSV input
   // the (d) is unused- not sure how to make the toString polymoph stuff without a var
-def toString(d:String): String =
-  {
+def toString(d:String): String = {
     val output = s"$customer_id,$customer_name,$country,$city"
+    println(output)
     output
   }
+
+
+
 
 
 }
