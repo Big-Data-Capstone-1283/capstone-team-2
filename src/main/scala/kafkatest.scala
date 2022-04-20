@@ -4,7 +4,7 @@ object kafkatest extends App {
 
   val props:Properties = new Properties()
   //Replace ip with your ip from server.config
-  props.put("bootstrap.servers","10.251.1.166:9092")
+  props.put("bootstrap.servers","ec2-3-93-174-172.compute-1.amazonaws.com:9092")
   props.put("key.serializer",
     "org.apache.kafka.common.serialization.StringSerializer")
   props.put("value.serializer",
