@@ -1,4 +1,4 @@
-"order_id", "customer_id", "customer_name", "product_id","product_name", "product_category", "payment_type", "qty","price", "datetime", "country", "city","ecommerce_website_name","payment_txn_id", "payment_txn_success", "failure_reason"
+order_id,customer_id,customer_name,product_id,product_name,product_category,payment_type,qty,price,datetime,country,city,ecommerce_website_name,payment_txn_id,payment_txn_success,failure_reason
 1,101,John  Smith,201,Pen,Stationery,Card,24,10,2021-01-10  10:12,India,Mumbai,www.amazon.com,36766,Y,
 2,102,Mary  Jane,202,Pencil,Stationery,Internet  Banking,36,5,2021-10-31 13:45,USA,Boston,www.flipkart.com,37167,Y,
 3,103,Joe Smith,203,Some mobile,Electronics,UPI,1,4999,2021-04-23 11:32,UK,Oxford,www.tatacliq.com,90383,Y,
