@@ -1,9 +1,10 @@
-import org.apache.spark.sql.functions._
+package consumer
+
 import org.apache.spark.sql.{DataFrame, SparkSession}
 
 object csvReader {
 
-  def main(args: Array[String]): Unit ={
+  def main(args: Array[String]): Unit = {
 
     val spark: SparkSession = SparkSession.builder()
       .master("local[1]")
@@ -17,7 +18,7 @@ object csvReader {
     spark.sparkContext.setLogLevel("ERROR")
 
     //Create dataFrame based on sample purchases
-    val dfPurchases: DataFrame = spark.read.option("header",true)
+    val dfPurchases: DataFrame = spark.read.option("header", true)
       .csv("src/main/data/purchase_examples.csv")
 
     val filteredPurchases = dfPurchases.filter(dfPurchases("order_id").isNotNull &&
@@ -29,7 +30,5 @@ object csvReader {
     filteredPurchases.show()
 
 
+  }
 }
-}
-
-
