@@ -15,4 +15,6 @@ class Producer {
   val producer = new KafkaProducer[String, String](props)
   //Update topic when they create theirs
   val topic = "team1"
+
+
 }
