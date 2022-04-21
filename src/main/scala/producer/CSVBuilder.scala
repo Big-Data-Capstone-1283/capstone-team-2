@@ -15,6 +15,7 @@ class CSVBuilder {
     for(i <- 0 until arr)
     {
       var p = new personGen
+      if(p.genRandomCity == "")
       output += p.toString()
 
     }

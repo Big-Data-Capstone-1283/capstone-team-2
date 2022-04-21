@@ -133,10 +133,20 @@ def genPayment:String={
 
 def gendateTime:String ={
   var output = new String
-  val
+  // want to assign timezones based off of country
+
+  val earlyMorning = ListBuffer[Int](0,1,2,3,4,5)
+  val midMorning = ListBuffer[Int](6,7,8,9,10,11,12)
+
+  val lunch = ListBuffer[Int](13)
+
+  val afternoon = ListBuffer[Int](14,15,16)
+  val evening = ListBuffer[Int](17,18,19)
+
+  val nightrush = ListBuffer[Int](20,21)
 
 
-
+    val nighttime = ListBuffer[Int](22,23)
   var timezone = 0
 
 
@@ -175,7 +185,7 @@ def genID(fname:String,lname:String):String = {
   val upper =9999999
 
 
-  val namerng = (new Random(upper).nextInt() + lower)
+  val namerng = Random.between(lower,upper)
 
   val ID:String = s"$fChar$lChar$namerng"
   return ID
@@ -209,7 +219,7 @@ def genID(fname:String,lname:String):String = {
   override def toString(): String = {
 
     val output = s"$customer_id,$customer_name,$payment_type,$country,$city"
-    println(output)
+    //println(output)
     output
   }
 

@@ -87,6 +87,20 @@
             </Attribute>
           </value>
         </entry>
+        <entry key="\input\products_electronics.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\input\products_food.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
         <entry key="\input\products_tools.csv">
           <value>
             <Attribute>
