@@ -127,9 +127,14 @@ def fullNameGen(fname:String,lname:String):String={
 def genID(fname:String,lname:String):String = {
   val fChar = fname.charAt(0)
   val lChar = lname.charAt(0)
-  val namerng = Random.between(1000000,9999999)
+  val lower =1000000
+  val upper =9999999
+
+
+  val namerng = (new Random(upper).nextInt() + lower)
+
   val ID:String = s"$fChar$lChar$namerng"
-    return ID
+  return ID
 }
 
 //-----------------------------------------
@@ -152,12 +157,15 @@ def genID(fname:String,lname:String):String = {
   }
 
 //basic toString that creates the string for the CSV input
-  // the (d) is unused- not sure how to make the toString polymoph stuff without a var
-def toString(d:String): String =
-  {
+
+  override def toString(): String = {
     val output = s"$customer_id,$customer_name,$country,$city"
+    println(output)
     output
   }
+
+
+
 
 
 }
