@@ -1,6 +1,6 @@
 package producer
 
-object WeightedRandomizer_Test {
+object WeightedRandomizer {
 	/**
 	  * Returns a random key from a Map containing `"item name" -> weight` pairs, where the
 	  * "weight" value indicates its frequency relative to the total value of all weights.
@@ -10,7 +10,8 @@ object WeightedRandomizer_Test {
 	  * @param items	A Map of `String -> Int` pairs, representing item name and weight.
 	  * @return			A semi-randomly chosen item name from the `items` map passed to the function.
 	  */
-	def WeightedRandomizer(items: Map[String, Int]): String = {
+
+	def apply(items: Map[String, Int]): String = {
 		var weightSum = 0  // The total value of all the weights passed in (Note: does NOT need to total to 100)
 		for (i <- items)  // Find the total value of weights for all keys
 			weightSum += i._2

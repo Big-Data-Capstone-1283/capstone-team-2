@@ -6,9 +6,10 @@ object main {
   def main(args: Array[String]): Unit = {
 
 
-   // val customer = new CSVBuilder
-    //customer.createCustomersCSV(10000)
+   val customer = new CSVBuilder
+    customer.createCustomersCSV(10000)
 
+    /**
     val prod = new Products
 
 
@@ -18,7 +19,7 @@ object main {
       {
         println(testList)
       }
-
+     */
   }
 
 }

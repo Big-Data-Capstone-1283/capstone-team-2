@@ -10,11 +10,13 @@ class CSVBuilder {
 // can reformat to fit schema
   def customerList(arr:Int): ListBuffer[String] =
   {
+
     var output = new ListBuffer[String]
-    for(i <- 0 to arr)
+    for(i <- 0 until arr)
     {
       var p = new personGen
       output += p.toString()
+
     }
 
     output

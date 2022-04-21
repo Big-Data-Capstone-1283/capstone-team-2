@@ -12,6 +12,10 @@ class personGen {
   private val customerID:String = genID(firstName,lastName)
   private val cus_country:String = genRandomCountry
   private val cus_city:String =  genRandomCity
+  private val paymentType:String = genPayment
+  private val datetime:String = ""
+  private val startDate:String=""
+  private val endDate:String =""
 
 // all CSV are in the input directory
 
@@ -46,6 +50,8 @@ def createLnameList(lnameFile:String):ListBuffer[String] ={
 
   return lName
 }
+
+
 //creates a list of countries that will be used in creating the String for the csv // needs a CSV name as text
 def createCountryList(countryf:String):ListBuffer[String]={
   var country = new ListBuffer[String]
@@ -85,6 +91,7 @@ def genRandomCountry:String={
   var countryName = createCountryList("input/Country.csv")
   val rng = new Random()
   val output:String = countryName(rng.nextInt(countryName.length - 1))
+
   output
 }
 
@@ -97,7 +104,44 @@ def genRandomCity:String={
   output
 }
 
+def genPayment:String={
+  var output = new String
+// payment rates to be changed based off of Patterns USes the weighted Randomizer class
+  cus_country match{
 
+
+    case "Australia" => output ={val paymentRates = Map("Card" -> 60, "Internet Banking" -> 10, "UPI" -> 5, "Wallet" -> 25)
+      WeightedRandomizer(paymentRates)}
+
+    case "Canada" => output ={val paymentRates = Map("Card" -> 60, "Internet Banking" -> 10, "UPI" -> 5, "Wallet" -> 25)
+      WeightedRandomizer(paymentRates)}
+
+    case "New_Zealand" =>output ={val paymentRates = Map("Card" -> 60, "Internet Banking" -> 10, "UPI" -> 5, "Wallet" -> 25)
+      WeightedRandomizer(paymentRates)}
+
+    case "United_Kingdom" => output ={val paymentRates = Map("Card" -> 60, "Internet Banking" -> 10, "UPI" -> 5, "Wallet" -> 25)
+      WeightedRandomizer(paymentRates)}
+
+    case "United_States_of_America" => output = {{val paymentRates = Map("Card" -> 60, "Internet Banking" -> 10, "UPI" -> 5, "Wallet" -> 25)
+      WeightedRandomizer(paymentRates)}}
+
+    case default => output = "Card"
+  }
+  output
+}
+
+
+def gendateTime:String ={
+  var output = new String
+  val
+
+
+
+  var timezone = 0
+
+
+  output
+}
 
 //generate a random first name
   def genRandomFname: String = {
@@ -155,11 +199,16 @@ def genID(fname:String,lname:String):String = {
     val city = s"$cus_city"
     city
   }
+  def payment_type:String={
+    val payment = s"$paymentType"
+    payment
+  }
 
 //basic toString that creates the string for the CSV input
 
   override def toString(): String = {
-    val output = s"$customer_id,$customer_name,$country,$city"
+
+    val output = s"$customer_id,$customer_name,$payment_type,$country,$city"
     println(output)
     output
   }
