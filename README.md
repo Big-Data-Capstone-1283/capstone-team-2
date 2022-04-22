@@ -10,16 +10,16 @@
 Big Data capstone project utilizing Kafka and Spark Streaming.
 
 ## Team Members
-- Adam Gore
+- Adam Gore [@Adam-Gore96](https://github.com/Adam-Gore96)
 - Alex White [@AlexWhite252](https://github.com/AlexWhite252)
-- Brandon Cho
+- Brandon Cho [@BrandonYCho](https://github.com/BrandonYCho)
 - Brian Vegh [@brianvegh](https://github.com/brianvegh)
-- Douglas Lam
-- Evan Laferriere
+- Douglas Lam [@Douglas-Lam](https://github.com/Douglas-Lam)
+- Evan Laferriere [@evanlaferriere](https://github.com/evanlaferriere)
 - Jeffrey Hafner [@JeffH001](https://github.com/JeffH001)
 - Md Tahmid Khan [@MdTahmidKhan](https://github.com/MdTahmidKhan)
-- Patrick Froerer
-- Rudy Esquerra
+- Patrick Froerer [@PJFroerer](https://github.com/PJFroerer)
+- Rudy Esquerra [@rudyesquerra](https://github.com/rudyesquerra)
 
 ## Technologies
 - Scala 2.13.8
