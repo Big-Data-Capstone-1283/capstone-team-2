@@ -11,7 +11,7 @@ Big Data capstone project utilizing Kafka and Spark Streaming.
 
 ## Team Members
 - Adam Gore
-- Alex White
+- Alex White [@AlexWhite252](https://github.com/AlexWhite252)
 - Brandon Cho
 - Brian Vegh [@brianvegh](https://github.com/brianvegh)
 - Douglas Lam
