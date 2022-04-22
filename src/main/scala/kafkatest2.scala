@@ -16,6 +16,8 @@ object kafkatest2 extends App {
   props.put("auto.commit.interval.ms", "1000")
   val consumer = new KafkaConsumer(props)
   val topics = List("text_topic")
+
+
   try {
     consumer.subscribe(topics.asJava)
     while (true) {
