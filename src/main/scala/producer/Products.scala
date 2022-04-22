@@ -19,8 +19,6 @@ class Products(person:personGen) {
       val foods = new ListBuffer[String]
       val f = new File(fileName)
       val s = new Scanner(f)
-
-
       while (s.hasNext()) {
         foods += s.nextLine()
       }
@@ -69,7 +67,6 @@ class Products(person:personGen) {
       val f = new File(fileName)
       val s = new Scanner(f)
 
-
       while (s.hasNext()) {
         electronics += s.nextLine()
       }
@@ -85,7 +82,6 @@ class Products(person:personGen) {
     var ordercat = new String
 
     var rng = scala.util.Random
-
 
     person.country match{
       case "Australia" => {val categoryRate = Map("books" -> 19, "clothes"->19, "electronics" -> 19, "food" -> 19, "tools" -> 24)
