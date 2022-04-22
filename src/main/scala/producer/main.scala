@@ -9,7 +9,7 @@ object main {
    //val customer = new CSVBuilder
     //customer.createCustomersCSV(10000)
 
-    Orders.printOrderList(100)
+    Orders.printOrderList(1000)
 
 
     /**
