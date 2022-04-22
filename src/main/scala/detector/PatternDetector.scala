@@ -80,7 +80,42 @@ object PatternDetector {
 				if (currentDeviation.abs < 1.0)
 					println(s"${entryNames(i)}: ${entryCounts(i)} (within expected rate; deviation = $currentDeviation)")
 				else
-					println(s"${entryNames(i)}: ${entryCounts(i)} (does not match expected rate; deviations = $currentDeviation)")
+					println(s"${entryNames(i)}: ${entryCounts(i)} (does NOT match expected rate; deviations = $currentDeviation)")
+		}
+		val normalizedDeviation = totalDeviation / totalEntries.toDouble
+		if (PatternDetector.testMode)  // Show info if we're in test mode
+			println(s"Total deviation: $totalDeviation\nNormalized deviation: $normalizedDeviation\n")
+		normalizedDeviation
+	}
+
+	/**
+	  * Calclulates the normalized deviation beyond a margin or error from randomized data for a two-factor dataframe.
+	  *
+	  * @param df	A dataframe consisting of a label and a count for each label.
+	  * @return		A normalized deviation from random data.
+	  */
+	def deviation2F(df: DataFrame): Double = {
+		var newData = df.collect()
+		var entryNames = newData.map(x => x.getString(0) + "+" + x.getString(1))
+		var totalEntries = entryNames.length
+		var entryCounts = newData.map(_.getLong(2).toInt)
+		var totalRows = 0
+		for (i <- 0 to totalEntries - 1)
+			totalRows += entryCounts(i)
+		var avgCount = totalRows / totalEntries  // Compute what the count should be for each entry if they were all selected totally randomly
+		var totalDeviation = 0.0
+		var currentDeviation = 0.0
+		var margin = avgCount * marginOfError  // Ignore anything below the margin of error
+		if (PatternDetector.testMode)  // Show info if we're in test mode
+			println(s"Total data points: $totalRows\nDistinct values: $totalEntries\nExpected rate: $avgCount  +/-$margin")
+		for (i <- 0 to totalEntries - 1) {
+			currentDeviation = (entryCounts(i).toDouble - avgCount.toDouble) / margin
+			totalDeviation += currentDeviation.abs
+			if (PatternDetector.testMode)  // Show info if we're in test mode
+				if (currentDeviation.abs <= 1.0)
+					println(s"${entryNames(i)}: ${entryCounts(i)} (within expected rate; deviation = $currentDeviation)")
+				else
+					println(s"${entryNames(i)}: ${entryCounts(i)} (does NOT match expected rate; deviations = $currentDeviation)")
 		}
 		val normalizedDeviation = totalDeviation / totalEntries.toDouble
 		if (PatternDetector.testMode)  // Show info if we're in test mode
@@ -103,6 +138,14 @@ object PatternDetector {
 		funcArr += CountryPattern.Go
 		descArr += "Payment Type pattern"
 		funcArr += PaymentTypePattern.Go
+		descArr += "Transaction Success pattern"
+		funcArr += TxnSuccessRatePattern.Go
+		descArr += "Ecommerce Website pattern"
+		funcArr += WebsitePattern.Go
+		descArr += "Product Category pattern"
+		funcArr += ProductCategoryPattern.Go
+		descArr += "Product Category + Country pattern"
+		funcArr += ProdCat_CountryPattern.Go
 
 		// Run all of the pattern tests
 		for (i <- 0 to funcArr.length - 1) {
