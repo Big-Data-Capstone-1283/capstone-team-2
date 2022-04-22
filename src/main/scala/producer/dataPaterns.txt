@@ -1,0 +1,38 @@
+///TODO///
+ - update payment type weights
+
+
+Patterns:
+=========
+More purchases on Sat-Sun every other week
+Purchase rates reflect country timezones (+ lunch hour 8m-10pm purchases)
+Purchase type ratios vary by country (e.g. US purchases more electronics)
+Some ecommerce sites have more or less sales than others
+Some payment types are used more than others (e.g. "card" is used more often)
+
+Errors:  (3% error rate)
+Some data will be NULL/empty
+Some columns will be truncated (missing columns)
+Negative product prices
+
+
+generate day of month based on {
+	Weekend vs Weekday
+}
+generate hour of day based on {
+	if ( lunch(hr 13), evening(hr 20,21) )  then {
+		higer percentage of selection than if not, in range (hr0-hr23)
+}
+generate Country-Category trends {
+	us- trends Electronics
+	australia - trends tools
+	new zealand - trends food
+ 	Canada - trends books
+	United Kingdom - trends clothing
+}
+
+
+OUR ADDED TRENDS
+generate month(1-3) based on {
+	direct linear increase as month increases //each month = 1.25x quant orders of previous month
+} 	
