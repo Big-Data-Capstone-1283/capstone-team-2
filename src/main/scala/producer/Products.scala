@@ -6,72 +6,145 @@ class Products(person:personGen) {
   import java.util.Scanner
   import scala.collection.mutable.ListBuffer
 
-  val eleList:ListBuffer[String]= productsLists.electronicsList("input/products_electronics.csv")
-  val bookList:ListBuffer[String] = productsLists.booksList("input/products_books.csv")
-  val clothList:ListBuffer[String]= productsLists.clothesList("input/products_clothes.csv")
-  val foodList:ListBuffer[String] = productsLists.foodsList("input/products_food.csv")
-  val toolList:ListBuffer[String] = productsLists.toolsList("input/products_tools.csv")
+  val eleList:ListBuffer[Product]= productsLists.electronicsList("input/products_electronics.csv")
+  val bookList:ListBuffer[Product] = productsLists.booksList("input/products_books.csv")
+  val clothList:ListBuffer[Product]= productsLists.clothesList("input/products_clothes.csv")
+  val foodList:ListBuffer[Product] = productsLists.foodsList("input/products_food.csv")
+  val toolList:ListBuffer[Product] = productsLists.toolsList("input/products_tools.csv")
 
   object productsLists {
 
 
-    def foodsList(fileName: String): ListBuffer[String] = {
-      val foods = new ListBuffer[String]
+
+
+    def foodsList(fileName: String): ListBuffer[Product] = {
+      val foods = new ListBuffer[Product]
       val f = new File(fileName)
       val s = new Scanner(f)
+      var price = new String
+      var name = new String
+      s.useDelimiter(",")
+
+      while (s.hasNextLine) {
 
 
-      while (s.hasNext()) {
-        foods += s.nextLine()
+
+
+        var line = new String
+        line = s.nextLine()
+
+        val lines = line.split(",")
+
+        name = lines(0)
+        price = lines(1)
+
+        //println(s" the name $name")
+        //println(s"the price $price")
+
+       val pro = new Product(name,price)
+        foods += pro
       }
       return foods
     }
 
 
-    def toolsList(fileName: String): ListBuffer[String] = {
-      val tools = new ListBuffer[String]
+    def toolsList(fileName: String): ListBuffer[Product] = {
+      val tools = new ListBuffer[Product]
       val f = new File(fileName)
       val s = new Scanner(f)
+      var price = new String
+      var name = new String
+      s.useDelimiter(",")
 
+      while (s.hasNextLine()) {
+        var line = new String
+        line = s.nextLine()
+        val lines = line.split(",")
+        name = lines(0)
+        price = lines(1)
 
-      while (s.hasNext()) {
-        tools += s.nextLine()
+        //println(s" the name $name")
+        //println(s"the price $price")
+
+        val pro = new Product(name,price)
+
+        tools += pro
       }
       return tools
     }
 
-    def clothesList(fileName: String): ListBuffer[String] = {
-      val clothes = new ListBuffer[String]
+    def clothesList(fileName: String): ListBuffer[Product] = {
+      val clothes = new ListBuffer[Product]
       val f = new File(fileName)
       val s = new Scanner(f)
+      var price = new String
+      var name = new String
+      s.useDelimiter(",")
 
+      while (s.hasNextLine()) {
 
-      while (s.hasNext()) {
-        clothes += s.nextLine()
+        var line = new String
+        line = s.nextLine()
+        val lines = line.split(",")
+        name = lines(0)
+        price = lines(1)
+        //println(s" the name $name")
+        //println(s"the price $price")
+       val pro = new Product(name,price)
+        clothes += pro
       }
       return clothes
     }
 
-    def booksList(fileName: String): ListBuffer[String] = {
-      val books = new ListBuffer[String]
+    def booksList(fileName: String): ListBuffer[Product] = {
+      val books = new ListBuffer[Product]
       val f = new File(fileName)
       val s = new Scanner(f)
+      var price = new String
+      var name = new String
+      s.useDelimiter(",")
 
 
-      while (s.hasNext()) {
-        books += s.nextLine()
+      while (s.hasNextLine()) {
+
+        var line = new String
+        line = s.nextLine()
+        val lines = line.split(",")
+        name = lines(0)
+        price = lines(1)
+
+        //println(s" the name $name")
+        //println(s"the price $price")
+
+        val pro = new Product(name,price)
+
+        books += pro
       }
       return books
     }
 
-    def electronicsList(fileName: String): ListBuffer[String] = {
-      val electronics = new ListBuffer[String]
+    def electronicsList(fileName: String): ListBuffer[Product] = {
+      val electronics = new ListBuffer[Product]
       val f = new File(fileName)
       val s = new Scanner(f)
+      var price = new String
+      var name = new String
 
+      s.useDelimiter(",")
 
       while (s.hasNext()) {
-        electronics += s.nextLine()
+
+        var line = new String
+        line = s.nextLine()
+        val lines = line.split(",")
+        name = lines(0)
+        price = lines(1)
+
+        //println(s" the name $name")
+        //println(s"the price $price")
+
+        val pro = new Product(name,price)
+        electronics += pro
       }
       return electronics
     }
@@ -108,25 +181,34 @@ class Products(person:personGen) {
 
     var productString = new String
     var txabrv = new String
+
+    var rngnum = 0
+    var price= new String
     ordercat match{
-      case "books" => {val rngnum = rng.nextInt(bookList.length -1)
-        productString = bookList(rngnum) + ",books"
-        txabrv = "bk"}
-      case "clothes" => {val rngnum = rng.nextInt(clothList.length -1)
-      productString = clothList(rngnum) + ",clothes"
-      txabrv = "cs"}
-      case "electronics" =>{val rngnum = rng.nextInt(eleList.length -1)
-      productString = eleList(rngnum) + ",electronics"
-      txabrv ="es"}
-      case "food" => {val rngnum =rng.nextInt(foodList.length -1)
-      productString = foodList(rngnum)+ ",food"
-      txabrv ="fd"}
-      case "tools" => {val rngnum = rng.nextInt(toolList.length -1)
-      productString = toolList(rngnum)+ ",tools"
-      txabrv ="ts"}
-      case default => {val rngnum = rng.nextInt(eleList.length -1)
-      productString = eleList(rngnum)+ ",electronics"
-      txabrv ="es"}
+      case "books" => {rngnum = rng.nextInt(bookList.length -1)
+        productString = bookList(rngnum).getName + ",books"
+        txabrv = "bk"
+      price = bookList(rngnum).getPrice}
+      case "clothes" => {rngnum = rng.nextInt(clothList.length -1)
+      productString = clothList(rngnum).getName + ",clothes"
+      txabrv = "cs"
+      price = clothList(rngnum).getPrice}
+      case "electronics" =>{ rngnum = rng.nextInt(eleList.length -1)
+      productString = eleList(rngnum).getName + ",electronics"
+      txabrv ="es"
+      price =eleList(rngnum).getPrice}
+      case "food" => {rngnum =rng.nextInt(foodList.length -1)
+      productString = foodList(rngnum).getName+ ",food"
+      txabrv ="fd"
+      price = foodList(rngnum).getPrice}
+      case "tools" => { rngnum = rng.nextInt(toolList.length -1)
+      productString = toolList(rngnum).getName+ ",tools"
+      txabrv ="ts"
+      price =foodList(rngnum).getPrice}
+      case default => { rngnum = rng.nextInt(eleList.length -1)
+      productString = eleList(rngnum).getName +",electronics"
+      txabrv ="es"
+      price=eleList(rngnum).getPrice}
     }
 
 
@@ -136,75 +218,24 @@ class Products(person:personGen) {
     val txn_success = "Y"
     val fail = "no failure"
     val ecoom_website = "Amazon"
-    personProductString = person.toString()+s",$product_id,$productString,$txn_id,$txn_success,$fail"
+    personProductString = s"${person.customer_id},${person.customer_name},$product_id,$productString,$price,${person.country},${person.city},$txn_id,$txn_success,$fail"
 
     //println(personProductString)
     personProductString
   }
 
+}
 
-
-  object tool extends Product {
-
-
-
-    override var product_id: String = _
-    override var product_name: String = _
-    override var product_category: String = _
-    override var price: String = _
-    override var ecommerce_website_name: String = _
-
+class Product(name:String, price:String)
+{
+  val Name =name
+  val Price =price
+  def getName:String ={
+    Name
+  }
+  def getPrice:String ={
+    Price
   }
 
-  object book extends Product {
-    private val filename: String = "product_books.csv"
-    val f = new File(filename)
-    val s = new Scanner(f)
-
-    override var product_id: String = _
-    override var product_name: String = _
-    override var product_category: String = _
-    override var price: String = _
-    override var ecommerce_website_name: String = _
-  }
-
-    object clothing extends Product {
-      private val filename: String = "product_clothes.csv"
-      val f = new File(filename)
-      val s = new Scanner(f)
-
-      override var product_id: String = _
-      override var product_name: String = _
-      override var product_category: String = _
-      override var price: String = _
-      override var ecommerce_website_name: String = _
-
-    }
-
-
-    object electronic extends Product {
-      private val filename: String = "product_electronics.csv"
-      val f = new File(filename)
-      val s = new Scanner(f)
-
-      override var product_id: String = _
-      override var product_name: String = _
-      override var product_category: String = _
-      override var price: String = _
-      override var ecommerce_website_name: String = _
-
-    }
-
-    object food extends Product {
-      private val filename:String ="product_food"
-      val f = new File(filename)
-      val s = new Scanner(f)
-
-      override var product_id: String = _
-      override var product_name: String = _
-      override var product_category: String = _
-      override var price: String = _
-      override var ecommerce_website_name: String = _
-    }
 
 }
