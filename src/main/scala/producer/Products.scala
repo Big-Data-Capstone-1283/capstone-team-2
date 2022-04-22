@@ -131,10 +131,12 @@ class Products(person:personGen) {
 
 
     val txn_IdRNG = scala.util.Random.between(100000,999999)
+    val product_id = scala.util.Random.between(10000000,99999999)
     val txn_id = txabrv+txn_IdRNG
     val txn_success = "Y"
     val fail = "no failure"
-    personProductString = person.toString()+s",$productString,+$txn_id,$txn_success,$fail"
+    val ecoom_website = "Amazon"
+    personProductString = person.toString()+s",$product_id,$productString,$txn_id,$txn_success,$fail"
 
     //println(personProductString)
     personProductString
