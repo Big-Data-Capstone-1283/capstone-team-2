@@ -15,4 +15,5 @@ libraryDependencies += "org.apache.spark" %% "spark-hive" % "3.2.0"
 //NEEDED FOR BATCH PROCESSING VIA SPARK;DOES NOT NEED TO BE IMPORTED INTO FILE TO WORK
 libraryDependencies += "org.apache.spark" %% "spark-sql-kafka-0-10" % "3.2.0"
 
-
+//KAFKA
+libraryDependencies += "org.apache.kafka" % "kafka-clients" % "3.1.0"

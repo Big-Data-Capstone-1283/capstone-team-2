@@ -1,8 +1,10 @@
+package consumer
+
 import org.apache.log4j.{Level, Logger}
 import org.apache.spark.sql.SparkSession
 import org.apache.spark.sql.streaming.Trigger.ProcessingTime
 
-object ConsumerTest extends App {
+object Consumer extends App {
 
   //INITIATE SPARK SESSION//
   Logger.getLogger("org").setLevel(Level.ERROR)
@@ -40,6 +42,7 @@ object ConsumerTest extends App {
     .load()
 
   df.printSchema()
+
 
   //Since the value is in binary, first we need to convert the binary value to String using selectExpr()
   val topicStringDF = df.selectExpr("CAST(key AS STRING)", "CAST(value AS STRING)")
