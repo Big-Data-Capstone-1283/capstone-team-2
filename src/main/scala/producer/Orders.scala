@@ -7,18 +7,8 @@ import scala.collection.JavaConverters._
 import scala.collection.mutable.ListBuffer
 
 object Orders {
+  val badData = Map("G" -> 0, "B" -> 100)
 
-  Logger.getLogger("org").setLevel(Level.ERROR)
-  System.setProperty("hadoop.home.dir", "C:\\hadoop")
-  val spark = SparkSession
-    .builder
-    .appName("hello hive")
-    .config("spark.master", "local[*]")
-    .enableHiveSupport()
-    .getOrCreate()
-
-  //println("created spark session")
-  spark.sparkContext.setLogLevel("ERROR")
 
 def createOrder(numOrders:Int,startAt:Int):List[String]={
   val allOrders = new ListBuffer[String]
@@ -33,7 +23,7 @@ def createOrder(numOrders:Int,startAt:Int):List[String]={
       peopleList+= person
     }
 
-  val badData = Map("G" -> 97, "B" -> 3)
+
 
 
   for(i <- 0 to numOrders)

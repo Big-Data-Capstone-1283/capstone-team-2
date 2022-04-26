@@ -1,12 +1,42 @@
 package producer
 
+import producer.Constants._
 
+object Constants {
+  val BADCID=0
+  val REARRANGENAMES=1
+  val COLDHARDCASH=2
+  val MOZAMBIQUE=3
+  val BLANKCITY=4
+  val REARRANGEFIELDS_1=5
+  val REARRANGEFIELDS_2=6
+  val REARRANGEFIELDS_3=7
+  val REARRANGEFIELDS_4=8
+  val REARRANGEFIELDS_5=9
+  val MONTHTHIRTEEN=10
+  val RICKROLL=11
+}
 
 class Products(person:personGen) {
 
   import java.io.{File, FileWriter}
   import java.util.Scanner
   import scala.collection.mutable.ListBuffer
+
+  val badDataCaseSelectionMap = Map(
+    BADCID->100,
+    REARRANGENAMES->100,
+    COLDHARDCASH->100,
+    MOZAMBIQUE->100,
+    BLANKCITY->100,
+    REARRANGEFIELDS_1->100,
+    REARRANGEFIELDS_2->100,
+    REARRANGEFIELDS_3->100,
+    REARRANGEFIELDS_4->100,
+    REARRANGEFIELDS_5->100,
+    MONTHTHIRTEEN->100,
+    RICKROLL->100
+  )
 
   val eleList:ListBuffer[Product]= productsLists.electronicsList("input/products_electronics.csv")
   val bookList:ListBuffer[Product] = productsLists.booksList("input/products_books.csv")
@@ -347,8 +377,8 @@ class Products(person:personGen) {
     var personProductString = s"$customer_id,$personName,$product_id,$productString,$quantity,$prices,$datetime,$customer_country,$customer_city,$ecom_website,$txn_id,$fail"
 
     //val check = rng1.nextInt(6)
-    val checkMap = Map(0->10,1->10,2->10,3->10,4->10,6->10,7->10,8->10,9->10,10->10,11->10)
-    val check = WeightedRandomizer(checkMap)
+
+    val check = WeightedRandomizer(badDataCaseSelectionMap)
     //WeightedRandomizergtg
 
 
@@ -427,6 +457,7 @@ class Product(name:String, price:String)
   def getPrice:String ={
     Price
   }
+
 
 
 }
