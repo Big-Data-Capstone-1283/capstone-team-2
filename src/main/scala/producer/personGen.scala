@@ -224,7 +224,25 @@ def genID(fname:String,lname:String):String = {
     output
   }
 
+ def falsePersonGen(cust_id:String,cust_name:String,pay_type:String,co:String,cit:String):String = {
 
+   val rng = scala.util.Random
+
+   val check = rng.nextInt(5)
+
+   check match{
+     case 1 =>
+   }
+
+
+
+
+   val output = s"$customer_id,$customer_name,$payment_type,$country,$city"
+
+
+
+   output
+ }
 
 
 
