@@ -11,12 +11,12 @@ class CSVBuilder {
   def customerList(arr:Int): ListBuffer[String] =
   {
     var output = new ListBuffer[String]
-    for(i <- 0 to arr)
+    for(i <- 0 until arr)
     {
       var p = new personGen
+      if(p.genRandomCity == "")
       output += p.toString()
     }
-
     output
   }
 
