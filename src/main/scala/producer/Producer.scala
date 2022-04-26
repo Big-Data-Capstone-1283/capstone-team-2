@@ -6,7 +6,7 @@ import producer.Orders._
 
 class Producer extends App{
   val props:Properties = new Properties()
-  //Replace ip with your ip from server.config
+  // Connecting to EC2
   props.put("bootstrap.servers","ec2-3-93-174-172.compute-1.amazonaws.com:9092")
   props.put("key.serializer",
     "org.apache.kafka.common.serialization.StringSerializer")
