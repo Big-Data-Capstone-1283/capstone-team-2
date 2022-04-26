@@ -1,15 +1,12 @@
 package producer
 
 import org.joda.time.DateTime
-
-
 import java.time.{DayOfWeek, LocalDate, Month, YearMonth}
 import java.util.stream.IntStream
 import scala.collection.mutable
 import scala.collection.mutable.ListBuffer
 import scala.io.Source
 import scala.util.Random
-
 
 object dateTimeGenerator {
   var cityString=""
@@ -138,5 +135,4 @@ object dateTimeGenerator {
 //    println(dateStr)
     dateStr
   }
-
 }
