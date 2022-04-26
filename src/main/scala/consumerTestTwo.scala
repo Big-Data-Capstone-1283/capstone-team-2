@@ -44,16 +44,16 @@ object consumerTestTwo extends App{
   //  consumerProperties.setProperty(AUTO_OFFSET_RESET_CONFIG, "latest")
 
   //must match producer TYPES
-  consumerProperties.setProperty(KEY_DESERIALIZER_CLASS_CONFIG, classOf[IntegerDeserializer].getName)
+  consumerProperties.setProperty(KEY_DESERIALIZER_CLASS_CONFIG, classOf[StringDeserializer].getName)
   //must match producer TYPES;
   consumerProperties.setProperty(VALUE_DESERIALIZER_CLASS_CONFIG, classOf[StringDeserializer].getName)
   //  consumerProperties.setProperty(ENABLE_AUTO_COMMIT_CONFIG, "false")
-  val consumer = new KafkaConsumer[Int, String](consumerProperties)
+  val consumer = new KafkaConsumer[String, String](consumerProperties)
   consumer.subscribe(List(topicName).asJava)
   //CREATE AND OPEN FILE WRITER
   val fileObject = new File("consumerOutput/transactions.csv")
   val printWriter = new PrintWriter(new FileOutputStream(fileObject))
-  val polledRecords: ConsumerRecords[Int, String] = consumer.poll(Duration.ofSeconds(50))
+  val polledRecords: ConsumerRecords[String, String] = consumer.poll(Duration.ofSeconds(50))
 
 
 
@@ -64,7 +64,7 @@ object consumerTestTwo extends App{
   //
 
   while (recordIterator.hasNext) {
-    val record: ConsumerRecord[Int, String] = recordIterator.next()
+    val record: ConsumerRecord[String, String] = recordIterator.next()
     println(s"| ${record.key()} | ${record.value()} ") //| ${record.partition()} | ${record.offset()} |")
     //WRITE THE KAFKA STREAM TO THE FILE
     printWriter.write(record.value() + "\n")
