@@ -12,6 +12,13 @@ class Products(person:personGen) {
   val foodList:ListBuffer[Product] = productsLists.foodsList("input/products_food.csv")
   val toolList:ListBuffer[Product] = productsLists.toolsList("input/products_tools.csv")
 
+  var customer_id = person.customerID
+  var personName = person.fullName
+  var paymentType = person.paymentType
+  var customer_country = person.cus_country
+  var customer_city = person.cus_city
+
+
   object productsLists {
 
 
@@ -235,13 +242,120 @@ class Products(person:personGen) {
         fail = "N/A = no Failure"
       }
     else{ fail = transactionFailReason}
+
+
+
     val ecoom_website = "Amazon"
-    personProductString = s"${person.customer_id},${person.customer_name},$product_id,$productString,$quantity,$prices,${person.country},${person.city},$ecoom_website,$txn_id,$fail"
+    //dateTime
+    personProductString = s"$customer_id,$personName,$product_id,$productString,$quantity,$prices,$customer_country,$customer_city,$ecoom_website,$txn_id,$fail"
 
     //println(personProductString)
     personProductString
   }
 
+  def falseProductGen:String = {
+    //var personProductString = new String
+    var ordercat = new String
+
+    val rng = scala.util.Random
+
+
+    person.country match{
+      case "Australia" => val categoryRate = Map("books" -> 19, "clothes"->19, "electronics" -> 19, "food" -> 19, "tools" -> 24)
+        ordercat =  WeightedRandomizer(categoryRate)
+
+      case "Canada" => val categoryRate = Map("books" ->24, "clothes"-> 19, "electronics" -> 19, "food" -> 19, "tools" -> 19)
+        ordercat =  WeightedRandomizer(categoryRate)
+
+      case "New_Zealand" => val categoryRate = Map("books" -> 19, "clothes"-> 19, "electronics" -> 19, "food" -> 24, "tools" -> 19)
+        ordercat =  WeightedRandomizer(categoryRate)
+
+      case "United_States_of_America" => val categoryRate = Map("books" -> 19, "clothes"-> 19, "electronics" -> 24, "food" -> 19, "tools" -> 19)
+        ordercat =  WeightedRandomizer(categoryRate)
+
+      case "United_Kingdom" => val categoryRate = Map("books" -> 19, "clothes"-> 24, "electronics" -> 19, "food" -> 19, "tools" -> 19)
+        ordercat =  WeightedRandomizer(categoryRate)
+      case default => val categoryRate = Map("books" -> 20, "clothes" -> 20, "electronics" -> 20, "food" -> 20, "tools" -> 20)
+        ordercat = WeightedRandomizer(categoryRate)
+    }
+
+    var productString = new String
+    var txabrv = new String
+//testing git
+    var rngnum = 0
+    var price= new String
+    ordercat match{
+      case "books" => rngnum = rng.nextInt(bookList.length -1)
+        productString = bookList(rngnum).getName + ",books"
+        txabrv = "bk"
+        price = bookList(rngnum).getPrice
+      case "clothes" => rngnum = rng.nextInt(clothList.length -1)
+        productString = clothList(rngnum).getName + ",clothes"
+        txabrv = "cs"
+        price = clothList(rngnum).getPrice
+      case "electronics" => rngnum = rng.nextInt(eleList.length -1)
+        productString = eleList(rngnum).getName + ",electronics"
+        txabrv ="es"
+        price =eleList(rngnum).getPrice
+      case "food" => rngnum =rng.nextInt(foodList.length -1)
+        productString = foodList(rngnum).getName+ ",food"
+        txabrv ="fd"
+        price = foodList(rngnum).getPrice
+      case "tools" => rngnum = rng.nextInt(toolList.length -1)
+        productString = toolList(rngnum).getName+ ",tools"
+        txabrv ="ts"
+        price =foodList(rngnum).getPrice
+      case default=> rngnum = rng.nextInt(eleList.length -1)
+        productString = eleList(rngnum).getName +",electronics"
+        txabrv ="es"
+        price=eleList(rngnum).getPrice
+    }
+
+
+
+    val txn_IdRNG = scala.util.Random.between(100000,999999)
+    val product_id = scala.util.Random.between(10000000,99999999)
+    val quantity:Int = scala.util.Random.between(1,30)
+
+    var prices = new String
+    try {
+      prices = "$" + BigDecimal(price.trim.toDouble * quantity.toDouble).setScale(2, BigDecimal.RoundingMode.HALF_UP).toString
+    }
+    catch{
+      case _:NumberFormatException => price = "$100"}
+    val txn_id = txabrv+txn_IdRNG
+
+
+
+
+    val txn_success = transactionSuccess
+    var fail = new String
+    if(txn_success =="Y")
+    {
+      fail = "N/A = no Failure"
+    }
+    else{ fail = transactionFailReason}
+
+
+
+    val ecoom_website = "Amazon"
+
+    val rng1 = scala.util.Random
+
+    val check = rng1.nextInt(5)
+
+    check match {
+      case 0=> person.customerID = person.customerID + rng.nextInt(10000)
+      case 1 => person.fullName = person.firstName + person.lastName
+      case 2 => paymentType = "Cold Hard Cash"
+      case 3 => person.cus_country = "Mozambique"
+      case 4 => person.cus_city = " "
+    }
+    // dateTime
+    val personProductString = s"$customer_id,$personName,$product_id,$productString,$quantity,$prices,,$customer_country,$customer_city,$ecoom_website,$txn_id,$fail"
+
+    personProductString
+  }
 
 
   def transactionSuccess: String =
@@ -260,6 +374,9 @@ class Products(person:personGen) {
 
       output
     }
+
+
+
 
 }
 
