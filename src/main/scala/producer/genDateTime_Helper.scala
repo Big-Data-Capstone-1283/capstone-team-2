@@ -17,16 +17,17 @@ import scala.util.{Random, Try}
 
 
 object genDateTime_Helper {
+  var cityString=""
   val MM: Int = getMonth
   val yyyy=2022
   var dd:Int=getDay
-  var hh:Int=getHour()
+  var hh:Int=getHour(cityString)
   val mm:Int=genRandomInt()
   val ss:Int=genRandomInt()
   var thisMonthLength:Int=0
   var dayOfEntireRange_Modifier:Int=0
 
-  private def getHour(city:String="Chicago"): Int = {
+  private def getHour(city:String): Int = {
     val filepath = "input/TIMEZONES_cities.csv"
     val timezones = mutable.Map[String, Int]()
     Source.fromFile(filepath)
@@ -53,7 +54,6 @@ object genDateTime_Helper {
       hh=hh-24
     }
     hh
-
   }
 
   private def genRandomInt(min:Int=0,max:Int=59):Int={
@@ -61,11 +61,12 @@ object genDateTime_Helper {
   }
 
   def main(args:Array[String]): Unit = {
-    apply("")
+    apply("London")
   }
 
-  def apply(country:String): String = {
-    toString
+  def apply(city:String): String = {
+    cityString=city
+    getString
   }
 
   private def getMonth:Int={
@@ -131,8 +132,8 @@ object genDateTime_Helper {
       .withSecondOfMinute(ss)
     var dayOfWeek = tempDate.dayOfWeek().get() // Returns an integer 1 - 7 representing Mon - Sun
     dateStr = tempDate.toString("YYYY-MM-dd HH:mm:ss")
-    println(dayOfWeek)
-    println(dateStr)
+//    println(dayOfWeek)
+//    println(dateStr)
     dateStr
   }
 

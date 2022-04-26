@@ -131,29 +131,11 @@ def genPayment:String={
   output
 }
 
-/**
-def gendateTime:String ={
-  val output = new String
-  // want to assign timezones based off of country
 
-  val earlyMorning = ListBuffer[Int](0,1,2,3,4,5)
-  val midMorning = ListBuffer[Int](6,7,8,9,10,11,12)
-
-  val lunch = ListBuffer[Int](13)
-
-  val afternoon = ListBuffer[Int](14,15,16)
-  val evening = ListBuffer[Int](17,18,19)
-
-  val nightrush = ListBuffer[Int](20,21)
-
-
-    val nighttime = ListBuffer[Int](22,23)
-  var timezone = 0
-
-
-  output
+def gendateTime(city:String):String ={
+  genDateTime_Helper(city)
 }
-**/
+
 
 //generate a random first name
   def genRandomFname: String = {
