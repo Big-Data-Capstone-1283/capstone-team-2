@@ -18,6 +18,7 @@ class Producer extends App{
 
   try {
     // for loop determines number of batches
+<<<<<<< Updated upstream
     for (i <- 1 to 2) {
       val batch = createOrders() // placeholder for data generation method
       println(s"Sending batch #$i ")
@@ -25,6 +26,17 @@ class Producer extends App{
       batch.foreach(x => {
         // REMINDER: change substring so that it pulls OrderID (I don't know how long it is currently)
         val record = new ProducerRecord[String, String](topic, x.substring(0, 10).toString, x)
+=======
+    for (i <- 1 to 100) {
+      val batch = createOrder(1000-1, i*1000+1) // Number of orders (rows)
+      // numOrders and startAt must be the same multiple of 10 (i.e. 1000 or 100) so there are no duplicate OrderIds
+      println(s"Sending batch #$i ")
+      Thread.sleep(500) // for testing purposes, to give user time to read
+      batch.foreach(x => {
+        val split = x.split(",")
+        val key = split(0)
+        val record = new ProducerRecord[String, String](topic, key, x)
+>>>>>>> Stashed changes
         val metadata = producer.send(record)
         // Display to console what is being sent to Kafka broker
         printf(s"Sent record(key=%s value=%s) " +
