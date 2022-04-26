@@ -20,11 +20,11 @@ object Orders {
   //println("created spark session")
   spark.sparkContext.setLogLevel("ERROR")
 
-def createOrder(numOrders:Int):List[String]={
-  var allOrders = new ListBuffer[String]
-  var count = 1
+def createOrder(numOrders:Int,startAt:Int):List[String]={
+  val allOrders = new ListBuffer[String]
+  var count = startAt
   val numOfPeople = numOrders /2
-  var peopleList = new ListBuffer[personGen]
+  val peopleList = new ListBuffer[personGen]
   for(i <-0 to numOfPeople)
     {
       val person = new personGen
@@ -44,16 +44,16 @@ def createOrder(numOrders:Int):List[String]={
 
   val orderoutput:List[String] =allOrders.toList
 
-  return orderoutput
+  orderoutput
 }
 
 
 
-  def printOrderList(numOrder:Int): Unit =
+  def printOrderList(numOrder:Int,order:Int): Unit =
   {
     //currently order is a bit bad, but that is based off the data. plans to go back in and add everything to a spark rdd then use the select
     // statments to properly format the data into strings then we can send to team 1's consumer
-    var orders:List[String] =createOrder(numOrder)
+    var orders:List[String] =createOrder(numOrder,order:Int)
     for(i <- 0 until orders.length -1 )
       {
         println(orders(i))
