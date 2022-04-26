@@ -7,7 +7,7 @@ import scala.collection.JavaConverters._
 import scala.collection.mutable.ListBuffer
 
 object Orders {
-  val badData = Map("G" -> 0, "B" -> 100)
+  val badData = Map("G" -> 97, "B" -> 3 )
 
 
 def createOrder(numOrders:Int,startAt:Int):List[String]={
