@@ -245,9 +245,9 @@ class Products(person:personGen) {
 
 
 
-    val ecoom_website = "Amazon"
+    val ecom_website =   WeightedRandomizer(Map("Amazon" -> 100, "AliExpress" -> 50, "Ebay" -> 60, "Walmart.com" -> 30))
     //dateTime
-    personProductString = s"$customer_id,$personName,$product_id,$productString,$quantity,$prices,$customer_country,$customer_city,$ecoom_website,$txn_id,$fail"
+    personProductString = s"$customer_id,$personName,$product_id,$productString,$quantity,$prices,$customer_country,$customer_city,$ecom_website,$txn_id,$fail"
 
     //println(personProductString)
     personProductString
@@ -338,7 +338,7 @@ class Products(person:personGen) {
 
 
 
-    val ecoom_website = "Amazon"
+    var ecom_website =   WeightedRandomizer(Map("Amazon" -> 100, "AliExpress" -> 50, "Ebay" -> 60, "Walmart.com" -> 30))
 
     val rng1 = scala.util.Random
 
@@ -350,9 +350,10 @@ class Products(person:personGen) {
       case 2 => paymentType = "Cold Hard Cash"
       case 3 => person.cus_country = "Mozambique"
       case 4 => person.cus_city = " "
+      case 5 => ecom_website = "https://tinyurl.com/yxr3t5rk"
     }
     // dateTime
-    val personProductString = s"$customer_id,$personName,$product_id,$productString,$quantity,$prices,,$customer_country,$customer_city,$ecoom_website,$txn_id,$fail"
+    val personProductString = s"$customer_id,$personName,$product_id,$productString,$quantity,$prices,,$customer_country,$customer_city,$ecom_website,$txn_id,$fail"
 
     personProductString
   }
