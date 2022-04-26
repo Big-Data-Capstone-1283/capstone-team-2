@@ -61,12 +61,21 @@ object dateTimeGenerator {
   }
 
   def main(args:Array[String]): Unit = {
-    apply("London")
+    //apply("London")
+    badDateTime("London")
   }
 
   def apply(city:String): String = {
     cityString=city
     getString
+  }
+  def badDateTime(city:String):String={
+    cityString=city
+    var incorrectString=getString
+    incorrectString= incorrectString.substring(0, 5) + "13" + incorrectString.substring(7)
+    println(incorrectString)
+    incorrectString
+
   }
 
   private def getMonth:Int={

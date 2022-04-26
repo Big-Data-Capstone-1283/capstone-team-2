@@ -22,9 +22,6 @@ class Products(person:personGen) {
 
   object productsLists {
 
-
-
-
     def foodsList(fileName: String): ListBuffer[Product] = {
       val foods = new ListBuffer[Product]
       val f = new File(fileName)
@@ -34,9 +31,6 @@ class Products(person:personGen) {
       s.useDelimiter(",")
 
       while (s.hasNextLine) {
-
-
-
 
         var line = new String
         line = s.nextLine()
@@ -156,7 +150,6 @@ class Products(person:personGen) {
       }
       electronics
     }
-
   }
 
 
@@ -166,7 +159,6 @@ class Products(person:personGen) {
     var ordercat = new String
 
     val rng = scala.util.Random
-
 
     person.country match{
       case "Australia" => val categoryRate = Map("books" -> 19, "clothes"->19, "electronics" -> 19, "food" -> 19, "tools" -> 24)
@@ -219,8 +211,6 @@ class Products(person:personGen) {
         price=eleList(rngnum).getPrice
     }
 
-
-
     val txn_IdRNG = scala.util.Random.between(100000,999999)
     val product_id = scala.util.Random.between(10000000,99999999)
     val quantity:Int = scala.util.Random.between(1,30)
@@ -233,9 +223,6 @@ class Products(person:personGen) {
       case _:NumberFormatException => price = "$100"}
     val txn_id = txabrv+txn_IdRNG
 
-
-
-
     val txn_success = transactionSuccess
     var fail = new String
     if(txn_success =="Y")
@@ -243,8 +230,6 @@ class Products(person:personGen) {
         fail = "N/A = no Failure"
       }
     else{ fail = transactionFailReason}
-
-
 
     val ecoom_website = "Amazon"
     //dateTime
@@ -257,23 +242,17 @@ class Products(person:personGen) {
   def falseProductGen:String = {
     //var personProductString = new String
     var ordercat = new String
-
     val rng = scala.util.Random
-
 
     person.country match{
       case "Australia" => val categoryRate = Map("books" -> 19, "clothes"->19, "electronics" -> 19, "food" -> 19, "tools" -> 24)
         ordercat =  WeightedRandomizer(categoryRate)
-
       case "Canada" => val categoryRate = Map("books" ->24, "clothes"-> 19, "electronics" -> 19, "food" -> 19, "tools" -> 19)
         ordercat =  WeightedRandomizer(categoryRate)
-
       case "New_Zealand" => val categoryRate = Map("books" -> 19, "clothes"-> 19, "electronics" -> 19, "food" -> 24, "tools" -> 19)
         ordercat =  WeightedRandomizer(categoryRate)
-
       case "United_States_of_America" => val categoryRate = Map("books" -> 19, "clothes"-> 19, "electronics" -> 24, "food" -> 19, "tools" -> 19)
         ordercat =  WeightedRandomizer(categoryRate)
-
       case "United_Kingdom" => val categoryRate = Map("books" -> 19, "clothes"-> 24, "electronics" -> 19, "food" -> 19, "tools" -> 19)
         ordercat =  WeightedRandomizer(categoryRate)
       case default => val categoryRate = Map("books" -> 20, "clothes" -> 20, "electronics" -> 20, "food" -> 20, "tools" -> 20)
@@ -312,8 +291,6 @@ class Products(person:personGen) {
         price=eleList(rngnum).getPrice
     }
 
-
-
     val txn_IdRNG = scala.util.Random.between(100000,999999)
     val product_id = scala.util.Random.between(10000000,99999999)
     val quantity:Int = scala.util.Random.between(1,30)
@@ -326,9 +303,6 @@ class Products(person:personGen) {
       case _:NumberFormatException => price = "$100"}
     val txn_id = txabrv+txn_IdRNG
 
-
-
-
     val txn_success = transactionSuccess
     var fail = new String
     if(txn_success =="Y")
@@ -336,8 +310,6 @@ class Products(person:personGen) {
       fail = "N/A = no Failure"
     }
     else{ fail = transactionFailReason}
-
-
 
     val ecoom_website = "Amazon"
 
@@ -358,7 +330,6 @@ class Products(person:personGen) {
     personProductString
   }
 
-
   def transactionSuccess: String =
   {
     val failOrSuc =Map("Y" -> 90, "N"-> 10)
@@ -372,13 +343,8 @@ class Products(person:personGen) {
       val failReason = Map("Card Failure" -> 11,"Missing Information" -> 11, "Field Destroyed" -> 11, "Not really sure" -> 5, "This doesn't usually happen" -> 10, "Stolen Credentials" -> 10, "Chip Read Error" -> 10, "insufficient Funds" -> 10,"Exact Change Needed" -> 10)
 
      val output = WeightedRandomizer(failReason)
-
       output
     }
-
-
-
-
 }
 
 class Product(name:String, price:String)
@@ -391,6 +357,4 @@ class Product(name:String, price:String)
   def getPrice:String ={
     Price
   }
-
-
 }
