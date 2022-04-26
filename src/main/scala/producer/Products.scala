@@ -11,16 +11,16 @@ class Products(person:personGen) {
   val badDataCaseSelectionMap = Map(
     BADCID->100,
     REARRANGENAMES->100,
-    COLDHARDCASH->100,
-    MOZAMBIQUE->100,
+    COLDHARDCASH->30,
+    MOZAMBIQUE->50,
     BLANKCITY->100,
-    REARRANGEFIELDS_1->100,
-    REARRANGEFIELDS_2->100,
-    REARRANGEFIELDS_3->100,
-    REARRANGEFIELDS_4->100,
-    REARRANGEFIELDS_5->100,
+    REARRANGEFIELDS_1->30,
+    REARRANGEFIELDS_2->30,
+    REARRANGEFIELDS_3->30,
+    REARRANGEFIELDS_4->30,
+    REARRANGEFIELDS_5->30,
     MONTHTHIRTEEN->100,
-    RICKROLL->100
+    RICKROLL->30
   )
 
   val eleList:ListBuffer[Product]= productsLists.electronicsList("input/products_electronics.csv")
