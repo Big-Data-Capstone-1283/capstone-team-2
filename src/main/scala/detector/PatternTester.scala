@@ -55,6 +55,37 @@ object PatternTester {
 		var payment_type = ""
 		var website = ""
 		var transaction_success = ""
+		var datetimestamp = new Timestamp(0)
+		var datemap = Map[Int, Int]()
+		var datearr = Array.ofDim[DateTime](90)
+		var timemap = Map[Int, Int]()
+		var month = 1
+		var day = 0
+		var hour = 0
+		for (i <- 0 to 89) {  // Build up date data
+			day += 1
+			if (month == 1 && day == 32) {
+				day = 1
+				month = 2
+			}
+			if (month == 2 && day == 29) {
+				day = 1
+				month = 3
+			}
+			datearr(i) = (new DateTime).withYear(2022).withMonthOfYear(month).withDayOfMonth(day)
+			if (i % 7 < 2)  // Dates with pattern on Sat/Sun
+				datemap += (i -> 120)
+				// datemap += Map(i -> 100)  // Dates with no pattern
+			else
+				datemap += (i -> 100)
+		}
+		for (i <- 0 to 23) {  // Build up time data
+			if (i == 12 || i == 20 || i == 21)  // Times with pattern at 12 noon - 1pm and 8pm - 10pm (exclusive)
+				timemap += (i -> 120)
+				// timemap += Map(i -> 100)  // Times with no pattern
+			else
+				timemap += (i -> 100)
+		}
 
 		// Generate test data to verify that the pattern testers are working properly
 		sampleData = Seq.empty[Row]
@@ -78,6 +109,11 @@ object PatternTester {
 			// website = WeightedRandomizer(Map("Amazon" -> 1, "Etsy" -> 1, "eBay" -> 1, "Alibaba" -> 1, "Walmart" -> 1))  // Add "ecommerce_website_name" data with no pattern
 			transaction_success = WeightedRandomizer(Map("Success" -> 95, "Failure" -> 5))  // Add "payment_txn_success" data with pattern
 			// transaction_success = WeightedRandomizer(Map("Success" -> 1, "Failure" -> 1))  // Add "payment_txn_success" data with no pattern
+			day = WeightedRandomizer(datemap)
+			hour = WeightedRandomizer(timemap)
+			while (day == 71 && hour == 2)  // Fix for daylight savings time (skips from 1:59.59am to 3:00.00am on Mar. 13rd, 2022)
+				hour = WeightedRandomizer(timemap)
+			datetimestamp = new Timestamp(datearr(day).withHourOfDay(hour).getMillis())
 			for (j <- 0 to 15) {
 				if (j == 0)
 					rowData = rowData :+ i.toString  // order_id
@@ -88,6 +124,8 @@ object PatternTester {
 				else if (j == 7)
 					rowData = rowData :+ 1  // Add "qty" data with no pattern
 				else if (j == 9)
+					rowData = rowData :+ datetimestamp
+					/*
 					rowData = rowData :+ new Timestamp((new DateTime)
 										.withYear(2022)
 										.withMonthOfYear(1)
@@ -96,6 +134,7 @@ object PatternTester {
 										.withMinuteOfHour(45)
 										.withSecondOfMinute(0)
 										.getMillis())  // Add "datetime" data with no pattern
+					*/
 				else if (j == 10)
 					rowData = rowData :+ country
 				else if (j == 12)
@@ -103,7 +142,7 @@ object PatternTester {
 				else if (j == 14)
 					rowData = rowData :+ transaction_success
 				else
-					rowData = rowData :+ ""
+					rowData = rowData :+ ""  // Add all remaining columns with no pattern
 			}
 			tempRow = Row.fromSeq(rowData)
 			sampleData = sampleData :+ tempRow
