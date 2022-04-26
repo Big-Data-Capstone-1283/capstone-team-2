@@ -2,21 +2,6 @@ package producer
 
 import producer.Constants._
 
-object Constants {
-  val BADCID=0
-  val REARRANGENAMES=1
-  val COLDHARDCASH=2
-  val MOZAMBIQUE=3
-  val BLANKCITY=4
-  val REARRANGEFIELDS_1=5
-  val REARRANGEFIELDS_2=6
-  val REARRANGEFIELDS_3=7
-  val REARRANGEFIELDS_4=8
-  val REARRANGEFIELDS_5=9
-  val MONTHTHIRTEEN=10
-  val RICKROLL=11
-}
-
 class Products(person:personGen) {
 
   import java.io.{File, FileWriter}
@@ -54,9 +39,6 @@ class Products(person:personGen) {
 
   object productsLists {
 
-
-
-
     def foodsList(fileName: String): ListBuffer[Product] = {
       val foods = new ListBuffer[Product]
       val f = new File(fileName)
@@ -66,9 +48,6 @@ class Products(person:personGen) {
       s.useDelimiter(",")
 
       while (s.hasNextLine) {
-
-
-
 
         var line = new String
         line = s.nextLine()
@@ -188,10 +167,7 @@ class Products(person:personGen) {
       }
       electronics
     }
-
   }
-
-
 
   def assignPersontoProduct:String={
     var personProductString = new String
@@ -251,8 +227,6 @@ class Products(person:personGen) {
         price=eleList(rngnum).getPrice
     }
 
-
-
     val txn_IdRNG = scala.util.Random.between(100000,999999)
     val product_id = scala.util.Random.between(10000000,99999999)
     val quantity:Int = scala.util.Random.between(1,30)
@@ -265,9 +239,6 @@ class Products(person:personGen) {
       case _:NumberFormatException => price = "$100"}
     val txn_id = txabrv+txn_IdRNG
 
-
-
-
     val txn_success = transactionSuccess
     var fail = new String
     if(txn_success =="Y")
@@ -275,8 +246,6 @@ class Products(person:personGen) {
         fail = "N/A = no Failure"
       }
     else{ fail = transactionFailReason}
-
-
 
     val ecom_website = "Amazon"
     //dateTime
@@ -291,7 +260,6 @@ class Products(person:personGen) {
     var ordercat = new String
 
     val rng = scala.util.Random
-
 
     person.country match{
       case "Australia" => val categoryRate = Map("books" -> 19, "clothes"->19, "electronics" -> 19, "food" -> 19, "tools" -> 24)
@@ -344,8 +312,6 @@ class Products(person:personGen) {
         price=eleList(rngnum).getPrice
     }
 
-
-
     val txn_IdRNG = scala.util.Random.between(100000,999999)
     val product_id = scala.util.Random.between(10000000,99999999)
     val quantity:Int = scala.util.Random.between(1,30)
@@ -358,9 +324,6 @@ class Products(person:personGen) {
       case _:NumberFormatException => price = "$100"}
     val txn_id = txabrv+txn_IdRNG
 
-
-
-
     val txn_success = transactionSuccess
     var fail = new String
     if(txn_success =="Y")
@@ -368,8 +331,6 @@ class Products(person:personGen) {
       fail = "N/A = no Failure"
     }
     else{ fail = transactionFailReason}
-
-
 
     val ecom_website = "Amazon"
 
@@ -416,11 +377,8 @@ class Products(person:personGen) {
         var fakeQuantity="https://tinyurl.com/yxr3t5rk"
         personProductString = s"$customer_id,$personName,$product_id,$productString,$fakeQuantity,$prices,$datetime,$customer_country,$customer_city,$ecom_website,$txn_id,$fail"
       }
-
     }
     // dateTime
-
-
     personProductString
   }
 
@@ -441,10 +399,6 @@ class Products(person:personGen) {
 
       output
     }
-
-
-
-
 }
 
 class Product(name:String, price:String)
@@ -457,7 +411,19 @@ class Product(name:String, price:String)
   def getPrice:String ={
     Price
   }
+}
 
-
-
+object Constants {
+  val BADCID=0
+  val REARRANGENAMES=1
+  val COLDHARDCASH=2
+  val MOZAMBIQUE=3
+  val BLANKCITY=4
+  val REARRANGEFIELDS_1=5
+  val REARRANGEFIELDS_2=6
+  val REARRANGEFIELDS_3=7
+  val REARRANGEFIELDS_4=8
+  val REARRANGEFIELDS_5=9
+  val MONTHTHIRTEEN=10
+  val RICKROLL=11
 }
