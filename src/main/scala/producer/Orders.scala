@@ -23,10 +23,20 @@ object Orders {
 def createOrder(numOrders:Int):List[String]={
   var allOrders = new ListBuffer[String]
   var count = 1
+  val numOfPeople = numOrders /2
+  var peopleList = new ListBuffer[personGen]
+  for(i <-0 to numOfPeople)
+    {
+      val person = new personGen
+      peopleList+= person
+    }
 
   for(i <- 0 to numOrders)
   {
-    val person = new personGen
+
+    val rng = scala.util.Random
+    val person = peopleList(rng.nextInt(numOfPeople))
+
     val products = new Products(person)
     allOrders += count + ","+ products.assignPersontoProduct
     count = count + 1

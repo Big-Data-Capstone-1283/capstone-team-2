@@ -13,9 +13,9 @@ class personGen {
   private val cus_country:String = genRandomCountry
   private val cus_city:String =  genRandomCity
   private val paymentType:String = genPayment
-  private val datetime:String = ""
-  private val startDate:String=""
-  private val endDate:String =""
+  //private val datetime:String = ""
+  //private val startDate:String=""
+  //private val endDate:String =""
 
 // all CSV are in the input directory
 
@@ -24,22 +24,22 @@ class personGen {
 // creates a list of first names to be used in creating the full name// needs a string as a CSV file as input
 def createFnameList(fnameFile:String):ListBuffer[String]= {
 
-  var fName = new ListBuffer[String]
+  val fName = new ListBuffer[String]
   val f = new File(fnameFile)
-  var s = new Scanner(f)
+  val s = new Scanner(f)
   while(s.hasNext)
     {
       fName += s.next()
     }
 
-return fName
+fName
 }
 // creates a list of last names to be used in creating the full name // needs CSV string as input
 def createLnameList(lnameFile:String):ListBuffer[String] ={
 
-  var lName = new ListBuffer[String]
+  val lName = new ListBuffer[String]
   val f = new File(lnameFile)
-  var s = new Scanner(f)
+  val s = new Scanner(f)
 
   while(s.hasNext)
     {
@@ -48,26 +48,26 @@ def createLnameList(lnameFile:String):ListBuffer[String] ={
 
 
 
-  return lName
+ lName
 }
 
 
 //creates a list of countries that will be used in creating the String for the csv // needs a CSV name as text
 def createCountryList(countryf:String):ListBuffer[String]={
-  var country = new ListBuffer[String]
+  val country = new ListBuffer[String]
   val f = new File(countryf)
-  var s = new Scanner(f)
+  val s = new Scanner(f)
 
   while(s.hasNext)
     {
       country+=s.next()
     }
 
-  return  country
+  country
 }
 //creates a list of cities that will be used in creating the String for csv needs a country name as input
 def createCityList(countryName:String):ListBuffer[String] = {
-  var cities = new ListBuffer[String]
+  val cities = new ListBuffer[String]
   var cityfileName = new String
   countryName match{
     case "Australia" => cityfileName = "input/AU10Cities.csv"
@@ -77,18 +77,18 @@ def createCityList(countryName:String):ListBuffer[String] = {
     case "United_Kingdom" => cityfileName = "input/UK10Cities.csv"
   }
   val f = new File(cityfileName)
-  var s = new Scanner(f)
+  val s = new Scanner(f)
 
   while(s.hasNext)
     {
       cities += s.next()
     }
-  return cities
+ cities
 }
 
 //generates a random country by using the Country list
 def genRandomCountry:String={
-  var countryName = createCountryList("input/Country.csv")
+  val countryName = createCountryList("input/Country.csv")
   val rng = new Random()
   val output:String = countryName(rng.nextInt(countryName.length - 1))
 
@@ -98,7 +98,7 @@ def genRandomCountry:String={
 
 //generates a random city by using the City List
 def genRandomCity:String={
-  var cityName = createCityList(country)
+  val cityName = createCityList(country)
   val rng = new Random()
   val output:String = cityName(rng.nextInt(cityName.length -1))
   output
@@ -130,9 +130,9 @@ def genPayment:String={
   output
 }
 
-
+/**
 def gendateTime:String ={
-  var output = new String
+  val output = new String
   // want to assign timezones based off of country
 
   val earlyMorning = ListBuffer[Int](0,1,2,3,4,5)
@@ -152,6 +152,7 @@ def gendateTime:String ={
 
   output
 }
+**/
 
 //generate a random first name
   def genRandomFname: String = {
@@ -188,7 +189,7 @@ def genID(fname:String,lname:String):String = {
   val namerng = Random.between(lower,upper)
 
   val ID:String = s"$fChar$lChar$namerng"
-  return ID
+  ID
 }
 
 //-----------------------------------------
