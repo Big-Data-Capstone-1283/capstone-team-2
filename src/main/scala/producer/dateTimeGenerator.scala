@@ -16,7 +16,7 @@ import scala.io.Source
 import scala.util.{Random, Try}
 
 
-object genDateTime_Helper {
+object dateTimeGenerator {
   var cityString=""
   val MM: Int = getMonth
   val yyyy=2022

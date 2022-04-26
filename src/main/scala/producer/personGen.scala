@@ -131,12 +131,6 @@ def genPayment:String={
   output
 }
 
-
-def gendateTime(city:String):String ={
-  genDateTime_Helper(city)
-}
-
-
 //generate a random first name
   def genRandomFname: String = {
     val fname = createFnameList("input/FirstName.csv")

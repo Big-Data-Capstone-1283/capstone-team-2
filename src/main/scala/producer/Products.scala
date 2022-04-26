@@ -18,7 +18,7 @@ class Products(person:personGen) {
   var paymentType = person.paymentType
   var customer_country = person.cus_country
   var customer_city = person.cus_city
-  val datetime = genDateTime_Helper(customer_city)
+  val datetime = dateTimeGenerator(customer_city)
 
   object productsLists {
 
@@ -350,7 +350,7 @@ class Products(person:personGen) {
       case 1 => person.fullName = person.firstName + person.lastName
       case 2 => paymentType = "Cold Hard Cash"
       case 3 => person.cus_country = "Mozambique"
-      case 4 => person.cus_city = " "
+      case 4 => person.cus_city = ","
     }
     // dateTime
     val personProductString = s"$customer_id,$personName,$product_id,$productString,$quantity,$prices,$datetime,$customer_country,$customer_city,$ecoom_website,$txn_id,$fail"
