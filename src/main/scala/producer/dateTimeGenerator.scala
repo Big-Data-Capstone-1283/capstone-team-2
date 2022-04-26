@@ -68,9 +68,7 @@ object dateTimeGenerator {
     cityString=city
     var incorrectString=getString
     incorrectString= incorrectString.substring(0, 5) + "13" + incorrectString.substring(7)
-    println(incorrectString)
     incorrectString
-
   }
 
   private def getMonth:Int={
