@@ -347,23 +347,45 @@ class Products(person:personGen) {
     var personProductString = s"$customer_id,$personName,$product_id,$productString,$quantity,$prices,$datetime,$customer_country,$customer_city,$ecom_website,$txn_id,$fail"
 
     //val check = rng1.nextInt(6)
-    val checkMap = Map(0->10,1->10,2->10,3->10,4->10,6->10,7->10,8->10,9->10,10->10)
+    val checkMap = Map(0->10,1->10,2->10,3->10,4->10,6->10,7->10,8->10,9->10,10->10,11->10)
     val check = WeightedRandomizer(checkMap)
     //WeightedRandomizergtg
 
 
     check match {
-      case 0=> person.customerID = person.customerID + rng.nextInt(10000)
-      case 1 => person.fullName = person.firstName + person.lastName
-      case 2 => paymentType = "Cold Hard Cash"
-      case 3 => person.cus_country = "Mozambique"
-      case 4 => person.cus_city = " "
+      case 0=> {
+        person.customerID = person.customerID + rng.nextInt(10000)
+        personProductString = s"$customer_id,$personName,$product_id,$productString,$quantity,$prices,$datetime,$customer_country,$customer_city,$ecom_website,$txn_id,$fail"
+      }
+      case 1 => {
+        person.fullName = person.firstName + person.lastName
+        personProductString = s"$customer_id,$personName,$product_id,$productString,$quantity,$prices,$datetime,$customer_country,$customer_city,$ecom_website,$txn_id,$fail"
+      }
+      case 2 => {
+        paymentType = "Cold Hard Cash"
+        personProductString = s"$customer_id,$personName,$product_id,$productString,$quantity,$prices,$datetime,$customer_country,$customer_city,$ecom_website,$txn_id,$fail"
+      }
+      case 3 => {
+        person.cus_country = "Mozambique"
+        personProductString = s"$customer_id,$personName,$product_id,$productString,$quantity,$prices,$datetime,$customer_country,$customer_city,$ecom_website,$txn_id,$fail"
+      }
+      case 4 => {
+        person.cus_city = " "
+        personProductString = s"$customer_id,$personName,$product_id,$productString,$quantity,$prices,$datetime,$customer_country,$customer_city,$ecom_website,$txn_id,$fail"
+      }
       case 5 => personProductString = s"$customer_id,$datetime,$product_id,$productString,$quantity,$prices,,$customer_country,$customer_city,$ecom_website,$txn_id,$fail"
       case 6 => personProductString = s"$customer_id,$personName,$product_id,$productString,$quantity,$prices,$datetime,$customer_country,$customer_city,,,,,$ecom_website,$txn_id,$fail"
       case 7 => personProductString = s"$customer_id,$personName,$product_id,$productString,$quantity,$prices,$datetime,$customer_country,$customer_city,$ecom_website,$txn_id,$fail"
       case 8 => personProductString = s",$personName,$product_id,$productString,$quantity,$prices,$datetime,$customer_country,$customer_city,$ecom_website,$txn_id,$fail"
       case 9 => personProductString = s"$customer_id,$personName,,"
-      case 10 => datetime=dateTimeGenerator.badDateTime(customer_city)
+      case 10 => {
+        datetime=dateTimeGenerator.badDateTime(customer_city)
+        personProductString = s"$customer_id,$personName,$product_id,$productString,$quantity,$prices,$datetime,$customer_country,$customer_city,$ecom_website,$txn_id,$fail"
+      }
+      case 11 => {
+        var fakeQuantity="https://tinyurl.com/yxr3t5rk"
+        personProductString = s"$customer_id,$personName,$product_id,$productString,$fakeQuantity,$prices,$datetime,$customer_country,$customer_city,$ecom_website,$txn_id,$fail"
+      }
 
     }
     // dateTime
