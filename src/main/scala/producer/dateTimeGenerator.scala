@@ -1,19 +1,14 @@
 package producer
 
-import au.com.bytecode.opencsv.CSVParser
-
-import java.time.DayOfWeek
-import java.time.LocalDate
-import java.time.LocalDateTime
-import java.time.Month
-import java.time.YearMonth
-import java.util.stream.IntStream
-import scala.collection.mutable.ListBuffer
 import org.joda.time.DateTime
 
+
+import java.time.{DayOfWeek, LocalDate, Month, YearMonth}
+import java.util.stream.IntStream
 import scala.collection.mutable
+import scala.collection.mutable.ListBuffer
 import scala.io.Source
-import scala.util.{Random, Try}
+import scala.util.Random
 
 
 object dateTimeGenerator {
@@ -36,7 +31,7 @@ object dateTimeGenerator {
       .map(_.split(","))
       .foreach { case x => timezones.put(x(0), x(1).toInt)
       }
-    println(timezones)
+    //println(timezones)
     var weightsMap=scala.collection.mutable.Map[Int, Int]()
     //fill weight map with 100 weight for every day of month
     for( i<- 0 to  23){
@@ -46,7 +41,7 @@ object dateTimeGenerator {
     for( i<- busyHours.indices){
       weightsMap(busyHours(i))=125
     }
-    hh=WeightedRandomizer.forInts(weightsMap.toMap)
+    hh=WeightedRandomizer(weightsMap.toMap)
     val timezoneMod:Int=timezones.getOrElse(city,0)
     //println(timezoneMod)
     hh=hh+timezoneMod
@@ -126,7 +121,7 @@ object dateTimeGenerator {
     for( i<- weekendDays.indices){
       weightsMap(weekendDays(i))=125
     }
-    dd=WeightedRandomizer.forInts(weightsMap.toMap)
+    dd=WeightedRandomizer(weightsMap.toMap)
     dd //return
   }
 
