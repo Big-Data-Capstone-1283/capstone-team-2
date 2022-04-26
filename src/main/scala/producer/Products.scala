@@ -15,12 +15,12 @@ class Products(person:personGen) {
   val toolList:ListBuffer[Product] = productsLists.toolsList("input/products_tools.csv")
 
 
-  var customer_id = person.customerID
-  var personName = person.fullName
-  var paymentType = person.paymentType
-  var customer_country = person.cus_country
-  var customer_city = person.cus_city
-  val datetime = dateTimeGenerator(customer_city)
+  var customer_id:String = person.customerID
+  var personName:String = person.fullName
+  var paymentType:String = person.paymentType
+  var customer_country:String = person.cus_country
+  var customer_city:String = person.cus_city
+  var datetime: String = dateTimeGenerator(customer_city)
 
   object productsLists {
 
@@ -248,9 +248,9 @@ class Products(person:personGen) {
 
 
 
-    val ecoom_website = "Amazon"
+    val ecom_website = "Amazon"
     //dateTime
-    personProductString = s"$customer_id,$personName,$product_id,$productString,$quantity,$prices,$datetime,$customer_country,$customer_city,$ecoom_website,$txn_id,$fail"
+    personProductString = s"$customer_id,$personName,$product_id,$productString,$quantity,$prices,$datetime,$customer_country,$customer_city,$ecom_website,$txn_id,$fail"
 
     //println(personProductString)
     personProductString
@@ -341,13 +341,13 @@ class Products(person:personGen) {
 
 
 
-    val ecoom_website = "Amazon"
+    val ecom_website = "Amazon"
 
     val rng1 = scala.util.Random
-    var personProductString = s"$customer_id,$personName,$product_id,$productString,$quantity,$prices,$datetime,$customer_country,$customer_city,$ecoom_website,$txn_id,$fail"
+    var personProductString = s"$customer_id,$personName,$product_id,$productString,$quantity,$prices,$datetime,$customer_country,$customer_city,$ecom_website,$txn_id,$fail"
 
     //val check = rng1.nextInt(6)
-    val checkMap = Map(0->10,1->10,2->10,3->10,4->10,6->10,7->10,8->10,9->10)
+    val checkMap = Map(0->10,1->10,2->10,3->10,4->10,6->10,7->10,8->10,9->10,10->10)
     val check = WeightedRandomizer(checkMap)
     //WeightedRandomizergtg
 
@@ -358,11 +358,12 @@ class Products(person:personGen) {
       case 2 => paymentType = "Cold Hard Cash"
       case 3 => person.cus_country = "Mozambique"
       case 4 => person.cus_city = " "
-      case 5 => personProductString = s"$customer_id,$datetime,$product_id,$productString,$quantity,$prices,,$customer_country,$customer_city,$ecoom_website,$txn_id,$fail"
-      case 6 => personProductString = s"$customer_id,$personName,$product_id,$productString,$quantity,$prices,$datetime,$customer_country,$customer_city,,,,,$ecoom_website,$txn_id,$fail"
-      case 7 => personProductString = s"$customer_id,$personName,$product_id,$productString,$quantity,$prices,$datetime,$customer_country,$customer_city,$ecoom_website,$txn_id,$fail"
-      case 8 => personProductString = s",$personName,$product_id,$productString,$quantity,$prices,$datetime,$customer_country,$customer_city,$ecoom_website,$txn_id,$fail"
+      case 5 => personProductString = s"$customer_id,$datetime,$product_id,$productString,$quantity,$prices,,$customer_country,$customer_city,$ecom_website,$txn_id,$fail"
+      case 6 => personProductString = s"$customer_id,$personName,$product_id,$productString,$quantity,$prices,$datetime,$customer_country,$customer_city,,,,,$ecom_website,$txn_id,$fail"
+      case 7 => personProductString = s"$customer_id,$personName,$product_id,$productString,$quantity,$prices,$datetime,$customer_country,$customer_city,$ecom_website,$txn_id,$fail"
+      case 8 => personProductString = s",$personName,$product_id,$productString,$quantity,$prices,$datetime,$customer_country,$customer_city,$ecom_website,$txn_id,$fail"
       case 9 => personProductString = s"$customer_id,$personName,,"
+      case 10 => datetime=dateTimeGenerator.badDateTime(customer_city)
 
     }
     // dateTime
