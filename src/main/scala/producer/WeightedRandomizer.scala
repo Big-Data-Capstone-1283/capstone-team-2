@@ -1,6 +1,6 @@
 package producer
 
-object WeightedRandomizer{
+object WeightedRandomizer {
 	/**
 	 * Returns a random key from a Map containing `"item name" -> weight` pairs, where the
 	 * "weight" value indicates its frequency relative to the total value of all weights.
@@ -54,22 +54,4 @@ object WeightedRandomizer{
 		for(i <- 1 to 10)
 			println(WeightedRandomizer(paymentRates))
 	}
-
-	def forInts(items: Map[Int, Int]): Int = {
-		var weightSum = 0  // The total value of all the weights passed in (Note: does NOT need to total to 100)
-		for (i <- items)  // Find the total value of weights for all keys
-			weightSum += i._2
-		val rnd = scala.util.Random.nextInt(weightSum)  // Pick a random number within the weight range
-		val keys = items.keySet.toArray  // Get the key names from the map
-		var n = 0  // Current item
-		var weightTotal = 0  // Current total of all item's weights checked so far
-		while (weightTotal + items(keys(n)) < rnd) {  // Find the item for the random value's weight group
-			weightTotal += items(keys(n))
-			n += 1
-		}
-		keys(n)  // Return the semi-randomly chosen item name
-	}
-
-
-
 }
