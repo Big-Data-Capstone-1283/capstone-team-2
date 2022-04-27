@@ -4,6 +4,13 @@ import org.apache.spark.sql.DataFrame
 import org.apache.spark.sql.functions._
 
 object TxnSuccessRatePattern {
+
+	/**
+	  * Tests for a pattern in the payment transaction success rate.
+	  *
+	  * @param data	Dataframe to search for a pattern on.
+	  * @return		Search result as `Option[String]`.  (`None` = no pattern)
+	  */
 	def Go(data: DataFrame): Option[String] = {
 		var newDf = data  // Generate the data
 			.select("payment_txn_success")

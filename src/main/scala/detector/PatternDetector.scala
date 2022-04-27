@@ -173,26 +173,60 @@ object PatternDetector {
 			if (PatternDetector.testMode)  // If we're in test mode...
 				println(dayToName(i) + ": " + dayCount(i))  // ...show count number of each day of week for normalization
 		}
+		if (PatternDetector.testMode)  // Show if we're in test mode
+			println("\n=====================================\n")
 		minDaysSeq = Seq.empty[String]
 		for (i <- 1 to 7)  // Make a list of days which have the minimum counts to use for data normalization
 			if (dayCount(i) == minCount)
 				minDaysSeq = minDaysSeq :+ dayToName(i)
 
-		// Add new pattern detection functions below
+		// Run the "quantity" pattern test to see if we can ignore the "qty" data
+		val qtyResult = QuantityPattern.Go(data)
+		if (qtyResult == None)
+			println("Quantity pattern: None")
+		else
+			println(s"Quantity pattern: ${qtyResult.get}")
+		if (PatternDetector.testMode)  // Show if we're in test mode
+			println("\n=====================================\n")
+
+		// ** Add new pattern detection functions below **
+		// 1-factor patterns  (quantity pattern executed above)
 		descArr += "Country pattern"
 		funcArr += CountryPattern.Go
+		descArr += "Day of Week pattern"
+		funcArr += OrdersByDayOfWeekPattern.Go
+		descArr += "Hour of Day pattern"
+		funcArr += OrdersByHourOfDayPattern.Go
 		descArr += "Payment Type pattern"
 		funcArr += PaymentTypePattern.Go
+		descArr += "Product Category pattern"
+		funcArr += ProductCategoryPattern.Go
 		descArr += "Transaction Success pattern"
 		funcArr += TxnSuccessRatePattern.Go
 		descArr += "Ecommerce Website pattern"
 		funcArr += WebsitePattern.Go
-		descArr += "Product Category pattern"
-		funcArr += ProductCategoryPattern.Go
+
+		// 2-factor patterns
+		descArr += "Payment Type + Country pattern"
+		funcArr += PmtType_CountryPattern.Go
+		descArr += "Payment Type + Product Category"
+		funcArr += PmtType_ProdCatPattern.Go
 		descArr += "Product Category + Country pattern"
 		funcArr += ProdCat_CountryPattern.Go
-		descArr += "Day of Week pattern"
-		funcArr += DayOfWeekPattern.Go
+		descArr += "Transaction Success + Payment Type pattern"
+		funcArr += TxnSuccess_PmtTypePattern.Go
+		descArr += "Website + Country pattern"
+		funcArr += Website_CountryPattern.Go
+		if (qtyResult != None) {  // Only run these tests if there is any kind of pattern in the quantity rates
+			descArr += "Total Items per Category pattern"
+			funcArr += TotalItemsPerCategory.Go
+			descArr += "Total Items per Country pattern"
+			funcArr += TotalItemsPerCountry.Go
+			descArr += "Total Items by Day of Week pattern"
+			funcArr += TotalItemsPerDayPattern.Go
+			descArr += "Total Items per Website pattern"
+			funcArr += TotalItemsPerWebsite.Go
+		}
 
 		// Run all of the pattern tests
 		for (i <- 0 to funcArr.length - 1) {
@@ -201,7 +235,7 @@ object PatternDetector {
 				println(s"${descArr(i)}: None")
 			else
 				println(s"${descArr(i)}: ${result.get}")
-			if (PatternDetector.testMode && (i < funcArr.length - 1))  // Show info if we're in test mode
+			if (PatternDetector.testMode && (i < funcArr.length - 1))  // Show if we're in test mode
 				println("\n=====================================\n")
 		}
 		if (PatternDetector.testMode)
