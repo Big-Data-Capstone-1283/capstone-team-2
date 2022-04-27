@@ -9,7 +9,7 @@ import org.joda.time.DateTime
 import java.sql.Timestamp
 import scala.collection.mutable.ArrayBuffer
 //import scala.util.Try
-import producer.WeightedRandomizer_Test.WeightedRandomizer
+import producer.WeightedRandomizer
 
 object PatternTester {
 	var spark:SparkSession = null

@@ -7,42 +7,45 @@ import scala.collection.JavaConverters._
 import scala.collection.mutable.ListBuffer
 
 object Orders {
+  val badData = Map("G" -> 97, "B" -> 3 )
 
-  Logger.getLogger("org").setLevel(Level.ERROR)
-  System.setProperty("hadoop.home.dir", "C:\\hadoop")
-  val spark = SparkSession
-    .builder
-    .appName("hello hive")
-    .config("spark.master", "local[*]")
-    .enableHiveSupport()
-    .getOrCreate()
-
-  //println("created spark session")
-  spark.sparkContext.setLogLevel("ERROR")
 
 def createOrder(numOrders:Int,startAt:Int):List[String]={
   val allOrders = new ListBuffer[String]
   var count = startAt
   val numOfPeople = numOrders /2
   val peopleList = new ListBuffer[personGen]
+
+
   for(i <-0 to numOfPeople)
     {
       val person = new personGen
       peopleList+= person
     }
 
+
+
+
   for(i <- 0 to numOrders)
   {
+    val badcheck = WeightedRandomizer(badData)
 
     val rng = scala.util.Random
     val person = peopleList(rng.nextInt(numOfPeople))
 
     val products = new Products(person)
-    allOrders += count + ","+ products.assignPersontoProduct
+
+    if(badcheck == "G") {
+      allOrders += count + "," + products.assignPersontoProduct
+    }
+    else if(badcheck == "B") {
+        allOrders += count + " " + products.falseProductGen
+      }
     count = count + 1
   }
 
   val orderoutput:List[String] =allOrders.toList
+
 
   orderoutput
 }
