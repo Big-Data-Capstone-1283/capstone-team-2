@@ -24,15 +24,12 @@ object csvConverter {
 
     //Crate a dataframe from the multiple batches of information and rename column
     val df = spark.read
-      //.options(Map("delimiter"->"["))
-      //.csv("testTeam2Dummy")
       .csv("output")
-      //.select("_c1")
       .withColumnRenamed("_c1","theirString")
 
 
     df.printSchema()     //Printing the schema (key,value)
-    df.show( 100, false)
+    //df.show( 100, false)
     //convert the df to an Array
     val rowArray = df.select("theirString").collect.map(_.toSeq)
 
@@ -63,7 +60,7 @@ object csvConverter {
         correctColNum = correctColNum :+ i.mkString(",")
     }
 
-    for (i <- correctColNum) {println(i)}
-
+    for (i <- correctColNum) {println(i.substring(i.indexOf("[")+1,i.indexOf("]")))}
+    println(correctColNum.length)
   }
 }
