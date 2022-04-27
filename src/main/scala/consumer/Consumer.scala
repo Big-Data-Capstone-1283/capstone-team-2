@@ -34,9 +34,13 @@ object Consumer extends App {
   val df = spark.readStream
     .format("kafka")
     //Provided the Kafka server, in our case it should be EC2
-    .option("kafka.bootstrap.servers", "172.31.230.240:9092")
-    //Suscribe to the other team topic
-    .option("subscribe", "text_topic")
+    //change bootstrap server to below to reach EC2
+    // ec2-3-93-174-172.compute-1.amazonaws.com:9092
+    // 3.93.174.172
+    .option("kafka.bootstrap.servers", "ec2-3-93-174-172.compute-1.amazonaws.com:9092")
+    //Subscribe to the other team topic
+    .option("subscribe", "team1")
+    //startingOffsets "earliest" returns no key value table at all
     .option("startingOffsets", "latest") // From starting
     .option("failOnDataLoss", false)
     .load()

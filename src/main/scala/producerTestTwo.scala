@@ -4,6 +4,7 @@ import java.util.Properties
 //import scala.io._
 import org.apache.kafka.clients.producer.{KafkaProducer, ProducerConfig, ProducerRecord}
 import org.apache.kafka.common.serialization.{IntegerSerializer, StringSerializer}
+import org.apache.log4j.{Level, Logger}
 
 object producerTestTwo extends App{
   //in intellij, create output directory
@@ -27,9 +28,9 @@ object producerTestTwo extends App{
 
   //run consumer
 
-
+  Logger.getLogger("org").setLevel(Level.ERROR)
   //this will need to change to whatever the other team names their topic
-  val topicName = "doug_test2"
+  val topicName = "text_topic"
 
   //ip address is for local computer, and may change depending on dhcp of home router, will have to change if it suddenly doesn't work
   val producerProperties = new Properties()

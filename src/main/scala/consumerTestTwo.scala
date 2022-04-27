@@ -5,6 +5,7 @@ import org.apache.kafka.clients.consumer.{ConsumerRecord, ConsumerRecords, Kafka
 import org.apache.kafka.common.serialization.{IntegerDeserializer, StringDeserializer}
 import java.io._
 import scala.collection.JavaConverters._
+import org.apache.log4j.{Level, Logger}
 
 object consumerTestTwo extends App{
   //in intellij, create output directory
@@ -23,6 +24,10 @@ object consumerTestTwo extends App{
   //use bin/./kafka-topics.sh --list --bootstrap-server 172.18.217.222:9092
   //you should see sql_dolphins2
   //or cd to bin, then run bin/./kafka-topics.sh --list --bootstrap-server localhost:9092
+
+
+  //SSH to EC2 KAFKA BROKER
+  //ON LOCAL SYSTEM, BE SURE TO CD TO ROOT, WHERE SSH PEM FILE IS
   //ssh -i William-Big_Data-1283.pem ec2-user@ec2-3-93-174-172.compute-1.amazonaws.com
 
   //DELETE topic from EC2
@@ -30,9 +35,9 @@ object consumerTestTwo extends App{
 
   //List topics in EC2
   //  bin/kafka-topics.sh --list --bootstrap-server localhost:9092
+  Logger.getLogger("org").setLevel(Level.ERROR)
 
-
-  val topicName = "doug_test2"
+  val topicName = "team1"
   val consumerProperties = new Properties()
 
   //consumerProperties.setProperty(BOOTSTRAP_SERVERS_CONFIG, "localhost:9092")
@@ -44,16 +49,20 @@ object consumerTestTwo extends App{
   //  consumerProperties.setProperty(AUTO_OFFSET_RESET_CONFIG, "latest")
 
   //must match producer TYPES
-  consumerProperties.setProperty(KEY_DESERIALIZER_CLASS_CONFIG, classOf[IntegerDeserializer].getName)
+  consumerProperties.setProperty(KEY_DESERIALIZER_CLASS_CONFIG, classOf[StringDeserializer].getName)
   //must match producer TYPES;
   consumerProperties.setProperty(VALUE_DESERIALIZER_CLASS_CONFIG, classOf[StringDeserializer].getName)
   //  consumerProperties.setProperty(ENABLE_AUTO_COMMIT_CONFIG, "false")
-  val consumer = new KafkaConsumer[Int, String](consumerProperties)
+  val consumer = new KafkaConsumer[String, String](consumerProperties)
   consumer.subscribe(List(topicName).asJava)
   //CREATE AND OPEN FILE WRITER
   val fileObject = new File("consumerOutput/transactions.csv")
   val printWriter = new PrintWriter(new FileOutputStream(fileObject))
-  val polledRecords: ConsumerRecords[Int, String] = consumer.poll(Duration.ofSeconds(50))
+
+  val polledRecords: ConsumerRecords[String, String] = consumer.poll(Duration.ofSeconds(50))
+
+
+
 
 
 
@@ -64,7 +73,7 @@ object consumerTestTwo extends App{
   //
 
   while (recordIterator.hasNext) {
-    val record: ConsumerRecord[Int, String] = recordIterator.next()
+    val record: ConsumerRecord[String, String] = recordIterator.next()
     println(s"| ${record.key()} | ${record.value()} ") //| ${record.partition()} | ${record.offset()} |")
     //WRITE THE KAFKA STREAM TO THE FILE
     printWriter.write(record.value() + "\n")

@@ -9,13 +9,13 @@ object kafkatest2 extends App {
   //Replace ip with your ip from server.config
   props.put("bootstrap.servers","ec2-3-93-174-172.compute-1.amazonaws.com:9092")
   props.put("key.deserializer",
-    "org.apache.kafka.common.serialization.StringDeserializer")
+    "org.apache.kafka.common.serialization.IntegerDeserializer")
   props.put("value.deserializer",
     "org.apache.kafka.common.serialization.StringDeserializer")
   props.put("enable.auto.commit", "true")
   props.put("auto.commit.interval.ms", "1000")
   val consumer = new KafkaConsumer(props)
-  val topics = List("text_topic")
+  val topics = List("team1")
 
 
   try {
