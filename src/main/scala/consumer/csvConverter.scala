@@ -20,11 +20,16 @@ object csvConverter {
     spark.sparkContext.setLogLevel("ERROR")
     println("Created Spark Session")
 
+
+
     //Crate a dataframe from the multiple batches of information and rename column
-    val df = spark.read.csv("output")
+    val df = spark.read
+      .csv("output")
       .withColumnRenamed("_c1","theirString")
+
+
     df.printSchema()     //Printing the schema (key,value)
-    df.show( 100, false)
+    //df.show( 100, false)
     //convert the df to an Array
     val rowArray = df.select("theirString").collect.map(_.toSeq)
 
@@ -38,7 +43,13 @@ object csvConverter {
           rowMap.+=((symbol.toString, 1))
         }
       }
-      rowMap(",")
+      //map returns count of character
+      if (rowMap.contains(",")) {
+        rowMap(",")
+      }
+      else {
+        0
+      }
     }
 
     //for (i <- rowArray) {commaCounter(i)}
@@ -49,7 +60,7 @@ object csvConverter {
         correctColNum = correctColNum :+ i.mkString(",")
     }
 
-    for (i <- correctColNum) {println(i)}
-
+    for (i <- correctColNum) {println(i.substring(i.indexOf("[")+1,i.indexOf("]")))}
+    println(correctColNum.length)
   }
 }
