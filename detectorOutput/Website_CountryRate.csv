@@ -1,0 +1,26 @@
+ecommerce_website_name,country,count
+Alibaba,Australia,24
+Alibaba,Canada,24
+Alibaba,New Zealand,12
+Alibaba,UK,74
+Alibaba,US,185
+Amazon,Australia,254
+Amazon,Canada,432
+Amazon,New Zealand,42
+Amazon,UK,638
+Amazon,US,3265
+Etsy,Australia,32
+Etsy,Canada,44
+Etsy,New Zealand,15
+Etsy,UK,99
+Etsy,US,547
+Walmart,Australia,160
+Walmart,Canada,197
+Walmart,New Zealand,22
+Walmart,UK,376
+Walmart,US,2112
+eBay,Australia,70
+eBay,Canada,119
+eBay,New Zealand,20
+eBay,UK,219
+eBay,US,1018
