@@ -1,26 +1,26 @@
 product_category,country,count
-books,Australia,119
-books,Canada,162
-books,New Zealand,20
-books,UK,319
-books,US,804
-clothing,Australia,123
-clothing,Canada,161
-clothing,New Zealand,17
-clothing,UK,292
-clothing,US,809
-electronics,Australia,117
-electronics,Canada,163
-electronics,New Zealand,23
-electronics,UK,306
-electronics,US,3803
-food,Australia,131
-food,Canada,173
-food,New Zealand,18
-food,UK,317
-food,US,794
-tools,Australia,101
-tools,Canada,163
-tools,New Zealand,33
-tools,UK,285
-tools,US,747
+books,Australia,409
+books,Canada,398
+books,New Zealand,406
+books,UK,399
+books,US,226
+clothing,Australia,435
+clothing,Canada,369
+clothing,New Zealand,380
+clothing,UK,379
+clothing,US,218
+electronics,Australia,367
+electronics,Canada,392
+electronics,New Zealand,395
+electronics,UK,383
+electronics,US,1105
+food,Australia,414
+food,Canada,388
+food,New Zealand,408
+food,UK,438
+food,US,238
+tools,Australia,368
+tools,Canada,408
+tools,New Zealand,446
+tools,UK,406
+tools,US,225
