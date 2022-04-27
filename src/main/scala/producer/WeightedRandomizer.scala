@@ -1,16 +1,16 @@
 package producer
 
-object WeightedRandomizer{
+object WeightedRandomizer_Test {
 	/**
-	 * Returns a random key from a Map containing `"item name" -> weight` pairs, where the
-	 * "weight" value indicates its frequency relative to the total value of all weights.
-	 * e.g. `WeightedRandomizer(Map("X" -> 60, "Y" -> 30, "Z" -> 10)` would return "X"
-	 * roughly 60% of the time, "Y" ~30% of the time, and "Z" ~10% of the time.
-	 *
-	 * @param items	A Map of `String -> Int` pairs, representing item name and weight.
-	 * @return			A semi-randomly chosen item name from the `items` map passed to the function.
-	 */
-	def apply(items: Map[String, Int]): String = {
+	  * Returns a random key from a Map containing `"item name" -> weight` pairs, where the
+	  * "weight" value indicates its frequency relative to the total value of all weights.
+	  * e.g. `WeightedRandomizer(Map("X" -> 60, "Y" -> 30, "Z" -> 10)` would return "X"
+	  * roughly 60% of the time, "Y" ~30% of the time, and "Z" ~10% of the time.
+	  *
+	  * @param items	A Map of `String -> Int` pairs, representing item name and weight.
+	  * @return			A semi-randomly chosen item name from the `items` map passed to the function.
+	  */
+	def WeightedRandomizer(items: Map[String, Int]): String = {
 		var weightSum = 0  // The total value of all the weights passed in (Note: does NOT need to total to 100)
 		for (i <- items)  // Find the total value of weights for all keys
 			weightSum += i._2
@@ -26,15 +26,15 @@ object WeightedRandomizer{
 	}
 
 	/**
-	 * Returns a random key from a Map containing `item_number -> weight` pairs, where the
-	 * "weight" value indicates its frequency relative to the total value of all weights.
-	 * e.g. `WeightedRandomizer(Map(1 -> 60, 2 -> 30, 3 -> 10)` would return 1 roughly
-	 * 60% of the time, 2 ~30% of the time, and 3 ~10% of the time.
-	 *
-	 * @param items	A Map of `Int -> Int` pairs, representing item name and weight.
-	 * @return			A semi-randomly chosen item value from the `items` map passed to the function.
-	 */
-	def apply(items: Map[Int, Int]): Int = {
+	  * Returns a random key from a Map containing `item_number -> weight` pairs, where the
+	  * "weight" value indicates its frequency relative to the total value of all weights.
+	  * e.g. `WeightedRandomizer(Map(1 -> 60, 2 -> 30, 3 -> 10)` would return 1 roughly
+	  * 60% of the time, 2 ~30% of the time, and 3 ~10% of the time.
+	  *
+	  * @param items	A Map of `Int -> Int` pairs, representing item name and weight.
+	  * @return			A semi-randomly chosen item value from the `items` map passed to the function.
+	  */
+	def WeightedRandomizer(items: Map[Int, Int]): Int = {
 		var weightSum = 0  // The total value of all the weights passed in (Note: does NOT need to total to 100)
 		for (i <- items)  // Find the total value of weights for all keys
 			weightSum += i._2

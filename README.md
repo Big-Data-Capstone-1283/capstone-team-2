@@ -1,19 +1,25 @@
 # Big Data Capstone Project
+## Table of Contents
+
+* <a href="#project-description">Project Description</a>
+* <a href="#team-members">Team Members</a>
+* <a href="#technologies">Technologies</a>
+* <a href="#schema">Schema</a>
 
 ## Project Description
-Big Data capstone project utilizing Kafka and Spark Streaming
+Big Data capstone project utilizing Kafka and Spark Streaming.
 
 ## Team Members
-- Adam Gore
-- Alex White
-- Brandon Cho
-- Brian Vegh
-- Douglas Lam
-- Evan Laferriere
-- Jeffrey Hafner
-- Md Tahmid Khan
-- Patrick Froerer 
-- Rudy Esquerra
+- Adam Gore [@Adam-Gore96](https://github.com/Adam-Gore96)
+- Alex White [@AlexWhite252](https://github.com/AlexWhite252)
+- Brandon Cho [@BrandonYCho](https://github.com/BrandonYCho)
+- Brian Vegh [@brianvegh](https://github.com/brianvegh)
+- Douglas Lam [@Douglas-Lam](https://github.com/Douglas-Lam)
+- Evan Laferriere [@evanlaferriere](https://github.com/evanlaferriere)
+- Jeffrey Hafner [@JeffH001](https://github.com/JeffH001)
+- Md Tahmid Khan [@MdTahmidKhan](https://github.com/MdTahmidKhan)
+- Patrick Froerer [@PJFroerer](https://github.com/PJFroerer)
+- Rudy Esquerra [@rudyesquerra](https://github.com/rudyesquerra)
 
 ## Technologies
 - Scala 2.13.8
