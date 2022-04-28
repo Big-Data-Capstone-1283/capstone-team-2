@@ -17,10 +17,10 @@ object PatternDetector {
 
 	// Day of week constants and variables:
 	val daymap = Map("Monday" -> 1, "Tuesday" -> 2, "Wednesday" -> 3, "Thursday" -> 4, "Friday" -> 5, "Saturday" -> 6, "Sunday" -> 7)  // Used to map the "day of week" names to a number
-	val daymapCol = typedlit(daymap)  // Used to map days of week into a sortable column
+	val daymapCol = typedlit(daymap)  // Used to map day of week to day number in a Spark column
 	val dayToName = Map(1 -> "Monday", 2 -> "Tuesday", 3 -> "Wednesday", 4 -> "Thursday", 5 -> "Friday", 6 -> "Saturday", 7 -> "Sunday")  // Used to convert "day of week" numbers into a string name
-	var daysPerMonth = Map.empty[String, Int]
-	var daysPerMonthCol = typedlit(Map.empty[String, Int])
+	var daysPerMonth = Map.empty[String, Int]  // A map of "year-month" ("yyyy-MM" format) to "number of days" for each month in the dataframe
+	var daysPerMonthCol = typedlit(Map.empty[String, Int])  // The "year-month to number of days" map for use in Spark columns
 	var minDaysSeq = Seq.empty[String]
 	var minCount = 0
 	var maxCount = 0
@@ -183,7 +183,7 @@ object PatternDetector {
 			if (dayCount(i) == minCount)
 				minDaysSeq = minDaysSeq :+ dayToName(i)
 
-		// Create a map in daysPerMonth for year/month -> days in the month
+		// Create a map in daysPerMonth & daysPerMonthCol for year/month -> days in the month
 		val fmt = DateTimeFormat.forPattern("yyyy-MM")
 		curDate = dateStart
 		daysPerMonth = Map(fmt.print(curDate) -> (curDate.dayOfMonth().getMaximumValue() - curDate.dayOfMonth().get() + 1))  // Get number of days for the first month
@@ -193,7 +193,7 @@ object PatternDetector {
 			curDate = curDate.plusMonths(1)
 		}
 		daysPerMonth = daysPerMonth + (fmt.print(curDate) -> dateEnd.getDayOfMonth())  // Get number of days for the last month
-		daysPerMonthCol = typedlit(daysPerMonth)
+		daysPerMonthCol = typedlit(daysPerMonth)  // Create a version of daysPerMonth to use in Spark columns
 		if (PatternDetector.testMode) {  // If we're in test mode...
 			println("")
 			for (x <- daysPerMonth)
