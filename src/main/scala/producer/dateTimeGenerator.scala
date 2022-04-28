@@ -10,12 +10,12 @@ import scala.util.Random
 
 object dateTimeGenerator {
   var cityString=""
-  val MM: Int = getMonth
-  val yyyy=2022
+  var MM: Int = getMonth
+  var yyyy=2022
   var dd:Int=getDay
   var hh:Int=getHour(cityString)
-  val mm:Int=genRandomInt()
-  val ss:Int=genRandomInt()
+  var mm:Int=genRandomInt()
+  var ss:Int=genRandomInt()
   var thisMonthLength:Int=0
   var dayOfEntireRange_Modifier:Int=0
 
@@ -42,8 +42,11 @@ object dateTimeGenerator {
     val timezoneMod:Int=timezones.getOrElse(city,0)
     //println(timezoneMod)
     hh=hh+timezoneMod
-    if (hh>23) {
+    if (hh>=24) {
       hh=hh-24
+    }
+    if (hh<0) {
+      hh=hh+24
     }
     hh
   }
@@ -53,16 +56,40 @@ object dateTimeGenerator {
   }
 
   def main(args:Array[String]): Unit = {
-    //apply("London")
+    apply("London")
+    apply("London")
+    apply("London")
+    apply("London")
+    apply("London")
+    badDateTime("London")
+    badDateTime("London")
+    badDateTime("London")
+    badDateTime("London")
     badDateTime("London")
   }
 
   def apply(city:String): String = {
     cityString=city
+    MM = getMonth
+    yyyy=2022
+    dd=getDay
+    hh=getHour(cityString)
+    mm=genRandomInt()
+    ss=genRandomInt()
+    thisMonthLength=0
+    dayOfEntireRange_Modifier=0
     getString
   }
   def badDateTime(city:String):String={
     cityString=city
+    MM = getMonth
+    yyyy=2022
+    dd=getDay
+    hh=getHour(cityString)
+    mm=genRandomInt()
+    ss=genRandomInt()
+    thisMonthLength=0
+    dayOfEntireRange_Modifier=0
     var incorrectString=getString
     incorrectString= incorrectString.substring(0, 5) + "13" + incorrectString.substring(7)
     incorrectString
@@ -132,7 +159,7 @@ object dateTimeGenerator {
     var dayOfWeek = tempDate.dayOfWeek().get() // Returns an integer 1 - 7 representing Mon - Sun
     dateStr = tempDate.toString("YYYY-MM-dd HH:mm:ss")
 //    println(dayOfWeek)
-//    println(dateStr)
+    println(dateStr)
     dateStr
   }
 }
