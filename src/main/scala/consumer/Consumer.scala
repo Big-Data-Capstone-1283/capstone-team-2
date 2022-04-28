@@ -65,6 +65,6 @@ object Consumer extends App {
     .option("path", "output")
     .outputMode("append")
     .start()
-    .awaitTermination() //waits for the termination signal from user
+    .awaitTermination() //waits for the termination signal from usera
 
 }
