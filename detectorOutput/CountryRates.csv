@@ -1,6 +1,24 @@
+<<<<<<< HEAD
 country,count
 New Zealand,111
 Australia,540
 Canada,816
 UK,1406
 US,7127
+=======
+day_of_week,daynum_of_week,count
+Tuesday,1,936
+Saturday,1,634
+Sunday,2,661
+Wednesday,2,889
+Monday,3,478
+Thursday,3,945
+Tuesday,4,432
+Friday,4,862
+Wednesday,5,446
+Saturday,5,1013
+Sunday,6,1015
+Thursday,6,405
+Friday,7,426
+Monday,7,858
+>>>>>>> master

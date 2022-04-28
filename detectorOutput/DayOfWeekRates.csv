@@ -1,4 +1,5 @@
 day_of_week,average_count,daynum_of_week
+<<<<<<< HEAD
 Monday,105,1
 Tuesday,105,2
 Wednesday,105,3
@@ -6,3 +7,12 @@ Thursday,102,4
 Friday,105,5
 Saturday,128,6
 Sunday,127,7
+=======
+Monday,99,1
+Tuesday,105,2
+Wednesday,104,3
+Thursday,108,4
+Friday,107,5
+Saturday,127,6
+Sunday,129,7
+>>>>>>> master
