@@ -2,6 +2,22 @@
 # Created by https://www.toptal.com/developers/gitignore/api/scala,spark,sbt
 # Edit at https://www.toptal.com/developers/gitignore?templates=scala,spark,sbt
 
+
+### KafkaAnalyzer SubProject ###
+KafkaAnalyzer/.metals/
+KafkaAnalyzer/.bloop/
+KafkaAnalyzer/.ammonite/
+KafkaAnalyzer/metals.sbt
+KafkaAnalyzer//.bsp/
+KafkaAnalyzer/target/
+KafkaAnalyzer/metastore_db/
+KafkaAnalyzer/spark-warehouse/
+KafkaAnalyzer/project/
+KafkaAnalyzer/derby.log
+KafkaAnalyzer/.vscode/
+KafkaAnalyzer/.idea/
+
+
 ### SBT ###
 # Simple Build Tool
 # http://www.scala-sbt.org/release/docs/Getting-Started/Directories.html#configuring-version-control
