@@ -22,7 +22,7 @@ object csvReader {
     //Create dataFrame based on sample purchases
     val dfPurchases: DataFrame = spark.read.option("header", false)
       .csv("src/main/data/Team1Data_with_errors.txt")
-    println(dfPurchases.count())
+    //println(dfPurchases.count())
 
     val filter1 = dfPurchases.filter(dfPurchases("_c0").isNotNull &&
       dfPurchases("_c1").isNotNull && dfPurchases("_c2").isNotNull && dfPurchases("_c3").isNotNull &&
@@ -37,7 +37,7 @@ object csvReader {
       && !filter1("_c5").contains("|") && !filter1("_c6").contains("|") && !filter1("_c7").contains("|") &&
       !filter1("_c8").contains("|") &&  !filter1("_c9").contains("|") && !filter1("_c10").contains("|") &&
       !filter1("_c11").contains("|") && !filter1("_c12").contains("|") && !filter1("_c13").contains("|") &&
-      !filter1("_c14").contains("|"))
+      !filter1("_c14").contains("|") && !filter1("_c15").contains("|"))
     //println(filter2.count())
 
     val filter3 = filter2.filter(!filter2("_c0").contains("{") && !filter2("_c1").contains("{") &&
@@ -45,7 +45,7 @@ object csvReader {
       && !filter2("_c5").contains("{") && !filter2("_c6").contains("{") && !filter2("_c7").contains("{") &&
       !filter2("_c8").contains("{") &&  !filter2("_c9").contains("{") && !filter2("_c10").contains("{") &&
       !filter2("_c11").contains("{") && !filter2("_c12").contains("{") && !filter2("_c13").contains("{") &&
-      !filter2("_c14").contains("{"))
+      !filter2("_c14").contains("{") && !filter2("_c15").contains("{"))
     //println(filter3.count())
 
     val filter4 = filter3.filter(!filter3("_c0").contains("}") && !filter3("_c1").contains("}") &&
@@ -53,7 +53,7 @@ object csvReader {
       && !filter3("_c5").contains("}") && !filter3("_c6").contains("}") && !filter3("_c7").contains("}") &&
       !filter3("_c8").contains("}") &&  !filter3("_c9").contains("}") && !filter3("_c10").contains("}") &&
       !filter3("_c11").contains("}") && !filter3("_c12").contains("}") && !filter3("_c13").contains("}") &&
-      !filter3("_c14").contains("}"))
+      !filter3("_c14").contains("}") && !filter3("_c15").contains("}"))
     //println(filter4.count())
 
     val filter5 = filter4.filter(!filter4("_c0").contains("[") && !filter4("_c1").contains("[") &&
@@ -61,7 +61,7 @@ object csvReader {
       && !filter4("_c5").contains("[") && !filter4("_c6").contains("[") && !filter4("_c7").contains("[") &&
       !filter4("_c8").contains("[") &&  !filter4("_c9").contains("[") && !filter4("_c10").contains("[") &&
       !filter4("_c11").contains("[") && !filter4("_c12").contains("[") && !filter4("_c13").contains("[") &&
-      !filter4("_c14").contains("["))
+      !filter4("_c14").contains("[") && !filter4("_c15").contains("["))
     //println(filter5.count())
 
     val filter6 = filter5.filter(!filter5("_c0").contains("]") && !filter5("_c1").contains("]") &&
@@ -69,7 +69,7 @@ object csvReader {
       && !filter5("_c5").contains("]") && !filter5("_c6").contains("]") && !filter5("_c7").contains("]") &&
       !filter5("_c8").contains("]") &&  !filter5("_c9").contains("]") && !filter5("_c10").contains("]") &&
       !filter5("_c11").contains("]") && !filter5("_c12").contains("]") && !filter5("_c13").contains("]") &&
-      !filter5("_c14").contains("]"))
+      !filter5("_c14").contains("]") && !filter5("_c15").contains("]"))
     //println(filter6.count())
 
     val convertedDF = filter6.select(
@@ -92,6 +92,6 @@ object csvReader {
     //println(convertedDF.count())
 
     val cleanDF = convertedDF.filter(convertedDF("datetime") >= "2000-01-01")
-    println(cleanDF.count())
+    println(dfPurchases.count()-cleanDF.count() + " rows were removed")
   }
 }
