@@ -10,12 +10,12 @@ import scala.util.Random
 
 object dateTimeGenerator {
   var cityString=""
-  val MM: Int = getMonth
+  var MM: Int = 0
   val yyyy=2022
-  var dd:Int=getDay
-  var hh:Int=getHour(cityString)
-  val mm:Int=genRandomInt()
-  val ss:Int=genRandomInt()
+  var dd:Int= 0
+  var hh:Int= 0
+  var mm:Int= 0
+  var ss:Int= 0
   var thisMonthLength:Int=0
   var dayOfEntireRange_Modifier:Int=0
 
@@ -42,8 +42,11 @@ object dateTimeGenerator {
     val timezoneMod:Int=timezones.getOrElse(city,0)
     //println(timezoneMod)
     hh=hh+timezoneMod
-    if (hh>23) {
+    if (hh>24) {
       hh=hh-24
+    }
+    else if(hh<0){
+      hh=hh+24
     }
     hh
   }
@@ -58,10 +61,21 @@ object dateTimeGenerator {
   }
 
   def apply(city:String): String = {
+    MM = getMonth
+    dd =getDay
+    hh =getHour(cityString)
+    mm=genRandomInt()
+    ss=genRandomInt()
+
     cityString=city
     getString
   }
   def badDateTime(city:String):String={
+    MM = getMonth
+    dd =getDay
+    hh =getHour(cityString)
+    mm=genRandomInt()
+    ss=genRandomInt()
     cityString=city
     var incorrectString=getString
     incorrectString= incorrectString.substring(0, 5) + "13" + incorrectString.substring(7)
