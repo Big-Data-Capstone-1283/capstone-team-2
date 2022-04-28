@@ -1,7 +1,7 @@
 package com.revature.main
 
 import com.revature.main.KafkaProcesser.{saveDataFrameAsCSV, spark}
-import com.revature.main.kafkaToSpark.{FORCE_TIMER_PRINT, investigatePreProcessed, kafkaProcessor}
+import com.revature.main.kafkaToSpark.{FORCE_TIMER_PRINT}
 import com.revature.main.mySparkUtils._
 import org.apache.commons.io.FileUtils
 import org.apache.log4j.{Level, Logger}
@@ -39,7 +39,8 @@ object KafkaProcesser {
 		// Run the "getUniqueCountries" query
 
 		kafkaToSpark.kafkaProcessor()
-		//investigatePreProcessed()
+		kafkaToSpark.testColumnCount()
+		kafkaToSpark.getDistinctCountriesCities()
 
 
 		// End Spark session
@@ -69,8 +70,11 @@ object KafkaProcesser {
 		Try(new File(oldName).renameTo(new File(newName))).getOrElse(false)
 	}
 
-	def saveDataFrameAsCSV(df: DataFrame, filename: String): String = {
-		df.coalesce(1).write.options(Map("header"->"true", "delimiter"->",")).mode(SaveMode.Overwrite).format("csv").save("tempCSVDir")
+	def saveDataFrameAsCSV(df: DataFrame, filename: String,printHeader:Boolean=true): String = {
+		var printHeader_BooleanString="true"
+		if (!printHeader){printHeader_BooleanString="false"}
+		df.coalesce(1).write.options(Map("header"->printHeader_BooleanString, "delimiter"->","))
+			.mode(SaveMode.Overwrite).format("csv").save("tempCSVDir")
 		val curDir = System.getProperty("user.dir")
 		val srcDir = new File(curDir + "/tempCSVDir")
 		val files = getListOfFiles(srcDir, List("csv"))
