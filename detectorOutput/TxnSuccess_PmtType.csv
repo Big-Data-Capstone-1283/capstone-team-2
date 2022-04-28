@@ -1,0 +1,9 @@
+payment_type,payment_txn_success,count
+UPI,Failure,36
+Internet Banking,Failure,44
+Wallet,Failure,180
+Credit Card,Failure,248
+UPI,Success,665
+Internet Banking,Success,895
+Wallet,Success,3279
+Credit Card,Success,4653

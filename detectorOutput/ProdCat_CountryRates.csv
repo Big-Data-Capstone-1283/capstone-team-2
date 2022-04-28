@@ -1,4 +1,31 @@
 product_category,country,count
+<<<<<<< HEAD
+books,Australia,101
+books,Canada,178
+books,New Zealand,21
+books,UK,290
+books,US,811
+clothing,Australia,111
+clothing,Canada,159
+clothing,New Zealand,24
+clothing,UK,291
+clothing,US,741
+electronics,Australia,110
+electronics,Canada,157
+electronics,New Zealand,23
+electronics,UK,281
+electronics,US,4061
+food,Australia,105
+food,Canada,168
+food,New Zealand,26
+food,UK,283
+food,US,764
+tools,Australia,113
+tools,Canada,154
+tools,New Zealand,17
+tools,UK,261
+tools,US,750
+=======
 books,Australia,409
 books,Canada,398
 books,New Zealand,406
@@ -24,3 +51,4 @@ tools,Canada,408
 tools,New Zealand,446
 tools,UK,406
 tools,US,225
+>>>>>>> master

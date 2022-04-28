@@ -4,6 +4,13 @@ import org.apache.spark.sql.DataFrame
 import org.apache.spark.sql.functions._
 
 object WebsitePattern {
+
+	/**
+	  * Tests for a pattern in the purchase frequency by ecommerce website name.
+	  *
+	  * @param data	Dataframe to search for a pattern on.
+	  * @return		Search result as `Option[String]`.  (`None` = no pattern)
+	  */
 	def Go(data: DataFrame): Option[String] = {
 		var newDf = data  // Generate the data
 			.select("ecommerce_website_name")

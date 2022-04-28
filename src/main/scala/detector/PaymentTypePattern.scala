@@ -1,16 +1,22 @@
 package detector
 
-import org.apache.spark.sql.{ SparkSession, SaveMode, Row, DataFrame }
+import org.apache.spark.sql.DataFrame
 import org.apache.spark.sql.functions._
-import org.apache.spark.sql.types._
 
 object PaymentTypePattern {
+
+	/**
+	  * Tests for a pattern in the purchase frequency by payment type.
+	  *
+	  * @param data	Dataframe to search for a pattern on.
+	  * @return		Search result as `Option[String]`.  (`None` = no pattern)
+	  */
 	def Go(data: DataFrame): Option[String] = {
 		var newDf = data  // Generate the data
 			.select("payment_type")
 			.groupBy("payment_type")
-			.agg(count("payment_type"))
-			.withColumnRenamed("count(payment_type)", "count")
+			.agg(count("payment_type").as("count"))
+			.orderBy("count")
 		if (PatternDetector.testMode)  // If we're in test mode...
 			newDf.show()  // ...show the data
 		val ndev = PatternDetector.deviation1F(newDf)  // Check the data for a pattern

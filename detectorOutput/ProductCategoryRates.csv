@@ -1,6 +1,14 @@
 product_category,count
+<<<<<<< HEAD
+food,1346
+books,1401
+electronics,4632
+clothing,1326
+tools,1295
+=======
 food,1886
 books,1838
 electronics,2642
 clothing,1781
 tools,1853
+>>>>>>> master
