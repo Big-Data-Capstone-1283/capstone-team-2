@@ -25,6 +25,10 @@ object kafkaToSpark {
   var preProcessed: DataFrame = null
   var processedData: DataFrame = null
 
+
+
+  var extraColumns, nullValue,
+
   def testColumnCount():Unit={
   // Read "covid_19_data.csv" data as a dataframe
     val INPUT_FILENAME="KafkaPreProcessed_SingleColumn.csv"
@@ -38,16 +42,21 @@ object kafkaToSpark {
     if (rawDataColumnCount!=16){
       if (rawDataColumnCount>16) println("The raw data contains rows with MORE columns than the defined schema")
       if (rawDataColumnCount<16) println("The raw data contains rows with LESS columns than the defined schema")
-      var badRowsCount=0
-      for (i<-(rawDataColumnCount-16) to rawDataColumnCount){
-        //Select
+      var badFieldsCount=0
+      for (i<-16 to rawDataColumnCount-1) {
+        var colName="_c"+i.toString
+        df.filter(df.col(colName).isNotNull).show()
+        badFieldsCount+=df.filter(df.col(colName).isNotNull).count().toInt
+        println(s"bad fields in column $i = $badFieldsCount")
       }
+      println(s"total bad fields $badFieldsCount.toString")
 
     } else {
       println("The raw data conforms to the schema in regards to column count")
     }
     stopTimer()
     df.show(5, false)
+    df.printSchema()
   }
 
   private def formatText_HIGHLIGHT_UNDERLINE(input:Any):String={
@@ -74,10 +83,10 @@ object kafkaToSpark {
 
     //filter date range between 2000 at earliest
 
-
     //row count after
 
     //rows removed
+
   }
 
   def getDistinctCountriesCities():Unit={
