@@ -8,7 +8,8 @@ import org.joda.time.DateTime
 object OrdersByMonthPattern {
 
 	/**
-	  * Tests for a pattern in the purchase frequency by month (average is per day rounded to nearest integer).  (Assumes pre-normalized time zone data.)
+	  * Tests for a pattern in the purchase frequency by month (average is per day rounded to nearest integer).
+	  * (Assumes time zone data is already normalized to UTC.)
 	  *
 	  * @param data	Dataframe to search for a pattern on.
 	  * @return		Search result as `Option[String]`.  (`None` = no pattern)
@@ -24,7 +25,7 @@ object OrdersByMonthPattern {
 			newDf.show()  // ...show the data
 		val ndev = PatternDetector.deviation1F(newDf)  // Check the data for a pattern
 		if (ndev > 1.0 + PatternDetector.marginOfError) {  // Pattern detected
-			val filename = PatternDetector.saveDataFrameAsCSV(newDf, "DayOfWeekRates.csv")  // Write the data to a file
+			val filename = PatternDetector.saveDataFrameAsCSV(newDf, "AvgOrdersPerDayByMonth.csv")  // Write the data to a file
 			if (ndev < 2)
 				Option("Found possible pattern (" + ((ndev - 1) * 100) + "% chance)\nFilename: " + filename)
 			else

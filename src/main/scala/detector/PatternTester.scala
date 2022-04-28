@@ -91,6 +91,7 @@ object PatternTester {
 
 		// Generate test data to verify that the pattern testers are working properly
 		sampleData = Seq.empty[Row]
+		println("Generating test data... ")
 		for (i <- 1 to 10000) {  // Generate this many rows of data
 			rowData = Seq.empty[Any]
 			country = WeightedRandomizer(Map("US" -> 330, "Australia" -> 26, "UK" -> 67, "Canada" -> 38, "New Zealand" -> 5))  // "country" data with a pattern
@@ -166,6 +167,7 @@ object PatternTester {
 			tempRow = Row.fromSeq(rowData)
 			sampleData = sampleData :+ tempRow
 		}
+		println("Complete!\n")
 		val df = spark.createDataFrame(spark.sparkContext.parallelize(sampleData, 1), tableStructure)  // Create a dataframe from the sample data
 		df.show()  // Verify it was created properly
 		df.printSchema()  // Verify it was created properly

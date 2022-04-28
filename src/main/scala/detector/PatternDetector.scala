@@ -9,21 +9,25 @@ import org.joda.time.format.{ DateTimeFormat, DateTimeFormatter }
 import org.joda.time.DateTime
 import java.io.File
 import util.Try
+import org.joda.time.Days
 
 object PatternDetector {
 	// Constants:
 	val marginOfError = 0.05  // 5% margin of error for pattern detection
 	val testMode = true // Determines if testing data is displayed
 
-	// Day of week constants and variables:
+	// Constants and variables for date and time operations:
+	var dateStart = new DateTime()  // Start date of the timeframe that the dataframe covers (without time data)
+	var dateEnd = new DateTime()  // End date of the timeframe that the dataframe covers (without time data)
+	var numberOfDays = 0  // The total number of days that the dataframe covers
 	val daymap = Map("Monday" -> 1, "Tuesday" -> 2, "Wednesday" -> 3, "Thursday" -> 4, "Friday" -> 5, "Saturday" -> 6, "Sunday" -> 7)  // Used to map the "day of week" names to a number
 	val daymapCol = typedlit(daymap)  // Used to map day of week to day number in a Spark column
 	val dayToName = Map(1 -> "Monday", 2 -> "Tuesday", 3 -> "Wednesday", 4 -> "Thursday", 5 -> "Friday", 6 -> "Saturday", 7 -> "Sunday")  // Used to convert "day of week" numbers into a string name
 	var daysPerMonth = Map.empty[String, Int]  // A map of "year-month" ("yyyy-MM" format) to "number of days" for each month in the dataframe
 	var daysPerMonthCol = typedlit(Map.empty[String, Int])  // The "year-month to number of days" map for use in Spark columns
-	var minDaysSeq = Seq.empty[String]
-	var minCount = 0
-	var maxCount = 0
+	var minCount = 0  // Lowest count for a day of week
+	var maxCount = 0  // Highest count for a day of week
+	var minDaysSeq = Seq.empty[String]  // A list of days of week which were of the lowest count
 
 	/**
 	  * Gets a list of filenames in the given directory, filtered by optional matching file extensions.
@@ -137,17 +141,13 @@ object PatternDetector {
 	}
 
 	/**
-	  * This method takes a dataframe and tests it for various patterns in the data.
+	  * Generate the data from the dataframe that's needed for pattern tests on date and time.
 	  *
-	  * @param data	A dataframe with data using the schema given for this project.
+	  * @param df	The dataframe to examine with dates in a "datetime" colum.
 	  */
-	def Go(data: DataFrame): Unit = {
-		var funcArr = ArrayBuffer.empty[Function[DataFrame, Option[String]]]  // Array of pattern testing functions
-		var descArr = ArrayBuffer.empty[String]  // Description/title of each function
-		var result: Option[String] = None
-
-		// Generate the data from the dataframe that's needed for the "day of week" pattern tests
-		var dateRangeDf = data  // Get the range of dates that the data covers
+	private def getDateTimeInfo(df: DataFrame): Unit = {
+		// Get the range of dates that the data covers
+		var dateRangeDf = df
 			.select("datetime")
 			.withColumn("data", lit("date range"))  // Make a dummy column to group by
 			.groupBy("data")
@@ -156,10 +156,11 @@ object PatternDetector {
 		if (PatternDetector.testMode)  // If we're in test mode...
 			dateRangeDf.show(false)  // ...show the date range we're working with.
 		val dateRangeData = dateRangeDf.head()  // Copy the data into Row object
-		val dateStart = new DateTime(dateRangeData(0)).withHourOfDay(0).withMinuteOfHour(0).withSecondOfMinute(0).withMillisOfSecond(0)  // Earliest date (stripped of time)
-		val dateEnd = new DateTime(dateRangeData(1)).withHourOfDay(0).withMinuteOfHour(0).withSecondOfMinute(0).withMillisOfSecond(0)  // Latest date (stripped of time)
+		dateStart = new DateTime(dateRangeData(0)).withHourOfDay(0).withMinuteOfHour(0).withSecondOfMinute(0).withMillisOfSecond(0)  // Earliest date (stripped of time)
+		dateEnd = new DateTime(dateRangeData(1)).withHourOfDay(0).withMinuteOfHour(0).withSecondOfMinute(0).withMillisOfSecond(0)  // Latest date (stripped of time)
+		numberOfDays = Days.daysBetween(dateStart, dateEnd).getDays()
 		if (PatternDetector.testMode)  // If we're in test mode...
-			println(s"Start date: $dateStart\nEnd date: $dateEnd\n")  // ...verify that the date range was converted properly
+			println(s"Start date: $dateStart\nEnd date: $dateEnd\nNumber of days: $numberOfDays\n")  // ...verify that the date range was converted properly
 
 		// Create a sequence in minDaysSeq noting which days of week are of the shorter length
 		var dayCount = Array.ofDim[Int](8)  // Array for determining count of days; Mon = 1 to Sun = 7 (no day for 0)
@@ -201,6 +202,22 @@ object PatternDetector {
 		}
 		if (PatternDetector.testMode)  // Show if we're in test mode
 			println("\n=====================================\n")
+	}
+
+
+	/**
+	  * This method takes a dataframe and tests it for various patterns in the data.
+	  *
+	  * @param data	A dataframe with data using the schema given for this project.
+	  */
+	def Go(data: DataFrame): Unit = {
+		var funcArr = ArrayBuffer.empty[Function[DataFrame, Option[String]]]  // Array of pattern testing functions
+		var descArr = ArrayBuffer.empty[String]  // Description/title of each function
+		var result: Option[String] = None
+
+		saveDataFrameAsCSV(data, "Full_Cleaned_Dataset.csv")  // Write out the data we receive
+
+		getDateTimeInfo(data)  // Generates the data from the dataframe that's needed for pattern tests on date and time
 
 		// Run the "quantity" pattern test to see if we can ignore the "qty" data
 		val qtyResult = QuantityPattern.Go(data)
@@ -213,13 +230,14 @@ object PatternDetector {
 
 		// ** Add new pattern detection functions below **
 		// 1-factor patterns  (quantity pattern executed above)
-		/*
 		descArr += "Country pattern"
 		funcArr += CountryPattern.Go
 		descArr += "Day of Week pattern"
 		funcArr += OrdersByDayOfWeekPattern.Go
 		descArr += "Hour of Day pattern"
 		funcArr += OrdersByHourOfDayPattern.Go
+		descArr += "Months pattern"
+		funcArr += OrdersByMonthPattern.Go
 		descArr += "Payment Type pattern"
 		funcArr += PaymentTypePattern.Go
 		descArr += "Product Category pattern"
@@ -250,9 +268,6 @@ object PatternDetector {
 			descArr += "Total Items per Website pattern"
 			funcArr += TotalItemsPerWebsite.Go
 		}
-		*/
-		descArr += "Months pattern"
-		funcArr += OrdersByMonthPattern.Go
 
 		// Run all of the pattern tests
 		for (i <- 0 to funcArr.length - 1) {
