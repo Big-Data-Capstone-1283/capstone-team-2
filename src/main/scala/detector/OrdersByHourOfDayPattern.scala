@@ -8,7 +8,7 @@ import org.joda.time.DateTime
 object OrdersByHourOfDayPattern {
 
 	/**
-	  * Tests for a pattern in the average purchase frequency by time of day on the "datetime" column in the dataframe (average is per day rounded to nearest integer).
+	  * Tests for a pattern in the average purchase frequency by time of day (average is per day rounded to nearest integer).
 	  * (Assumes time zone data is already normalized to UTC.)
 	  *
 	  * @param data	Dataframe to search for a pattern on.
@@ -19,7 +19,7 @@ object OrdersByHourOfDayPattern {
 			.select("datetime")
 			.withColumn("hour_of_day", date_format(col("datetime"), "H"))  // Create a column with the hour of day (0 to 23) for each date
 			.groupBy("hour_of_day")
-			.agg(round(count("hour_of_day").as("count") / PatternDetector.numberOfDays).cast(LongType).as("average_per_hour"))
+			.agg(round(count("hour_of_day").as("count") / PatternDetector.numberOfDays).cast(LongType).as("average_orders_per_hour"))
 			.orderBy(col("hour_of_day").cast(LongType))
 		if (PatternDetector.testMode)  // If we're in test mode...
 			newDf.show(24, false)  // ...show the data

@@ -158,7 +158,7 @@ object PatternDetector {
 		val dateRangeData = dateRangeDf.head()  // Copy the data into Row object
 		dateStart = new DateTime(dateRangeData(0)).withHourOfDay(0).withMinuteOfHour(0).withSecondOfMinute(0).withMillisOfSecond(0)  // Earliest date (stripped of time)
 		dateEnd = new DateTime(dateRangeData(1)).withHourOfDay(0).withMinuteOfHour(0).withSecondOfMinute(0).withMillisOfSecond(0)  // Latest date (stripped of time)
-		numberOfDays = Days.daysBetween(dateStart, dateEnd).getDays()
+		numberOfDays = Days.daysBetween(dateStart, dateEnd).getDays() + 1  // Total number of days covered by date range
 		if (PatternDetector.testMode)  // If we're in test mode...
 			println(s"Start date: $dateStart\nEnd date: $dateEnd\nNumber of days: $numberOfDays\n")  // ...verify that the date range was converted properly
 
@@ -238,6 +238,8 @@ object PatternDetector {
 		funcArr += OrdersByHourOfDayPattern.Go
 		descArr += "Months pattern"
 		funcArr += OrdersByMonthPattern.Go
+		descArr += "Weeks pattern"
+		funcArr += OrdersByWeekPattern.Go
 		descArr += "Payment Type pattern"
 		funcArr += PaymentTypePattern.Go
 		descArr += "Product Category pattern"

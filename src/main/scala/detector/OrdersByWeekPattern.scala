@@ -5,10 +5,10 @@ import org.apache.spark.sql.functions._
 import org.apache.spark.sql.types._
 import org.joda.time.DateTime
 
-object OrdersByMonthPattern {
+object OrdersByWeekPattern {
 
 	/**
-	  * Tests for a pattern in the average purchase frequency by month (average is per day rounded to nearest integer).
+	  * Tests for a pattern in the purchase frequency by week (not including first and last weeks).
 	  * (Assumes time zone data is already normalized to UTC.)
 	  *
 	  * @param data	Dataframe to search for a pattern on.
@@ -17,15 +17,18 @@ object OrdersByMonthPattern {
 	def Go(data: DataFrame): Option[String] = {
 		var newDf = data  // Generate the data
 			.select("datetime")
-			.withColumn("year_and_month", date_format(col("datetime"), "yyyy-MM"))  // Create a column with the year and month for each date
-			.groupBy("year_and_month")
-			.agg(round(count("year_and_month") / PatternDetector.daysPerMonthCol(col("year_and_month"))).cast(LongType).as("average_orders_per_day"))  // Averages counts per day by length of month
-			.orderBy(col("year_and_month"))
+			.withColumn("week", window(col("datetime"), "7 days").cast(StringType))
+			.groupBy("week")
+			.agg(count("week").as("count"))
+			.orderBy(col("week"))
+		val firstRow = newDf.head(1)(0).getString(0)
+		val lastRow = newDf.tail(1)(0).getString(0)
+		newDf = newDf.where("week != '" + firstRow + "' AND week != '" + lastRow + "'")  // Remove the first and last rows since they're likely not complete weeks
 		if (PatternDetector.testMode)  // If we're in test mode...
-			newDf.show()  // ...show the data
+			newDf.show(false)  // ...show the data
 		val ndev = PatternDetector.deviation1F(newDf)  // Check the data for a pattern
 		if (ndev > 1.0 + PatternDetector.marginOfError) {  // Pattern detected
-			val filename = PatternDetector.saveDataFrameAsCSV(newDf, "AvgOrdersPerDayByMonth.csv")  // Write the data to a file
+			val filename = PatternDetector.saveDataFrameAsCSV(newDf, "OrdersByWeek.csv")  // Write the data to a file
 			if (ndev < 2)
 				Option("Found possible pattern (" + ((ndev - 1) * 100) + "% chance)\nFilename: " + filename)
 			else
