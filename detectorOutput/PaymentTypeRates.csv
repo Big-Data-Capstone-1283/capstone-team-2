@@ -1,12 +1,5 @@
-payment_type,count
-<<<<<<< HEAD
-UPI,701
-Internet Banking,939
-Wallet,3459
-Credit Card,4901
-=======
-Credit Card,4908
-Internet Banking,936
-Wallet,3473
-UPI,683
->>>>>>> master
+payment_type,count,total,total_successful
+Credit Card,4896,5494,5250
+Internet Banking,974,1139,1065
+UPI,695,780,747
+Wallet,3435,3902,3691

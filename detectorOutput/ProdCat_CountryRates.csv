@@ -1,54 +1,26 @@
-product_category,country,count
-<<<<<<< HEAD
-books,Australia,101
-books,Canada,178
-books,New Zealand,21
-books,UK,290
-books,US,811
-clothing,Australia,111
-clothing,Canada,159
-clothing,New Zealand,24
-clothing,UK,291
-clothing,US,741
-electronics,Australia,110
-electronics,Canada,157
-electronics,New Zealand,23
-electronics,UK,281
-electronics,US,4061
-food,Australia,105
-food,Canada,168
-food,New Zealand,26
-food,UK,283
-food,US,764
-tools,Australia,113
-tools,Canada,154
-tools,New Zealand,17
-tools,UK,261
-tools,US,750
-=======
-books,Australia,409
-books,Canada,398
-books,New Zealand,406
-books,UK,399
-books,US,226
-clothing,Australia,435
-clothing,Canada,369
-clothing,New Zealand,380
-clothing,UK,379
-clothing,US,218
-electronics,Australia,367
-electronics,Canada,392
-electronics,New Zealand,395
-electronics,UK,383
-electronics,US,1105
-food,Australia,414
-food,Canada,388
-food,New Zealand,408
-food,UK,438
-food,US,238
-tools,Australia,368
-tools,Canada,408
-tools,New Zealand,446
-tools,UK,406
-tools,US,225
->>>>>>> master
+product_category,country,count,total,total_successful
+books,Australia,111,115,113
+books,Canada,155,178,172
+books,New Zealand,18,19,19
+books,UK,312,348,323
+books,US,790,912,866
+clothing,Australia,108,118,113
+clothing,Canada,143,147,142
+clothing,New Zealand,13,20,19
+clothing,UK,273,305,290
+clothing,US,769,870,826
+electronics,Australia,127,156,152
+electronics,Canada,177,213,209
+electronics,New Zealand,27,28,28
+electronics,UK,272,300,293
+electronics,US,3948,4466,4233
+food,Australia,103,112,105
+food,Canada,160,171,164
+food,New Zealand,31,32,32
+food,UK,296,344,323
+food,US,772,896,841
+tools,Australia,101,114,108
+tools,Canada,160,170,163
+tools,New Zealand,24,29,27
+tools,UK,277,319,299
+tools,US,833,933,893

@@ -1,26 +1,26 @@
-ecommerce_website_name,country,count
-Alibaba,Australia,24
-Alibaba,Canada,24
-Alibaba,New Zealand,12
-Alibaba,UK,74
-Alibaba,US,185
-Amazon,Australia,254
-Amazon,Canada,432
-Amazon,New Zealand,42
-Amazon,UK,638
-Amazon,US,3265
-Etsy,Australia,32
-Etsy,Canada,44
-Etsy,New Zealand,15
-Etsy,UK,99
-Etsy,US,547
-Walmart,Australia,160
-Walmart,Canada,197
-Walmart,New Zealand,22
-Walmart,UK,376
-Walmart,US,2112
-eBay,Australia,70
-eBay,Canada,119
-eBay,New Zealand,20
-eBay,UK,219
-eBay,US,1018
+ecommerce_website_name,country,count,total,total_successful
+Alibaba,Australia,23,30,28
+Alibaba,Canada,39,42,41
+Alibaba,New Zealand,18,18,18
+Alibaba,UK,61,69,63
+Alibaba,US,180,197,187
+Amazon,Australia,258,289,274
+Amazon,Canada,366,402,391
+Amazon,New Zealand,40,40,39
+Amazon,UK,696,796,740
+Amazon,US,3389,3856,3660
+Etsy,Australia,42,48,47
+Etsy,Canada,64,79,76
+Etsy,New Zealand,8,9,9
+Etsy,UK,94,109,105
+Etsy,US,516,571,549
+Walmart,Australia,138,151,149
+Walmart,Canada,204,226,219
+Walmart,New Zealand,35,49,48
+Walmart,UK,373,427,412
+Walmart,US,1996,2277,2155
+eBay,Australia,89,97,93
+eBay,Canada,122,130,123
+eBay,New Zealand,12,12,11
+eBay,UK,206,215,208
+eBay,US,1031,1176,1108

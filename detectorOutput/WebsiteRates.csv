@@ -1,14 +1,6 @@
-ecommerce_website_name,count
-<<<<<<< HEAD
-Walmart,2867
-Etsy,737
-Alibaba,319
-eBay,1446
-Amazon,4631
-=======
-Walmart,2795
-Etsy,735
-Alibaba,460
-eBay,1372
-Amazon,4638
->>>>>>> master
+ecommerce_website_name,count,total,total_successful
+Alibaba,321,356,337
+Etsy,724,816,786
+eBay,1460,1630,1543
+Walmart,2746,3130,2983
+Amazon,4749,5383,5104

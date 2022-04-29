@@ -1,0 +1,21 @@
+payment_type,country,count,total,total_successful
+Credit Card,Australia,361,407,396
+Credit Card,Canada,380,424,406
+Credit Card,New Zealand,65,73,71
+Credit Card,UK,671,741,708
+Credit Card,US,3419,3849,3669
+Internet Banking,Australia,60,68,64
+Internet Banking,Canada,68,75,74
+Internet Banking,New Zealand,9,13,13
+Internet Banking,UK,136,168,153
+Internet Banking,US,701,815,761
+UPI,Australia,48,55,53
+UPI,Canada,61,74,72
+UPI,New Zealand,5,5,5
+UPI,UK,110,127,125
+UPI,US,471,519,492
+Wallet,Australia,81,85,78
+Wallet,Canada,286,306,298
+Wallet,New Zealand,34,37,36
+Wallet,UK,513,580,542
+Wallet,US,2521,2894,2737

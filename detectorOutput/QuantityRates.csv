@@ -1,6 +1,6 @@
-quantity,count
-1,9200
-2,510
-3,92
-4,100
-5,98
+quantity,count,count_successful
+1,9237,8780
+2,482,451
+3,100,97
+4,91,90
+5,90,84
