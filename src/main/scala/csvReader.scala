@@ -92,24 +92,37 @@ object csvReader {
     val filter11 = filter10.filter(filter10("_c5") === "App" || filter10("_c5") === "Drug" ||
       filter10("_c5") === "Groceries" || filter10("_c5") === "Car" || filter10("_c5") === "Plants" ||
       filter10("_c5") === "Movie" )
-
-    val convertedDF = filter11.select(
-      filter11("_c0").cast(StringType).as("order_id"),
-      filter11("_c1").cast(StringType).as("customer_id"),
-      filter11("_c2").cast(StringType).as("customer_name"),
-      filter11("_c3").cast(StringType).as("product_id"),
-      filter11("_c4").cast(StringType).as("product_name"),
-      filter11("_c5").cast(StringType).as("product_category"),
-      filter11("_c6").cast(StringType).as("payment_type"),
-      filter11("_c7").cast(IntegerType).as("qty"),
-      filter11("_c8").cast(StringType).as("price"),
-      filter11("_c9").cast(TimestampType).as("datetime"),
-      filter11("_c10").cast(StringType).as("country"),
-      filter11("_c11").cast(StringType).as("city"),
-      filter11("_c12").cast(StringType).as("ecommerce_website_name"),
-      filter11("_c13").cast(StringType).as("payment_txn_id"),
-      filter11("_c14").cast(StringType).as("payment_txn_success"),
-      filter11("_c15").cast(StringType).as("failure_reason"))
+    
+    val filter12 = filter11.filter(filter11("_c10") === "United States" || filter11("_c10") === "Russia" ||
+      filter11("_c10") === "Venezuela" || filter11("_c10") === "Colombia" || filter11("_c10") === "Argentina" ||
+      filter11("_c10") === "India" || filter11("_c10") === "China" || filter11("_c10") === "South Africa" ||
+      filter11("_c10") === "Pakistan" || filter11("_c10") === "Mexico" || filter11("_c10") === "South Korea"||
+      filter11("_c10") === "United Kingdom" || filter11("_c10") === "Japan" || filter11("_c10") === "Israel" ||
+      filter11("_c10") === "Greece" || filter11("_c10") === "Australia" || filter11("_c10") === "Italy" ||
+      filter11("_c10") === "Spain" || filter11("_c10") === "Ireland" || filter11("_c10") === "Germany" ||
+      filter11("_c10") === "Sweden"|| filter11("_c10") === "Egypt" || filter11("_c10") === "Iran" ||
+      filter11("_c10") === "Poland" || filter11("_c10") === "Norway" || filter11("_c10") === "Turkey" ||
+      filter11("_c10") === "Ukraine" || filter11("_c10") === "Canada" || filter11("_c10") === "Belgium" ||
+      filter11("_c10") === "Netherlands" || filter11("_c10") === "Indonesia" || filter11("_c10") === "France"
+      || filter11("_c10") === "Scotland" || filter11("_c10") === "Brazil" || filter11("_c10") === "Portugal")
+    
+    val convertedDF = filter12.select(
+      filter12("_c0").cast(StringType).as("order_id"),
+      filter12("_c1").cast(StringType).as("customer_id"),
+      filter12("_c2").cast(StringType).as("customer_name"),
+      filter12("_c3").cast(StringType).as("product_id"),
+      filter12("_c4").cast(StringType).as("product_name"),
+      filter12("_c5").cast(StringType).as("product_category"),
+      filter12("_c6").cast(StringType).as("payment_type"),
+      filter12("_c7").cast(IntegerType).as("qty"),
+      filter12("_c8").cast(StringType).as("price"),
+      filter12("_c9").cast(TimestampType).as("datetime"),
+      filter12("_c10").cast(StringType).as("country"),
+      filter12("_c11").cast(StringType).as("city"),
+      filter12("_c12").cast(StringType).as("ecommerce_website_name"),
+      filter12("_c13").cast(StringType).as("payment_txn_id"),
+      filter12("_c14").cast(StringType).as("payment_txn_success"),
+      filter12("_c15").cast(StringType).as("failure_reason"))
     //println(convertedDF.count())
 
     val cleanDF = convertedDF.filter(convertedDF("datetime") >= "2000-01-01")
