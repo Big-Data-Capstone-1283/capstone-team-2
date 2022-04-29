@@ -1,10 +1,8 @@
 package consumer
-import org.apache.spark._
 import detector.PatternDetector
+import org.apache.spark._
 import org.apache.spark.sql.types._
 import org.apache.spark.sql.{DataFrame, SparkSession}
-
-
 object csvReader {
 
   def main(args: Array[String]): Unit = {
@@ -72,7 +70,7 @@ object csvReader {
       !filter5("_c11").contains("]") && !filter5("_c12").contains("]") && !filter5("_c13").contains("]") &&
       !filter5("_c14").contains("]") && !filter5("_c15").contains("]"))
     //println(filter6.count())
-
+    
     val filter7 = filter6.filter(filter6("_c12") === "www.amazon.com.br")
 
     val convertedDF = filter7.select(
