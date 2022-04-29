@@ -3,41 +3,35 @@ package detector
 import org.apache.spark.sql.DataFrame
 import org.apache.spark.sql.functions._
 
-object CountryPattern {
+object IncomeByProdCatPattern {
 
 	/**
-	  * Tests for a pattern in the purchase frequency by country.
+	  * Tests for a pattern in the income (price * qty) by product category.
 	  *
 	  * @param data	Dataframe to search for a pattern on.
 	  * @return		Search result as `Option[String]`.  (`None` = no pattern)
 	  */
 	def Go(data: DataFrame): Option[String] = {
-		var newDf = data  // Generate the "count" and "total" data
-			.select("country", "qty")
-			.groupBy("country")
-			.agg(count("country").as("count"), sum("qty").as("total"))
-		var newDfSucc = data  // Generate the "total_successful" data
-			.select(col("country").as("temp_country"), col("qty"))
+		var newDf = data  // Generate the "income" data
+			.select("product_category", "price", "qty")
 			.where("payment_txn_success = 'Y'")
-			.groupBy("temp_country")
-			.agg(sum("qty").as("total_successful"))
-		newDf = newDf  // Merge the two dataframes
-			.join(newDfSucc, newDf("country") === newDfSucc("temp_country"), "full")
-			.drop("temp_country")
-			.orderBy("count")
+			.groupBy("product_category")
+			.agg(count("product_category").as("count"), sum(col("qty") * col("price")).as("total_income"))
+			.withColumn("average_income_per_order", col("total_income") / col("count"))
+			.orderBy("product_category")
 		if (PatternDetector.testMode)  // If we're in test mode...
 			newDf.show(false)  // ...show the data
-		val ndev = PatternDetector.deviation1F(newDf)  // Check the data for a pattern
+		val ndev = PatternDetector.getDeviationDouble(newDf, 3, Seq(0))  // Check the "average_income" data for a pattern
 		var filename = ""
 		if (ndev > 1.0 + PatternDetector.marginOfError) {  // Pattern detected
-			filename = PatternDetector.saveDataFrameAsCSV(newDf, "CountryRates.csv")  // Write the data to a file
+			filename = PatternDetector.saveDataFrameAsCSV(newDf, "Income_ProdCat.csv")  // Write the data to a file
 			if (ndev < 2)
 				Option("Found possible pattern (" + ((ndev - 1) * 100) + "% chance)\nFilename: " + filename)
 			else
 				Option("Found pattern (100% chance)\nFilename: " + filename)
 		} else {  // No pattern detected
 			if (PatternDetector.forceCSV) {
-				filename = PatternDetector.saveDataFrameAsCSV(newDf, "CountryRates.csv")  // Write the data to a file
+				filename = PatternDetector.saveDataFrameAsCSV(newDf, "Income_ProdCat.csv")  // Write the data to a file
 				if (PatternDetector.testMode)  // If we're in test mode...
 					println(s"Data force-saved as: $filename\n")  // ...show the filename
 			}

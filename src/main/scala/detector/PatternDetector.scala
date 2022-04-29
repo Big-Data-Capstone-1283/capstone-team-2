@@ -15,6 +15,7 @@ object PatternDetector {
 	// Constants:
 	val marginOfError = 0.05  // 5% margin of error for pattern detection
 	val testMode = true // Determines if testing data is displayed
+	val forceCSV = true // Determines if CSV files are written out even when there's no pattern
 
 	// Constants and variables for date and time operations:
 	var dateStart = new DateTime()  // Start date of the timeframe that the dataframe covers (without time data)
@@ -71,73 +72,110 @@ object PatternDetector {
 	}
 
 	/**
-	  * Calclulates the normalized deviation beyond a margin or error from randomized data for a single-factor dataframe.
+	  * Calclulates the normalized deviation beyond a margin of error (set by this object's `marginOfError` variable) from randomized data on a dataframe column of type DoubleType.
+	  * If the `testMode` variable on the PatternDetector object is set to `true`, then it shows the results using the `entryColNums` column values as the row labels.
 	  *
-	  * @param df	A dataframe consisting of a label and a count for each label.
-	  * @return		A normalized deviation from random data.
+	  * @param df			A dataframe consisting of one or more StringType label columns and a DoubleType column to test.
+	  * @param dataColNum	The column number of DoubleType to test on (starting from column `0`).
+	  * @param labelColNums A sequence of StringType columns to use as labels for the data when showing them if "testMode" is `true`.
+	  * @return				Deviation from random data.  (< 1 means probably no pattern, >= 1 the larger the value the more likely it found a pattern)
 	  */
-	def deviation1F(df: DataFrame): Double = {
+	def getDeviationDouble(df: DataFrame, dataColNum: Int, labelColNums: Seq[Int]): Double = {
 		var newData = df.collect()
-		var entryNames = newData.map(_.getString(0))
-		var totalEntries = entryNames.length
-		var entryCounts = newData.map(_.getLong(1).toInt)
-		var totalRows = 0
-		for (i <- 0 to totalEntries - 1)
-			totalRows += entryCounts(i)
-		var avgCount = totalRows / totalEntries  // Compute what the count should be for each entry if they were all selected totally randomly
-		var totalDeviation = 0.0
-		var currentDeviation = 0.0
-		var margin = avgCount * marginOfError  // Ignore anything below the margin of error
-		if (PatternDetector.testMode)  // Show info if we're in test mode
-			println(s"Total data points: $totalRows\nDistinct values: $totalEntries\nExpected rate: $avgCount  +/-$margin")
-		for (i <- 0 to totalEntries - 1) {
-			currentDeviation = (entryCounts(i).toDouble - avgCount.toDouble) / margin
-			totalDeviation += currentDeviation.abs
-			if (PatternDetector.testMode)  // Show info if we're in test mode
-				if (currentDeviation.abs < 1.0)
-					println(s"${entryNames(i)}: ${entryCounts(i)} (within expected rate; deviation = $currentDeviation)")
+		var label = ""
+		var groupLabels = newData.map(x => {  // Generate a label for each group of data
+			for (i <- 0 to labelColNums.length - 1)
+				if (i == 0)
+					label = x.getString(labelColNums(0))
 				else
-					println(s"${entryNames(i)}: ${entryCounts(i)} (does NOT match expected rate; deviations = $currentDeviation)")
-		}
-		val normalizedDeviation = totalDeviation / totalEntries.toDouble
-		if (PatternDetector.testMode)  // Show info if we're in test mode
-			println(s"Total deviation: $totalDeviation\nNormalized deviation: $normalizedDeviation\n")
-		normalizedDeviation
-	}
-
-	/**
-	  * Calclulates the normalized deviation beyond a margin or error from randomized data for a two-factor dataframe.
-	  *
-	  * @param df	A dataframe consisting of a label and a count for each label.
-	  * @return		A normalized deviation from random data.
-	  */
-	def deviation2F(df: DataFrame): Double = {
-		var newData = df.collect()
-		var entryNames = newData.map(x => x.getString(0) + "+" + x.getString(1))
-		var totalEntries = entryNames.length
-		var entryCounts = newData.map(_.getLong(2).toInt)
-		var totalRows = 0
-		for (i <- 0 to totalEntries - 1)
-			totalRows += entryCounts(i)
-		var avgCount = totalRows / totalEntries  // Compute what the count should be for each entry if they were all selected totally randomly
-		var totalDeviation = 0.0
+					label += "+" + x.getString(labelColNums(i))
+			label
+		})
+		var groupCount = groupLabels.length  // Number of distinct groups of data
+		var entryCounts = newData.map(_.getDouble(dataColNum))  // Array of values for each group
+		var groupTotal = entryCounts.sum  // Sum of all group values
+		var avgCount = groupTotal / groupCount  // Compute what the count should be for each entry if they were all selected totally randomly
+		var totalDeviation = 0.0  // Sum of all groups' deviations
 		var currentDeviation = 0.0
 		var margin = avgCount * marginOfError  // Ignore anything below the margin of error
-		if (PatternDetector.testMode)  // Show info if we're in test mode
-			println(s"Total data points: $totalRows\nDistinct values: $totalEntries\nExpected rate: $avgCount  +/-$margin")
-		for (i <- 0 to totalEntries - 1) {
+		if (PatternDetector.testMode) { // Show info if we're in test mode
+			println(s"Column tested: ${df.schema.fields(dataColNum).name}\nDistinct groups: $groupCount\nSum of group values: $groupTotal\nExpected rate: $avgCount  +/-$margin\nGroups:")
+		}
+		for (i <- 0 to groupCount - 1) {
 			currentDeviation = (entryCounts(i).toDouble - avgCount.toDouble) / margin
 			totalDeviation += currentDeviation.abs
 			if (PatternDetector.testMode)  // Show info if we're in test mode
 				if (currentDeviation.abs <= 1.0)
-					println(s"${entryNames(i)}: ${entryCounts(i)} (within expected rate; deviation = $currentDeviation)")
+					println(s"  ${groupLabels(i)}: ${entryCounts(i)} (within expected rate; deviation = $currentDeviation)")
 				else
-					println(s"${entryNames(i)}: ${entryCounts(i)} (does NOT match expected rate; deviations = $currentDeviation)")
+					println(s"  ${groupLabels(i)}: ${entryCounts(i)} (does NOT match expected rate; deviations = $currentDeviation)")
 		}
-		val normalizedDeviation = totalDeviation / totalEntries.toDouble
+		val normalizedDeviation = totalDeviation / groupCount.toDouble  // Resulting deviation (< 1 means probably no pattern, >= 1 the larger the value the more likely it found a pattern)
 		if (PatternDetector.testMode)  // Show info if we're in test mode
 			println(s"Total deviation: $totalDeviation\nNormalized deviation: $normalizedDeviation\n")
 		normalizedDeviation
+	}
+	/**
+	  * Calclulates the normalized deviation beyond a margin of error (set by this object's `marginOfError` variable) from randomized data on a dataframe column of type LongType.
+	  * If the `testMode` variable on the PatternDetector object is set to `true`, then it shows the results using the `entryColNums` column values as the row labels.
+	  *
+	  * @param df			A dataframe consisting of one or more StringType label columns and a LongType column to test.
+	  * @param dataColNum	The column number of LongType to test on (starting from column `0`).
+	  * @param labelColNums A sequence of StringType columns to use as labels for the data when showing them if "testMode" is `true`.
+	  * @return				Deviation from random data.  (< 1 means probably no pattern, >= 1 the larger the value the more likely it found a pattern)
+	  */
+	def getDeviationLong(df: DataFrame, dataColNum: Int, labelColNums: Seq[Int]): Double = {
+		var newData = df.collect()
+		var label = ""
+		var groupLabels = newData.map(x => {  // Generate a label for each group of data
+			for (i <- 0 to labelColNums.length - 1)
+				if (i == 0)
+					label = x.getString(labelColNums(0))
+				else
+					label += "+" + x.getString(labelColNums(i))
+			label
+		})
+		var groupCount = groupLabels.length  // Number of distinct groups of data
+		var entryCounts = newData.map(_.getLong(dataColNum))  // Array of values for each group
+		var groupTotal = entryCounts.sum  // Sum of all group values
+		var avgCount = groupTotal / groupCount  // Compute what the count should be for each entry if they were all selected totally randomly
+		var totalDeviation = 0.0  // Sum of all groups' deviations
+		var currentDeviation = 0.0
+		var margin = avgCount * marginOfError  // Ignore anything below the margin of error
+		if (PatternDetector.testMode) { // Show info if we're in test mode
+			println(s"Column tested: ${df.schema.fields(dataColNum).name}\nDistinct groups: $groupCount\nSum of group values: $groupTotal\nExpected rate: $avgCount  +/-$margin\nGroups:")
+		}
+		for (i <- 0 to groupCount - 1) {
+			currentDeviation = (entryCounts(i).toDouble - avgCount.toDouble) / margin
+			totalDeviation += currentDeviation.abs
+			if (PatternDetector.testMode)  // Show info if we're in test mode
+				if (currentDeviation.abs <= 1.0)
+					println(s"  ${groupLabels(i)}: ${entryCounts(i)} (within expected rate; deviation = $currentDeviation)")
+				else
+					println(s"  ${groupLabels(i)}: ${entryCounts(i)} (does NOT match expected rate; deviations = $currentDeviation)")
+		}
+		val normalizedDeviation = totalDeviation / groupCount.toDouble  // Resulting deviation (< 1 means probably no pattern, >= 1 the larger the value the more likely it found a pattern)
+		if (PatternDetector.testMode)  // Show info if we're in test mode
+			println(s"Total deviation: $totalDeviation\nNormalized deviation: $normalizedDeviation\n")
+		normalizedDeviation
+	}
+	/**
+	  * Calclulates the normalized deviation beyond a margin of error from randomized data for a single-factor dataframe.
+	  *
+	  * @param df	A dataframe consisting of a label (column 0) and a count (column 1) for each label.
+	  * @return				Deviation from random data.  (< 1 means probably no pattern, >= 1 the larger the value the more likely it found a pattern)
+	  */
+	def deviation1F(df: DataFrame): Double = {
+		getDeviationLong(df, 1, Seq(0))
+	}
+	/**
+	  * Calclulates the normalized deviation beyond a margin of error from randomized data for a two-factor dataframe.
+	  *
+	  * @param df	A dataframe consisting of two labels (columns 0 & 1) and a count (column 2) for each label.
+	  * @return				Deviation from random data.  (< 1 means probably no pattern, >= 1 the larger the value the more likely it found a pattern)
+	  */
+	def deviation2F(df: DataFrame): Double = {
+		getDeviationLong(df, 2, Seq(0, 1))
 	}
 
 	/**
@@ -215,23 +253,25 @@ object PatternDetector {
 		var descArr = ArrayBuffer.empty[String]  // Description/title of each function
 		var result: Option[String] = None
 
-		saveDataFrameAsCSV(data, "Full_Cleaned_Dataset.csv")  // Write out the data we receive
+		val fname = saveDataFrameAsCSV(data, "Full_Cleaned_Dataset.csv")  // Write out the data we receive
+		if (PatternDetector.testMode)  // If we're in test mode...
+			println(s"Original dataset saved as: $fname\n\n=====================================\n")  // ...show where the data was saved
 
 		getDateTimeInfo(data)  // Generates the data from the dataframe that's needed for pattern tests on date and time
 
-		// Run the "quantity" pattern test to see if we can ignore the "qty" data
-		val qtyResult = QuantityPattern.Go(data)
-		if (qtyResult == None)
-			println("Quantity pattern: None")
-		else
-			println(s"Quantity pattern: ${qtyResult.get}")
-		if (PatternDetector.testMode)  // Show if we're in test mode
-			println("\n=====================================\n")
-
 		// ** Add new pattern detection functions below **
-		// 1-factor patterns  (quantity pattern executed above)
+		/* Resulting output columns:
+				first one or two columns = group label(s)
+				count = number of rows in the data with each group  (usually an integer)
+				total = sum of "qty" for each group  (usually an integer)
+				total_successful = sum of "qty" for each group where "payment_txn_success" = "Y"  (usually an integer)
+			Some other columns are used for certain patterns, see each *Pattern.scala file for details.
+		*/
+		// 1-factor patterns
 		descArr += "Country pattern"
 		funcArr += CountryPattern.Go
+		descArr += "Failure Reason pattern"
+		funcArr += FailureReasonPattern.Go
 		descArr += "Day of Week pattern"
 		funcArr += OrdersByDayOfWeekPattern.Go
 		descArr += "Hour of Day pattern"
@@ -244,35 +284,35 @@ object PatternDetector {
 		funcArr += PaymentTypePattern.Go
 		descArr += "Product Category pattern"
 		funcArr += ProductCategoryPattern.Go
+		descArr += "Quantity pattern"
+		funcArr += QuantityPattern.Go
 		descArr += "Transaction Success pattern"
-		funcArr += TxnSuccessRatePattern.Go
-		descArr += "Ecommerce Website pattern"
+		funcArr += TxnSuccessPattern.Go
+		descArr += "Website pattern"
 		funcArr += WebsitePattern.Go
 
 		// 2-factor patterns
+		descArr += "Income by Product Category pattern"
+		funcArr += IncomeByProdCatPattern.Go
+		descArr += "Payment Type + City pattern"
+		funcArr += PmtType_CityPattern.Go
 		descArr += "Payment Type + Country pattern"
 		funcArr += PmtType_CountryPattern.Go
-		descArr += "Payment Type + Product Category"
-		funcArr += PmtType_ProdCatPattern.Go
+		descArr += "Product Category + City pattern"
+		funcArr += ProdCat_CityPattern.Go
 		descArr += "Product Category + Country pattern"
 		funcArr += ProdCat_CountryPattern.Go
-		descArr += "Transaction Success + Payment Type pattern"
-		funcArr += TxnSuccess_PmtTypePattern.Go
+		descArr += "Product Category + Payment Type"
+		funcArr += ProdCat_PmtTypePattern.Go
+		descArr += "Product Category + Website"
+		funcArr += ProdCat_WebsitePattern.Go
 		descArr += "Website + Country pattern"
 		funcArr += Website_CountryPattern.Go
-		if (qtyResult != None) {  // Only run these tests if there is any kind of pattern in the quantity rates
-			descArr += "Total Items per Category pattern"
-			funcArr += TotalItemsPerCategory.Go
-			descArr += "Total Items per Country pattern"
-			funcArr += TotalItemsPerCountry.Go
-			descArr += "Total Items by Day of Week pattern"
-			funcArr += TotalItemsPerDayPattern.Go
-			descArr += "Total Items per Website pattern"
-			funcArr += TotalItemsPerWebsite.Go
-		}
 
 		// Run all of the pattern tests
 		for (i <- 0 to funcArr.length - 1) {
+			if (PatternDetector.testMode)
+				println(s"Results for '${descArr(i)}':\n")
 			result = funcArr(i)(data)  // Test for pattern
 			if (result == None)
 				println(s"${descArr(i)}: None")
