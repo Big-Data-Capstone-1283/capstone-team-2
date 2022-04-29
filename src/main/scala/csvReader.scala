@@ -88,24 +88,28 @@ object csvReader {
       !filter9("_c8").contains(">") &&  !filter9("_c9").contains(">") && !filter9("_c10").contains(">") &&
       !filter9("_c11").contains(">") && !filter9("_c12").contains(">") && !filter9("_c13").contains(">") &&
       !filter9("_c14").contains(">") && !filter9("_c15").contains(">"))
-    
-    val convertedDF = filter8.select(
-      filter8("_c0").cast(StringType).as("order_id"),
-      filter8("_c1").cast(StringType).as("customer_id"),
-      filter8("_c2").cast(StringType).as("customer_name"),
-      filter8("_c3").cast(StringType).as("product_id"),
-      filter8("_c4").cast(StringType).as("product_name"),
-      filter8("_c5").cast(StringType).as("product_category"),
-      filter8("_c6").cast(StringType).as("payment_type"),
-      filter8("_c7").cast(IntegerType).as("qty"),
-      filter8("_c8").cast(StringType).as("price"),
-      filter8("_c9").cast(TimestampType).as("datetime"),
-      filter8("_c10").cast(StringType).as("country"),
-      filter8("_c11").cast(StringType).as("city"),
-      filter8("_c12").cast(StringType).as("ecommerce_website_name"),
-      filter8("_c13").cast(StringType).as("payment_txn_id"),
-      filter8("_c14").cast(StringType).as("payment_txn_success"),
-      filter8("_c15").cast(StringType).as("failure_reason"))
+
+    val filter11 = filter10.filter(filter10("_c5") === "App" || filter10("_c5") === "Drug" ||
+      filter10("_c5") === "Groceries" || filter10("_c5") === "Car" || filter10("_c5") === "Plants" ||
+      filter10("_c5") === "Movie" )
+
+    val convertedDF = filter11.select(
+      filter11("_c0").cast(StringType).as("order_id"),
+      filter11("_c1").cast(StringType).as("customer_id"),
+      filter11("_c2").cast(StringType).as("customer_name"),
+      filter11("_c3").cast(StringType).as("product_id"),
+      filter11("_c4").cast(StringType).as("product_name"),
+      filter11("_c5").cast(StringType).as("product_category"),
+      filter11("_c6").cast(StringType).as("payment_type"),
+      filter11("_c7").cast(IntegerType).as("qty"),
+      filter11("_c8").cast(StringType).as("price"),
+      filter11("_c9").cast(TimestampType).as("datetime"),
+      filter11("_c10").cast(StringType).as("country"),
+      filter11("_c11").cast(StringType).as("city"),
+      filter11("_c12").cast(StringType).as("ecommerce_website_name"),
+      filter11("_c13").cast(StringType).as("payment_txn_id"),
+      filter11("_c14").cast(StringType).as("payment_txn_success"),
+      filter11("_c15").cast(StringType).as("failure_reason"))
     //println(convertedDF.count())
 
     val cleanDF = convertedDF.filter(convertedDF("datetime") >= "2000-01-01")
