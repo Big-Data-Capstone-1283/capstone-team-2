@@ -1,5 +1,4 @@
 package consumer
-import detector.PatternDetector
 import org.apache.spark._
 import org.apache.spark.sql.types._
 import org.apache.spark.sql.{DataFrame, SparkSession}
@@ -72,28 +71,45 @@ object csvReader {
     //println(filter6.count())
     
     val filter7 = filter6.filter(filter6("_c12") === "www.amazon.com.br")
+    
+    val filter8 = filter7.filter(filter7("_c6") === "Bank" || filter7("_c6") === "Card" || 
+      filter7("_c6") === "Paypal" || filter7("_c6") === "UPI")
 
-    val convertedDF = filter7.select(
-      filter7("_c0").cast(StringType).as("order_id"),
-      filter7("_c1").cast(StringType).as("customer_id"),
-      filter7("_c2").cast(StringType).as("customer_name"),
-      filter7("_c3").cast(StringType).as("product_id"),
-      filter7("_c4").cast(StringType).as("product_name"),
-      filter7("_c5").cast(StringType).as("product_category"),
-      filter7("_c6").cast(StringType).as("payment_type"),
-      filter7("_c7").cast(IntegerType).as("qty"),
-      filter7("_c8").cast(StringType).as("price"),
-      filter7("_c9").cast(TimestampType).as("datetime"),
-      filter7("_c10").cast(StringType).as("country"),
-      filter7("_c11").cast(StringType).as("city"),
-      filter7("_c12").cast(StringType).as("ecommerce_website_name"),
-      filter7("_c13").cast(StringType).as("payment_txn_id"),
-      filter7("_c14").cast(StringType).as("payment_txn_success"),
-      filter7("_c15").cast(StringType).as("failure_reason"))
+    val filter9 = filter8.filter(!filter8("_c0").contains("<") && !filter8("_c1").contains("<") &&
+      !filter8("_c2").contains("<") && !filter8("_c3").contains("<") && !filter8("_c4").contains("<")
+      && !filter8("_c5").contains("<") && !filter8("_c6").contains("<") && !filter8("_c7").contains("<") &&
+      !filter8("_c8").contains("<") &&  !filter8("_c9").contains("<") && !filter8("_c10").contains("<") &&
+      !filter8("_c11").contains("<") && !filter8("_c12").contains("<") && !filter8("_c13").contains("<") &&
+      !filter8("_c14").contains("<") && !filter8("_c15").contains("<"))
+
+    val filter10 = filter9.filter(!filter9("_c0").contains(">") && !filter9("_c1").contains(">") &&
+      !filter9("_c2").contains(">") && !filter9("_c3").contains(">") && !filter9("_c4").contains(">")
+      && !filter9("_c5").contains(">") && !filter9("_c6").contains(">") && !filter9("_c7").contains(">") &&
+      !filter9("_c8").contains(">") &&  !filter9("_c9").contains(">") && !filter9("_c10").contains(">") &&
+      !filter9("_c11").contains(">") && !filter9("_c12").contains(">") && !filter9("_c13").contains(">") &&
+      !filter9("_c14").contains(">") && !filter9("_c15").contains(">"))
+    
+    val convertedDF = filter8.select(
+      filter8("_c0").cast(StringType).as("order_id"),
+      filter8("_c1").cast(StringType).as("customer_id"),
+      filter8("_c2").cast(StringType).as("customer_name"),
+      filter8("_c3").cast(StringType).as("product_id"),
+      filter8("_c4").cast(StringType).as("product_name"),
+      filter8("_c5").cast(StringType).as("product_category"),
+      filter8("_c6").cast(StringType).as("payment_type"),
+      filter8("_c7").cast(IntegerType).as("qty"),
+      filter8("_c8").cast(StringType).as("price"),
+      filter8("_c9").cast(TimestampType).as("datetime"),
+      filter8("_c10").cast(StringType).as("country"),
+      filter8("_c11").cast(StringType).as("city"),
+      filter8("_c12").cast(StringType).as("ecommerce_website_name"),
+      filter8("_c13").cast(StringType).as("payment_txn_id"),
+      filter8("_c14").cast(StringType).as("payment_txn_success"),
+      filter8("_c15").cast(StringType).as("failure_reason"))
     //println(convertedDF.count())
 
     val cleanDF = convertedDF.filter(convertedDF("datetime") >= "2000-01-01")
     println(dfPurchases.count()-cleanDF.count() + " rows were removed")
-    PatternDetector.Go(cleanDF)
+    //PatternDetector.Go(cleanDF)
   }
 }
