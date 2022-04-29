@@ -1,0 +1,9 @@
+payment_type,payment_txn_success,count
+Paypal,N,632
+Card,N,637
+UPI,N,669
+Bank,N,672
+Paypal,Y,12028
+Card,Y,12057
+Bank,Y,12097
+UPI,Y,12152
