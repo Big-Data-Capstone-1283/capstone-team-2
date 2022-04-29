@@ -40,7 +40,7 @@ object KafkaProcesser {
 
 		kafkaToSpark.kafkaProcessor()
 		kafkaToSpark.testColumnCount()
-		kafkaToSpark.getDistinctCountriesCities()
+		//kafkaToSpark.getDistinctCountriesCities()
 
 
 		// End Spark session

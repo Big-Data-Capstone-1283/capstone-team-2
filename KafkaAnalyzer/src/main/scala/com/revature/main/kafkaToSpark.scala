@@ -5,11 +5,13 @@ import com.revature.main.kafkaToSpark.{FORCE_TIMER_PRINT, kafkaProcessor}
 import com.revature.main.mySparkUtils._
 import org.apache.commons.io.FileUtils
 import org.apache.log4j.{Level, Logger}
-import org.apache.spark.sql.functions.{col, expr, split}
+import org.apache.spark.sql.functions.{col, expr, split, to_date, to_timestamp}
+import org.apache.spark.sql.types.IntegerType
 import org.apache.spark.sql.{DataFrame, SaveMode, SparkSession}
 
 import java.io.{File, PrintWriter}
 import scala.Console.{RED, RESET, UNDERLINED, WHITE_B, YELLOW_B}
+import scala.collection.mutable
 import scala.io.Source
 
 object kafkaToSpark {
@@ -25,9 +27,14 @@ object kafkaToSpark {
   var preProcessed: DataFrame = null
   var processedData: DataFrame = null
 
+  var startingTotalRows:Int=0
+  var rowsBeforeTransaction:Int=0
+  var rowsAfterTransaction:Int=0
+  var totalRemovedCount: Int=0
 
+  var removalMap:mutable.Map[String,Int]=scala.collection.mutable.Map[String, Int]()
+  removalMap+="Total Removed Count"->0
 
-  var extraColumns, nullValue,
 
   def testColumnCount():Unit={
   // Read "covid_19_data.csv" data as a dataframe
@@ -37,26 +44,140 @@ object kafkaToSpark {
     startTimer()
     var df = spark.read.format("csv").option("header", "false").option("inferSchema", "true")
       .load(filename)
+    startingTotalRows=df.count().toInt
+    rowsBeforeTransaction=df.count().toInt
     val rawDataColumnCount=df.columns.length
     println(s"There are ${formatText_HIGHLIGHT_UNDERLINE(rawDataColumnCount)} columns in the raw data")
     if (rawDataColumnCount!=16){
       if (rawDataColumnCount>16) println("The raw data contains rows with MORE columns than the defined schema")
       if (rawDataColumnCount<16) println("The raw data contains rows with LESS columns than the defined schema")
       var badFieldsCount=0
-      for (i<-16 to rawDataColumnCount-1) {
+      for (i<-16 until rawDataColumnCount) {
         var colName="_c"+i.toString
-        df.filter(df.col(colName).isNotNull).show()
-        badFieldsCount+=df.filter(df.col(colName).isNotNull).count().toInt
-        println(s"bad fields in column $i = $badFieldsCount")
+        df=df.filter(df.col(colName).isNull)
       }
-      println(s"total bad fields $badFieldsCount.toString")
-
+      for (i<-rawDataColumnCount until 16 by -1) {
+        var colName="_c"+i.toString
+        df=df.drop(colName)
+      }
     } else {
       println("The raw data conforms to the schema in regards to column count")
     }
-    stopTimer()
-    df.show(5, false)
+    rowsAfterTransaction=df.count().toInt
+    rowRemovalTracker("Extra Columns")
+
+    //REMOVE ROWS WITH INVALID CHARACTERS
+    rowsBeforeTransaction=rowsAfterTransaction
+    for (i<-0 to 15) {
+      var colName = "_c" + i.toString
+      if (i==4||i==9) {
+        df = df.filter(!col(colName).rlike(raw"[\^<>;|\[\]{}?!#%^&*@+=_\/]"))
+      } else {
+        df = df.filter(!col(colName).rlike(raw"[\^<>;|\[\]{}?!#%^&*@+=_\/]"))
+      }
+    }
+    rowsAfterTransaction=df.count().toInt
+    rowRemovalTracker("Illegal Characters")
+
+
+    //RENAME COLUMNS
+    df = df.select(
+      col("_c0").as("order_id"),
+      col("_c1").as("customer_id"),
+      col("_c2").as("customer_name"),
+      col("_c3").as("product_id"),
+      col("_c4").as("product_name"),
+      col("_c5").as("product_category"),
+      col("_c6").as("payment_type"),
+      col("_c7").as("qty"),
+      col("_c8").as("price"),
+      col("_c9").as("datetime"),
+      col("_c10").as("country"),
+      col("_c11").as("city"),
+      col("_c12").as("ecommerce_website_name"),
+      col("_c13").as("payment_txn_id"),
+      col("_c14").as("payment_txn_success"),
+      col("_c15").as("failure_reason")
+    )
+    df.show()
+
+    //REMOVE ROWS WHERE SITE NOT EQUAL WWW.AMAZON.BR
+    rowsBeforeTransaction=rowsAfterTransaction
+
+    df=df.filter(col("ecommerce_website_name").like("www.amazon.com.br"))
+
+    rowsAfterTransaction=df.count().toInt
+    rowRemovalTracker("Invalid Website")
+
+
+    //REMOVE ROWS WITH INVALID DATE_TIME
+    rowsBeforeTransaction=rowsAfterTransaction
+    df=df.withColumn("datetime",to_timestamp(col("datetime")))
+    df=df.filter(col("datetime").isNotNull)
     df.printSchema()
+    rowsAfterTransaction=df.count().toInt
+    rowRemovalTracker("Invalid DateTime")
+
+    //REMOVE ROWS WITH INVALID TYPE
+    rowsBeforeTransaction=rowsAfterTransaction
+    df=df.withColumn("qty",col("qty").cast(IntegerType))
+    df=df.filter(col("qty").isNotNull)
+
+    rowsAfterTransaction=df.count().toInt
+    rowRemovalTracker("Invalid Type")
+
+
+
+    //REMOVE ROWS WITH NULL VALUE EXCEPT failure_reason
+//    rowsBeforeTransaction=rowsAfterTransaction
+//
+//    rowsAfterTransaction=df.count().toInt
+//    rowRemovalTracker("     ")
+
+
+    //REMOVE WHERE CUSTOMER NAME CONTAINS NUMBERS
+
+    //REMOVE WHERE CUSTOMER NAME CONTAINS MORE THAN ONE SPACE
+
+    //REMOVE WHERE payment_txn_success NOT EQUAL 'Y' or 'N'
+
+    //REMOVE WHERE ORDER ID NOT UNIQUE
+
+    //REMOVE LOWER COUNT ON CID WHERE (GROUPBY CUSTOMER ID & GROUPBY CUSTOMER NAME) RETURNS MORE THAN ONE ROW
+
+    //REMOVE WHERE COUNTRY IS NOT A REAL COUNTRY
+
+    //REMOVE WHERE CITY IS NOT A REAL CITY
+
+    //REMOVE WHERE paymentReason NOT EQUAL TO
+                      /**
+                      {
+                     "Connection Interrupted",
+                     "PayPal Service Down",
+                     "Server Maintenance",
+                     "Card Information Incorrect",
+                     "Fraud",
+                     "Out of Funds",
+                     "Invalid Routing Number",
+                     "Bank Account Suspended",
+                     "Incorrect Credentials",
+                     "Card Expired"
+                      }
+                      */
+
+    //OUTPUT FINDINGS AND SAVE FINALIZED DATAFRAME AS .CSV
+    df.printSchema()
+    println(df.count())
+    println(s"Total bad rows removed: $totalRemovedCount")
+    saveDataFrameAsCSV(df,"KafkaCleanedData.csv")
+  }
+
+  def rowRemovalTracker(rowRemovalReason:String):Unit={
+    val removedCount = rowsBeforeTransaction - rowsAfterTransaction
+    removalMap+= rowRemovalReason -> removedCount
+    totalRemovedCount = startingTotalRows - rowsAfterTransaction
+      removalMap("Total Removed Count")= totalRemovedCount
+    println(removalMap)
   }
 
   private def formatText_HIGHLIGHT_UNDERLINE(input:Any):String={
@@ -78,7 +199,6 @@ object kafkaToSpark {
 
 
   def testDateTime():Unit={
-
     //row count before
 
     //filter date range between 2000 at earliest
@@ -86,7 +206,6 @@ object kafkaToSpark {
     //row count after
 
     //rows removed
-
   }
 
   def getDistinctCountriesCities():Unit={
@@ -130,17 +249,17 @@ object kafkaToSpark {
       split(col("csv"), ",").getItem(9).as("datetime"),
       split(col("csv"), ",").getItem(10).as("country"),
       split(col("csv"), ",").getItem(11).as("city"),
-      split(col("csv"), ",").getItem(12).as("ecommerce_website_namne"),
+      split(col("csv"), ",").getItem(12).as("ecommerce_website_name"),
       split(col("csv"), ",").getItem(13).as("payment_txn_id"),
       split(col("csv"), ",").getItem(14).as("payment_txn_success"),
       split(col("csv"), ",").getItem(15).as("failure_reason")
     )
       .drop("csv")
 
-    df2.printSchema()
-    df2.printLength
+//    df2.printSchema()
+//    df2.printLength
     stopTimer()
-    df2.show(5, false)
+//    df2.show(5, false)
 
     //Write the data out as a file to be used for visualization
     processedData = df2
