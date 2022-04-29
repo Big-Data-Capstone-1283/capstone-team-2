@@ -6,7 +6,7 @@ import com.revature.main.mySparkUtils._
 import org.apache.commons.io.FileUtils
 import org.apache.log4j.{Level, Logger}
 import org.apache.spark.sql.functions.{col, expr, split, to_date, to_timestamp}
-import org.apache.spark.sql.types.IntegerType
+import org.apache.spark.sql.types.{IntegerType, StringType, StructField, TimestampType}
 import org.apache.spark.sql.{DataFrame, SaveMode, SparkSession}
 
 import java.io.{File, PrintWriter}
@@ -126,6 +126,7 @@ object kafkaToSpark {
     rowsAfterTransaction=df.count().toInt
     rowRemovalTracker("Invalid Type")
 
+    df=df.groupBy("payment_txn_id")
 
 
     //REMOVE ROWS WITH NULL VALUE EXCEPT failure_reason
@@ -133,7 +134,6 @@ object kafkaToSpark {
 //
 //    rowsAfterTransaction=df.count().toInt
 //    rowRemovalTracker("     ")
-
 
     //REMOVE WHERE CUSTOMER NAME CONTAINS NUMBERS
 
@@ -170,6 +170,26 @@ object kafkaToSpark {
     println(df.count())
     println(s"Total bad rows removed: $totalRemovedCount")
     saveDataFrameAsCSV(df,"KafkaCleanedData.csv")
+
+    val dfForPatternDetector=df
+    .withColumn("order_id",col("order_id").cast(StringType))
+    .withColumn("customer_id",col("customer_id").cast(StringType))
+    .withColumn("customer_name",col("customer_name").cast(StringType))
+    .withColumn("product_id",col("product_id").cast(StringType))
+    .withColumn("product_name",col("product_name").cast(StringType))
+    .withColumn("product_category",col("product_category").cast(StringType))
+    .withColumn("payment_type",col("payment_type").cast(StringType))
+    .withColumn("qty",col("qty").cast(IntegerType))
+    .withColumn("price",col("price").cast(StringType))
+    .withColumn("datetime",col("datetime").cast(TimestampType))
+    .withColumn("country",col("country").cast(StringType))
+    .withColumn("city",col("city").cast(StringType))
+    .withColumn("ecommerce_website_name",col("ecommerce_website_name").cast(StringType))
+    .withColumn("payment_txn_id",col("payment_txn_id").cast(StringType))
+    .withColumn("payment_txn_success",col("payment_txn_success").cast(StringType))
+    .withColumn("failure_reason",col("failure_reason").cast(StringType))
+
+    csvWriterHelper(dfForPatternDetector, "csvForPatternTester.csv")
   }
 
   def rowRemovalTracker(rowRemovalReason:String):Unit={
