@@ -23,14 +23,14 @@ object FailureReasonPattern {
 		val ndev = PatternDetector.deviation1F(newDf)  // Check the data for a pattern
 		var filename = ""
 		if (ndev > 1.0 + PatternDetector.marginOfError) {  // Pattern detected
-			filename = PatternDetector.saveDataFrameAsCSV(newDf, "failure_reasonRates.csv")  // Write the data to a file
+			filename = PatternDetector.saveDataFrameAsCSV(newDf, "FailureReasonRates.csv")  // Write the data to a file
 			if (ndev < 2)
 				Option("Found possible pattern (" + ((ndev - 1) * 100) + "% chance)\nFilename: " + filename)
 			else
 				Option("Found pattern (100% chance)\nFilename: " + filename)
 		} else {  // No pattern detected
 			if (PatternDetector.forceCSV) {
-				filename = PatternDetector.saveDataFrameAsCSV(newDf, "failure_reasonRates.csv")  // Write the data to a file
+				filename = PatternDetector.saveDataFrameAsCSV(newDf, "FailureReasonRates.csv")  // Write the data to a file
 				if (PatternDetector.testMode)  // If we're in test mode...
 					println(s"Data force-saved as: $filename\n")  // ...show the filename
 			}

@@ -1,11 +1,16 @@
 package consumer
+
+import org.apache.log4j.{ Level, Logger }
 import org.apache.spark._
 import org.apache.spark.sql.types._
 import org.apache.spark.sql.{DataFrame, SparkSession}
+import detector.PatternDetector
+
 object csvReader {
 
   def main(args: Array[String]): Unit = {
 
+	Logger.getLogger("org").setLevel(Level.ERROR)  // Hide most of the initial non-error log messages
     val spark: SparkSession = SparkSession.builder()
       .master("local[1]")
       .appName("SparkByExamples.com")
@@ -154,6 +159,6 @@ object csvReader {
     println(dfPurchases.count()-cleanDF.count() + " rows were removed")
 
     //Send to pattern detector
-    //PatternDetector.Go(cleanDF)
+    PatternDetector.Go(cleanDF)
   }
 }
