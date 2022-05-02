@@ -15,7 +15,7 @@ object PatternDetector {
 	// Constants:
 	val marginOfError = 0.05  // 5% margin of error for pattern detection
 	val testMode = true // Determines if testing data is displayed
-	val forceCSV = true // Determines if CSV files are written out even when there's no pattern
+	val forceCSV = false // Determines if CSV files are written out even when there's no pattern
 
 	// Constants and variables for date and time operations:
 	var dateStart = new DateTime()  // Start date of the timeframe that the dataframe covers (without time data)
@@ -292,12 +292,36 @@ object PatternDetector {
 		funcArr += WebsitePattern.Go
 
 		// 2-factor patterns
+		descArr += "Country by Day of Week pattern"
+		funcArr += CountryByDayOfWeekPattern.Go
+		descArr += "Country by Month pattern"
+		funcArr += CountryByMonthPattern.Go
+		descArr += "Country by Week pattern"
+		funcArr += CountryByWeekPattern.Go
+		descArr += "Failure Reason + Payment Type pattern"
+		funcArr += FailureReason_PmtTypePattern.Go
+		descArr += "Failure Reason + Website pattern"
+		funcArr += FailureReason_WebsitePattern.Go
+		descArr += "Income by Country pattern"
+		funcArr += IncomeByCountryPattern.Go
+		descArr += "Income by Day of Week pattern"
+		funcArr += IncomeByDayOfWeekPattern.Go
+		descArr += "Income by Hour of Day pattern"
+		funcArr += IncomeByHourOfDayPattern.Go
+		descArr += "Income by Month pattern"
+		funcArr += IncomeByMonthPattern.Go
 		descArr += "Income by Product Category pattern"
 		funcArr += IncomeByProdCatPattern.Go
+		descArr += "Income by Website pattern"
+		funcArr += IncomeByWebsitePattern.Go
+		descArr += "Income by Week pattern"
+		funcArr += IncomeByWeekPattern.Go
 		descArr += "Payment Type + City pattern"
 		funcArr += PmtType_CityPattern.Go
 		descArr += "Payment Type + Country pattern"
 		funcArr += PmtType_CountryPattern.Go
+		descArr += "Payment Type + Website pattern"
+		funcArr += PmtType_WebsitePattern.Go
 		descArr += "Product Category + City pattern"
 		funcArr += ProdCat_CityPattern.Go
 		descArr += "Product Category + Country pattern"
@@ -308,6 +332,12 @@ object PatternDetector {
 		funcArr += ProdCat_WebsitePattern.Go
 		descArr += "Website + Country pattern"
 		funcArr += Website_CountryPattern.Go
+		descArr += "Website + Day of Week pattern"
+		funcArr += WebsiteByDayOfWeekPattern.Go
+		descArr += "Website + Month pattern"
+		funcArr += WebsiteByMonthPattern.Go
+		descArr += "Website + Week pattern"
+		funcArr += WebsiteByWeekPattern.Go
 
 		// Run all of the pattern tests
 		for (i <- 0 to funcArr.length - 1) {

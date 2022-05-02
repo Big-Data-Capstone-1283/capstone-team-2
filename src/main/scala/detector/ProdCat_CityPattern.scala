@@ -13,21 +13,21 @@ object ProdCat_CityPattern {
 	  */
 	def Go(data: DataFrame): Option[String] = {
 		var newDf = data  // Generate the "count" and "total" data
-			.select("product_category", "city", "qty")
-			.groupBy("product_category", "city")
+			.select("product_category", "country", "city", "qty")
+			.groupBy("product_category", "country", "city")
 			.agg(count("product_category").as("count"), sum("qty").as("total"))
 		var newDfSucc = data  // Generate the "total_successful" data
-			.select(col("product_category").as("temp_product_category"), col("city").as("temp_city"), col("qty"))
+			.select(col("product_category").as("temp_product_category"), col("country").as("temp_country"), col("city").as("temp_city"), col("qty"))
 			.where("payment_txn_success = 'Y'")
-			.groupBy("temp_product_category", "temp_city")
+			.groupBy("temp_product_category", "temp_country", "temp_city")
 			.agg(sum("qty").as("total_successful"))
 		newDf = newDf  // Merge the two dataframes
-			.join(newDfSucc, newDf("product_category") === newDfSucc("temp_product_category") && newDf("city") === newDfSucc("temp_city"), "full")
-			.drop("temp_product_category", "temp_city")
-			.orderBy("product_category", "city")
+			.join(newDfSucc, newDf("product_category") === newDfSucc("temp_product_category") && newDf("country") === newDfSucc("temp_country") && newDf("city") === newDfSucc("temp_city"), "full")
+			.drop("temp_product_category", "temp_country", "temp_city")
+			.orderBy("product_category", "country", "city")
 		if (PatternDetector.testMode)  // If we're in test mode...
 			newDf.show(false)  // ...show the data
-		val ndev = PatternDetector.deviation2F(newDf)  // Check the data for a pattern
+		val ndev = PatternDetector.getDeviationLong(newDf, 3, Seq(0, 1, 2))  // Check the data for a pattern
 		var filename = ""
 		if (ndev > 1.0 + PatternDetector.marginOfError) {  // Pattern detected
 			filename = PatternDetector.saveDataFrameAsCSV(newDf, "ProdCat_CityRates.csv")  // Write the data to a file
