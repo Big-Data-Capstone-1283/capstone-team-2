@@ -124,24 +124,32 @@ object csvReader {
     //Remove rows with bad payment success
     val filter14 = filter13.filter(filter13("_c14") === "Y" || filter13("_c14") === "N")
 
+    //Remove bad failure reasons
+    val filter15 = filter14.filter(!filter14("_c15").isNotNull || filter14("_c15") === "Fraud"
+      || filter14("_c15") === "Server Maintenance"|| filter14("_c15") === "Connection Interrupted"
+      || filter14("_c15") === "Invalid Routing Number" || filter14("_c15") === "Bank Account Suspended"
+      || filter14("_c15") === "Card Information Incorrect"|| filter14("_c15") === "Card Expired"
+      || filter14("_c15") === "Out of Funds"|| filter14("_c15") === "Incorrect Credentials"
+      || filter14("_c15") === "Paypal Service Down")
+
     //Remake the dataframe, cast types and name columns
-    val convertedDF = filter14.select(
-      filter14("_c0").cast(StringType).as("order_id"),
-      filter14("_c1").cast(StringType).as("customer_id"),
-      filter14("_c2").cast(StringType).as("customer_name"),
-      filter14("_c3").cast(StringType).as("product_id"),
-      filter14("_c4").cast(StringType).as("product_name"),
-      filter14("_c5").cast(StringType).as("product_category"),
-      filter14("_c6").cast(StringType).as("payment_type"),
-      filter14("_c7").cast(IntegerType).as("qty"),
-      filter14("_c8").cast(StringType).as("price"),
-      filter14("_c9").cast(TimestampType).as("datetime"),
-      filter14("_c10").cast(StringType).as("country"),
-      filter14("_c11").cast(StringType).as("city"),
-      filter14("_c12").cast(StringType).as("ecommerce_website_name"),
-      filter14("_c13").cast(StringType).as("payment_txn_id"),
-      filter14("_c14").cast(StringType).as("payment_txn_success"),
-      filter14("_c15").cast(StringType).as("failure_reason"))
+    val convertedDF = filter15.select(
+      filter15("_c0").cast(StringType).as("order_id"),
+      filter15("_c1").cast(StringType).as("customer_id"),
+      filter15("_c2").cast(StringType).as("customer_name"),
+      filter15("_c3").cast(StringType).as("product_id"),
+      filter15("_c4").cast(StringType).as("product_name"),
+      filter15("_c5").cast(StringType).as("product_category"),
+      filter15("_c6").cast(StringType).as("payment_type"),
+      filter15("_c7").cast(IntegerType).as("qty"),
+      filter15("_c8").cast(StringType).as("price"),
+      filter15("_c9").cast(TimestampType).as("datetime"),
+      filter15("_c10").cast(StringType).as("country"),
+      filter15("_c11").cast(StringType).as("city"),
+      filter15("_c12").cast(StringType).as("ecommerce_website_name"),
+      filter15("_c13").cast(StringType).as("payment_txn_id"),
+      filter15("_c14").cast(StringType).as("payment_txn_success"),
+      filter15("_c15").cast(StringType).as("failure_reason"))
     //println(convertedDF.count())
 
     //Remove bad quantities
@@ -154,6 +162,6 @@ object csvReader {
     println(dfPurchases.count()-cleanDF.count() + " rows were removed")
 
     //Send to pattern detector
-    //PatternDetector.Go(cleanDF)
+    PatternDetector.Go(cleanDF)
   }
 }
