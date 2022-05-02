@@ -1,21 +1,631 @@
 payment_type,city,count,total,total_successful
-Credit Card,Alpha,1243,1385,1325
-Credit Card,Bravo,1105,1258,1196
-Credit Card,Charlie,1006,1114,1060
-Credit Card,Delta,825,935,900
-Credit Card,Echo,717,802,769
-Internet Banking,Alpha,247,307,292
-Internet Banking,Bravo,215,243,230
-Internet Banking,Charlie,188,212,205
-Internet Banking,Delta,174,210,181
-Internet Banking,Echo,150,167,157
-UPI,Alpha,174,196,183
-UPI,Bravo,134,151,146
-UPI,Charlie,149,158,152
-UPI,Delta,128,150,146
-UPI,Echo,110,125,120
-Wallet,Alpha,849,958,909
-Wallet,Bravo,773,864,813
-Wallet,Charlie,733,833,794
-Wallet,Delta,598,683,656
-Wallet,Echo,482,564,519
+Bank,Aberdeen,3,6,6
+Bank,Acre,5,5,5
+Bank,Alexandria,8,8,8
+Bank,Amsterdam,6,6,5
+Bank,Antalya,5,5,4
+Bank,Antwerp,6,6,6
+Bank,Athens,3,3,3
+Bank,Bandung,3,3,2
+Bank,Barcelona,5,5,3
+Bank,Beijing,12,19,18
+Bank,Bergen,3,3,3
+Bank,Berlin,6,6,6
+Bank,Bilbao,4,4,4
+Bank,Bogotá,673,1235,1166
+Bank,Bologna,3,13,13
+Bank,Bordeaux,3,3,3
+Bank,Braga,3,3,3
+Bank,Brussels,3,3,3
+Bank,Buenos Aires,721,1070,1009
+Bank,Burmingham,4,4,4
+Bank,Bursa,1,1,1
+Bank,Busan,4,21,21
+Bank,Cairo,4,8,8
+Bank,Calgary,1,1,1
+Bank,Cali,828,1451400,1451372
+Bank,Canberra,3,8,8
+Bank,Cape Town,3,3,3
+Bank,Caracas,675,5194,5136
+Bank,Cartagena,1034,4979,1502
+Bank,Chelyabinsk,3,3,3
+Bank,Chengdu,8,22,22
+Bank,Chennai,6,15,15
+Bank,Chicago,1,1,1
+Bank,Cologne,4,4,4
+Bank,Corinth,5,5,5
+Bank,Cork,1,1,1
+Bank,Córdoba,738,1254,1194
+Bank,Daegu,5,5,4
+Bank,Dalaran,1,1,1
+Bank,Delft,7,9,9
+Bank,Delhi,9,16,16
+Bank,Dijon,6,6,6
+Bank,Dublin,4,4,4
+Bank,Dundee,4,4,4
+Bank,Durban,6,6,6
+Bank,Edenburgh,2,2,2
+Bank,Evora,7,17,17
+Bank,Faisalabad,2,2,2
+Bank,Florence,4,4,4
+Bank,Fortaleza,570,1042,997
+Bank,Galway,6,8,7
+Bank,Giza,5,19,19
+Bank,Glasgow,1,1,1
+Bank,Gothenburg,6,8,7
+Bank,Guayana City,1036,2759,2650
+Bank,Haifa,6,6,6
+Bank,Hamburg,6,6,5
+Bank,Helsingborg,2,2,2
+Bank,Hotlands,1,1,1
+Bank,ICameIWentIConquered City,1,1,1
+Bank,Incheon,2,2,1
+Bank,Isla Ratón,786,1233,1184
+Bank,Istanbul,6,6,6
+Bank,Izmir,3,18,2
+Bank,Jaipur,6,21,21
+Bank,Jakarta,5,5,5
+Bank,Jerusalem,5,5,5
+Bank,Karachi,7,9,9
+Bank,Kermanshah,6,7,7
+Bank,Kharkiv,5,19,19
+Bank,Kraków,9,11,10
+Bank,Kyiv,4,12,11
+Bank,Kyoto,1,1,1
+Bank,Lahore,3,10,10
+Bank,Leuven,4,4,4
+Bank,Limerick,6,7,6
+Bank,Lisbon,5,5,5
+Bank,Liverpool,6,6,6
+Bank,London,9,9,9
+Bank,Lordaeron,1,1,1
+Bank,Los Angeles,4,4,4
+Bank,Lublin,4,4,4
+Bank,Luxor,6,6,6
+Bank,Madrid,5,21,21
+Bank,Makassar,5,5,5
+Bank,Manaus,485,684,656
+Bank,Manchester,5,5,2
+Bank,Maracay,803,10351,10302
+Bank,Mariupol,7,7,6
+Bank,Mashhad,6,6,5
+Bank,Melbourne,1,1,1
+Bank,Mendoza,1018,8063,7955
+Bank,Mewami,1,1,1
+Bank,Mexico City,7,14,14
+Bank,Miami,4,4,4
+Bank,Monterrey,6,14,13
+Bank,Multan,4,4,4
+Bank,Mumbai,4,8,8
+Bank,Munich,7,17,17
+Bank,Mérida,3,3,3
+Bank,Namur,4,4,4
+Bank,New Bark City,2,2,""
+Bank,New York City,3,3,3
+Bank,Newest Newer City,1,1,1
+Bank,Nice,3,3,2
+Bank,Odesa,5,5,5
+Bank,Osaka,4,4,4
+Bank,Osio,4,4,4
+Bank,Paris,4,9,9
+Bank,Patras,2,2,2
+Bank,Petah Tikva,7,7,6
+Bank,Pisa,3,22,22
+Bank,Polokwane,6,6,5
+Bank,Porto,4,4,3
+Bank,Pretoria,3,3,3
+Bank,Puebla,8,8,8
+Bank,Quebec City,4,11,11
+Bank,Rio de Janeiro,904,28936,28865
+Bank,Rome,6,6,6
+Bank,Rorikstead,1,1,1
+Bank,Rosario,586,991,946
+Bank,Rotterdam,6,18,18
+Bank,Saint Petersburg,6,10,10
+Bank,Samara,3,3,2
+Bank,Santa Marta,666,3816,3761
+Bank,Semarang,7,10,10
+Bank,Seoul,5,5,4
+Bank,Serene Village,2,14,14
+Bank,Shanghai,8,8,8
+Bank,Sidney,4,4,2
+Bank,Stavanger,3,3,3
+Bank,Stockholm,3,3,3
+Bank,Stoneholm,1,1,1
+Bank,Super Hero Land,1,1,1
+Bank,São Paulo,655,1037,943
+Bank,Tabriz,4,4,4
+Bank,Tehran,5,5,5
+Bank,Terry Town,1,1,1
+Bank,Thessaloniki,3,3,3
+Bank,Thunder Bluff,1,1,1
+Bank,Tokyo,3,7,7
+Bank,Toronto,5,19,18
+Bank,Totally Tubular,2,2,2
+Bank,Town City,1,1,1
+Bank,Trondheim,5,5,4
+Bank,Uppsala,1,6,6
+Bank,Utrecht,6,6,6
+Bank,Valencia,5,5,5
+Bank,Vancouver,4,10195,10195
+Bank,Village Town,1,1,1
+Bank,Warsaw,15,45,44
+Bank,Wrocław,10,10,9
+Bank,Yokohama,3,5,4
+Bank,null,1,1,""
+Card,Aberdeen,5,5,4
+Card,Acre,3,8,7
+Card,Alexandria,6,6,6
+Card,Amsterdam,3,3,3
+Card,Anastar City,1,1,1
+Card,Antalya,4,4,4
+Card,Antwerp,7,7,7
+Card,Athens,2,2,2
+Card,Bandung,6,6,6
+Card,Barcelona,2,2,2
+Card,Beijing,4,10,10
+Card,Bergen,3,3,3
+Card,Berlin,7,15,15
+Card,Bilbao,2,2,2
+Card,Bogotá,671,1342,1307
+Card,Bologna,5,13,13
+Card,Bordeaux,7,8,7
+Card,Braga,8,9,9
+Card,Brussels,3,3,3
+Card,Buenos Aires,742,1072,1014
+Card,Burmingham,5,20,19
+Card,Bursa,5,5,5
+Card,Busan,4,4,4
+Card,Cairo,6,20,19
+Card,Calgary,3,3,3
+Card,Cali,855,1415,1351
+Card,Canberra,4,4,4
+Card,Cape Town,6,7,6
+Card,Caracas,629,929,899
+Card,Cartagena,1020,10038,9968
+Card,Castle Town,1,1,1
+Card,Chelyabinsk,1,1,1
+Card,Chengdu,3,20,20
+Card,Chennai,1,1,1
+Card,Chicago,11,13,13
+Card,City Town,1,1,1
+Card,Cologne,5,20,19
+Card,Corinth,4,15,14
+Card,Cork,6,6,6
+Card,Córdoba,699,85146,84823
+Card,Daegu,5,5,5
+Card,Deepholm,2,2,2
+Card,Delft,2,2,2
+Card,Delhi,3,19,19
+Card,Dijon,6,6,6
+Card,Dublin,3,11,11
+Card,Dundee,4,4,3
+Card,Durban,6,13,13
+Card,E3zglyOd,1,1,1
+Card,Edenburgh,1,1,1
+Card,Evora,11,23,22
+Card,Faisalabad,5,13,12
+Card,Florence,3,3,3
+Card,Fortaleza,626,19793,19732
+Card,Galway,3,3,3
+Card,Giza,5,11,11
+Card,Glasgow,3,3,3
+Card,Gothenburg,3,3,3
+Card,Guangzhou,5,14,14
+Card,Guayana City,942,1805,1750
+Card,Haifa,3,3,3
+Card,Hamburg,2,2,2
+Card,Hearthglen,1,22,22
+Card,Helsingborg,4,4,4
+Card,Incheon,8,8,8
+Card,Isla Ratón,769,1164,1070
+Card,Istanbul,8,8,8
+Card,It's a mystery!,2,2,2
+Card,Izmir,8,8,7
+Card,Jaipur,4,4,4
+Card,Jakarta,5,10,10
+Card,Jerry's Tree,1,1,1
+Card,Jerusalem,3,3,3
+Card,Karachi,2,2,1
+Card,Kermanshah,3,3,3
+Card,Kharkiv,4,20,20
+Card,Kraków,7,7,7
+Card,Kyiv,5,6,6
+Card,Kyoto,3,3,3
+Card,Lahore,5,5,5
+Card,Leuven,2,2,2
+Card,Limerick,9,9,8
+Card,Lisbon,6,6,5
+Card,Liverpool,4,4,4
+Card,London,6,6,6
+Card,Los Angeles,3,16,16
+Card,Lublin,5,5,5
+Card,Luxor,5,5,4
+Card,Madrid,6,6,5
+Card,Makassar,2,2,2
+Card,Manaus,477,695,676
+Card,Manchester,13,23,23
+Card,Maracay,844,1186,1140
+Card,Mariupol,5,5,4
+Card,Mashhad,2,3,3
+Card,Melbourne,7,7,6
+Card,Mendoza,1003,3650,3609
+Card,Mew York City,1,1,1
+Card,Mexico City,4,7,7
+Card,Miami,11,25,25
+Card,Monterrey,6,6,5
+Card,Moscow,2,2,2
+Card,Multan,5,5,5
+Card,Mumbai,5,5,5
+Card,Munich,7,12,11
+Card,Mérida,3,3,3
+Card,Namur,2,2,2
+Card,New Avalon,1,1,1
+Card,New York City,4,4,4
+Card,Newcastle,4,4,3
+Card,Newest Newer City,1,1,1
+Card,Nice,7,7,6
+Card,Odesa,4,4,3
+Card,Osaka,3,6,6
+Card,Osio,3,16,16
+Card,Paris,8,8,8
+Card,Patras,8,8,8
+Card,Petah Tikva,8,9,8
+Card,Pisa,7,7,7
+Card,Polokwane,4,4,3
+Card,Porto,4,4,4
+Card,Post Town,1,1,1
+Card,Pretoria,2,10,10
+Card,Puebla,4,4,4
+Card,Quebec City,4,4,4
+Card,Rio de Janeiro,867,1434,1362
+Card,Rome,2,2,2
+Card,Rorikstead,3,3,3
+Card,Rosario,622,8859,8677
+Card,Rotterdam,7,7,7
+Card,Saint Petersburg,4,4,4
+Card,Samara,7,7,6
+Card,Santa Marta,671,912,852
+Card,Semarang,9,12,10
+Card,Shanghai,5,5,4
+Card,Sidney,4,6,5
+Card,Snowdin,1,1,1
+Card,Stavanger,4,4,4
+Card,Stockholm,3,3,3
+Card,São Paulo,650,1338,1289
+Card,Tabriz,6,27,27
+Card,Tehran,2,2,1
+Card,Thessaloniki,5,6,5
+Card,Tokyo,6,6,6
+Card,Toronto,5,5,5
+Card,Totally Tubular,2,2,2
+Card,Trondheim,4,5,5
+Card,Uppsala,1,1,1
+Card,Utrecht,5,7,6
+Card,Valencia,10,13,13
+Card,Vancouver,7,7,7
+Card,Village Town,2,2,2
+Card,Warsaw,5,5,5
+Card,Waterfall,1,3,3
+Card,Wrocław,4,4,4
+Card,Yokohama,1,1,1
+Card,tUXcRf'y1Aq\\n,1,1,1
+Paypal,Aberdeen,4,25,25
+Paypal,Acre,3,3,1
+Paypal,Alexandria,4,4,4
+Paypal,Amsterdam,3,3,3
+Paypal,Anastar City,2,320,320
+Paypal,Antalya,6,6,6
+Paypal,Antwerp,5,5,5
+Paypal,Athens,6,6,6
+Paypal,Bandung,2,2,2
+Paypal,Barcelona,6,13,13
+Paypal,Beijing,6,6,6
+Paypal,Bergen,3,3,3
+Paypal,Berlin,4,4,4
+Paypal,Bilbao,2,2,2
+Paypal,Bilgewater Port,1,1,1
+Paypal,Bogotá,679,1001,932
+Paypal,Bologna,3,3,2
+Paypal,Bordeaux,7,7,7
+Paypal,Braga,4,4,3
+Paypal,Brussels,5,5,5
+Paypal,Buenos Aires,762,1917,1875
+Paypal,Burmingham,4,22,22
+Paypal,Bursa,1,1,1
+Paypal,Busan,9,15,14
+Paypal,Cairo,8,11,10
+Paypal,Calgary,6,6,6
+Paypal,Cali,824,1398,1342
+Paypal,Canberra,3,3,3
+Paypal,Cape Town,2,2,1
+Paypal,Caracas,633,1886,1852
+Paypal,Cartagena,985,1520,1448
+Paypal,Chelyabinsk,10,10,9
+Paypal,Chengdu,5,5,5
+Paypal,Chennai,2,2,1
+Paypal,Chicago,2,2,2
+Paypal,City Square,2,2,2
+Paypal,Cologne,4,4,4
+Paypal,Corinth,4,5,5
+Paypal,Cork,5,5,4
+Paypal,Cyber City,1,1,1
+Paypal,Córdoba,700,1045,994
+Paypal,Daegu,8,8,8
+Paypal,Darnassus,1,1,1
+Paypal,Deepholm,1,1,1
+Paypal,Delft,3,3,3
+Paypal,Delhi,6,6,4
+Paypal,Dijon,2,2,1
+Paypal,Dublin,4,4,4
+Paypal,Dundee,1,1,1
+Paypal,Durban,8,8,8
+Paypal,Edenburgh,1,1,1
+Paypal,Evora,2,2,2
+Paypal,Faisalabad,6,12,12
+Paypal,Fire Island Volcano,2,2,2
+Paypal,Florence,5,5,5
+Paypal,Fortaleza,581,893,850
+Paypal,Galway,5,5,5
+Paypal,Giza,5,5,5
+Paypal,Glasgow,3,3,2
+Paypal,Gothenburg,3,3,3
+Paypal,Guangzhou,2,2,2
+Paypal,Guayana City,951,1588,1469
+Paypal,Haifa,1,1,1
+Paypal,Hamburg,3,3,3
+Paypal,Helsingborg,1,1,1
+Paypal,Hotlands,1,8,8
+Paypal,Incheon,4,20,20
+Paypal,Isla Ratón,826,15446,15399
+Paypal,Istanbul,2,2,2
+Paypal,Izmir,3,8,8
+Paypal,Jaipur,8,8,8
+Paypal,Jakarta,6,15,15
+Paypal,Jerusalem,6,6,5
+Paypal,Karachi,2,2,2
+Paypal,Kermanshah,9,25,25
+Paypal,Kharkiv,4,4,4
+Paypal,Kraków,9,9,7
+Paypal,Kyiv,2,2,2
+Paypal,Kyoto,2,2,2
+Paypal,Lahore,5,5,5
+Paypal,Lavender Town,1,1,1
+Paypal,Limerick,8,15,15
+Paypal,Lisbon,8,27,26
+Paypal,Lively Town,1,1,1
+Paypal,Liverpool,5,5,5
+Paypal,London,1,1,1
+Paypal,Los Angeles,3,3,3
+Paypal,Lublin,7,9,9
+Paypal,Luxor,7,7,7
+Paypal,Madrid,8,8,8
+Paypal,Magmoor Caverns,1,1,1
+Paypal,Makassar,3,4,4
+Paypal,Manaus,500,710,672
+Paypal,Manchester,7,7,7
+Paypal,Maracay,839,1251,1187
+Paypal,Mariupol,7,7,6
+Paypal,Mashhad,1,1,1
+Paypal,Melbourne,5,9,4
+Paypal,Mendoza,935,1471,1425
+Paypal,Mexico City,2,2,2
+Paypal,Miami,4,11,11
+Paypal,Mistral City,1,1,1
+Paypal,Monterrey,4,6,6
+Paypal,Moscow,5,21,21
+Paypal,Multan,5,5,5
+Paypal,Mumbai,6,19,19
+Paypal,Munich,3,21,21
+Paypal,My House,1,1,1
+Paypal,Mérida,5,8,8
+Paypal,Namur,2,2,2
+Paypal,New York City,7,7,7
+Paypal,Newcastle,3,3,3
+Paypal,Newest Newer City,1,1,1
+Paypal,Nice,5,5,5
+Paypal,Not Kansas,2,2,2
+Paypal,Odesa,9,25,25
+Paypal,Osaka,2,2,2
+Paypal,Osio,5,5,4
+Paypal,Paris,4,4,4
+Paypal,Patras,6,6,6
+Paypal,Petah Tikva,3,3,2
+Paypal,Pisa,5,5,5
+Paypal,Polokwane,5,6,5
+Paypal,Porto,7,7,6
+Paypal,Pretoria,5,5,5
+Paypal,Puebla,5,15,15
+Paypal,Quebec City,5,5,5
+Paypal,Rio de Janeiro,912,1618,1562
+Paypal,Rome,2,2,2
+Paypal,Rorikstead,2,2,2
+Paypal,Rosario,574,895,827
+Paypal,Rotterdam,3,19,19
+Paypal,Saint Petersburg,6,6,6
+Paypal,Samara,6,6,6
+Paypal,Santa Marta,706,2204,2143
+Paypal,Semarang,3,3,3
+Paypal,Seoul,2,2,2
+Paypal,Shanghai,2,2,2
+Paypal,Sidney,3,3,3
+Paypal,Silvermoon City,1,1,1
+Paypal,Stavanger,4,4,4
+Paypal,Stockholm,5,5,5
+Paypal,São Paulo,693,2723,2695
+Paypal,Tabriz,5,8,8
+Paypal,Tehran,4,4,2
+Paypal,Terry Town,1,1,1
+Paypal,Thessaloniki,2,2,2
+Paypal,Thunder Bluff,1,1,1
+Paypal,Tokyo,2,2,2
+Paypal,Toronto,1,1,1
+Paypal,Trondheim,2,2,2
+Paypal,Uppsala,3,3,3
+Paypal,Utrecht,4,4,4
+Paypal,Valencia,2,2,2
+Paypal,Vancouver,4,13,13
+Paypal,Warsaw,8,11,9
+Paypal,Waterfall,1,1,1
+Paypal,We'll never know!,1,1,1
+Paypal,Wouldn't you like to know?,1,1,1
+Paypal,Wrocław,4,4,4
+Paypal,Yokohama,4,4,4
+Paypal,z,1,1,1
+UPI,Aberdeen,7,15,14
+UPI,Acre,4,13,13
+UPI,Alexandria,7,7,7
+UPI,Amsterdam,4,4,4
+UPI,Antalya,5,5,5
+UPI,Antwerp,6,6,6
+UPI,Athens,7,7,7
+UPI,Bandung,3,3,3
+UPI,Barcelona,6,6,6
+UPI,Beijing,4,12,12
+UPI,Bergen,3,3,3
+UPI,Berlin,5,5,5
+UPI,Bilbao,2,2,2
+UPI,Bogotá,639,1686,1656
+UPI,Bologna,6,12,12
+UPI,Bordeaux,3,3,3
+UPI,Braga,6,6,6
+UPI,BrightHoof,1,1,1
+UPI,Brussels,4,10,10
+UPI,Buenos Aires,778,1094,1035
+UPI,Burmingham,8,15,15
+UPI,Bursa,5,5,5
+UPI,Busan,8,8,7
+UPI,Cairo,4,13,13
+UPI,Calgary,2,2,1
+UPI,Cali,821,1331,1279
+UPI,Canberra,2,2,2
+UPI,Cape Town,2,6,6
+UPI,Caracas,619,946,876
+UPI,Cartagena,984,1402,1315
+UPI,Castle Town,1,1,1
+UPI,Chelyabinsk,5,5,5
+UPI,Chengdu,6,6,6
+UPI,Chennai,3,3,3
+UPI,Chicago,3,3,3
+UPI,Cologne,4,21,20
+UPI,Corinth,3,3,3
+UPI,Cork,3,3,2
+UPI,Córdoba,752,1460,1424
+UPI,Daegu,4,4,4
+UPI,Delft,2,2,2
+UPI,Delhi,6,6,6
+UPI,Dijon,8,8,7
+UPI,Dublin,5,5,5
+UPI,Dundee,2,2,""
+UPI,Durban,5,5,5
+UPI,Edenburgh,2,2,2
+UPI,Evora,4,4,4
+UPI,Faisalabad,5,5,5
+UPI,Florence,9,9,9
+UPI,Fortaleza,610,1543,1474
+UPI,Galway,5,5,5
+UPI,Giza,4,11,11
+UPI,Glasgow,4,4,4
+UPI,Gothenburg,5,8,8
+UPI,Guangzhou,4,4,4
+UPI,Guayana City,927,1445,1363
+UPI,Haifa,3,3,3
+UPI,Hamburg,2,2,2
+UPI,Hearthglen,1,2,2
+UPI,Helsingborg,5,5,4
+UPI,Horror Island,1,1,1
+UPI,Incheon,4,4,4
+UPI,Isla Ratón,824,1315,1279
+UPI,Istanbul,6,6,5
+UPI,It's a mystery!,1,1,1
+UPI,Izmir,2,9,9
+UPI,Jaipur,7,7,7
+UPI,Jakarta,6,5,4
+UPI,Jerusalem,5,7,7
+UPI,Jubilife Village,1,1,""
+UPI,Karachi,4,4,4
+UPI,Kermanshah,4,10,10
+UPI,Kharkiv,3,3,3
+UPI,Kraków,6,20,20
+UPI,Kyiv,5,7,7
+UPI,Lahore,3,3,3
+UPI,Leuven,5,5,4
+UPI,Limerick,3,3,3
+UPI,Lisbon,7,7,7
+UPI,Liverpool,6,6,6
+UPI,London,7,7,7
+UPI,Los Angeles,5,5,5
+UPI,Lublin,5,8,7
+UPI,Luxor,9,9,9
+UPI,Madrid,8,15,15
+UPI,Magmoor Caverns,1,1,1
+UPI,Manaus,536,3247,3224
+UPI,Manchester,10,16,9
+UPI,Maracay,814,1188,1130
+UPI,Mariupol,2,2,2
+UPI,Mashhad,4,4,4
+UPI,Melbourne,4,4,4
+UPI,Mendoza,1026,1478,1421
+UPI,Mexico City,2,2,2
+UPI,Miami,7,7,7
+UPI,Monterrey,1,1,1
+UPI,Moscow,3,3,3
+UPI,Multan,3,3,3
+UPI,Mumbai,1,1,1
+UPI,Munich,4,4,4
+UPI,Mérida,2,2,2
+UPI,Namur,5,9,9
+UPI,New Bark City,2,2,2
+UPI,New New City,1,1,1
+UPI,New York City,9,27,27
+UPI,Newcastle,6,6,5
+UPI,Newest Newer City,1,1,1
+UPI,Nice,3,3,3
+UPI,Odesa,5,5,5
+UPI,Osaka,5,9,9
+UPI,Osio,10,10,9
+UPI,Paris,4,4,4
+UPI,Patras,3,3,3
+UPI,Petah Tikva,5,4,4
+UPI,Pisa,2,2,1
+UPI,Polokwane,6,7,5
+UPI,Porto,6,6,5
+UPI,Pretoria,5,5,5
+UPI,Puebla,8,331,331
+UPI,Quebec City,7,21,21
+UPI,Rio de Janeiro,884,1300,1227
+UPI,Rome,1,1,""
+UPI,Rosario,580,816,776
+UPI,Rotterdam,5,5,5
+UPI,Saint Petersburg,4,4,3
+UPI,Samara,7,10,10
+UPI,Santa Marta,719,970,935
+UPI,Semarang,6,6,6
+UPI,Seoul,1,14,14
+UPI,Shanghai,5,5,4
+UPI,Sidney,2,2,2
+UPI,Stavanger,5,5,5
+UPI,Stoneholm,1,1,1
+UPI,Stormwind City,2,2,2
+UPI,São Paulo,714,26228,26185
+UPI,Tabriz,6,14,14
+UPI,Tehran,6,17,17
+UPI,The Core,1,1,1
+UPI,Thessaloniki,3,3,2
+UPI,Thunder Bluff,1,1,1
+UPI,Tokyo,4,4,4
+UPI,Toronto,1,1,1
+UPI,Town City,1,1,""
+UPI,Trondheim,5,5,5
+UPI,Uppsala,2,2,2
+UPI,Utrecht,5,5,5
+UPI,Valencia,8,8,8
+UPI,Vancouver,11,11,10
+UPI,Village Town,1,1,1
+UPI,Warsaw,11,11,10
+UPI,Waterfall,1,1,1
+UPI,We'll never know!,1,1,1
+UPI,Wrocław,3,3,2
+UPI,Yokohama,4,4,4
+UPI,Your other pocket,1,1,1
+UPI,null,2,2,2

@@ -1,26 +1,36 @@
 ecommerce_website_name,country,count,total,total_successful
-Alibaba,Australia,23,30,28
-Alibaba,Canada,39,42,41
-Alibaba,New Zealand,18,18,18
-Alibaba,UK,61,69,63
-Alibaba,US,180,197,187
-Amazon,Australia,258,289,274
-Amazon,Canada,366,402,391
-Amazon,New Zealand,40,40,39
-Amazon,UK,696,796,740
-Amazon,US,3389,3856,3660
-Etsy,Australia,42,48,47
-Etsy,Canada,64,79,76
-Etsy,New Zealand,8,9,9
-Etsy,UK,94,109,105
-Etsy,US,516,571,549
-Walmart,Australia,138,151,149
-Walmart,Canada,204,226,219
-Walmart,New Zealand,35,49,48
-Walmart,UK,373,427,412
-Walmart,US,1996,2277,2155
-eBay,Australia,89,97,93
-eBay,Canada,122,130,123
-eBay,New Zealand,12,12,11
-eBay,UK,206,215,208
-eBay,US,1031,1176,1108
+www.amazon.com.br,Argentina,12261,120631,119351
+www.amazon.com.br,Australia,55,66,55
+www.amazon.com.br,Belgium,63,73,72
+www.amazon.com.br,Brazil,10684,93253,92439
+www.amazon.com.br,Canada,70,10305,10302
+www.amazon.com.br,China,79,140,137
+www.amazon.com.br,Colombia,12801,1486699,1482379
+www.amazon.com.br,Egypt,93,150,147
+www.amazon.com.br,France,81,87,82
+www.amazon.com.br,Germany,73,146,142
+www.amazon.com.br,Greece,66,79,76
+www.amazon.com.br,India,77,141,138
+www.amazon.com.br,Indonesia,71,91,87
+www.amazon.com.br,Iran,73,140,136
+www.amazon.com.br,Ireland,76,94,89
+www.amazon.com.br,Israel,71,87,80
+www.amazon.com.br,Italy,66,109,106
+www.amazon.com.br,Japan,47,60,59
+www.amazon.com.br,Mexico,70,426,424
+www.amazon.com.br,Netherlands,71,103,101
+www.amazon.com.br,Norway,66,80,77
+www.amazon.com.br,Pakistan,66,89,87
+www.amazon.com.br,Poland,112,166,156
+www.amazon.com.br,Portugal,92,134,127
+www.amazon.com.br,Russia,72,95,91
+www.amazon.com.br,Scotland,47,79,73
+www.amazon.com.br,South Africa,74,96,89
+www.amazon.com.br,South Korea,73,125,120
+www.amazon.com.br,Spain,81,114,111
+www.amazon.com.br,Sweden,48,58,56
+www.amazon.com.br,Turkey,70,97,78
+www.amazon.com.br,Ukraine,76,133,128
+www.amazon.com.br,United Kingdom,100,156,145
+www.amazon.com.br,United States,81,135,135
+www.amazon.com.br,Venezuela,12938,49707,48707

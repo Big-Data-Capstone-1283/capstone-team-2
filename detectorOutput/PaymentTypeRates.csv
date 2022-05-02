@@ -1,5 +1,5 @@
 payment_type,count,total,total_successful
-Credit Card,4896,5494,5250
-Internet Banking,974,1139,1065
-UPI,695,780,747
-Wallet,3435,3902,3691
+Bank,12769,1535159,1530701
+Card,12694,141704,140411
+Paypal,12660,38709,37783
+UPI,12821,48572,47687

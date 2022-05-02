@@ -1,21 +1,141 @@
 payment_type,country,count,total,total_successful
-Credit Card,Australia,361,407,396
-Credit Card,Canada,380,424,406
-Credit Card,New Zealand,65,73,71
-Credit Card,UK,671,741,708
-Credit Card,US,3419,3849,3669
-Internet Banking,Australia,60,68,64
-Internet Banking,Canada,68,75,74
-Internet Banking,New Zealand,9,13,13
-Internet Banking,UK,136,168,153
-Internet Banking,US,701,815,761
-UPI,Australia,48,55,53
-UPI,Canada,61,74,72
-UPI,New Zealand,5,5,5
-UPI,UK,110,127,125
-UPI,US,471,519,492
-Wallet,Australia,81,85,78
-Wallet,Canada,286,306,298
-Wallet,New Zealand,34,37,36
-Wallet,UK,513,580,542
-Wallet,US,2521,2894,2737
+Bank,Argentina,3069,11384,11108
+Bank,Australia,8,13,11
+Bank,Belgium,17,17,17
+Bank,Brazil,2619,31716,31477
+Bank,Canada,14,10226,10225
+Bank,China,28,49,48
+Bank,Colombia,3206,1461435,1457806
+Bank,Egypt,23,41,41
+Bank,France,16,21,20
+Bank,Germany,23,33,32
+Bank,Greece,13,13,13
+Bank,India,25,60,60
+Bank,Indonesia,20,23,22
+Bank,Iran,21,22,21
+Bank,Ireland,17,20,18
+Bank,Israel,23,23,22
+Bank,Italy,16,45,45
+Bank,Japan,11,17,16
+Bank,Mexico,24,39,38
+Bank,Netherlands,25,39,38
+Bank,Norway,15,15,14
+Bank,Pakistan,16,25,25
+Bank,Poland,38,70,67
+Bank,Portugal,19,29,28
+Bank,Russia,12,16,15
+Bank,Scotland,10,13,13
+Bank,South Africa,18,18,17
+Bank,South Korea,16,33,30
+Bank,Spain,19,35,33
+Bank,Sweden,12,19,18
+Bank,Turkey,15,30,13
+Bank,Ukraine,21,43,41
+Bank,United Kingdom,24,24,21
+Bank,United States,12,12,12
+Bank,Venezuela,3304,19541,19276
+Card,Argentina,3070,98731,98127
+Card,Australia,19,21,18
+Card,Belgium,14,14,14
+Card,Brazil,2624,23264,23063
+Card,Canada,19,19,19
+Card,China,17,49,48
+Card,Colombia,3225,13738,13509
+Card,Egypt,22,42,40
+Card,France,29,30,28
+Card,Germany,21,49,47
+Card,Greece,19,31,29
+Card,India,13,29,29
+Card,Indonesia,22,30,28
+Card,Iran,13,35,34
+Card,Ireland,21,29,28
+Card,Israel,18,24,22
+Card,Italy,17,25,25
+Card,Japan,13,16,16
+Card,Mexico,17,20,19
+Card,Netherlands,17,19,18
+Card,Norway,14,28,28
+Card,Pakistan,17,25,23
+Card,Poland,21,21,21
+Card,Portugal,29,42,40
+Card,Russia,14,14,13
+Card,Scotland,13,13,11
+Card,South Africa,18,34,32
+Card,South Korea,17,17,17
+Card,Spain,20,23,22
+Card,Sweden,11,11,11
+Card,Turkey,25,25,24
+Card,Ukraine,18,35,33
+Card,United Kingdom,28,53,52
+Card,United States,29,58,58
+Card,Venezuela,3190,5090,4865
+Paypal,Argentina,2979,5661,5454
+Paypal,Australia,14,18,13
+Paypal,Belgium,12,12,12
+Paypal,Brazil,2693,5951,5786
+Paypal,Canada,16,25,25
+Paypal,China,15,15,15
+Paypal,Colombia,3201,6130,5872
+Paypal,Egypt,24,27,26
+Paypal,France,18,18,17
+Paypal,Germany,14,32,32
+Paypal,Greece,18,19,19
+Paypal,India,22,35,32
+Paypal,Indonesia,14,24,24
+Paypal,Iran,19,38,36
+Paypal,Ireland,22,29,28
+Paypal,Israel,13,13,9
+Paypal,Italy,15,15,14
+Paypal,Japan,10,10,10
+Paypal,Mexico,16,31,31
+Paypal,Netherlands,13,29,29
+Paypal,Norway,14,14,13
+Paypal,Pakistan,18,24,24
+Paypal,Poland,28,33,29
+Paypal,Portugal,21,40,37
+Paypal,Russia,27,43,42
+Paypal,Scotland,9,30,29
+Paypal,South Africa,20,21,19
+Paypal,South Korea,23,45,44
+Paypal,Spain,18,25,25
+Paypal,Sweden,12,12,12
+Paypal,Turkey,12,17,17
+Paypal,Ukraine,22,38,37
+Paypal,United Kingdom,17,35,35
+Paypal,United States,16,23,23
+Paypal,Venezuela,3255,20177,19913
+UPI,Argentina,3143,4855,4662
+UPI,Australia,14,14,13
+UPI,Belgium,20,30,29
+UPI,Brazil,2748,32322,32113
+UPI,Canada,21,35,33
+UPI,China,19,27,26
+UPI,Colombia,3169,5396,5192
+UPI,Egypt,24,40,40
+UPI,France,18,18,17
+UPI,Germany,15,32,31
+UPI,Greece,16,16,15
+UPI,India,17,17,17
+UPI,Indonesia,15,14,13
+UPI,Iran,20,45,45
+UPI,Ireland,16,16,15
+UPI,Israel,17,27,27
+UPI,Italy,18,24,22
+UPI,Japan,13,17,17
+UPI,Mexico,13,336,336
+UPI,Netherlands,16,16,16
+UPI,Norway,23,23,22
+UPI,Pakistan,15,15,15
+UPI,Poland,25,42,39
+UPI,Portugal,23,23,22
+UPI,Russia,19,22,21
+UPI,Scotland,15,23,20
+UPI,South Africa,18,23,21
+UPI,South Korea,17,30,29
+UPI,Spain,24,31,31
+UPI,Sweden,13,16,15
+UPI,Turkey,18,25,24
+UPI,Ukraine,15,17,17
+UPI,United Kingdom,31,44,37
+UPI,United States,24,42,42
+UPI,Venezuela,3189,4899,4653

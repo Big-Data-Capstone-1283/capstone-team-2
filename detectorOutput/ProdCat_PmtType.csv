@@ -1,21 +1,25 @@
 product_category,payment_type,count,total,total_successful
-books,Credit Card,694,780,739
-books,Internet Banking,149,180,172
-books,UPI,90,96,92
-books,Wallet,453,516,490
-clothing,Credit Card,661,735,711
-clothing,Internet Banking,104,124,115
-clothing,UPI,92,101,96
-clothing,Wallet,449,500,468
-electronics,Credit Card,2220,2517,2404
-electronics,Internet Banking,447,525,493
-electronics,UPI,305,345,331
-electronics,Wallet,1579,1776,1687
-food,Credit Card,654,714,684
-food,Internet Banking,137,164,143
-food,UPI,102,117,112
-food,Wallet,469,560,526
-tools,Credit Card,667,748,712
-tools,Internet Banking,137,146,142
-tools,UPI,106,121,116
-tools,Wallet,485,550,520
+App,Bank,1531,2716,2624
+App,Card,1472,3772,3694
+App,Paypal,1487,2662,2583
+App,UPI,1546,1964,1879
+Car,Bank,2323,1481013,1480875
+Car,Card,2290,11779,11664
+Car,Paypal,2263,2622,2512
+Car,UPI,2293,26081,25953
+Drug,Bank,2071,6604,3118
+Drug,Card,2045,2399,2286
+Drug,Paypal,2077,2183,2086
+Drug,UPI,2026,2355,2267
+Groceries,Bank,2088,7143,6747
+Groceries,Card,2046,25299,24749
+Groceries,Paypal,2013,8210,7926
+Groceries,UPI,2150,7161,6911
+Movie,Bank,2405,33819,33680
+Movie,Card,2438,86325,86215
+Movie,Paypal,2443,17097,16967
+Movie,UPI,2419,2687,2548
+Plants,Bank,2351,3864,3657
+Plants,Card,2403,12130,11803
+Plants,Paypal,2377,5935,5709
+Plants,UPI,2387,8324,8129
