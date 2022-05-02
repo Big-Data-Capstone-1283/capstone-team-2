@@ -125,7 +125,7 @@ object csvReader {
     val filter14 = filter13.filter(filter13("_c14") === "Y" || filter13("_c14") === "N")
 
     //Remove bad failure reasons
-    val filter15 = filter14.filter(!filter14("_c15").isNotNull || filter14("_c15") === "Fraud"
+    val filter15 = filter14.filter(filter14("_c15").isNotNull || filter14("_c15") === "Fraud"
       || filter14("_c15") === "Server Maintenance"|| filter14("_c15") === "Connection Interrupted"
       || filter14("_c15") === "Invalid Routing Number" || filter14("_c15") === "Bank Account Suspended"
       || filter14("_c15") === "Card Information Incorrect"|| filter14("_c15") === "Card Expired"
@@ -153,7 +153,7 @@ object csvReader {
     //println(convertedDF.count())
 
     //Remove bad quantities
-    val qtyDF = convertedDF.filter(convertedDF("qty") <= 100)
+    val qtyDF = convertedDF.filter(convertedDF("qty") <= 100 && convertedDF("qty") > 0)
 
     //Remove bad dates
     val cleanDF = qtyDF.filter(qtyDF("datetime") >= "2000-01-01")
