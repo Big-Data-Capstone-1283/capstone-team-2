@@ -20,15 +20,11 @@ object Orders {
   val numOfPeople = numOrders /2
   val peopleList = new ListBuffer[personGen]
 
-
   for(i <-0 to numOfPeople)
     {
       val person = new personGen
       peopleList+= person
     }
-
-
-
 
   for(i <- 0 to numOrders)
   {
