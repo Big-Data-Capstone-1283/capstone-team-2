@@ -1,15 +1,36 @@
-day_of_week,daynum_of_week,count
-Tuesday,1,936
-Saturday,1,634
-Sunday,2,661
-Wednesday,2,889
-Monday,3,478
-Thursday,3,945
-Tuesday,4,432
-Friday,4,862
-Wednesday,5,446
-Saturday,5,1013
-Sunday,6,1015
-Thursday,6,405
-Friday,7,426
-Monday,7,858
+country,count,total,total_successful
+Japan,47,60,59
+Scotland,47,79,73
+Sweden,48,58,56
+Australia,55,66,55
+Belgium,63,73,72
+Greece,66,79,76
+Italy,66,109,106
+Norway,66,80,77
+Pakistan,66,89,87
+Canada,69,131,128
+Indonesia,69,91,87
+Mexico,69,105,103
+Israel,70,87,80
+Turkey,70,97,78
+Netherlands,71,103,101
+Iran,72,140,136
+Russia,72,95,91
+Germany,73,146,142
+South Korea,73,125,120
+South Africa,74,96,89
+India,76,141,138
+Ireland,76,94,89
+Ukraine,76,133,128
+China,78,140,137
+France,81,87,82
+Spain,81,114,111
+United States,81,135,135
+Egypt,92,150,147
+Portugal,92,134,127
+United Kingdom,100,156,145
+Poland,111,166,156
+Brazil,10589,15603,14789
+Argentina,12173,18607,17704
+Colombia,12685,19063,18122
+Venezuela,12839,19221,18221

@@ -1,6 +1,7 @@
-product_category,count
-food,1886
-books,1838
-electronics,2642
-clothing,1781
-tools,1853
+product_category,count,total,total_successful
+App,6030,6184,5850
+Drug,8117,8833,8428
+Groceries,8190,25990,24747
+Car,9140,9768,9277
+Plants,9362,15162,14347
+Movie,9697,9916,9398

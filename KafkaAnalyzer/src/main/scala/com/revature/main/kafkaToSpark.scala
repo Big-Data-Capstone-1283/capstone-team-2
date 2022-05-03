@@ -8,6 +8,10 @@ import org.apache.log4j.{Level, Logger}
 import org.apache.spark.sql.functions.{col, expr, split}
 import org.apache.spark.sql.{DataFrame, SaveMode, SparkSession}
 
+import java.io.{File, PrintWriter}
+import scala.Console.{RED, RESET, UNDERLINED, WHITE_B, YELLOW_B}
+import scala.io.Source
+
 object kafkaToSpark {
   //Constant to switch csv write on/off for debug purposes
   val WRITE_TO_CSV_ON: Boolean = true
@@ -23,15 +27,46 @@ object kafkaToSpark {
 
   def testColumnCount():Unit={
   // Read "covid_19_data.csv" data as a dataframe
+    val INPUT_FILENAME="KafkaPreProcessed_SingleColumn.csv"
+    val filename = removeAllQuotesFromFile(INPUT_FILENAME)
     println("Dataframe read from CSV:")
     startTimer()
     var df = spark.read.format("csv").option("header", "false").option("inferSchema", "true")
-      .load("kafkaPreProcessed.csv")
-    df.printSchema()
-    df.printLength
+      .load(filename)
+    val rawDataColumnCount=df.columns.length
+    println(s"There are ${formatText_HIGHLIGHT_UNDERLINE(rawDataColumnCount)} columns in the raw data")
+    if (rawDataColumnCount!=16){
+      if (rawDataColumnCount>16) println("The raw data contains rows with MORE columns than the defined schema")
+      if (rawDataColumnCount<16) println("The raw data contains rows with LESS columns than the defined schema")
+      var badRowsCount=0
+      for (i<-(rawDataColumnCount-16) to rawDataColumnCount){
+        //Select
+      }
+
+    } else {
+      println("The raw data conforms to the schema in regards to column count")
+    }
     stopTimer()
     df.show(5, false)
   }
+
+  private def formatText_HIGHLIGHT_UNDERLINE(input:Any):String={
+    val input_Stringed=input.toString
+    s"${RESET}${WHITE_B}${RED}${UNDERLINED}$input${RESET}"
+  }
+
+  private def removeAllQuotesFromFile(INPUT_FILENAME:String):String={
+    //val f1 is original filename
+    val inputFile= INPUT_FILENAME
+    val outputFile = new File("KafkaPreProcessed_CommasRemoved.csv") // Temporary File
+    val w = new PrintWriter(outputFile)
+    Source.fromFile(inputFile).getLines
+      .map { x => x.replaceAll("[\"]","") }
+      .foreach(x => w.println(x))
+    w.close()
+    outputFile.getName
+  }
+
 
   def testDateTime():Unit={
 
@@ -46,6 +81,12 @@ object kafkaToSpark {
   }
 
   def getDistinctCountriesCities():Unit={
+    var df=processedData
+    var distinctCountries=df.select("country").distinct().count()
+    var distinctCities=df.select("city").distinct().count()
+
+    println(s"Distinct Countries count = $distinctCountries")
+    println(s"Distinct Cities count = $distinctCities")
 
   }
 
@@ -64,9 +105,8 @@ object kafkaToSpark {
       .load("kafka.csv")
     df = df.select(df.columns(1))
     df = df.withColumn("csv", expr("substring(_c1, 2, length(_c1)-2)"))
-
     df = df.select(df.columns(1))
-    csvWriterHelper(df, "KafkaPreprocessed.csv")
+    saveDataFrameAsCSV(df,"KafkaPreProcessed_SingleColumn.csv",false)
 
     val df2 = df.select(
       split(col("csv"), ",").getItem(0).as("order_id"),
@@ -95,18 +135,21 @@ object kafkaToSpark {
 
     //Write the data out as a file to be used for visualization
     processedData = df2
-    csvWriterHelper(processedData, "KafkaProcessed.csv")
+    csvWriterHelper(processedData, "KafkaProcessed_CorrectSchema_Unclean.csv")
   }
 
 
   /**
     * Allows write to csv to be one line in other methods, reducing overall code. Method called ios still the csv writer from the Project2 driver
     */
-  def csvWriterHelper(df: DataFrame, filename: String): Unit = {
+  def csvWriterHelper(df: DataFrame, filename: String,additionalPRINTLN:String=""): Unit = {
     if (WRITE_TO_CSV_ON) {
       // Write the data out as a file to be used for visualization
       startTimer(s"Save $filename as file")
       saveDataFrameAsCSV(df, filename)
+      if (!additionalPRINTLN.isEmpty) {
+        println(additionalPRINTLN)
+      }
       println(s"Saved as: $filename")
       stopTimer("Save $filename")
     }
