@@ -7,22 +7,24 @@ import scala.util.Random
 
 class personGen {
 
-  var firstName:String = genRandomFname
-  var lastName:String = genRandomLname
-  var fullName:String = s"$firstName $lastName"
-  var customerID:String = genID(firstName,lastName)
-  var cus_country:String = genRandomCountry
-  var cus_city:String =  genRandomCity
-  var paymentType:String = genPayment
-  //private val datetime:String = ""
-  //private val startDate:String=""
-  //private val endDate:String =""
+  var firstName:String = genRandomFname //First name
+  var lastName:String = genRandomLname //Last Name
+  var fullName:String = s"$firstName $lastName" // Full name ex "Adam Gore"
+  var customerID:String = genID(firstName,lastName) //ID AG1234567
+  var cus_country:String = genRandomCountry //Country Name
+  var cus_city:String =  genRandomCity // City Name within Country
+  var paymentType:String = genPayment // Payment type
+
 
 // all CSV are in the input directory
 
 
-
-// creates a list of first names to be used in creating the full name// needs a string as a CSV file as input
+  /**
+   * takes in the name of CSV
+   * @param fnameFile
+   * @return fname List
+   */
+  // creates a list of first names to be used in creating the full name// needs a string as a CSV file as input
 def createFnameList(fnameFile:String):ListBuffer[String]= {
 
   val fName = new ListBuffer[String]
@@ -35,7 +37,13 @@ def createFnameList(fnameFile:String):ListBuffer[String]= {
 
 fName
 }
-// creates a list of last names to be used in creating the full name // needs CSV string as input
+
+  /**
+   * takes in the name of a csv
+   * @param lnameFile
+   * @return Lname list
+   */
+  // creates a list of last names to be used in creating the full name // needs CSV string as input
 def createLnameList(lnameFile:String):ListBuffer[String] ={
 
   val lName = new ListBuffer[String]
@@ -53,7 +61,12 @@ def createLnameList(lnameFile:String):ListBuffer[String] ={
 }
 
 
-//creates a list of countries that will be used in creating the String for the csv // needs a CSV name as text
+  /**
+   * takes in the name of csv
+   * @param countryf
+   * @return country list
+   */
+  //creates a list of countries that will be used in creating the String for the csv // needs a CSV name as text
 def createCountryList(countryf:String):ListBuffer[String]={
   val country = new ListBuffer[String]
   val f = new File(countryf)
@@ -66,7 +79,13 @@ def createCountryList(countryf:String):ListBuffer[String]={
 
   country
 }
-//creates a list of cities that will be used in creating the String for csv needs a country name as input
+
+  /**
+   * Takes in the name of a country
+   * @param countryName
+   * @return list of countries
+   */
+  //creates a list of cities that will be used in creating the String for csv needs a country name as input
 def createCityList(countryName:String):ListBuffer[String] = {
   val cities = new ListBuffer[String]
   var cityfileName = new String
@@ -87,7 +106,10 @@ def createCityList(countryName:String):ListBuffer[String] = {
  cities
 }
 
-//generates a random country by using the Country list
+  /**Generates a random country from CSV
+   * @return countryName
+   */
+  //generates a random country by using the Country list
 def genRandomCountry:String={
   val countryName = createCountryList("input/Country.csv")
   val rng = new Random()
@@ -98,14 +120,23 @@ def genRandomCountry:String={
 
 
 //generates a random city by using the City List
-def genRandomCity:String={
+
+  /**
+   * Genereates a random city based off of the country using createCityList
+   * @return cityName
+   */
+  def genRandomCity:String={
   val cityName = createCityList(country)
   val rng = new Random()
   val output:String = cityName(rng.nextInt(cityName.length -1))
   output
 }
 
-def genPayment:String={
+  /**
+   * Generates a random payment_type
+   * @return output payment_type
+   */
+  def genPayment:String={
   var output = new String
 // payment rates to be changed based off of Patterns USes the weighted Randomizer class
   cus_country match{
@@ -131,7 +162,11 @@ def genPayment:String={
   output
 }
 
-//generate a random first name
+  /**
+   * Generates a random first name
+   * @return fname
+   */
+  //generate a random first name
   def genRandomFname: String = {
     val fname = createFnameList("input/FirstName.csv")
     var output = new String
@@ -140,7 +175,11 @@ def genPayment:String={
     output
   }
 
-//generate a random last night
+  /**
+   * Generates a rangdom last name csv
+   * @return lname
+   */
+  //generate a random last night
   def genRandomLname: String = {
     val Lname = createLnameList("input/LastName.csv")
     var output = new String
@@ -149,7 +188,12 @@ def genPayment:String={
     output
   }
 
-//generates a full name string with first and last name separated by a space
+  /**
+   * @param fname First name from the firstname generator
+   * @param lname Last name from the lastname generator
+   * @return "First Last"
+   */
+  //generates a full name string with first and last name separated by a space
 def fullNameGen(fname:String,lname:String):String={
   val fullname = s"$fname $lname"
   fullname
@@ -196,6 +240,10 @@ def genID(fname:String,lname:String):String = {
 
 //basic toString that creates the string for the CSV input
 
+  /**
+   * overloaded string method. Prints out all of the aspects of a person.
+   * @return output String.
+   */
   override def toString(): String = {
 
     var output = new String
@@ -215,7 +263,11 @@ def genID(fname:String,lname:String):String = {
     output
   }
 
- def falsePersonGen:Unit = {
+
+  /**
+   * Changes pieces of the  person data to make them false.
+   */
+  def falsePersonGen:Unit = {
 
    val rng = scala.util.Random
 

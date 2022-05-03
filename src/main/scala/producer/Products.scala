@@ -39,6 +39,10 @@ class Products(person:personGen) {
 
   object productsLists {
 
+    /**
+     * @param fileName foodsCSV
+     * @return List of foods
+     */
     def foodsList(fileName: String): ListBuffer[Product] = {
       val foods = new ListBuffer[Product]
       val f = new File(fileName)
@@ -67,6 +71,10 @@ class Products(person:personGen) {
     }
 
 
+    /**
+     * @param fileName ToolsCSV
+     * @return List of Tools
+     */
     def toolsList(fileName: String): ListBuffer[Product] = {
       val tools = new ListBuffer[Product]
       val f = new File(fileName)
@@ -92,6 +100,10 @@ class Products(person:personGen) {
       tools
     }
 
+    /**
+     * @param fileName ClothesCSV
+     * @return List of Clothes
+     */
     def clothesList(fileName: String): ListBuffer[Product] = {
       val clothes = new ListBuffer[Product]
       val f = new File(fileName)
@@ -115,6 +127,10 @@ class Products(person:personGen) {
       clothes
     }
 
+    /**
+     * @param fileName booksCSV
+     * @return List of Books
+     */
     def booksList(fileName: String): ListBuffer[Product] = {
       val books = new ListBuffer[Product]
       val f = new File(fileName)
@@ -142,6 +158,10 @@ class Products(person:personGen) {
       books
     }
 
+    /**
+     * @param fileName electronicsCSV
+     * @return List of Electronics
+     */
     def electronicsList(fileName: String): ListBuffer[Product] = {
       val electronics = new ListBuffer[Product]
       val f = new File(fileName)
@@ -169,6 +189,10 @@ class Products(person:personGen) {
     }
   }
 
+  /**
+   * Assaigns a person to a product using a list of customers and a weighted choice for the type of product from the lists created above
+   * @return a string in the order of the schema
+   */
   def assignPersontoProduct:String={
     var personProductString = new String
     var ordercat = new String
@@ -176,6 +200,7 @@ class Products(person:personGen) {
     val rng = scala.util.Random
 
 
+    // weighted randomizer for choosing the category for products
     person.country match{
       case "Australia" => val categoryRate = Map("books" -> 19, "clothes"->19, "electronics" -> 19, "food" -> 19, "tools" -> 24)
         ordercat =  WeightedRandomizer(categoryRate)
@@ -255,6 +280,10 @@ class Products(person:personGen) {
     personProductString
   }
 
+  /**
+   * Creates the portion of false data that creates a break in the batter
+   * @return a new formatted string of bad data
+   */
   def falseProductGen:String = {
     //var personProductString = new String
     var ordercat = new String
@@ -383,6 +412,10 @@ class Products(person:personGen) {
   }
 
 
+  /**
+   * Randomizes a transaction success based on the weight
+   * @return Y or N
+   */
   def transactionSuccess: String =
   {
     val failOrSuc =Map("Y" -> 90, "N"-> 10)
@@ -390,6 +423,10 @@ class Products(person:personGen) {
     output
   }
 
+  /**
+   * gives a randomized reason
+   * @return Failure Reason
+   */
   def transactionFailReason:String =
     {
       //var output = ""
@@ -401,13 +438,28 @@ class Products(person:personGen) {
     }
 }
 
+/**
+ * create a product
+ * @param name of product
+ * @param price of product
+ */
 class Product(name:String, price:String)
 {
   val Name: String =name
   val Price: String =price
+
+  /**
+   * returns the name of the product
+   * @return
+   */
   def getName:String ={
     Name
   }
+
+  /**
+   * returns the price of a product
+   * @return
+   */
   def getPrice:String ={
     Price
   }
