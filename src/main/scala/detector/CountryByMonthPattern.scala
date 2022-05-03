@@ -8,7 +8,7 @@ import org.joda.time.DateTime
 object CountryByMonthPattern {
 
 	/**
-	  * Tests for a pattern in the average purchase frequency for each country by month (average is per day rounded to nearest integer).
+	  * Tests for a pattern in the average purchase frequency for each country by month.
 	  * (Assumes time zone data is already normalized to UTC.)
 	  *
 	  * @param data	Dataframe to search for a pattern on.
@@ -19,22 +19,26 @@ object CountryByMonthPattern {
 			.select("datetime", "country", "qty")
 			.withColumn("year_and_month", date_format(col("datetime"), "yyyy-MM"))  // Create a column with the year and month for each date
 			.groupBy("country","year_and_month")
-			.agg(round(count("year_and_month") / PatternDetector.daysPerMonthCol(col("year_and_month"))).cast(LongType).as("average_count_per_day"),  // Averages counts per day by length of month
-				 round(sum("qty") / PatternDetector.daysPerMonthCol(col("year_and_month"))).cast(LongType).as("average_total_per_day"))  // Averages totals per day by length of month
+			// .agg(round(count("year_and_month") / PatternDetector.daysPerMonthCol(col("year_and_month"))).cast(LongType).as("average_count_per_day"),  // Averages counts per day by length of month
+				 // round(sum("qty") / PatternDetector.daysPerMonthCol(col("year_and_month"))).cast(LongType).as("average_total_per_day"))  // Averages totals per day by length of month
+			.agg((count("year_and_month") / PatternDetector.daysPerMonthCol(col("year_and_month"))).as("average_count_per_day"),  // Averages counts per day by length of month
+				 (sum("qty") / PatternDetector.daysPerMonthCol(col("year_and_month"))).as("average_total_per_day"))  // Averages totals per day by length of month
 		var newDfSucc = data  // Generate the "average_total_successful_per_day" data
 			.select("datetime", "qty", "country")
 			.where("payment_txn_success = 'Y'")
 			.withColumn("temp_year_and_month", date_format(col("datetime"), "yyyy-MM"))  // Create a column with the year and month for each date
 			.withColumnRenamed("country", "temp_country")
 			.groupBy("temp_country", "temp_year_and_month")
-			.agg(round(sum("qty") / PatternDetector.daysPerMonthCol(col("temp_year_and_month"))).cast(LongType).as("average_total_successful_per_day"))  // Averages totals per day by length of month
+			//.agg(round(sum("qty") / PatternDetector.daysPerMonthCol(col("temp_year_and_month"))).cast(LongType).as("average_total_successful_per_day"))  // Averages totals per day by length of month
+			.agg((sum("qty") / PatternDetector.daysPerMonthCol(col("temp_year_and_month"))).as("average_total_successful_per_day"))  // Averages totals per day by length of month
 		newDf = newDf  // Merge the two dataframes
 			.join(newDfSucc, newDf("year_and_month") === newDfSucc("temp_year_and_month")  && newDf("country") === newDfSucc("temp_country"), "full")
 			.drop("temp_year_and_month", "temp_country")
 			.orderBy("year_and_month", "country")
 		if (PatternDetector.testMode)  // If we're in test mode...
 			newDf.show(false)  // ...show the data
-		val ndev = PatternDetector.deviation2F(newDf)  // Check the data for a pattern
+		// val ndev = PatternDetector.deviation2F(newDf)  // Check the data for a pattern
+		val ndev = PatternDetector.getDeviationDouble(newDf, 2, Seq(0, 1))  // Check the data for a pattern
 		var filename = ""
 		if (ndev > 1.0 + PatternDetector.marginOfError) {  // Pattern detected
 			filename = PatternDetector.saveDataFrameAsCSV(newDf, "CountryByMonth.csv")  // Write the data to a file
