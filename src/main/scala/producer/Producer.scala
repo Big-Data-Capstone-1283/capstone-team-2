@@ -4,9 +4,9 @@ import java.util.Properties
 import org.apache.kafka.clients.producer.{KafkaProducer, ProducerRecord}
 import producer.Orders._
 
-class Producer extends App{
+object Producer extends App{
   val props:Properties = new Properties()
-  //Replace ip with your ip from server.config
+  // Connecting to EC2
   props.put("bootstrap.servers","ec2-3-93-174-172.compute-1.amazonaws.com:9092")
   props.put("key.serializer",
     "org.apache.kafka.common.serialization.StringSerializer")
@@ -14,17 +14,19 @@ class Producer extends App{
     "org.apache.kafka.common.serialization.StringSerializer")
   props.put("acks","all")
   val producer = new KafkaProducer[String, String](props)
-  val topic = "team2"
+  val topic = "topic_text"
 
   try {
     // for loop determines number of batches
-    for (i <- 1 to 2) {
-      val batch = createOrders() // placeholder for data generation method
+    for (i <- 1 to 50) {
+      val batch = createOrder(1000-1, i*1000+1) // Number of orders (rows)
+      // numOrders and startAt must be the same multiple of 10 (i.e. 1000 or 100) so there are no duplicate OrderIds
       println(s"Sending batch #$i ")
-      Thread.sleep(2000) // for testing purposes, to give user time to read
+      Thread.sleep(500) // for testing purposes, to give user time to read
       batch.foreach(x => {
-        // REMINDER: change substring so that it pulls OrderID (I don't know how long it is currently)
-        val record = new ProducerRecord[String, String](topic, x.substring(0, 10).toString, x)
+        val split = x.split(",")
+        val key = split(0)
+        val record = new ProducerRecord[String, String](topic, key, x)
         val metadata = producer.send(record)
         // Display to console what is being sent to Kafka broker
         printf(s"Sent record(key=%s value=%s) " +

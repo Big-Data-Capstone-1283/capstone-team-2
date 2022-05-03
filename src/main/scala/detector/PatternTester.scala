@@ -9,13 +9,14 @@ import org.joda.time.DateTime
 import java.sql.Timestamp
 import scala.collection.mutable.ArrayBuffer
 //import scala.util.Try
-import producer.WeightedRandomizer_Test.WeightedRandomizer
+import producer.WeightedRandomizer
 
 object PatternTester {
 	var spark:SparkSession = null
 
 	def main (args: Array[String]): Unit = {
 
+		// Spark setup
 		Logger.getLogger("org").setLevel(Level.ERROR)  // Hide most of the initial non-error log messages
 		spark = SparkSession  // Create the Spark session
 			.builder()
@@ -24,6 +25,7 @@ object PatternTester {
 			.getOrCreate()
 		spark.sparkContext.setLogLevel("ERROR")  // Hide further non-error messages
 
+		// Data generation setup
 		/*
 		var colNames = Seq(col("order_id"), col("customer_id"), col("customer_name"), col("product_id"), col("product_name"),
 						   col("product_category"), col("payment_type"), col("qty"), col("price"), col("datetime"), col("country"), col("city"),
@@ -50,11 +52,13 @@ object PatternTester {
 		var sampleData = Seq.empty[Row]  // Array of rows used for generating sample data
 		var tempRow = Row.empty
 		var rowData = Seq.empty[Any]
-		var country = ""
 		var product_category = ""
 		var payment_type = ""
+		var country = ""
+		var city = ""
 		var website = ""
 		var transaction_success = ""
+		var failure_reason = ""
 		var datetimestamp = new Timestamp(0)
 		var datemap = Map[Int, Int]()
 		var datearr = Array.ofDim[DateTime](90)
@@ -89,11 +93,14 @@ object PatternTester {
 
 		// Generate test data to verify that the pattern testers are working properly
 		sampleData = Seq.empty[Row]
-		for (i <- 1 to 10000) {
+		println("Generating test data... ")
+		for (i <- 1 to 10000) {  // Generate this many rows of data
 			rowData = Seq.empty[Any]
-			// country = WeightedRandomizer(Map("US" -> 330, "Australia" -> 26, "UK" -> 67, "Canada" -> 38, "New Zealand" -> 5))  // "country" data with a pattern
+			country = WeightedRandomizer(Map("US" -> 330, "Australia" -> 26, "UK" -> 67, "Canada" -> 38, "New Zealand" -> 5))  // "country" data with a pattern
 			// country = WeightedRandomizer(Map("US" -> 15, "Australia" -> 10, "UK" -> 10, "Canada" -> 10, "New Zealand" -> 10))  // "country" data with slight pattern
-			country = WeightedRandomizer(Map("US" -> 1, "Australia" -> 1, "UK" -> 1, "Canada" -> 1, "New Zealand" -> 1))  // "country" data with no pattern
+			// country = WeightedRandomizer(Map("US" -> 1, "Australia" -> 1, "UK" -> 1, "Canada" -> 1, "New Zealand" -> 1))  // "country" data with no pattern
+			city = WeightedRandomizer(Map("Alpha" -> 10, "Bravo" -> 9, "Charlie" -> 8, "Delta" -> 7, "Echo" -> 6))  // "city" data with a pattern
+			// city = WeightedRandomizer(Map("Alpha" -> 1, "Bravo" -> 1, "Charlie" -> 1, "Delta" -> 1, "Echo" -> 1))  // "city" data with no pattern
 			country match {  // "product_category" data
 				case "US" => 			product_category = WeightedRandomizer(Map("electronics" -> 5, "tools" -> 1, "clothing" -> 1, "books" -> 1, "food" -> 1))
 				case "Australia" =>		product_category = WeightedRandomizer(Map("electronics" -> 1, "tools" -> 1, "clothing" -> 1, "books" -> 1, "food" -> 1))
@@ -103,12 +110,30 @@ object PatternTester {
 			}
 			// product_category = WeightedRandomizer(Map("Electronics" -> 60, "Tools" -> 20, "Clothing" -> 45, "Books" -> 30, "Food" -> 100)) // Add "product_category" data with no pattern
           	// product_category = WeightedRandomizer(Map("Electronics" -> 1, "Tools" -> 1, "Clothing" -> 1, "Books" -> 1, "Food" -> 1)) // Add "product_category" data with no pattern
-			payment_type = WeightedRandomizer(Map("Credit Card" -> 210, "Internet Banking" -> 40, "UPI" -> 30, "Wallet" -> 150))  // Add "payment_type" data with a pattern
+			country match {  // "payment_type" data
+				case "US" => 			payment_type = WeightedRandomizer(Map("Credit Card" -> 210, "Internet Banking" -> 40, "UPI" -> 30, "Wallet" -> 150))
+				case "Australia" =>		payment_type = WeightedRandomizer(Map("Credit Card" -> 210, "Internet Banking" -> 40, "UPI" -> 30, "Wallet" -> 50))
+				case "UK" =>			payment_type = WeightedRandomizer(Map("Credit Card" -> 210, "Internet Banking" -> 40, "UPI" -> 30, "Wallet" -> 150))
+				case "Canada" =>		payment_type = WeightedRandomizer(Map("Credit Card" -> 210, "Internet Banking" -> 40, "UPI" -> 30, "Wallet" -> 150))
+				case "New Zealand" =>	payment_type = WeightedRandomizer(Map("Credit Card" -> 210, "Internet Banking" -> 40, "UPI" -> 30, "Wallet" -> 150))
+			}
+			// payment_type = WeightedRandomizer(Map("Credit Card" -> 210, "Internet Banking" -> 40, "UPI" -> 30, "Wallet" -> 150))  // Add "payment_type" data with a pattern
 			// payment_type = WeightedRandomizer(Map("Credit Card" -> 1, "Internet Banking" -> 1, "UPI" -> 1, "Wallet" -> 1))  // Add "payment_type" data with no pattern
-			website = WeightedRandomizer(Map("Amazon" -> 100, "Etsy" -> 15, "eBay" -> 30, "Alibaba" -> 10, "Walmart" -> 60))  // Add "ecommerce_website_name" data with no pattern
+			country match {  // "website" data
+				case "US" => 			website = WeightedRandomizer(Map("Amazon" -> 100, "Etsy" -> 15, "eBay" -> 30, "Alibaba" -> 5, "Walmart" -> 60))
+				case "Australia" =>		website = WeightedRandomizer(Map("Amazon" -> 100, "Etsy" -> 15, "eBay" -> 30, "Alibaba" -> 10, "Walmart" -> 60))
+				case "UK" =>			website = WeightedRandomizer(Map("Amazon" -> 100, "Etsy" -> 15, "eBay" -> 30, "Alibaba" -> 10, "Walmart" -> 60))
+				case "Canada" =>		website = WeightedRandomizer(Map("Amazon" -> 100, "Etsy" -> 15, "eBay" -> 30, "Alibaba" -> 10, "Walmart" -> 60))
+				case "New Zealand" =>	website = WeightedRandomizer(Map("Amazon" -> 100, "Etsy" -> 15, "eBay" -> 30, "Alibaba" -> 20, "Walmart" -> 60))
+			}
+			// website = WeightedRandomizer(Map("Amazon" -> 100, "Etsy" -> 15, "eBay" -> 30, "Alibaba" -> 10, "Walmart" -> 60))  // Add "ecommerce_website_name" data with no pattern
 			// website = WeightedRandomizer(Map("Amazon" -> 1, "Etsy" -> 1, "eBay" -> 1, "Alibaba" -> 1, "Walmart" -> 1))  // Add "ecommerce_website_name" data with no pattern
-			transaction_success = WeightedRandomizer(Map("Success" -> 95, "Failure" -> 5))  // Add "payment_txn_success" data with pattern
-			// transaction_success = WeightedRandomizer(Map("Success" -> 1, "Failure" -> 1))  // Add "payment_txn_success" data with no pattern
+			transaction_success = WeightedRandomizer(Map("Y" -> 95, "N" -> 5))  // Add "payment_txn_success" data with pattern
+			// transaction_success = WeightedRandomizer(Map("Y" -> 1, "N" -> 1))  // Add "payment_txn_success" data with no pattern
+			if (transaction_success == "N")
+				failure_reason = WeightedRandomizer(Map("Invalid transaction data" -> 100, "Connection dropped" -> 60, "Payment system failure" -> 30, "Unknown error" -> 20, "Explosion" -> 15))
+			else
+				failure_reason = ""
 			day = WeightedRandomizer(datemap)
 			hour = WeightedRandomizer(timemap)
 			while (day == 71 && hour == 2)  // Fix for daylight savings time (skips from 1:59.59am to 3:00.00am on Mar. 13rd, 2022)
@@ -122,7 +147,10 @@ object PatternTester {
 				else if (j == 6)
 					rowData = rowData :+ payment_type
 				else if (j == 7)
-					rowData = rowData :+ 1  // Add "qty" data with no pattern
+					rowData = rowData :+ WeightedRandomizer(Map(1 -> 92, 2 -> 5, 3 -> 1, 4 -> 1, 5 -> 1))  // Add "qty" data with a pattern
+					// rowData = rowData :+ 1  // Add "qty" data with no pattern
+				else if (j == 8)
+					rowData = rowData :+ "100"  // Add "price" data with no pattern
 				else if (j == 9)
 					rowData = rowData :+ datetimestamp
 					/*
@@ -137,16 +165,21 @@ object PatternTester {
 					*/
 				else if (j == 10)
 					rowData = rowData :+ country
+				else if (j == 11)
+					rowData = rowData :+ city
 				else if (j == 12)
 					rowData = rowData :+ website
 				else if (j == 14)
 					rowData = rowData :+ transaction_success
+				else if (j == 15)
+					rowData = rowData :+ failure_reason
 				else
 					rowData = rowData :+ ""  // Add all remaining columns with no pattern
 			}
 			tempRow = Row.fromSeq(rowData)
 			sampleData = sampleData :+ tempRow
 		}
+		println("Complete!\n")
 		val df = spark.createDataFrame(spark.sparkContext.parallelize(sampleData, 1), tableStructure)  // Create a dataframe from the sample data
 		df.show()  // Verify it was created properly
 		df.printSchema()  // Verify it was created properly
