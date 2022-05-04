@@ -10,12 +10,12 @@ import scala.util.Random
 
 object dateTimeGenerator {
   var cityString=""
-  var MM: Int = 0
-  val yyyy=2022
-  var dd:Int= 0
-  var hh:Int= 0
-  var mm:Int= 0
-  var ss:Int= 0
+  var MM: Int = getMonth
+  var yyyy=2022
+  var dd:Int=getDay
+  var hh:Int=getHour(cityString)
+  var mm:Int=genRandomInt()
+  var ss:Int=genRandomInt()
   var thisMonthLength:Int=0
   var dayOfEntireRange_Modifier:Int=0
 
@@ -42,10 +42,10 @@ object dateTimeGenerator {
     val timezoneMod:Int=timezones.getOrElse(city,0)
     //println(timezoneMod)
     hh=hh+timezoneMod
-    if (hh>24) {
+    if (hh>=24) {
       hh=hh-24
     }
-    else if(hh<0){
+    if (hh<0) {
       hh=hh+24
     }
     hh
@@ -56,27 +56,31 @@ object dateTimeGenerator {
   }
 
   def main(args:Array[String]): Unit = {
-    //apply("London")
-    badDateTime("London")
+
   }
 
   def apply(city:String): String = {
+    cityString=city
     MM = getMonth
-    dd =getDay
-    hh =getHour(cityString)
+    yyyy=2022
+    dd=getDay
+    hh=getHour(cityString)
     mm=genRandomInt()
     ss=genRandomInt()
-
-    cityString=city
+    thisMonthLength=0
+    dayOfEntireRange_Modifier=0
     getString
   }
   def badDateTime(city:String):String={
+    cityString=city
     MM = getMonth
-    dd =getDay
-    hh =getHour(cityString)
+    yyyy=2022
+    dd=getDay
+    hh=getHour(cityString)
     mm=genRandomInt()
     ss=genRandomInt()
-    cityString=city
+    thisMonthLength=0
+    dayOfEntireRange_Modifier=0
     var incorrectString=getString
     incorrectString= incorrectString.substring(0, 5) + "13" + incorrectString.substring(7)
     incorrectString
@@ -95,7 +99,7 @@ object dateTimeGenerator {
 
   private def getDay:Int={
     val year = 2022
-      var month:Month=null
+    var month:Month=null
     MM match{
       case 1 => month=Month.JANUARY
       case 2=> {
@@ -116,10 +120,10 @@ object dateTimeGenerator {
     thisMonthLength=YearMonth.of(year, month).lengthOfMonth
     var weekendDays:ListBuffer[Int]=new ListBuffer[Int]
     IntStream.rangeClosed(1, YearMonth.of(year, month).lengthOfMonth).mapToObj((day: Int) =>
-        LocalDate.of(year, month, day)).filter((date: LocalDate) =>
+      LocalDate.of(year, month, day)).filter((date: LocalDate) =>
       (date.getDayOfWeek eq DayOfWeek.SATURDAY) || (date.getDayOfWeek eq DayOfWeek.SUNDAY)).forEach((date: LocalDate) =>
-        //System.out.print(date.getDayOfMonth + " "
-        weekendDays.append(date.getDayOfMonth)
+      //System.out.print(date.getDayOfMonth + " "
+      weekendDays.append(date.getDayOfMonth)
     )
     var weightsMap=scala.collection.mutable.Map[Int, Int]()
     //fill weight map with 100 weight for every day of month
@@ -145,8 +149,8 @@ object dateTimeGenerator {
       .withSecondOfMinute(ss)
     var dayOfWeek = tempDate.dayOfWeek().get() // Returns an integer 1 - 7 representing Mon - Sun
     dateStr = tempDate.toString("YYYY-MM-dd HH:mm:ss")
-//    println(dayOfWeek)
-//    println(dateStr)
+    //    println(dayOfWeek)
+    //println(dateStr)
     dateStr
   }
 }
