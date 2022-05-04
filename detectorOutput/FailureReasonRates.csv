@@ -1,16 +1,11 @@
 failure_reason,count
-+AYz*FExgoTbkwJkaJ,1
-Onn1E,1
-fi@k;Q5s2j&vKAE!zLN,1
-"W$TBGzmLz\\\"",1
-6aK,1
-PayPal Service Down,94
-Incorrect Credentials,105
-Out of Funds,110
-Card Expired,127
-Card Information Incorrect,130
-Bank Account Suspended,243
-Invalid Routing Number,269
-Connection Interrupted,473
-Server Maintenance,511
-Fraud,527
+Incorrect Credentials,696
+Out of Funds,698
+PayPal Service Down,738
+Card Expired,877
+Card Information Incorrect,897
+Invalid Routing Number,1647
+Bank Account Suspended,1698
+Connection Interrupted,3217
+Fraud,3223
+Server Maintenance,3228

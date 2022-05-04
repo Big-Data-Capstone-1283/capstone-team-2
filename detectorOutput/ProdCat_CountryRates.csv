@@ -1,211 +1,211 @@
 product_category,country,count,total,total_successful
-App,Argentina,1478,1534,1443
-App,Australia,12,12,11
-App,Belgium,9,9,9
-App,Brazil,1246,1344,1272
-App,Canada,8,8,8
-App,China,10,10,10
-App,Colombia,1473,1473,1401
-App,Egypt,12,12,11
-App,France,11,11,11
-App,Germany,10,10,9
-App,Greece,7,7,7
-App,India,10,10,10
-App,Indonesia,11,11,9
-App,Iran,11,11,10
-App,Ireland,11,11,10
-App,Israel,6,6,5
-App,Italy,7,7,7
-App,Japan,8,8,8
-App,Mexico,9,9,8
-App,Netherlands,6,6,6
-App,Norway,5,5,5
-App,Pakistan,6,6,6
-App,Poland,19,19,17
-App,Portugal,7,7,6
-App,Russia,6,6,6
-App,Scotland,2,2,2
-App,South Africa,10,10,10
-App,South Korea,5,5,5
-App,Spain,12,12,12
-App,Sweden,7,7,7
-App,Turkey,11,11,10
-App,Ukraine,11,11,9
-App,United Kingdom,15,15,15
-App,United States,5,5,5
-App,Venezuela,1554,1554,1470
-Car,Argentina,2151,2304,2177
-Car,Australia,7,7,7
-Car,Belgium,12,12,12
-Car,Brazil,1970,2116,2030
-Car,Canada,14,14,13
-Car,China,18,18,16
-Car,Colombia,2289,2441,2323
-Car,Egypt,19,19,18
-Car,France,12,12,12
-Car,Germany,11,11,10
-Car,Greece,15,16,16
-Car,India,11,11,11
-Car,Indonesia,6,6,6
-Car,Iran,5,5,5
-Car,Ireland,15,15,14
-Car,Israel,15,15,15
-Car,Italy,12,12,12
-Car,Japan,7,7,6
-Car,Mexico,15,15,14
-Car,Netherlands,12,12,12
-Car,Norway,13,13,13
-Car,Pakistan,9,9,9
-Car,Poland,15,15,15
-Car,Portugal,14,17,17
-Car,Russia,12,12,11
-Car,Scotland,6,6,6
-Car,South Africa,9,10,9
-Car,South Korea,13,13,10
-Car,Spain,17,17,16
-Car,Sweden,8,10,10
-Car,Turkey,12,12,12
-Car,Ukraine,14,14,13
-Car,United Kingdom,14,14,13
-Car,United States,12,12,12
-Car,Venezuela,2356,2526,2382
-Drug,Argentina,1988,2303,2215
-Drug,Australia,5,7,6
-Drug,Belgium,6,6,6
-Drug,Brazil,1667,1802,1696
-Drug,Canada,9,9,8
-Drug,China,10,13,13
-Drug,Colombia,2043,2161,2068
-Drug,Egypt,13,13,13
-Drug,France,16,17,15
-Drug,Germany,7,7,7
-Drug,Greece,14,14,13
-Drug,India,13,13,12
-Drug,Indonesia,10,11,11
-Drug,Iran,13,13,13
-Drug,Ireland,11,11,9
-Drug,Israel,11,11,10
-Drug,Italy,8,8,7
-Drug,Japan,8,8,8
-Drug,Mexico,9,12,12
-Drug,Netherlands,15,16,16
-Drug,Norway,14,16,16
-Drug,Pakistan,13,13,13
-Drug,Poland,20,25,25
-Drug,Portugal,17,17,14
-Drug,Russia,17,17,14
-Drug,Scotland,9,9,8
-Drug,South Africa,16,17,14
-Drug,South Korea,15,15,15
-Drug,Spain,10,10,9
-Drug,Sweden,12,15,14
-Drug,Turkey,8,8,8
-Drug,Ukraine,10,13,13
-Drug,United Kingdom,15,15,15
-Drug,United States,14,14,14
-Drug,Venezuela,2051,2174,2078
-Groceries,Argentina,1931,6270,6017
-Groceries,Australia,9,14,14
-Groceries,Belgium,14,24,23
-Groceries,Brazil,1715,5174,4909
-Groceries,Canada,11,48,47
-Groceries,China,13,39,38
-Groceries,Colombia,2066,6482,6141
-Groceries,Egypt,8,50,50
-Groceries,France,8,8,7
-Groceries,Germany,12,85,85
-Groceries,Greece,9,20,20
-Groceries,India,15,76,76
-Groceries,Indonesia,9,19,19
-Groceries,Iran,13,73,73
-Groceries,Ireland,11,18,17
-Groceries,Israel,14,30,29
-Groceries,Italy,17,60,58
-Groceries,Japan,5,11,11
-Groceries,Mexico,7,19,19
-Groceries,Netherlands,11,40,40
-Groceries,Norway,11,23,22
-Groceries,Pakistan,10,10,9
-Groceries,Poland,17,47,45
-Groceries,Portugal,19,57,56
-Groceries,Russia,7,29,29
-Groceries,Scotland,5,25,23
-Groceries,South Africa,13,21,21
-Groceries,South Korea,11,63,63
-Groceries,Spain,7,23,23
-Groceries,Sweden,3,3,3
-Groceries,Turkey,15,37,20
-Groceries,Ukraine,10,56,56
-Groceries,United Kingdom,21,70,63
-Groceries,United States,17,64,64
-Groceries,Venezuela,2126,6902,6557
-Movie,Argentina,2399,2473,2333
-Movie,Australia,10,10,8
-Movie,Belgium,15,15,15
-Movie,Brazil,1989,2007,1910
-Movie,Canada,11,11,11
-Movie,China,14,14,14
-Movie,Colombia,2412,2439,2315
-Movie,Egypt,23,23,23
-Movie,France,14,14,14
-Movie,Germany,17,17,15
-Movie,Greece,12,13,12
-Movie,India,12,12,10
-Movie,Indonesia,17,17,17
-Movie,Iran,19,20,18
-Movie,Ireland,14,14,14
-Movie,Israel,13,13,10
-Movie,Italy,11,11,11
-Movie,Japan,10,10,10
-Movie,Mexico,10,10,10
-Movie,Netherlands,14,14,13
-Movie,Norway,10,10,9
-Movie,Pakistan,15,15,14
-Movie,Poland,16,16,14
-Movie,Portugal,20,20,19
-Movie,Russia,13,14,14
-Movie,Scotland,17,17,15
-Movie,South Africa,18,18,15
-Movie,South Korea,20,20,18
-Movie,Spain,15,15,14
-Movie,Sweden,11,11,11
-Movie,Turkey,11,11,10
-Movie,Ukraine,18,18,16
-Movie,United Kingdom,22,22,19
-Movie,United States,24,24,24
-Movie,Venezuela,2431,2528,2403
-Plants,Argentina,2226,3723,3519
-Plants,Australia,12,16,9
-Plants,Belgium,7,7,7
-Plants,Brazil,2002,3160,2972
-Plants,Canada,16,41,41
-Plants,China,13,46,46
-Plants,Colombia,2402,4067,3874
-Plants,Egypt,17,33,32
-Plants,France,20,25,23
-Plants,Germany,16,16,16
-Plants,Greece,9,9,8
-Plants,India,15,19,19
-Plants,Indonesia,16,27,25
-Plants,Iran,11,18,17
-Plants,Ireland,14,25,25
-Plants,Israel,11,12,11
-Plants,Italy,11,11,11
-Plants,Japan,9,16,16
-Plants,Mexico,19,40,40
-Plants,Netherlands,13,15,14
-Plants,Norway,13,13,12
-Plants,Pakistan,13,36,36
-Plants,Poland,24,44,40
-Plants,Portugal,15,16,15
-Plants,Russia,17,17,17
-Plants,Scotland,8,20,19
-Plants,South Africa,8,20,20
-Plants,South Korea,9,9,9
-Plants,Spain,20,37,37
-Plants,Sweden,7,12,11
-Plants,Turkey,13,18,18
-Plants,Ukraine,13,21,21
-Plants,United Kingdom,13,20,20
-Plants,United States,9,16,16
-Plants,Venezuela,2321,3537,3331
+App,Argentina,773,773,747
+App,Australia,261,261,245
+App,Belgium,624,624,598
+App,Brazil,652,652,627
+App,Canada,1252,1252,1190
+App,China,1722,1722,1634
+App,Colombia,760,760,721
+App,Egypt,317,317,305
+App,France,770,770,732
+App,Germany,628,628,600
+App,Greece,631,631,597
+App,India,2628,2628,2500
+App,Indonesia,1575,1575,1505
+App,Iran,253,253,239
+App,Ireland,679,679,641
+App,Israel,267,267,254
+App,Italy,618,618,593
+App,Japan,237,237,220
+App,Mexico,1134,1134,1076
+App,Netherlands,648,648,608
+App,Norway,637,637,613
+App,Pakistan,2279,2279,2178
+App,Poland,300,300,291
+App,Portugal,760,760,721
+App,Russia,207,207,195
+App,Scotland,610,610,574
+App,South Africa,309,309,296
+App,South Korea,312,312,295
+App,Spain,595,595,574
+App,Sweden,591,591,558
+App,Turkey,303,303,286
+App,Ukraine,286,286,278
+App,United Kingdom,772,772,732
+App,United States,1136,1136,1080
+App,Venezuela,704,704,662
+Car,Argentina,1141,1222,1161
+Car,Australia,405,419,405
+Car,Belgium,971,1031,984
+Car,Brazil,993,1053,1004
+Car,Canada,1810,1936,1846
+Car,China,2552,2638,2496
+Car,Colombia,1090,1144,1084
+Car,Egypt,484,512,490
+Car,France,1079,1151,1097
+Car,Germany,981,1035,984
+Car,Greece,968,1001,950
+Car,India,4115,4251,4070
+Car,Indonesia,2328,2472,2364
+Car,Iran,399,415,388
+Car,Ireland,1023,1115,1060
+Car,Israel,433,447,422
+Car,Italy,948,1002,957
+Car,Japan,392,425,408
+Car,Mexico,1814,1927,1835
+Car,Netherlands,1024,1094,1033
+Car,Norway,991,1047,984
+Car,Pakistan,3382,3588,3418
+Car,Poland,506,527,501
+Car,Portugal,1046,1086,1050
+Car,Russia,370,385,370
+Car,Scotland,975,1062,1006
+Car,South Africa,439,456,435
+Car,South Korea,500,545,521
+Car,Spain,920,974,916
+Car,Sweden,915,982,941
+Car,Turkey,407,445,423
+Car,Ukraine,412,460,440
+Car,United Kingdom,1154,1227,1167
+Car,United States,1783,1963,1889
+Car,Venezuela,1162,1251,1196
+Drug,Argentina,1029,1107,1061
+Drug,Australia,360,374,361
+Drug,Belgium,889,946,900
+Drug,Brazil,886,940,896
+Drug,Canada,1670,1775,1679
+Drug,China,2228,2394,2281
+Drug,Colombia,1045,1148,1096
+Drug,Egypt,452,488,463
+Drug,France,981,1050,963
+Drug,Germany,872,940,895
+Drug,Greece,895,974,921
+Drug,India,3584,3870,3664
+Drug,Indonesia,2038,2162,2052
+Drug,Iran,329,362,346
+Drug,Ireland,913,976,925
+Drug,Israel,391,423,400
+Drug,Italy,841,898,846
+Drug,Japan,342,364,348
+Drug,Mexico,1590,1697,1596
+Drug,Netherlands,969,1017,964
+Drug,Norway,815,875,827
+Drug,Pakistan,3076,3293,3131
+Drug,Poland,456,487,468
+Drug,Portugal,977,1049,996
+Drug,Russia,352,378,357
+Drug,Scotland,911,993,940
+Drug,South Africa,392,421,394
+Drug,South Korea,406,443,421
+Drug,Spain,809,862,811
+Drug,Sweden,867,927,869
+Drug,Turkey,393,437,416
+Drug,Ukraine,356,376,366
+Drug,United Kingdom,982,1043,997
+Drug,United States,1619,1734,1643
+Drug,Venezuela,1024,1094,1024
+Groceries,Argentina,2073,6770,6342
+Groceries,Australia,1380,4537,4282
+Groceries,Belgium,1878,6214,5869
+Groceries,Brazil,1829,5774,5408
+Groceries,Canada,2609,8285,7925
+Groceries,China,3487,11185,10622
+Groceries,Colombia,2032,6936,6602
+Groceries,Egypt,1614,5033,4856
+Groceries,France,2225,6925,6630
+Groceries,Germany,1893,5793,5531
+Groceries,Greece,1903,6069,5793
+Groceries,India,4783,15245,14554
+Groceries,Indonesia,3029,9568,9032
+Groceries,Iran,1447,4782,4627
+Groceries,Ireland,2046,6235,5908
+Groceries,Israel,1374,4480,4348
+Groceries,Italy,1791,5290,5001
+Groceries,Japan,1242,4050,3804
+Groceries,Mexico,2489,7831,7492
+Groceries,Netherlands,1945,6230,5889
+Groceries,Norway,1851,5863,5570
+Groceries,Pakistan,3907,12630,11949
+Groceries,Poland,1586,4858,4563
+Groceries,Portugal,2128,6697,6275
+Groceries,Russia,1316,4348,4207
+Groceries,Scotland,1833,5950,5595
+Groceries,South Africa,1392,4607,4343
+Groceries,South Korea,1465,4836,4577
+Groceries,Spain,1806,5853,5643
+Groceries,Sweden,1836,5769,5524
+Groceries,Turkey,1386,4655,4449
+Groceries,Ukraine,1352,4584,4326
+Groceries,United Kingdom,2205,7209,6868
+Groceries,United States,2683,8629,8203
+Groceries,Venezuela,2103,6717,6394
+Movie,Argentina,2558,2590,2436
+Movie,Australia,1624,1640,1553
+Movie,Belgium,2200,2224,2104
+Movie,Brazil,2007,2022,1919
+Movie,Canada,3234,3276,3099
+Movie,China,4172,4212,3980
+Movie,Colombia,2416,2443,2320
+Movie,Egypt,1950,1969,1841
+Movie,France,2576,2605,2486
+Movie,Germany,2202,2225,2098
+Movie,Greece,2293,2315,2204
+Movie,India,5608,5650,5385
+Movie,Indonesia,3719,3757,3564
+Movie,Iran,1656,1668,1586
+Movie,Ireland,2304,2325,2206
+Movie,Israel,1671,1688,1595
+Movie,Italy,2109,2131,2022
+Movie,Japan,1549,1559,1468
+Movie,Mexico,3083,3122,2991
+Movie,Netherlands,2261,2285,2178
+Movie,Norway,2290,2318,2201
+Movie,Pakistan,4751,4802,4572
+Movie,Poland,1921,1946,1848
+Movie,Portugal,2476,2504,2366
+Movie,Russia,1562,1578,1498
+Movie,Scotland,2219,2243,2133
+Movie,South Africa,1643,1652,1571
+Movie,South Korea,1720,1740,1666
+Movie,Spain,2063,2086,1972
+Movie,Sweden,2204,2219,2120
+Movie,Turkey,1691,1711,1623
+Movie,Ukraine,1515,1533,1451
+Movie,United Kingdom,2644,2673,2549
+Movie,United States,3127,3160,2999
+Movie,Venezuela,2563,2592,2462
+Plants,Argentina,2245,3479,3272
+Plants,Australia,1610,2438,2279
+Plants,Belgium,2205,3514,3354
+Plants,Brazil,2001,3259,3090
+Plants,Canada,3149,4944,4675
+Plants,China,3916,6111,5792
+Plants,Colombia,2360,3684,3521
+Plants,Egypt,1840,2771,2613
+Plants,France,2287,3568,3405
+Plants,Germany,2174,3332,3208
+Plants,Greece,2198,3332,3169
+Plants,India,5580,8557,8182
+Plants,Indonesia,3543,5528,5277
+Plants,Iran,1623,2418,2260
+Plants,Ireland,2171,3316,3177
+Plants,Israel,1640,2491,2366
+Plants,Italy,2074,3256,3106
+Plants,Japan,1400,2177,2091
+Plants,Mexico,2916,4459,4247
+Plants,Netherlands,2155,3474,3303
+Plants,Norway,2109,3186,3003
+Plants,Pakistan,4606,7180,6848
+Plants,Poland,1812,2774,2644
+Plants,Portugal,2427,3714,3541
+Plants,Russia,1509,2443,2320
+Plants,Scotland,2147,3397,3242
+Plants,South Africa,1564,2532,2413
+Plants,South Korea,1639,2530,2394
+Plants,Spain,1956,2884,2740
+Plants,Sweden,2055,3201,3039
+Plants,Turkey,1595,2408,2286
+Plants,Ukraine,1481,2187,2088
+Plants,United Kingdom,2400,3844,3605
+Plants,United States,2949,4724,4526
+Plants,Venezuela,2461,3870,3710

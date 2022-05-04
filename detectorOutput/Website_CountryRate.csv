@@ -1,36 +1,277 @@
 ecommerce_website_name,country,count,total,total_successful
-www.amazon.com.br,Argentina,12173,18607,17704
-www.amazon.com.br,Australia,55,66,55
-www.amazon.com.br,Belgium,63,73,72
-www.amazon.com.br,Brazil,10589,15603,14789
-www.amazon.com.br,Canada,69,131,128
-www.amazon.com.br,China,78,140,137
-www.amazon.com.br,Colombia,12685,19063,18122
-www.amazon.com.br,Egypt,92,150,147
-www.amazon.com.br,France,81,87,82
-www.amazon.com.br,Germany,73,146,142
-www.amazon.com.br,Greece,66,79,76
-www.amazon.com.br,India,76,141,138
-www.amazon.com.br,Indonesia,69,91,87
-www.amazon.com.br,Iran,72,140,136
-www.amazon.com.br,Ireland,76,94,89
-www.amazon.com.br,Israel,70,87,80
-www.amazon.com.br,Italy,66,109,106
-www.amazon.com.br,Japan,47,60,59
-www.amazon.com.br,Mexico,69,105,103
-www.amazon.com.br,Netherlands,71,103,101
-www.amazon.com.br,Norway,66,80,77
-www.amazon.com.br,Pakistan,66,89,87
-www.amazon.com.br,Poland,111,166,156
-www.amazon.com.br,Portugal,92,134,127
-www.amazon.com.br,Russia,72,95,91
-www.amazon.com.br,Scotland,47,79,73
-www.amazon.com.br,South Africa,74,96,89
-www.amazon.com.br,South Korea,73,125,120
-www.amazon.com.br,Spain,81,114,111
-www.amazon.com.br,Sweden,48,58,56
-www.amazon.com.br,Turkey,70,97,78
-www.amazon.com.br,Ukraine,76,133,128
-www.amazon.com.br,United Kingdom,100,156,145
-www.amazon.com.br,United States,81,135,135
-www.amazon.com.br,Venezuela,12839,19221,18221
+www.allibaba.com,Argentina,323,482,468
+www.allibaba.com,Australia,367,521,494
+www.allibaba.com,Belgium,327,542,526
+www.allibaba.com,Brazil,304,451,420
+www.allibaba.com,Canada,317,543,506
+www.allibaba.com,China,12121,18066,17097
+www.allibaba.com,Colombia,326,444,418
+www.allibaba.com,Egypt,350,477,462
+www.allibaba.com,France,345,506,495
+www.allibaba.com,Germany,347,474,455
+www.allibaba.com,Greece,346,517,502
+www.allibaba.com,India,12477,18386,17609
+www.allibaba.com,Indonesia,10886,15925,15184
+www.allibaba.com,Iran,337,484,466
+www.allibaba.com,Ireland,324,497,458
+www.allibaba.com,Israel,311,482,471
+www.allibaba.com,Italy,315,477,457
+www.allibaba.com,Japan,285,435,420
+www.allibaba.com,Mexico,342,516,488
+www.allibaba.com,Netherlands,333,486,466
+www.allibaba.com,Norway,286,443,431
+www.allibaba.com,Pakistan,10366,15186,14447
+www.allibaba.com,Poland,358,498,468
+www.allibaba.com,Portugal,341,554,512
+www.allibaba.com,Scotland,346,515,495
+www.allibaba.com,South Africa,330,410,388
+www.allibaba.com,South Korea,326,517,498
+www.allibaba.com,Spain,291,403,377
+www.allibaba.com,Sweden,318,478,466
+www.allibaba.com,Turkey,335,476,446
+www.allibaba.com,Ukraine,277,449,442
+www.allibaba.com,United Kingdom,383,522,508
+www.allibaba.com,United States,330,528,509
+www.allibaba.com,Venezuela,349,499,469
+www.amazon.com,Argentina,170,265,257
+www.amazon.com,Australia,170,282,271
+www.amazon.com,Belgium,187,287,261
+www.amazon.com,Brazil,143,200,194
+www.amazon.com,Canada,8051,11806,11193
+www.amazon.com,China,178,206,197
+www.amazon.com,Colombia,207,275,267
+www.amazon.com,Egypt,193,287,271
+www.amazon.com,France,179,264,251
+www.amazon.com,Germany,184,324,301
+www.amazon.com,Greece,173,238,223
+www.amazon.com,India,161,222,209
+www.amazon.com,Indonesia,169,220,216
+www.amazon.com,Ireland,175,251,236
+www.amazon.com,Israel,171,282,254
+www.amazon.com,Italy,153,203,196
+www.amazon.com,Japan,149,240,217
+www.amazon.com,Mexico,7654,11249,10697
+www.amazon.com,Netherlands,178,284,275
+www.amazon.com,Norway,176,250,242
+www.amazon.com,Pakistan,161,279,270
+www.amazon.com,Poland,187,256,246
+www.amazon.com,Portugal,186,315,297
+www.amazon.com,Russia,188,294,278
+www.amazon.com,Scotland,174,275,255
+www.amazon.com,South Africa,163,303,290
+www.amazon.com,South Korea,189,256,242
+www.amazon.com,Spain,147,187,179
+www.amazon.com,Sweden,138,199,191
+www.amazon.com,Turkey,166,232,207
+www.amazon.com,Ukraine,167,256,243
+www.amazon.com,United Kingdom,199,295,268
+www.amazon.com,United States,7894,11936,11374
+www.amazon.com,Venezuela,165,253,248
+www.amazon.com.br,Argentina,3918,5890,5569
+www.amazon.com.br,Australia,16,16,15
+www.amazon.com.br,Belgium,29,54,50
+www.amazon.com.br,Brazil,3343,5171,4837
+www.amazon.com.br,Canada,21,31,31
+www.amazon.com.br,China,20,25,24
+www.amazon.com.br,Colombia,3930,6116,5892
+www.amazon.com.br,Egypt,30,43,27
+www.amazon.com.br,France,15,15,13
+www.amazon.com.br,Germany,24,37,35
+www.amazon.com.br,Greece,27,27,26
+www.amazon.com.br,India,26,41,38
+www.amazon.com.br,Indonesia,21,35,33
+www.amazon.com.br,Iran,28,29,28
+www.amazon.com.br,Ireland,27,27,25
+www.amazon.com.br,Israel,19,51,51
+www.amazon.com.br,Italy,20,27,26
+www.amazon.com.br,Japan,13,38,38
+www.amazon.com.br,Mexico,24,24,24
+www.amazon.com.br,Netherlands,21,28,27
+www.amazon.com.br,Norway,23,23,22
+www.amazon.com.br,Pakistan,22,22,21
+www.amazon.com.br,Poland,22,41,39
+www.amazon.com.br,Portugal,20,20,19
+www.amazon.com.br,Russia,21,38,37
+www.amazon.com.br,Scotland,28,46,46
+www.amazon.com.br,South Africa,23,24,24
+www.amazon.com.br,South Korea,31,42,40
+www.amazon.com.br,Spain,20,35,35
+www.amazon.com.br,Sweden,20,28,27
+www.amazon.com.br,Turkey,25,45,43
+www.amazon.com.br,Ukraine,17,20,18
+www.amazon.com.br,United Kingdom,19,19,19
+www.amazon.com.br,United States,23,44,43
+www.amazon.com.br,Venezuela,4108,6214,5860
+www.amazon.in,Argentina,41,44,43
+www.amazon.in,Australia,39,70,55
+www.amazon.in,Belgium,44,49,39
+www.amazon.in,Brazil,31,39,39
+www.amazon.in,Canada,45,110,102
+www.amazon.in,China,52,55,55
+www.amazon.in,Colombia,48,50,46
+www.amazon.in,Egypt,58,75,72
+www.amazon.in,France,50,89,85
+www.amazon.in,Germany,42,56,55
+www.amazon.in,Greece,46,62,61
+www.amazon.in,India,7858,11576,11041
+www.amazon.in,Indonesia,34,41,40
+www.amazon.in,Iran,65,88,84
+www.amazon.in,Ireland,41,52,52
+www.amazon.in,Israel,58,86,82
+www.amazon.in,Italy,45,64,63
+www.amazon.in,Japan,39,65,63
+www.amazon.in,Mexico,45,57,55
+www.amazon.in,Netherlands,51,70,68
+www.amazon.in,Norway,42,51,51
+www.amazon.in,Pakistan,6726,10379,9869
+www.amazon.in,Poland,37,47,46
+www.amazon.in,Portugal,47,75,71
+www.amazon.in,Russia,47,92,91
+www.amazon.in,Scotland,44,55,52
+www.amazon.in,South Africa,37,64,61
+www.amazon.in,South Korea,38,60,59
+www.amazon.in,Spain,46,90,88
+www.amazon.in,Sweden,51,76,73
+www.amazon.in,Turkey,40,66,63
+www.amazon.in,Ukraine,46,68,64
+www.amazon.in,United Kingdom,48,76,74
+www.amazon.in,United States,40,45,36
+www.amazon.in,Venezuela,55,65,58
+www.blockuster.com,Argentina,2973,5599,5320
+www.blockuster.com,Australia,2808,5347,5038
+www.blockuster.com,Belgium,2791,5271,4972
+www.blockuster.com,Brazil,2478,4541,4356
+www.blockuster.com,Canada,2982,5563,5376
+www.blockuster.com,China,3097,5841,5551
+www.blockuster.com,Colombia,2865,5423,5111
+www.blockuster.com,Egypt,3335,5963,5659
+www.blockuster.com,France,3176,6003,5708
+www.blockuster.com,Germany,2772,5162,4936
+www.blockuster.com,Greece,2920,5269,5032
+www.blockuster.com,India,3220,5922,5624
+www.blockuster.com,Indonesia,2820,5334,5000
+www.blockuster.com,Iran,3069,5895,5626
+www.blockuster.com,Ireland,2957,5370,5132
+www.blockuster.com,Israel,2877,5275,5079
+www.blockuster.com,Italy,2657,4711,4449
+www.blockuster.com,Japan,2589,4687,4415
+www.blockuster.com,Mexico,2724,4805,4594
+www.blockuster.com,Netherlands,2825,5566,5280
+www.blockuster.com,Norway,2760,5004,4716
+www.blockuster.com,Pakistan,2595,4725,4483
+www.blockuster.com,Poland,3316,5962,5663
+www.blockuster.com,Portugal,3197,5766,5433
+www.blockuster.com,Russia,2801,5455,5229
+www.blockuster.com,Scotland,2777,5139,4826
+www.blockuster.com,South Africa,2865,5341,5035
+www.blockuster.com,South Korea,2931,5413,5117
+www.blockuster.com,Spain,2572,4603,4410
+www.blockuster.com,Sweden,2732,5147,4952
+www.blockuster.com,Turkey,2859,5407,5122
+www.blockuster.com,Ukraine,2679,5190,4889
+www.blockuster.com,United Kingdom,3259,6437,6091
+www.blockuster.com,United States,2754,5278,5054
+www.blockuster.com,Venezuela,3221,6062,5793
+www.ebay.com,Argentina,1542,2266,2096
+www.ebay.com,Australia,1426,1998,1901
+www.ebay.com,Belgium,1504,2302,2182
+www.ebay.com,Brazil,1378,2170,2062
+www.ebay.com,Canada,1557,2226,2084
+www.ebay.com,China,1696,2534,2421
+www.ebay.com,Colombia,1508,2349,2255
+www.ebay.com,Egypt,1720,2568,2447
+www.ebay.com,France,1656,2444,2335
+www.ebay.com,Germany,1461,2137,2045
+www.ebay.com,Greece,1455,2177,2072
+www.ebay.com,India,1671,2429,2310
+www.ebay.com,Indonesia,1472,2218,2079
+www.ebay.com,Iran,1648,2441,2315
+www.ebay.com,Ireland,1571,2319,2182
+www.ebay.com,Israel,1557,2261,2143
+www.ebay.com,Italy,1387,2083,1985
+www.ebay.com,Japan,1324,1970,1874
+www.ebay.com,Mexico,1439,2194,2124
+www.ebay.com,Netherlands,1522,2091,1952
+www.ebay.com,Norway,1486,2260,2139
+www.ebay.com,Pakistan,1401,1962,1834
+www.ebay.com,Poland,1717,2577,2460
+www.ebay.com,Portugal,1624,2400,2284
+www.ebay.com,Russia,1464,2097,1977
+www.ebay.com,Scotland,1508,2157,2064
+www.ebay.com,South Africa,1533,2418,2297
+www.ebay.com,South Korea,1647,2564,2451
+www.ebay.com,Spain,1414,2128,2026
+www.ebay.com,Sweden,1459,2054,1968
+www.ebay.com,Turkey,1518,2405,2315
+www.ebay.com,Ukraine,1444,2114,2003
+www.ebay.com,United Kingdom,1762,2671,2522
+www.ebay.com,United States,1481,2185,2049
+www.ebay.com,Venezuela,1586,2178,2091
+www.etsy.com,Argentina,343,497,430
+www.etsy.com,Australia,307,477,447
+www.etsy.com,Belgium,3395,5063,4817
+www.etsy.com,Brazil,280,436,426
+www.etsy.com,Canada,298,451,416
+www.etsy.com,China,338,485,438
+www.etsy.com,Colombia,320,511,472
+www.etsy.com,Egypt,396,645,631
+www.etsy.com,France,3935,5800,5526
+www.etsy.com,Germany,3408,4926,4671
+www.etsy.com,Greece,3400,5046,4760
+www.etsy.com,India,351,563,527
+www.etsy.com,Indonesia,342,466,445
+www.etsy.com,Ireland,3525,5109,4867
+www.etsy.com,Israel,305,525,490
+www.etsy.com,Italy,3350,4876,4623
+www.etsy.com,Japan,296,490,475
+www.etsy.com,Mexico,288,472,449
+www.etsy.com,Netherlands,3602,5380,5098
+www.etsy.com,Norway,3366,4876,4652
+www.etsy.com,Pakistan,270,354,337
+www.etsy.com,Poland,375,494,475
+www.etsy.com,Portugal,3853,5578,5263
+www.etsy.com,Russia,322,476,460
+www.etsy.com,Scotland,3327,5250,4992
+www.etsy.com,South Africa,331,529,497
+www.etsy.com,South Korea,355,556,500
+www.etsy.com,Spain,3159,4832,4600
+www.etsy.com,Sweden,3275,4786,4499
+www.etsy.com,Turkey,321,474,455
+www.etsy.com,Ukraine,307,481,458
+www.etsy.com,United Kingdom,3923,5719,5464
+www.etsy.com,United States,298,470,459
+www.netflix.com,Argentina,509,898,836
+www.netflix.com,Australia,507,958,904
+www.netflix.com,Belgium,490,985,962
+www.netflix.com,Brazil,411,692,610
+www.netflix.com,Canada,453,738,706
+www.netflix.com,China,575,1050,1022
+www.netflix.com,Colombia,499,947,883
+www.netflix.com,Egypt,575,1032,999
+www.netflix.com,France,562,948,900
+www.netflix.com,Germany,512,837,818
+www.netflix.com,Greece,521,986,958
+www.netflix.com,India,534,1062,997
+www.netflix.com,Indonesia,488,823,797
+www.netflix.com,Iran,560,961,927
+www.netflix.com,Ireland,516,1021,965
+www.netflix.com,Israel,478,834,815
+www.netflix.com,Italy,454,754,726
+www.netflix.com,Japan,467,887,837
+www.netflix.com,Mexico,510,853,806
+www.netflix.com,Netherlands,470,843,809
+www.netflix.com,Norway,554,1019,945
+www.netflix.com,Pakistan,460,865,835
+www.netflix.com,Poland,569,1017,918
+www.netflix.com,Portugal,546,1102,1070
+www.netflix.com,Russia,473,887,875
+www.netflix.com,Scotland,491,818,760
+www.netflix.com,South Africa,457,888,860
+www.netflix.com,South Korea,525,998,967
+www.netflix.com,Spain,500,976,941
+www.netflix.com,Sweden,475,921,875
+www.netflix.com,Turkey,511,854,832
+www.netflix.com,Ukraine,465,848,832
+www.netflix.com,United Kingdom,564,1029,972
+www.netflix.com,United States,477,860,816
+www.netflix.com,Venezuela,533,957,929

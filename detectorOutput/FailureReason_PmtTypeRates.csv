@@ -1,27 +1,22 @@
 failure_reason,payment_type,count
-+AYz*FExgoTbkwJkaJ,Card,1
-6aK,Bank,1
-Bank Account Suspended,Bank,119
-Bank Account Suspended,UPI,124
-Card Expired,Card,127
-Card Information Incorrect,Card,130
-Connection Interrupted,Bank,136
-Connection Interrupted,Card,112
-Connection Interrupted,Paypal,101
-Connection Interrupted,UPI,124
-Fraud,Bank,147
-Fraud,Card,130
-Fraud,Paypal,110
-Fraud,UPI,140
-Incorrect Credentials,Paypal,105
-Invalid Routing Number,Bank,140
-Invalid Routing Number,UPI,129
-Onn1E,Card,1
-Out of Funds,Paypal,110
-PayPal Service Down,Paypal,94
-Server Maintenance,Bank,120
-Server Maintenance,Card,132
-Server Maintenance,Paypal,110
-Server Maintenance,UPI,149
-"W$TBGzmLz\\\"",Paypal,1
-fi@k;Q5s2j&vKAE!zLN,Bank,1
+Bank Account Suspended,Bank,880
+Bank Account Suspended,UPI,818
+Card Expired,Card,877
+Card Information Incorrect,Card,897
+Connection Interrupted,Bank,822
+Connection Interrupted,Card,863
+Connection Interrupted,Paypal,688
+Connection Interrupted,UPI,844
+Fraud,Bank,852
+Fraud,Card,816
+Fraud,Paypal,696
+Fraud,UPI,859
+Incorrect Credentials,Paypal,696
+Invalid Routing Number,Bank,844
+Invalid Routing Number,UPI,803
+Out of Funds,Paypal,698
+PayPal Service Down,Paypal,738
+Server Maintenance,Bank,783
+Server Maintenance,Card,878
+Server Maintenance,Paypal,731
+Server Maintenance,UPI,836

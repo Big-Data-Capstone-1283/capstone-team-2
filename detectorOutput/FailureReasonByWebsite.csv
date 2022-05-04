@@ -1,16 +1,81 @@
 ecommerce_website_name,failure_reason,count
-www.amazon.com.br,Fraud,527
-www.amazon.com.br,Server Maintenance,511
-www.amazon.com.br,Connection Interrupted,473
-www.amazon.com.br,Invalid Routing Number,269
-www.amazon.com.br,Bank Account Suspended,243
-www.amazon.com.br,Card Information Incorrect,130
-www.amazon.com.br,Card Expired,127
-www.amazon.com.br,Out of Funds,110
-www.amazon.com.br,Incorrect Credentials,105
-www.amazon.com.br,PayPal Service Down,94
-www.amazon.com.br,+AYz*FExgoTbkwJkaJ,1
-www.amazon.com.br,6aK,1
-www.amazon.com.br,Onn1E,1
-www.amazon.com.br,"W$TBGzmLz\\\"",1
-www.amazon.com.br,fi@k;Q5s2j&vKAE!zLN,1
+www.blockuster.com,Connection Interrupted,990
+www.blockuster.com,Fraud,979
+www.blockuster.com,Server Maintenance,956
+www.ebay.com,Server Maintenance,540
+www.ebay.com,Connection Interrupted,539
+www.allibaba.com,Server Maintenance,520
+www.blockuster.com,Bank Account Suspended,517
+www.allibaba.com,Connection Interrupted,498
+www.ebay.com,Fraud,495
+www.etsy.com,Server Maintenance,494
+www.allibaba.com,Fraud,493
+www.etsy.com,Connection Interrupted,487
+www.blockuster.com,Invalid Routing Number,478
+www.etsy.com,Fraud,475
+www.amazon.com,Fraud,296
+www.blockuster.com,Card Information Incorrect,288
+www.allibaba.com,Invalid Routing Number,283
+www.ebay.com,Bank Account Suspended,274
+www.blockuster.com,Card Expired,265
+www.allibaba.com,Bank Account Suspended,261
+www.amazon.com,Connection Interrupted,260
+www.amazon.com,Server Maintenance,255
+www.ebay.com,Invalid Routing Number,252
+www.etsy.com,Bank Account Suspended,248
+www.etsy.com,Invalid Routing Number,246
+www.blockuster.com,PayPal Service Down,203
+www.blockuster.com,Incorrect Credentials,194
+www.blockuster.com,Out of Funds,192
+www.netflix.com,Connection Interrupted,177
+www.netflix.com,Fraud,177
+www.amazon.in,Fraud,169
+www.amazon.com.br,Server Maintenance,158
+www.netflix.com,Server Maintenance,154
+www.etsy.com,Card Expired,153
+www.amazon.com,Invalid Routing Number,152
+www.amazon.in,Server Maintenance,151
+www.allibaba.com,Card Information Incorrect,147
+www.amazon.com.br,Connection Interrupted,147
+www.ebay.com,Card Expired,146
+www.amazon.com,Bank Account Suspended,145
+www.ebay.com,Card Information Incorrect,145
+www.amazon.com.br,Fraud,139
+www.allibaba.com,Incorrect Credentials,135
+www.etsy.com,Card Information Incorrect,132
+www.etsy.com,Out of Funds,127
+www.allibaba.com,PayPal Service Down,122
+www.allibaba.com,Card Expired,119
+www.amazon.in,Connection Interrupted,119
+www.etsy.com,PayPal Service Down,119
+www.allibaba.com,Out of Funds,117
+www.ebay.com,PayPal Service Down,115
+www.ebay.com,Incorrect Credentials,112
+www.etsy.com,Incorrect Credentials,98
+www.ebay.com,Out of Funds,97
+www.amazon.com.br,Invalid Routing Number,91
+www.amazon.com.br,Bank Account Suspended,89
+www.netflix.com,Bank Account Suspended,87
+www.amazon.com,Card Expired,82
+www.amazon.in,Bank Account Suspended,77
+www.amazon.in,Invalid Routing Number,77
+www.netflix.com,Invalid Routing Number,68
+www.amazon.com,Card Information Incorrect,66
+www.amazon.com,Out of Funds,65
+www.amazon.com,PayPal Service Down,59
+www.amazon.com,Incorrect Credentials,53
+www.amazon.in,PayPal Service Down,49
+www.amazon.in,Card Information Incorrect,44
+www.netflix.com,Incorrect Credentials,43
+www.netflix.com,PayPal Service Down,43
+www.amazon.com.br,Card Expired,41
+www.netflix.com,Card Information Incorrect,41
+www.amazon.com.br,Incorrect Credentials,38
+www.netflix.com,Card Expired,37
+www.amazon.in,Out of Funds,36
+www.amazon.com.br,Card Information Incorrect,34
+www.amazon.in,Card Expired,34
+www.amazon.com.br,Out of Funds,33
+www.netflix.com,Out of Funds,31
+www.amazon.com.br,PayPal Service Down,28
+www.amazon.in,Incorrect Credentials,23

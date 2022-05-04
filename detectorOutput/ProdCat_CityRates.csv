@@ -1,891 +1,841 @@
 product_category,country,city,count,total,total_successful
-App,Argentina,Buenos Aires,378,378,356
-App,Argentina,Córdoba,333,333,300
-App,Argentina,Fire Island Volcano,1,1,1
-App,Argentina,Mendoza,476,532,509
-App,Argentina,Rorikstead,1,1,1
-App,Argentina,Rosario,286,286,273
-App,Argentina,Stoneholm,1,1,1
-App,Argentina,Thunder Bluff,1,1,1
-App,Argentina,Town City,1,1,1
-App,Australia,Canberra,4,4,4
-App,Australia,Melbourne,2,2,1
-App,Australia,Newcastle,4,4,4
-App,Australia,Sidney,2,2,2
-App,Belgium,Antwerp,4,4,4
-App,Belgium,Brussels,3,3,3
-App,Belgium,Leuven,1,1,1
-App,Belgium,Namur,1,1,1
-App,Brazil,Fortaleza,278,376,356
-App,Brazil,Hotlands,1,1,1
-App,Brazil,Manaus,243,243,231
-App,Brazil,Newest Newer City,1,1,1
-App,Brazil,Rio de Janeiro,418,418,390
-App,Brazil,Snowdin,1,1,1
-App,Brazil,São Paulo,304,304,292
-App,Canada,Calgary,3,3,3
-App,Canada,Quebec City,1,1,1
-App,Canada,Toronto,1,1,1
-App,Canada,Vancouver,3,3,3
-App,China,Beijing,2,2,2
-App,China,Chengdu,4,4,4
-App,China,Guangzhou,2,2,2
-App,China,Shanghai,2,2,2
-App,Colombia,Bogotá,298,298,285
-App,Colombia,Cali,387,387,370
-App,Colombia,Cartagena,454,454,426
-App,Colombia,Rorikstead,1,1,1
-App,Colombia,Santa Marta,333,333,319
-App,Egypt,Alexandria,2,2,2
-App,Egypt,Cairo,4,4,3
-App,Egypt,Giza,3,3,3
-App,Egypt,Luxor,3,3,3
-App,France,Bordeaux,1,1,1
-App,France,Dijon,3,3,3
-App,France,Nice,3,3,3
-App,France,Paris,4,4,4
-App,Germany,Berlin,2,2,2
-App,Germany,Cologne,2,2,1
-App,Germany,Hamburg,3,3,3
-App,Germany,Munich,3,3,3
-App,Greece,Athens,1,1,1
-App,Greece,Corinth,2,2,2
-App,Greece,Patras,2,2,2
-App,Greece,Thessaloniki,2,2,2
-App,India,Chennai,1,1,1
-App,India,Delhi,3,3,3
-App,India,Jaipur,3,3,3
-App,India,Mumbai,3,3,3
-App,Indonesia,Bandung,2,2,1
-App,Indonesia,Jakarta,4,4,4
-App,Indonesia,Makassar,3,3,3
-App,Indonesia,Semarang,2,2,1
-App,Iran,Kermanshah,2,2,2
-App,Iran,Mashhad,2,2,2
-App,Iran,Tabriz,4,4,4
-App,Iran,Tehran,3,3,2
-App,Ireland,Cork,2,2,1
-App,Ireland,Dublin,3,3,3
-App,Ireland,Galway,2,2,2
-App,Ireland,Limerick,4,4,4
-App,Israel,Acre,1,1,""
-App,Israel,Haifa,3,3,3
-App,Israel,Jerusalem,1,1,1
-App,Israel,Petah Tikva,1,1,1
-App,Italy,Bologna,3,3,3
-App,Italy,Florence,3,3,3
-App,Italy,Pisa,1,1,1
-App,Japan,Kyoto,2,2,2
-App,Japan,Osaka,3,3,3
-App,Japan,Tokyo,2,2,2
-App,Japan,Yokohama,1,1,1
-App,Mexico,Mexico City,1,1,1
-App,Mexico,Monterrey,2,2,1
-App,Mexico,Mérida,2,2,2
-App,Mexico,Puebla,4,4,4
-App,Netherlands,Amsterdam,1,1,1
-App,Netherlands,Delft,2,2,2
-App,Netherlands,Utrecht,3,3,3
-App,Norway,Bergen,1,1,1
-App,Norway,Osio,2,2,2
-App,Norway,Stavanger,1,1,1
-App,Norway,Trondheim,1,1,1
-App,Pakistan,Faisalabad,1,1,1
-App,Pakistan,Karachi,3,3,3
-App,Pakistan,Lahore,2,2,2
-App,Poland,Kraków,6,6,4
-App,Poland,Lublin,2,2,2
-App,Poland,Warsaw,7,7,7
-App,Poland,Wrocław,4,4,4
-App,Portugal,Braga,1,1,1
-App,Portugal,Evora,2,2,2
-App,Portugal,Lisbon,1,1,""
-App,Portugal,Porto,3,3,3
-App,Russia,Chelyabinsk,3,3,3
-App,Russia,Saint Petersburg,2,2,2
-App,Russia,Samara,1,1,1
-App,Scotland,Dundee,1,1,1
-App,Scotland,Glasgow,1,1,1
-App,South Africa,Durban,7,7,7
-App,South Africa,Polokwane,1,1,1
-App,South Africa,Pretoria,2,2,2
-App,South Korea,Busan,1,1,1
-App,South Korea,Daegu,2,2,2
-App,South Korea,Incheon,2,2,2
-App,Spain,Barcelona,2,2,2
-App,Spain,Bilbao,2,2,2
-App,Spain,Madrid,2,2,2
-App,Spain,Valencia,6,6,6
-App,Sweden,Gothenburg,1,1,1
-App,Sweden,Helsingborg,3,3,3
-App,Sweden,Stockholm,2,2,2
-App,Sweden,Uppsala,1,1,1
-App,Turkey,Antalya,3,3,3
-App,Turkey,Bursa,3,3,3
-App,Turkey,Istanbul,3,3,3
-App,Turkey,Izmir,2,2,1
-App,Ukraine,Kharkiv,4,4,4
-App,Ukraine,Kyiv,1,1,1
-App,Ukraine,Mariupol,3,3,2
-App,Ukraine,Odesa,3,3,2
-App,United Kingdom,Burmingham,3,3,3
-App,United Kingdom,Liverpool,2,2,2
-App,United Kingdom,London,4,4,4
-App,United Kingdom,Manchester,6,6,6
-App,United States,Chicago,1,1,1
-App,United States,Los Angeles,1,1,1
-App,United States,Miami,2,2,2
-App,United States,New York City,1,1,1
-App,Venezuela,Caracas,318,318,301
-App,Venezuela,Guayana City,447,447,429
-App,Venezuela,Isla Ratón,397,397,371
-App,Venezuela,Maracay,391,391,368
-App,Venezuela,Silvermoon City,1,1,1
-Car,Argentina,Buenos Aires,532,581,546
-Car,Argentina,Castle Town,1,1,1
-Car,Argentina,Córdoba,480,491,471
-Car,Argentina,Hotlands,1,8,8
-Car,Argentina,Mendoza,706,757,715
-Car,Argentina,New Bark City,1,1,""
-Car,Argentina,Rosario,426,461,433
-Car,Argentina,Totally Tubular,1,1,1
-Car,Argentina,Village Town,1,1,1
-Car,Argentina,null,1,1,""
-Car,Argentina,tUXcRf'y1Aq\\n,1,1,1
-Car,Australia,Canberra,1,1,1
-Car,Australia,Melbourne,3,3,3
-Car,Australia,Newcastle,3,3,3
-Car,Belgium,Antwerp,5,5,5
-Car,Belgium,Brussels,4,4,4
-Car,Belgium,Leuven,1,1,1
-Car,Belgium,Namur,2,2,2
-Car,Brazil,City Town,1,1,1
-Car,Brazil,Fortaleza,417,433,415
-Car,Brazil,Manaus,375,404,388
-Car,Brazil,New Bark City,2,2,1
-Car,Brazil,Rio de Janeiro,668,715,689
-Car,Brazil,São Paulo,505,559,534
-Car,Brazil,Totally Tubular,1,1,1
-Car,Brazil,We'll never know!,1,1,1
-Car,Canada,Calgary,5,5,5
-Car,Canada,Quebec City,2,2,2
-Car,Canada,Toronto,1,1,""
-Car,Canada,Vancouver,6,6,6
-Car,China,Beijing,9,9,9
-Car,China,Chengdu,4,4,4
-Car,China,Guangzhou,1,1,1
-Car,China,Shanghai,4,4,2
-Car,Colombia,Bogotá,477,497,471
-Car,Colombia,Cali,596,657,623
-Car,Colombia,Cartagena,737,787,755
-Car,Colombia,ICameIWentIConquered City,1,1,1
-Car,Colombia,Santa Marta,477,498,472
-Car,Colombia,Thunder Bluff,1,1,1
-Car,Egypt,Alexandria,8,8,8
-Car,Egypt,Cairo,5,5,4
-Car,Egypt,Giza,2,2,2
-Car,Egypt,Luxor,4,4,4
-Car,France,Bordeaux,3,3,3
-Car,France,Dijon,3,3,3
-Car,France,Nice,1,1,1
-Car,France,Paris,5,5,5
-Car,Germany,Berlin,2,2,2
-Car,Germany,Hamburg,3,3,3
-Car,Germany,Munich,6,6,5
-Car,Greece,Athens,6,6,6
-Car,Greece,Corinth,2,2,2
-Car,Greece,Patras,4,4,4
-Car,Greece,Thessaloniki,3,4,4
-Car,India,Chennai,3,3,3
-Car,India,Delhi,3,3,3
-Car,India,Jaipur,3,3,3
-Car,India,Mumbai,2,2,2
-Car,Indonesia,Bandung,1,1,1
-Car,Indonesia,Makassar,2,2,2
-Car,Indonesia,Semarang,3,3,3
-Car,Iran,Kermanshah,1,1,1
-Car,Iran,Tabriz,4,4,4
-Car,Ireland,Cork,5,5,4
-Car,Ireland,Dublin,1,1,1
-Car,Ireland,Galway,4,4,4
-Car,Ireland,Limerick,5,5,5
-Car,Israel,Acre,3,3,3
-Car,Israel,Haifa,3,3,3
-Car,Israel,Jerusalem,3,3,3
-Car,Israel,Petah Tikva,6,6,6
-Car,Italy,Bologna,1,1,1
-Car,Italy,Florence,6,6,6
-Car,Italy,Pisa,3,3,3
-Car,Italy,Rome,2,2,2
-Car,Japan,Osaka,1,1,1
-Car,Japan,Tokyo,3,3,3
-Car,Japan,Yokohama,3,3,2
-Car,Mexico,Mexico City,2,2,2
-Car,Mexico,Monterrey,9,9,8
-Car,Mexico,Mérida,2,2,2
-Car,Mexico,Puebla,2,2,2
-Car,Netherlands,Amsterdam,3,3,3
-Car,Netherlands,Delft,3,3,3
-Car,Netherlands,Rotterdam,2,2,2
-Car,Netherlands,Utrecht,4,4,4
-Car,Norway,Osio,4,4,4
-Car,Norway,Stavanger,4,4,4
-Car,Norway,Trondheim,5,5,5
-Car,Pakistan,Faisalabad,2,2,2
-Car,Pakistan,Karachi,1,1,1
-Car,Pakistan,Lahore,1,1,1
-Car,Pakistan,Multan,5,5,5
-Car,Poland,Kraków,4,4,4
-Car,Poland,Lublin,3,3,3
-Car,Poland,Warsaw,5,5,5
-Car,Poland,Wrocław,3,3,3
-Car,Portugal,Braga,3,3,3
-Car,Portugal,Evora,4,4,4
-Car,Portugal,Lisbon,2,5,5
-Car,Portugal,Porto,5,5,5
-Car,Russia,Chelyabinsk,2,2,1
-Car,Russia,Moscow,2,2,2
-Car,Russia,Saint Petersburg,3,3,3
-Car,Russia,Samara,5,5,5
-Car,Scotland,Aberdeen,3,3,3
-Car,Scotland,Dundee,1,1,1
-Car,Scotland,Edenburgh,1,1,1
-Car,Scotland,Glasgow,1,1,1
-Car,South Africa,Cape Town,1,1,1
-Car,South Africa,Durban,1,1,1
-Car,South Africa,Polokwane,4,5,4
-Car,South Africa,Pretoria,3,3,3
-Car,South Korea,Busan,4,4,2
-Car,South Korea,Daegu,3,3,2
-Car,South Korea,Incheon,4,4,4
-Car,South Korea,Seoul,2,2,2
-Car,Spain,Barcelona,4,4,3
-Car,Spain,Bilbao,3,3,3
-Car,Spain,Madrid,5,5,5
-Car,Spain,Valencia,5,5,5
-Car,Sweden,Gothenburg,3,5,5
-Car,Sweden,Helsingborg,1,1,1
-Car,Sweden,Stockholm,3,3,3
-Car,Sweden,Uppsala,1,1,1
-Car,Turkey,Antalya,4,4,4
-Car,Turkey,Bursa,2,2,2
-Car,Turkey,Istanbul,5,5,5
-Car,Turkey,Izmir,1,1,1
-Car,Ukraine,Kharkiv,3,3,3
-Car,Ukraine,Kyiv,4,4,4
-Car,Ukraine,Mariupol,4,4,3
-Car,Ukraine,Odesa,3,3,3
-Car,United Kingdom,Burmingham,3,3,3
-Car,United Kingdom,Liverpool,4,4,4
-Car,United Kingdom,London,2,2,2
-Car,United Kingdom,Manchester,5,5,4
-Car,United States,Chicago,4,4,4
-Car,United States,Los Angeles,2,2,2
-Car,United States,Miami,4,4,4
-Car,United States,New York City,2,2,2
-Car,Venezuela,Caracas,454,478,440
-Car,Venezuela,Guayana City,708,760,723
-Car,Venezuela,Isla Ratón,583,648,616
-Car,Venezuela,Maracay,606,635,598
-Car,Venezuela,Mew York City,1,1,1
-Car,Venezuela,Newest Newer City,1,1,1
-Car,Venezuela,Terry Town,2,2,2
-Car,Venezuela,Village Town,1,1,1
-Drug,Argentina,Anastar City,1,1,1
-Drug,Argentina,Buenos Aires,505,592,572
-Drug,Argentina,Córdoba,484,644,620
-Drug,Argentina,Magmoor Caverns,1,1,1
-Drug,Argentina,Mendoza,628,666,636
-Drug,Argentina,Rosario,369,399,385
-Drug,Australia,Canberra,2,2,2
-Drug,Australia,Melbourne,1,1,1
-Drug,Australia,Newcastle,1,1,""
-Drug,Australia,Sidney,1,3,3
-Drug,Belgium,Antwerp,2,2,2
-Drug,Belgium,Brussels,1,1,1
-Drug,Belgium,Leuven,1,1,1
-Drug,Belgium,Namur,2,2,2
-Drug,Brazil,Fire Island Volcano,1,1,1
-Drug,Brazil,Fortaleza,364,398,375
-Drug,Brazil,Manaus,314,338,318
-Drug,Brazil,Rio de Janeiro,554,588,551
-Drug,Brazil,São Paulo,432,475,450
-Drug,Brazil,Town City,1,1,""
-Drug,Brazil,Wouldn't you like to know?,1,1,1
-Drug,Canada,Calgary,1,1,1
-Drug,Canada,Quebec City,5,5,5
-Drug,Canada,Vancouver,3,3,2
-Drug,China,Beijing,1,1,1
-Drug,China,Chengdu,3,6,6
-Drug,China,Shanghai,6,6,6
-Drug,Colombia,Bogotá,432,451,427
-Drug,Colombia,Cali,504,532,513
-Drug,Colombia,Cartagena,630,675,641
-Drug,Colombia,Mewami,1,1,1
-Drug,Colombia,Rorikstead,1,1,1
-Drug,Colombia,Santa Marta,473,499,483
-Drug,Colombia,Stormwind City,2,2,2
-Drug,Egypt,Alexandria,3,3,3
-Drug,Egypt,Cairo,3,3,3
-Drug,Egypt,Giza,2,2,2
-Drug,Egypt,Luxor,5,5,5
-Drug,France,Bordeaux,2,2,1
-Drug,France,Dijon,3,3,3
-Drug,France,Nice,5,5,4
-Drug,France,Paris,6,7,7
-Drug,Germany,Berlin,2,2,2
-Drug,Germany,Cologne,1,1,1
-Drug,Germany,Hamburg,2,2,2
-Drug,Germany,Munich,2,2,2
-Drug,Greece,Athens,2,2,2
-Drug,Greece,Corinth,5,5,5
-Drug,Greece,Patras,4,4,4
-Drug,Greece,Thessaloniki,3,3,2
-Drug,India,Chennai,3,3,3
-Drug,India,Delhi,5,5,4
-Drug,India,Jaipur,4,4,4
-Drug,India,Mumbai,1,1,1
-Drug,Indonesia,Bandung,2,2,2
-Drug,Indonesia,Jakarta,3,3,3
-Drug,Indonesia,Makassar,1,2,2
-Drug,Indonesia,Semarang,4,4,4
-Drug,Iran,Kermanshah,3,3,3
-Drug,Iran,Mashhad,4,4,4
-Drug,Iran,Tabriz,3,3,3
-Drug,Iran,Tehran,3,3,3
-Drug,Ireland,Cork,1,1,1
-Drug,Ireland,Dublin,5,5,5
-Drug,Ireland,Galway,2,2,1
-Drug,Ireland,Limerick,3,3,2
-Drug,Israel,Acre,2,2,2
-Drug,Israel,Haifa,2,2,2
-Drug,Israel,Jerusalem,2,2,2
-Drug,Israel,Petah Tikva,5,5,4
-Drug,Italy,Bologna,1,1,""
-Drug,Italy,Florence,4,4,4
-Drug,Italy,Pisa,1,1,1
-Drug,Italy,Rome,2,2,2
-Drug,Japan,Kyoto,1,1,1
-Drug,Japan,Osaka,3,3,3
-Drug,Japan,Tokyo,1,1,1
-Drug,Japan,Yokohama,3,3,3
-Drug,Mexico,Mexico City,3,3,3
-Drug,Mexico,Mérida,1,1,1
-Drug,Mexico,Puebla,5,8,8
-Drug,Netherlands,Amsterdam,6,6,6
-Drug,Netherlands,Delft,1,1,1
-Drug,Netherlands,Rotterdam,5,6,6
-Drug,Netherlands,Utrecht,3,3,3
-Drug,Norway,Bergen,4,4,4
-Drug,Norway,Osio,5,7,7
-Drug,Norway,Stavanger,5,5,5
-Drug,Pakistan,Faisalabad,3,3,3
-Drug,Pakistan,Karachi,4,4,4
-Drug,Pakistan,Lahore,3,3,3
-Drug,Pakistan,Multan,3,3,3
-Drug,Poland,Kraków,4,4,4
-Drug,Poland,Lublin,4,6,6
-Drug,Poland,Warsaw,8,11,11
-Drug,Poland,Wrocław,4,4,4
-Drug,Portugal,Braga,5,5,4
-Drug,Portugal,Evora,5,5,4
-Drug,Portugal,Lisbon,4,4,4
-Drug,Portugal,Porto,3,3,2
-Drug,Russia,Chelyabinsk,4,4,4
-Drug,Russia,Moscow,2,2,2
-Drug,Russia,Saint Petersburg,6,6,5
-Drug,Russia,Samara,5,5,3
-Drug,Scotland,Aberdeen,3,3,3
-Drug,Scotland,Dundee,4,4,3
-Drug,Scotland,Glasgow,2,2,2
-Drug,South Africa,Cape Town,3,4,3
-Drug,South Africa,Durban,7,7,7
-Drug,South Africa,Polokwane,6,6,4
-Drug,South Korea,Busan,5,5,5
-Drug,South Korea,Daegu,6,6,6
-Drug,South Korea,Incheon,3,3,3
-Drug,South Korea,Seoul,1,1,1
-Drug,Spain,Barcelona,2,2,1
-Drug,Spain,Bilbao,3,3,3
-Drug,Spain,Madrid,2,2,2
-Drug,Spain,Valencia,3,3,3
-Drug,Sweden,Gothenburg,6,9,9
-Drug,Sweden,Helsingborg,3,3,2
-Drug,Sweden,Stockholm,2,2,2
-Drug,Sweden,Uppsala,1,1,1
-Drug,Turkey,Antalya,4,4,4
-Drug,Turkey,Istanbul,3,3,3
-Drug,Turkey,Izmir,1,1,1
-Drug,Ukraine,Kharkiv,2,2,2
-Drug,Ukraine,Kyiv,2,5,5
-Drug,Ukraine,Mariupol,3,3,3
-Drug,Ukraine,Odesa,3,3,3
-Drug,United Kingdom,Burmingham,2,2,2
-Drug,United Kingdom,Liverpool,3,3,3
-Drug,United Kingdom,London,7,7,7
-Drug,United Kingdom,Manchester,3,3,3
-Drug,United States,Los Angeles,4,4,4
-Drug,United States,Miami,3,3,3
-Drug,United States,New York City,7,7,7
-Drug,Venezuela,Caracas,407,424,403
-Drug,Venezuela,City Square,1,1,1
-Drug,Venezuela,Guayana City,584,627,595
-Drug,Venezuela,Isla Ratón,519,553,529
-Drug,Venezuela,Maracay,536,565,546
-Drug,Venezuela,New Avalon,1,1,1
-Drug,Venezuela,Newest Newer City,1,1,1
-Drug,Venezuela,Totally Tubular,1,1,1
-Drug,Venezuela,null,1,1,1
-Groceries,Argentina,Buenos Aires,457,1213,1142
-Groceries,Argentina,Córdoba,462,1650,1572
-Groceries,Argentina,Magmoor Caverns,1,1,1
-Groceries,Argentina,Mendoza,636,2181,2117
-Groceries,Argentina,New New City,1,1,1
-Groceries,Argentina,Rosario,371,1221,1181
-Groceries,Argentina,Village Town,1,1,1
-Groceries,Argentina,Waterfall,1,1,1
-Groceries,Argentina,Your other pocket,1,1,1
-Groceries,Australia,Canberra,2,7,7
-Groceries,Australia,Melbourne,4,4,4
-Groceries,Australia,Newcastle,1,1,1
-Groceries,Australia,Sidney,2,2,2
-Groceries,Belgium,Antwerp,6,6,6
-Groceries,Belgium,Brussels,3,9,9
-Groceries,Belgium,Leuven,3,3,2
-Groceries,Belgium,Namur,2,6,6
-Groceries,Brazil,City Square,1,1,1
-Groceries,Brazil,Deepholm,1,1,1
-Groceries,Brazil,Fortaleza,389,1141,1053
-Groceries,Brazil,Manaus,317,894,874
-Groceries,Brazil,Rio de Janeiro,588,1825,1732
-Groceries,Brazil,Serene Village,1,13,13
-Groceries,Brazil,São Paulo,417,1298,1234
-Groceries,Brazil,null,1,1,1
-Groceries,Canada,Calgary,1,1,""
-Groceries,Canada,Quebec City,4,11,11
-Groceries,Canada,Toronto,3,17,17
-Groceries,Canada,Vancouver,3,19,19
-Groceries,China,Beijing,3,3,2
-Groceries,China,Chengdu,5,22,22
-Groceries,China,Guangzhou,2,11,11
-Groceries,China,Shanghai,3,3,3
-Groceries,Colombia,Bogotá,422,1249,1179
-Groceries,Colombia,Cali,534,1831,1790
-Groceries,Colombia,Cartagena,672,2062,1931
-Groceries,Colombia,Lordaeron,1,1,1
-Groceries,Colombia,Santa Marta,436,1338,1239
-Groceries,Colombia,The Core,1,1,1
-Groceries,Egypt,Alexandria,1,1,1
-Groceries,Egypt,Cairo,3,31,31
-Groceries,Egypt,Giza,1,15,15
-Groceries,Egypt,Luxor,3,3,3
-Groceries,France,Bordeaux,3,3,3
-Groceries,France,Dijon,1,1,""
-Groceries,France,Nice,1,1,1
-Groceries,France,Paris,3,3,3
-Groceries,Germany,Berlin,2,10,10
-Groceries,Germany,Cologne,3,35,35
-Groceries,Germany,Hamburg,2,2,2
-Groceries,Germany,Munich,5,38,38
-Groceries,Greece,Athens,3,3,3
-Groceries,Greece,Corinth,3,14,14
-Groceries,Greece,Patras,2,2,2
-Groceries,Greece,Thessaloniki,1,1,1
-Groceries,India,Chennai,2,11,11
-Groceries,India,Delhi,4,27,27
-Groceries,India,Jaipur,4,19,19
-Groceries,India,Mumbai,5,19,19
-Groceries,Indonesia,Bandung,2,2,2
-Groceries,Indonesia,Jakarta,4,14,14
-Groceries,Indonesia,Makassar,2,2,2
-Groceries,Indonesia,Semarang,1,1,1
-Groceries,Iran,Kermanshah,4,20,20
-Groceries,Iran,Mashhad,2,2,2
-Groceries,Iran,Tabriz,5,38,38
-Groceries,Iran,Tehran,2,13,13
-Groceries,Ireland,Cork,2,2,2
-Groceries,Ireland,Dublin,2,2,2
-Groceries,Ireland,Galway,2,2,2
-Groceries,Ireland,Limerick,5,12,11
-Groceries,Israel,Acre,3,17,17
-Groceries,Israel,Haifa,2,2,2
-Groceries,Israel,Jerusalem,6,8,8
-Groceries,Israel,Petah Tikva,3,3,2
-Groceries,Italy,Bologna,6,30,30
-Groceries,Italy,Florence,4,4,4
-Groceries,Italy,Pisa,6,25,24
-Groceries,Italy,Rome,1,1,""
-Groceries,Japan,Kyoto,1,1,1
-Groceries,Japan,Osaka,2,6,6
-Groceries,Japan,Yokohama,2,4,4
-Groceries,Mexico,Mexico City,3,13,13
-Groceries,Mexico,Monterrey,2,4,4
-Groceries,Mexico,Mérida,1,1,1
-Groceries,Mexico,Puebla,1,1,1
-Groceries,Netherlands,Amsterdam,1,1,1
-Groceries,Netherlands,Delft,2,2,2
-Groceries,Netherlands,Rotterdam,7,34,34
-Groceries,Netherlands,Utrecht,1,3,3
-Groceries,Norway,Bergen,1,1,1
-Groceries,Norway,Osio,4,15,14
-Groceries,Norway,Stavanger,3,3,3
-Groceries,Norway,Trondheim,3,4,4
-Groceries,Pakistan,Faisalabad,4,4,3
-Groceries,Pakistan,Karachi,2,2,2
-Groceries,Pakistan,Lahore,4,4,4
-Groceries,Poland,Kraków,4,20,20
-Groceries,Poland,Lublin,7,10,9
-Groceries,Poland,Warsaw,6,17,16
-Groceries,Portugal,Braga,2,2,2
-Groceries,Portugal,Evora,5,27,27
-Groceries,Portugal,Lisbon,8,24,24
-Groceries,Portugal,Porto,4,4,3
-Groceries,Russia,Chelyabinsk,2,2,2
-Groceries,Russia,Moscow,3,19,19
-Groceries,Russia,Saint Petersburg,1,5,5
-Groceries,Russia,Samara,1,3,3
-Groceries,Scotland,Aberdeen,4,24,22
-Groceries,Scotland,Edenburgh,1,1,1
-Groceries,South Africa,Cape Town,4,4,4
-Groceries,South Africa,Durban,4,11,11
-Groceries,South Africa,Polokwane,3,4,4
-Groceries,South Africa,Pretoria,2,2,2
-Groceries,South Korea,Busan,7,30,30
-Groceries,South Korea,Daegu,2,2,2
-Groceries,South Korea,Incheon,1,17,17
-Groceries,South Korea,Seoul,1,14,14
-Groceries,Spain,Madrid,4,20,20
-Groceries,Spain,Valencia,3,3,3
-Groceries,Sweden,Stockholm,2,2,2
-Groceries,Sweden,Waterfall,1,1,1
-Groceries,Turkey,Antalya,4,4,4
-Groceries,Turkey,Bursa,3,3,3
-Groceries,Turkey,Istanbul,4,4,3
-Groceries,Turkey,Izmir,4,26,10
-Groceries,Ukraine,Kharkiv,2,32,32
-Groceries,Ukraine,Kyiv,2,2,2
-Groceries,Ukraine,Mariupol,2,2,2
-Groceries,Ukraine,Odesa,4,20,20
-Groceries,United Kingdom,Burmingham,4,37,37
-Groceries,United Kingdom,Liverpool,5,5,5
-Groceries,United Kingdom,London,2,2,2
-Groceries,United Kingdom,Manchester,10,26,19
-Groceries,United States,Chicago,3,3,3
-Groceries,United States,Los Angeles,1,14,14
-Groceries,United States,Miami,9,25,25
-Groceries,United States,New York City,4,22,22
-Groceries,Venezuela,Bilgewater Port,1,1,1
-Groceries,Venezuela,Caracas,401,1317,1273
-Groceries,Venezuela,Guayana City,679,2265,2119
-Groceries,Venezuela,Isla Ratón,504,1560,1461
-Groceries,Venezuela,Maracay,539,1757,1701
-Groceries,Venezuela,Rorikstead,2,2,2
-Movie,Argentina,Buenos Aires,591,647,621
-Movie,Argentina,Córdoba,594,600,562
-Movie,Argentina,Jubilife Village,1,1,""
-Movie,Argentina,Lively Town,1,1,1
-Movie,Argentina,Mendoza,774,781,743
-Movie,Argentina,Not Kansas,1,1,1
-Movie,Argentina,Rosario,437,442,405
-Movie,Australia,Canberra,2,2,2
-Movie,Australia,Melbourne,2,2,2
-Movie,Australia,Newcastle,2,2,2
-Movie,Australia,Sidney,4,4,2
-Movie,Belgium,Antwerp,6,6,6
-Movie,Belgium,Brussels,2,2,2
-Movie,Belgium,Leuven,3,3,3
-Movie,Belgium,Namur,4,4,4
-Movie,Brazil,Fortaleza,443,443,421
-Movie,Brazil,Manaus,375,378,361
-Movie,Brazil,New Bark City,1,1,1
-Movie,Brazil,Not Kansas,1,1,1
-Movie,Brazil,Rio de Janeiro,665,673,638
-Movie,Brazil,São Paulo,504,511,488
-Movie,Canada,Calgary,1,1,1
-Movie,Canada,Quebec City,2,2,2
-Movie,Canada,Toronto,3,3,3
-Movie,Canada,Vancouver,5,5,5
-Movie,China,Beijing,4,4,4
-Movie,China,Chengdu,3,3,3
-Movie,China,Guangzhou,4,4,4
-Movie,China,Shanghai,3,3,3
-Movie,Colombia,Bogotá,487,494,464
-Movie,Colombia,Cali,632,637,607
-Movie,Colombia,Cartagena,764,768,730
-Movie,Colombia,Cyber City,1,1,1
-Movie,Colombia,Dalaran,1,1,1
-Movie,Colombia,E3zglyOd,1,1,1
-Movie,Colombia,It's a mystery!,1,1,1
-Movie,Colombia,Jerry's Tree,1,1,1
-Movie,Colombia,Lavender Town,1,1,1
-Movie,Colombia,Rorikstead,1,1,1
-Movie,Colombia,Santa Marta,519,530,504
-Movie,Colombia,Thunder Bluff,1,1,1
-Movie,Colombia,Village Town,1,1,1
-Movie,Colombia,z,1,1,1
-Movie,Egypt,Alexandria,6,6,6
-Movie,Egypt,Cairo,2,2,2
-Movie,Egypt,Giza,8,8,8
-Movie,Egypt,Luxor,7,7,7
-Movie,France,Bordeaux,2,2,2
-Movie,France,Dijon,7,7,7
-Movie,France,Nice,4,4,4
-Movie,France,Paris,1,1,1
-Movie,Germany,Berlin,7,7,7
-Movie,Germany,Cologne,5,5,4
-Movie,Germany,Hamburg,2,2,1
-Movie,Germany,Munich,3,3,3
-Movie,Greece,Athens,5,5,5
-Movie,Greece,Corinth,2,3,3
-Movie,Greece,Patras,3,3,3
-Movie,Greece,Thessaloniki,2,2,1
-Movie,India,Chennai,3,3,2
-Movie,India,Delhi,3,3,2
-Movie,India,Jaipur,5,5,5
-Movie,India,Mumbai,1,1,1
-Movie,Indonesia,Bandung,5,5,5
-Movie,Indonesia,Jakarta,6,6,6
-Movie,Indonesia,Semarang,6,6,6
-Movie,Iran,Kermanshah,6,6,6
-Movie,Iran,Mashhad,5,6,5
-Movie,Iran,Tabriz,2,2,2
-Movie,Iran,Tehran,6,6,5
-Movie,Ireland,Cork,3,3,3
-Movie,Ireland,Dublin,4,4,4
-Movie,Ireland,Galway,5,5,5
-Movie,Ireland,Limerick,2,2,2
-Movie,Israel,Acre,4,4,3
-Movie,Israel,Haifa,2,2,2
-Movie,Israel,Jerusalem,4,4,3
-Movie,Israel,Petah Tikva,3,3,2
-Movie,Italy,Bologna,2,2,2
-Movie,Italy,Florence,1,1,1
-Movie,Italy,Pisa,4,4,4
-Movie,Italy,Rome,4,4,4
-Movie,Japan,Kyoto,2,2,2
-Movie,Japan,Osaka,1,1,1
-Movie,Japan,Tokyo,5,5,5
-Movie,Japan,Yokohama,2,2,2
-Movie,Mexico,Mexico City,3,3,3
-Movie,Mexico,Monterrey,2,2,2
-Movie,Mexico,Mérida,2,2,2
-Movie,Mexico,Puebla,3,3,3
-Movie,Netherlands,Amsterdam,4,4,3
-Movie,Netherlands,Delft,3,3,3
-Movie,Netherlands,Rotterdam,3,3,3
-Movie,Netherlands,Utrecht,4,4,4
-Movie,Norway,Bergen,3,3,3
-Movie,Norway,Osio,4,4,3
-Movie,Norway,Stavanger,1,1,1
-Movie,Norway,Trondheim,2,2,2
-Movie,Pakistan,Faisalabad,3,3,3
-Movie,Pakistan,Karachi,3,3,2
-Movie,Pakistan,Lahore,3,3,3
-Movie,Pakistan,Multan,6,6,6
-Movie,Poland,Kraków,7,7,7
-Movie,Poland,Lublin,1,1,1
-Movie,Poland,Warsaw,6,6,4
-Movie,Poland,Wrocław,2,2,2
-Movie,Portugal,Braga,4,4,4
-Movie,Portugal,Evora,4,4,4
-Movie,Portugal,Lisbon,9,9,8
-Movie,Portugal,Porto,3,3,3
-Movie,Russia,Chelyabinsk,3,3,3
-Movie,Russia,Saint Petersburg,2,2,2
-Movie,Russia,Samara,8,9,9
-Movie,Scotland,Aberdeen,7,7,7
-Movie,Scotland,Dundee,4,4,2
-Movie,Scotland,Edenburgh,3,3,3
-Movie,Scotland,Glasgow,3,3,3
-Movie,South Africa,Cape Town,2,2,1
-Movie,South Africa,Durban,5,5,5
-Movie,South Africa,Polokwane,5,5,3
-Movie,South Africa,Pretoria,6,6,6
-Movie,South Korea,Busan,5,5,5
-Movie,South Korea,Daegu,5,5,5
-Movie,South Korea,Incheon,7,7,6
-Movie,South Korea,Seoul,3,3,2
-Movie,Spain,Barcelona,4,4,4
-Movie,Spain,Bilbao,1,1,1
-Movie,Spain,Madrid,6,6,5
-Movie,Spain,Valencia,4,4,4
-Movie,Sweden,Gothenburg,4,4,4
-Movie,Sweden,Helsingborg,4,4,4
-Movie,Sweden,Stockholm,1,1,1
-Movie,Sweden,Uppsala,2,2,2
-Movie,Turkey,Antalya,4,4,3
-Movie,Turkey,Bursa,1,1,1
-Movie,Turkey,Istanbul,3,3,3
-Movie,Turkey,Izmir,3,3,3
-Movie,Ukraine,Kharkiv,3,3,3
-Movie,Ukraine,Kyiv,3,3,2
-Movie,Ukraine,Mariupol,8,8,7
-Movie,Ukraine,Odesa,4,4,4
-Movie,United Kingdom,Burmingham,3,3,2
-Movie,United Kingdom,Liverpool,5,5,5
-Movie,United Kingdom,London,6,6,6
-Movie,United Kingdom,Manchester,8,8,6
-Movie,United States,Chicago,5,5,5
-Movie,United States,Los Angeles,6,6,6
-Movie,United States,Miami,4,4,4
-Movie,United States,New York City,9,9,9
-Movie,Venezuela,Caracas,491,494,464
-Movie,Venezuela,Castle Town,1,1,1
-Movie,Venezuela,Guayana City,726,815,772
-Movie,Venezuela,Isla Ratón,598,602,583
-Movie,Venezuela,It's a mystery!,1,1,1
-Movie,Venezuela,Maracay,611,612,579
-Movie,Venezuela,Mistral City,1,1,1
-Movie,Venezuela,Newest Newer City,1,1,1
-Movie,Venezuela,Stoneholm,1,1,1
-Plants,Argentina,Buenos Aires,525,851,805
-Plants,Argentina,Córdoba,519,829,789
-Plants,Argentina,Mendoza,727,1184,1129
-Plants,Argentina,Rosario,453,857,794
-Plants,Argentina,Super Hero Land,1,1,1
-Plants,Argentina,We'll never know!,1,1,1
-Plants,Australia,Canberra,1,1,1
-Plants,Australia,Melbourne,5,9,4
-Plants,Australia,Newcastle,2,2,1
-Plants,Australia,Sidney,4,4,3
-Plants,Belgium,Antwerp,1,1,1
-Plants,Belgium,Brussels,2,2,2
-Plants,Belgium,Leuven,2,2,2
-Plants,Belgium,Namur,2,2,2
-Plants,Brazil,Fortaleza,471,746,699
-Plants,Brazil,Manaus,364,562,539
-Plants,Brazil,My House,1,1,1
-Plants,Brazil,Rio de Janeiro,643,1024,971
-Plants,Brazil,Serene Village,1,1,1
-Plants,Brazil,São Paulo,521,825,760
-Plants,Brazil,Totally Tubular,1,1,1
-Plants,Canada,Calgary,1,1,1
-Plants,Canada,Quebec City,6,20,20
-Plants,Canada,Toronto,4,4,4
-Plants,Canada,Vancouver,5,16,16
-Plants,China,Beijing,6,28,28
-Plants,China,Chengdu,3,14,14
-Plants,China,Guangzhou,2,2,2
-Plants,China,Shanghai,2,2,2
-Plants,Colombia,Anastar City,1,1,1
-Plants,Colombia,Bogotá,525,871,831
-Plants,Colombia,BrightHoof,1,1,1
-Plants,Colombia,Cali,641,1015,956
-Plants,Colombia,Cartagena,730,1235,1171
-Plants,Colombia,Darnassus,1,1,1
-Plants,Colombia,Deepholm,1,1,1
-Plants,Colombia,Hearthglen,2,24,24
-Plants,Colombia,Santa Marta,499,915,885
-Plants,Colombia,Waterfall,1,3,3
-Plants,Egypt,Alexandria,5,5,5
-Plants,Egypt,Cairo,4,7,7
-Plants,Egypt,Giza,3,16,16
-Plants,Egypt,Luxor,5,5,4
-Plants,France,Bordeaux,9,10,10
-Plants,France,Dijon,5,5,4
-Plants,France,Nice,4,4,3
-Plants,France,Paris,1,5,5
-Plants,France,Post Town,1,1,1
-Plants,Germany,Berlin,7,7,7
-Plants,Germany,Cologne,6,6,6
-Plants,Germany,Hamburg,1,1,1
-Plants,Germany,Munich,2,2,2
-Plants,Greece,Athens,1,1,1
-Plants,Greece,Corinth,2,2,1
-Plants,Greece,Patras,4,4,4
-Plants,Greece,Thessaloniki,2,2,2
-Plants,India,Delhi,6,6,6
-Plants,India,Jaipur,6,6,6
-Plants,India,Mumbai,3,7,7
-Plants,Indonesia,Bandung,2,2,2
-Plants,Indonesia,Jakarta,3,8,7
-Plants,Indonesia,Makassar,2,2,2
-Plants,Indonesia,Semarang,9,15,14
-Plants,Iran,Kermanshah,6,13,13
-Plants,Iran,Tabriz,2,2,2
-Plants,Iran,Tehran,3,3,2
-Plants,Ireland,Cork,2,2,2
-Plants,Ireland,Dublin,1,9,9
-Plants,Ireland,Galway,4,6,6
-Plants,Ireland,Limerick,7,8,8
-Plants,Israel,Acre,2,2,1
-Plants,Israel,Haifa,1,1,1
-Plants,Israel,It's a mystery!,1,1,1
-Plants,Israel,Jerusalem,3,3,3
-Plants,Israel,Petah Tikva,4,5,5
-Plants,Italy,Bologna,4,4,4
-Plants,Italy,Florence,3,3,3
-Plants,Italy,Pisa,2,2,2
-Plants,Italy,Rome,2,2,2
-Plants,Japan,Osaka,4,7,7
-Plants,Japan,Tokyo,4,8,8
-Plants,Japan,Yokohama,1,1,1
-Plants,Mexico,Mexico City,3,3,3
-Plants,Mexico,Monterrey,2,10,10
-Plants,Mexico,Mérida,5,8,8
-Plants,Mexico,Puebla,9,19,19
-Plants,Netherlands,Amsterdam,1,1,1
-Plants,Netherlands,Delft,3,5,5
-Plants,Netherlands,Rotterdam,4,4,4
-Plants,Netherlands,Utrecht,5,5,4
-Plants,Norway,Bergen,3,3,3
-Plants,Norway,Osio,3,3,3
-Plants,Norway,Stavanger,2,2,2
-Plants,Norway,Trondheim,5,5,4
-Plants,Pakistan,Faisalabad,5,19,19
-Plants,Pakistan,Karachi,2,4,4
-Plants,Pakistan,Lahore,3,10,10
-Plants,Pakistan,Multan,3,3,3
-Plants,Poland,Kraków,6,6,5
-Plants,Poland,Lublin,4,4,4
-Plants,Poland,Warsaw,6,26,25
-Plants,Poland,Wrocław,8,8,6
-Plants,Portugal,Braga,6,7,7
-Plants,Portugal,Evora,4,4,4
-Plants,Portugal,Lisbon,2,2,2
-Plants,Portugal,Porto,3,3,2
-Plants,Russia,Chelyabinsk,5,5,5
-Plants,Russia,Moscow,3,3,3
-Plants,Russia,Saint Petersburg,6,6,6
-Plants,Russia,Samara,3,3,3
-Plants,Scotland,Aberdeen,2,14,14
-Plants,Scotland,Dundee,1,1,1
-Plants,Scotland,Edenburgh,1,1,1
-Plants,Scotland,Glasgow,4,4,3
-Plants,South Africa,Cape Town,3,7,7
-Plants,South Africa,Durban,1,1,1
-Plants,South Africa,Polokwane,2,2,2
-Plants,South Africa,Pretoria,2,10,10
-Plants,South Korea,Busan,3,3,3
-Plants,South Korea,Daegu,4,4,4
-Plants,South Korea,Incheon,1,1,1
-Plants,South Korea,Seoul,1,1,1
-Plants,Spain,Barcelona,7,14,14
-Plants,Spain,Bilbao,1,1,1
-Plants,Spain,Madrid,8,15,15
-Plants,Spain,Valencia,4,7,7
-Plants,Sweden,Gothenburg,3,3,2
-Plants,Sweden,Helsingborg,1,1,1
-Plants,Sweden,Stockholm,1,1,1
-Plants,Sweden,Uppsala,2,7,7
-Plants,Turkey,Antalya,1,1,1
-Plants,Turkey,Bursa,3,3,3
-Plants,Turkey,Istanbul,4,4,4
-Plants,Turkey,Izmir,5,10,10
-Plants,Ukraine,Kharkiv,2,2,2
-Plants,Ukraine,Kyiv,4,12,12
-Plants,Ukraine,Mariupol,1,1,1
-Plants,Ukraine,Odesa,6,6,6
-Plants,United Kingdom,Burmingham,6,13,13
-Plants,United Kingdom,Liverpool,2,2,2
-Plants,United Kingdom,London,2,2,2
-Plants,United Kingdom,Manchester,3,3,3
-Plants,United States,Chicago,4,6,6
-Plants,United States,Los Angeles,1,1,1
-Plants,United States,Miami,4,9,9
-Plants,Venezuela,Caracas,464,740,698
-Plants,Venezuela,Deepholm,1,1,1
-Plants,Venezuela,Guayana City,681,1054,965
-Plants,Venezuela,Horror Island,1,1,1
-Plants,Venezuela,Isla Ratón,579,854,828
-Plants,Venezuela,Maracay,595,887,838
+App,Argentina,Buenos Aires,174,174,169
+App,Argentina,Córdoba,180,180,173
+App,Argentina,Mendoza,263,263,255
+App,Argentina,Rosario,156,156,150
+App,Australia,Canberra,71,71,68
+App,Australia,Melbourne,77,77,72
+App,Australia,Newcastle,79,79,72
+App,Australia,Sidney,34,34,33
+App,Belgium,Antwerp,176,176,173
+App,Belgium,Brussels,145,145,135
+App,Belgium,Leuven,119,119,114
+App,Belgium,Namur,184,184,176
+App,Brazil,Fortaleza,165,165,158
+App,Brazil,Manaus,127,127,123
+App,Brazil,Rio de Janeiro,216,216,207
+App,Brazil,São Paulo,144,144,139
+App,Canada,Calgary,313,313,295
+App,Canada,Quebec City,291,291,280
+App,Canada,Toronto,228,228,218
+App,Canada,Vancouver,420,420,397
+App,China,Beijing,500,500,472
+App,China,Chengdu,469,469,452
+App,China,Guangzhou,269,269,252
+App,China,Shanghai,484,484,458
+App,Colombia,Bogotá,155,155,140
+App,Colombia,Cali,205,205,196
+App,Colombia,Cartagena,238,238,232
+App,Colombia,Santa Marta,162,162,153
+App,Egypt,Alexandria,71,71,67
+App,Egypt,Cairo,86,86,82
+App,Egypt,Giza,63,63,61
+App,Egypt,Luxor,97,97,95
+App,France,Bordeaux,162,162,155
+App,France,Dijon,222,222,206
+App,France,Nice,169,169,162
+App,France,Paris,217,217,209
+App,Germany,Berlin,180,180,175
+App,Germany,Cologne,186,186,178
+App,Germany,Hamburg,131,131,126
+App,Germany,Munich,131,131,121
+App,Greece,Athens,141,141,135
+App,Greece,Corinth,174,174,166
+App,Greece,Patras,138,138,130
+App,Greece,Thessaloniki,178,178,166
+App,India,Chennai,614,614,583
+App,India,Delhi,638,638,609
+App,India,Jaipur,829,829,788
+App,India,Mumbai,547,547,520
+App,Indonesia,Bandung,362,362,347
+App,Indonesia,Jakarta,422,422,399
+App,Indonesia,Makassar,364,364,351
+App,Indonesia,Semarang,427,427,408
+App,Iran,Kermanshah,47,47,42
+App,Iran,Mashhad,52,52,52
+App,Iran,Tabriz,72,72,66
+App,Iran,Tehran,82,82,79
+App,Ireland,Cork,156,156,151
+App,Ireland,Dublin,163,163,154
+App,Ireland,Galway,180,180,167
+App,Ireland,Limerick,180,180,169
+App,Israel,Acre,79,79,74
+App,Israel,Haifa,56,56,54
+App,Israel,Jerusalem,59,59,55
+App,Israel,Petah Tikva,73,73,71
+App,Italy,Bologna,102,102,97
+App,Italy,Florence,190,190,185
+App,Italy,Pisa,214,214,203
+App,Italy,Rome,112,112,108
+App,Japan,Kyoto,52,52,50
+App,Japan,Osaka,60,60,56
+App,Japan,Tokyo,63,63,55
+App,Japan,Yokohama,62,62,59
+App,Mexico,Mexico City,260,260,246
+App,Mexico,Monterrey,323,323,310
+App,Mexico,Mérida,249,249,233
+App,Mexico,Puebla,302,302,287
+App,Netherlands,Amsterdam,148,148,142
+App,Netherlands,Delft,172,172,159
+App,Netherlands,Rotterdam,172,172,160
+App,Netherlands,Utrecht,156,156,147
+App,Norway,Bergen,145,145,140
+App,Norway,Osio,150,150,145
+App,Norway,Stavanger,173,173,163
+App,Norway,Trondheim,169,169,165
+App,Pakistan,Faisalabad,534,534,510
+App,Pakistan,Karachi,581,581,553
+App,Pakistan,Lahore,564,564,539
+App,Pakistan,Multan,600,600,576
+App,Poland,Kraków,91,91,90
+App,Poland,Lublin,67,67,62
+App,Poland,Warsaw,90,90,89
+App,Poland,Wrocław,52,52,50
+App,Portugal,Braga,164,164,155
+App,Portugal,Evora,244,244,227
+App,Portugal,Lisbon,181,181,175
+App,Portugal,Porto,171,171,164
+App,Russia,Chelyabinsk,52,52,49
+App,Russia,Moscow,49,49,44
+App,Russia,Saint Petersburg,52,52,49
+App,Russia,Samara,54,54,53
+App,Scotland,Aberdeen,168,168,158
+App,Scotland,Dundee,140,140,132
+App,Scotland,Edenburgh,128,128,123
+App,Scotland,Glasgow,174,174,161
+App,South Africa,Cape Town,68,68,64
+App,South Africa,Durban,127,127,122
+App,South Africa,Polokwane,46,46,44
+App,South Africa,Pretoria,68,68,66
+App,South Korea,Busan,83,83,80
+App,South Korea,Daegu,67,67,66
+App,South Korea,Incheon,69,69,64
+App,South Korea,Seoul,93,93,85
+App,Spain,Barcelona,142,142,138
+App,Spain,Bilbao,147,147,144
+App,Spain,Madrid,129,129,122
+App,Spain,Valencia,177,177,170
+App,Sweden,Gothenburg,153,153,142
+App,Sweden,Helsingborg,196,196,184
+App,Sweden,Stockholm,153,153,150
+App,Sweden,Uppsala,89,89,82
+App,Turkey,Antalya,74,74,69
+App,Turkey,Bursa,68,68,66
+App,Turkey,Istanbul,83,83,79
+App,Turkey,Izmir,78,78,72
+App,Ukraine,Kharkiv,66,66,65
+App,Ukraine,Kyiv,56,56,54
+App,Ukraine,Mariupol,70,70,66
+App,Ukraine,Odesa,94,94,93
+App,United Kingdom,Burmingham,196,196,191
+App,United Kingdom,Liverpool,203,203,189
+App,United Kingdom,London,187,187,174
+App,United Kingdom,Manchester,186,186,178
+App,United States,Chicago,281,281,265
+App,United States,Los Angeles,206,206,200
+App,United States,Miami,332,332,315
+App,United States,New York City,317,317,300
+App,Venezuela,Caracas,139,139,132
+App,Venezuela,Guayana City,221,221,207
+App,Venezuela,Isla Ratón,170,170,161
+App,Venezuela,Maracay,174,174,162
+Car,Argentina,Buenos Aires,254,299,288
+Car,Argentina,Córdoba,265,282,265
+Car,Argentina,Mendoza,378,390,368
+Car,Argentina,Rosario,244,251,240
+Car,Australia,Canberra,115,121,117
+Car,Australia,Melbourne,137,142,139
+Car,Australia,Newcastle,96,96,92
+Car,Australia,Sidney,57,60,57
+Car,Belgium,Antwerp,294,337,319
+Car,Belgium,Brussels,188,197,190
+Car,Belgium,Leuven,203,211,203
+Car,Belgium,Namur,286,286,272
+Car,Brazil,Fortaleza,220,244,236
+Car,Brazil,Manaus,194,198,193
+Car,Brazil,Rio de Janeiro,312,332,307
+Car,Brazil,São Paulo,267,279,268
+Car,Canada,Calgary,469,507,480
+Car,Canada,Quebec City,457,486,466
+Car,Canada,Toronto,315,334,324
+Car,Canada,Vancouver,569,609,576
+Car,China,Beijing,765,772,730
+Car,China,Chengdu,649,677,649
+Car,China,Guangzhou,430,450,416
+Car,China,Shanghai,708,739,701
+Car,Colombia,Bogotá,209,230,212
+Car,Colombia,Cali,281,288,273
+Car,Colombia,Cartagena,366,381,368
+Car,Colombia,Santa Marta,234,245,231
+Car,Egypt,Alexandria,129,132,122
+Car,Egypt,Cairo,126,145,142
+Car,Egypt,Giza,110,110,106
+Car,Egypt,Luxor,119,125,120
+Car,France,Bordeaux,235,256,245
+Car,France,Dijon,311,349,335
+Car,France,Nice,213,219,206
+Car,France,Paris,320,327,311
+Car,Germany,Berlin,284,289,270
+Car,Germany,Cologne,250,270,255
+Car,Germany,Hamburg,236,250,241
+Car,Germany,Munich,211,226,218
+Car,Greece,Athens,225,229,215
+Car,Greece,Corinth,266,280,266
+Car,Greece,Patras,229,236,226
+Car,Greece,Thessaloniki,248,256,243
+Car,India,Chennai,937,972,931
+Car,India,Delhi,951,984,946
+Car,India,Jaipur,1372,1394,1322
+Car,India,Mumbai,855,901,871
+Car,Indonesia,Bandung,545,595,566
+Car,Indonesia,Jakarta,636,667,636
+Car,Indonesia,Makassar,526,573,556
+Car,Indonesia,Semarang,621,637,606
+Car,Iran,Kermanshah,123,123,114
+Car,Iran,Mashhad,87,96,89
+Car,Iran,Tabriz,97,97,94
+Car,Iran,Tehran,92,99,91
+Car,Ireland,Cork,246,266,252
+Car,Ireland,Dublin,247,278,261
+Car,Ireland,Galway,244,263,255
+Car,Ireland,Limerick,286,308,292
+Car,Israel,Acre,112,116,110
+Car,Israel,Haifa,95,96,92
+Car,Israel,Jerusalem,84,89,82
+Car,Israel,Petah Tikva,142,146,138
+Car,Italy,Bologna,193,212,202
+Car,Italy,Florence,264,270,258
+Car,Italy,Pisa,285,305,297
+Car,Italy,Rome,206,215,200
+Car,Japan,Kyoto,74,81,77
+Car,Japan,Osaka,116,127,123
+Car,Japan,Tokyo,111,119,114
+Car,Japan,Yokohama,91,98,94
+Car,Mexico,Mexico City,402,432,406
+Car,Mexico,Monterrey,504,522,504
+Car,Mexico,Mérida,427,454,431
+Car,Mexico,Puebla,481,519,494
+Car,Netherlands,Amsterdam,255,272,255
+Car,Netherlands,Delft,263,279,256
+Car,Netherlands,Rotterdam,268,294,281
+Car,Netherlands,Utrecht,238,249,241
+Car,Norway,Bergen,189,199,180
+Car,Norway,Osio,252,263,240
+Car,Norway,Stavanger,259,274,263
+Car,Norway,Trondheim,291,311,301
+Car,Pakistan,Faisalabad,797,839,791
+Car,Pakistan,Karachi,910,971,921
+Car,Pakistan,Lahore,818,868,822
+Car,Pakistan,Multan,857,910,884
+Car,Poland,Kraków,152,163,156
+Car,Poland,Lublin,91,91,89
+Car,Poland,Warsaw,160,167,158
+Car,Poland,Wrocław,103,106,98
+Car,Portugal,Braga,253,266,257
+Car,Portugal,Evora,301,306,293
+Car,Portugal,Lisbon,274,284,277
+Car,Portugal,Porto,218,230,223
+Car,Russia,Chelyabinsk,92,98,95
+Car,Russia,Moscow,71,71,67
+Car,Russia,Saint Petersburg,110,118,113
+Car,Russia,Samara,97,98,95
+Car,Scotland,Aberdeen,294,310,294
+Car,Scotland,Dundee,214,228,215
+Car,Scotland,Edenburgh,186,215,203
+Car,Scotland,Glasgow,281,309,294
+Car,South Africa,Cape Town,91,92,89
+Car,South Africa,Durban,180,188,180
+Car,South Africa,Polokwane,74,79,75
+Car,South Africa,Pretoria,94,97,91
+Car,South Korea,Busan,154,172,163
+Car,South Korea,Daegu,112,117,111
+Car,South Korea,Incheon,115,131,128
+Car,South Korea,Seoul,119,125,119
+Car,Spain,Barcelona,211,225,212
+Car,Spain,Bilbao,222,246,233
+Car,Spain,Madrid,190,194,176
+Car,Spain,Valencia,297,309,295
+Car,Sweden,Gothenburg,230,249,238
+Car,Sweden,Helsingborg,284,312,299
+Car,Sweden,Stockholm,239,245,234
+Car,Sweden,Uppsala,162,176,170
+Car,Turkey,Antalya,102,102,97
+Car,Turkey,Bursa,87,87,85
+Car,Turkey,Istanbul,109,139,129
+Car,Turkey,Izmir,109,117,112
+Car,Ukraine,Kharkiv,88,108,104
+Car,Ukraine,Kyiv,75,79,70
+Car,Ukraine,Mariupol,119,131,129
+Car,Ukraine,Odesa,130,142,137
+Car,United Kingdom,Burmingham,307,320,297
+Car,United Kingdom,Liverpool,282,309,293
+Car,United Kingdom,London,291,311,299
+Car,United Kingdom,Manchester,274,287,278
+Car,United States,Chicago,418,448,426
+Car,United States,Los Angeles,348,388,375
+Car,United States,Miami,515,569,548
+Car,United States,New York City,502,558,540
+Car,Venezuela,Caracas,197,213,202
+Car,Venezuela,Guayana City,367,372,355
+Car,Venezuela,Isla Ratón,319,365,353
+Car,Venezuela,Maracay,279,301,286
+Drug,Argentina,Buenos Aires,241,261,250
+Drug,Argentina,Córdoba,244,261,250
+Drug,Argentina,Mendoza,340,367,353
+Drug,Argentina,Rosario,204,218,208
+Drug,Australia,Canberra,88,94,90
+Drug,Australia,Melbourne,106,108,104
+Drug,Australia,Newcastle,102,106,104
+Drug,Australia,Sidney,64,66,63
+Drug,Belgium,Antwerp,258,282,266
+Drug,Belgium,Brussels,174,181,171
+Drug,Belgium,Leuven,173,183,173
+Drug,Belgium,Namur,284,300,290
+Drug,Brazil,Fortaleza,192,209,192
+Drug,Brazil,Manaus,171,179,174
+Drug,Brazil,Rio de Janeiro,293,312,299
+Drug,Brazil,São Paulo,230,240,231
+Drug,Canada,Calgary,412,444,419
+Drug,Canada,Quebec City,412,427,397
+Drug,Canada,Toronto,302,315,304
+Drug,Canada,Vancouver,544,589,559
+Drug,China,Beijing,676,721,686
+Drug,China,Chengdu,591,617,590
+Drug,China,Guangzhou,364,409,385
+Drug,China,Shanghai,597,647,620
+Drug,Colombia,Bogotá,219,240,225
+Drug,Colombia,Cali,249,281,272
+Drug,Colombia,Cartagena,324,355,337
+Drug,Colombia,Santa Marta,253,272,262
+Drug,Egypt,Alexandria,124,131,122
+Drug,Egypt,Cairo,127,148,140
+Drug,Egypt,Giza,93,95,91
+Drug,Egypt,Luxor,108,114,110
+Drug,France,Bordeaux,224,245,221
+Drug,France,Dijon,276,292,268
+Drug,France,Nice,216,227,213
+Drug,France,Paris,265,286,261
+Drug,Germany,Berlin,243,271,262
+Drug,Germany,Cologne,220,228,215
+Drug,Germany,Hamburg,204,224,210
+Drug,Germany,Munich,205,217,208
+Drug,Greece,Athens,191,202,195
+Drug,Greece,Corinth,231,253,242
+Drug,Greece,Patras,236,252,235
+Drug,Greece,Thessaloniki,237,267,249
+Drug,India,Chennai,858,947,912
+Drug,India,Delhi,848,914,870
+Drug,India,Jaipur,1141,1217,1141
+Drug,India,Mumbai,737,792,741
+Drug,Indonesia,Bandung,491,529,501
+Drug,Indonesia,Jakarta,505,529,500
+Drug,Indonesia,Makassar,456,490,460
+Drug,Indonesia,Semarang,586,614,591
+Drug,Iran,Kermanshah,93,95,91
+Drug,Iran,Mashhad,66,80,79
+Drug,Iran,Tabriz,88,97,91
+Drug,Iran,Tehran,82,90,85
+Drug,Ireland,Cork,224,235,225
+Drug,Ireland,Dublin,191,213,202
+Drug,Ireland,Galway,247,263,248
+Drug,Ireland,Limerick,251,265,250
+Drug,Israel,Acre,96,106,103
+Drug,Israel,Haifa,90,101,97
+Drug,Israel,Jerusalem,71,73,65
+Drug,Israel,Petah Tikva,134,143,135
+Drug,Italy,Bologna,164,177,163
+Drug,Italy,Florence,240,256,236
+Drug,Italy,Pisa,267,289,275
+Drug,Italy,Rome,170,176,172
+Drug,Japan,Kyoto,79,80,77
+Drug,Japan,Osaka,90,101,98
+Drug,Japan,Tokyo,86,90,87
+Drug,Japan,Yokohama,87,93,86
+Drug,Mexico,Mexico City,341,361,338
+Drug,Mexico,Monterrey,461,491,461
+Drug,Mexico,Mérida,391,425,400
+Drug,Mexico,Puebla,397,420,397
+Drug,Netherlands,Amsterdam,205,219,208
+Drug,Netherlands,Delft,267,280,267
+Drug,Netherlands,Rotterdam,270,278,265
+Drug,Netherlands,Utrecht,227,240,224
+Drug,Norway,Bergen,167,174,162
+Drug,Norway,Osio,206,219,210
+Drug,Norway,Stavanger,206,226,215
+Drug,Norway,Trondheim,236,256,240
+Drug,Pakistan,Faisalabad,699,748,714
+Drug,Pakistan,Karachi,832,900,856
+Drug,Pakistan,Lahore,718,762,720
+Drug,Pakistan,Multan,827,883,841
+Drug,Poland,Kraków,141,156,148
+Drug,Poland,Lublin,97,99,97
+Drug,Poland,Warsaw,125,130,127
+Drug,Poland,Wrocław,93,102,96
+Drug,Portugal,Braga,215,235,220
+Drug,Portugal,Evora,327,342,330
+Drug,Portugal,Lisbon,237,254,241
+Drug,Portugal,Porto,198,218,205
+Drug,Russia,Chelyabinsk,77,84,83
+Drug,Russia,Moscow,79,87,84
+Drug,Russia,Saint Petersburg,104,109,97
+Drug,Russia,Samara,92,98,93
+Drug,Scotland,Aberdeen,253,275,262
+Drug,Scotland,Dundee,246,269,253
+Drug,Scotland,Edenburgh,187,199,185
+Drug,Scotland,Glasgow,225,250,240
+Drug,South Africa,Cape Town,100,109,98
+Drug,South Africa,Durban,136,151,142
+Drug,South Africa,Polokwane,66,68,65
+Drug,South Africa,Pretoria,90,93,89
+Drug,South Korea,Busan,113,126,123
+Drug,South Korea,Daegu,112,120,114
+Drug,South Korea,Incheon,88,100,92
+Drug,South Korea,Seoul,93,97,92
+Drug,Spain,Barcelona,191,203,188
+Drug,Spain,Bilbao,207,216,208
+Drug,Spain,Madrid,165,176,165
+Drug,Spain,Valencia,246,267,250
+Drug,Sweden,Gothenburg,250,271,259
+Drug,Sweden,Helsingborg,253,262,239
+Drug,Sweden,Stockholm,204,224,215
+Drug,Sweden,Uppsala,160,170,156
+Drug,Turkey,Antalya,104,124,116
+Drug,Turkey,Bursa,81,94,91
+Drug,Turkey,Istanbul,103,108,107
+Drug,Turkey,Izmir,105,111,102
+Drug,Ukraine,Kharkiv,75,80,78
+Drug,Ukraine,Kyiv,88,90,87
+Drug,Ukraine,Mariupol,97,109,106
+Drug,Ukraine,Odesa,96,97,95
+Drug,United Kingdom,Burmingham,238,264,248
+Drug,United Kingdom,Liverpool,268,278,265
+Drug,United Kingdom,London,279,295,285
+Drug,United Kingdom,Manchester,197,206,199
+Drug,United States,Chicago,353,383,357
+Drug,United States,Los Angeles,327,345,333
+Drug,United States,Miami,464,495,465
+Drug,United States,New York City,475,511,488
+Drug,Venezuela,Caracas,194,204,195
+Drug,Venezuela,Guayana City,304,336,311
+Drug,Venezuela,Isla Ratón,244,249,236
+Drug,Venezuela,Maracay,282,305,282
+Groceries,Argentina,Buenos Aires,484,1651,1578
+Groceries,Argentina,Córdoba,493,1650,1546
+Groceries,Argentina,Mendoza,667,2188,2009
+Groceries,Argentina,Rosario,429,1281,1209
+Groceries,Australia,Canberra,388,1247,1153
+Groceries,Australia,Melbourne,422,1419,1341
+Groceries,Australia,Newcastle,339,1078,1019
+Groceries,Australia,Sidney,231,793,769
+Groceries,Belgium,Antwerp,527,1639,1489
+Groceries,Belgium,Brussels,393,1270,1224
+Groceries,Belgium,Leuven,367,1233,1186
+Groceries,Belgium,Namur,591,2072,1970
+Groceries,Brazil,Fortaleza,377,1238,1139
+Groceries,Brazil,Manaus,330,917,898
+Groceries,Brazil,Rio de Janeiro,657,2101,1951
+Groceries,Brazil,São Paulo,465,1518,1420
+Groceries,Canada,Calgary,697,2277,2184
+Groceries,Canada,Quebec City,611,1994,1915
+Groceries,Canada,Toronto,457,1383,1289
+Groceries,Canada,Vancouver,844,2631,2537
+Groceries,China,Beijing,1053,3342,3163
+Groceries,China,Chengdu,910,2948,2784
+Groceries,China,Guangzhou,586,1875,1796
+Groceries,China,Shanghai,938,3020,2879
+Groceries,Colombia,Bogotá,459,1671,1594
+Groceries,Colombia,Cali,554,1929,1757
+Groceries,Colombia,Cartagena,590,1930,1874
+Groceries,Colombia,Santa Marta,429,1406,1377
+Groceries,Egypt,Alexandria,405,1351,1287
+Groceries,Egypt,Cairo,434,1410,1376
+Groceries,Egypt,Giza,340,1049,1007
+Groceries,Egypt,Luxor,435,1223,1186
+Groceries,France,Bordeaux,532,1591,1520
+Groceries,France,Dijon,654,1996,1936
+Groceries,France,Nice,482,1588,1552
+Groceries,France,Paris,557,1750,1622
+Groceries,Germany,Berlin,555,1638,1539
+Groceries,Germany,Cologne,501,1627,1574
+Groceries,Germany,Hamburg,413,1241,1190
+Groceries,Germany,Munich,424,1287,1228
+Groceries,Greece,Athens,389,1268,1230
+Groceries,Greece,Corinth,513,1672,1598
+Groceries,Greece,Patras,478,1355,1289
+Groceries,Greece,Thessaloniki,523,1774,1676
+Groceries,India,Chennai,1127,3475,3309
+Groceries,India,Delhi,1090,3622,3429
+Groceries,India,Jaipur,1580,5073,4815
+Groceries,India,Mumbai,986,3075,3001
+Groceries,Indonesia,Bandung,728,2248,2094
+Groceries,Indonesia,Jakarta,818,2639,2458
+Groceries,Indonesia,Makassar,713,2316,2182
+Groceries,Indonesia,Semarang,770,2365,2298
+Groceries,Iran,Kermanshah,412,1315,1275
+Groceries,Iran,Mashhad,265,1005,964
+Groceries,Iran,Tabriz,398,1106,1097
+Groceries,Iran,Tehran,372,1356,1291
+Groceries,Ireland,Cork,486,1398,1311
+Groceries,Ireland,Dublin,452,1417,1331
+Groceries,Ireland,Galway,524,1537,1418
+Groceries,Ireland,Limerick,584,1883,1848
+Groceries,Israel,Acre,352,1184,1164
+Groceries,Israel,Haifa,305,914,886
+Groceries,Israel,Jerusalem,332,1060,1028
+Groceries,Israel,Petah Tikva,385,1322,1270
+Groceries,Italy,Bologna,364,953,897
+Groceries,Italy,Florence,553,1654,1536
+Groceries,Italy,Pisa,544,1735,1691
+Groceries,Italy,Rome,330,948,877
+Groceries,Japan,Kyoto,277,1035,931
+Groceries,Japan,Osaka,359,1152,1137
+Groceries,Japan,Tokyo,315,901,856
+Groceries,Japan,Yokohama,291,962,880
+Groceries,Mexico,Mexico City,557,1821,1764
+Groceries,Mexico,Monterrey,681,2034,1951
+Groceries,Mexico,Mérida,556,1540,1425
+Groceries,Mexico,Puebla,695,2436,2352
+Groceries,Netherlands,Amsterdam,429,1550,1415
+Groceries,Netherlands,Delft,545,1674,1550
+Groceries,Netherlands,Rotterdam,521,1669,1634
+Groceries,Netherlands,Utrecht,450,1337,1290
+Groceries,Norway,Bergen,397,1293,1229
+Groceries,Norway,Osio,446,1482,1390
+Groceries,Norway,Stavanger,476,1494,1426
+Groceries,Norway,Trondheim,532,1594,1525
+Groceries,Pakistan,Faisalabad,899,2760,2580
+Groceries,Pakistan,Karachi,1067,3691,3507
+Groceries,Pakistan,Lahore,925,2962,2866
+Groceries,Pakistan,Multan,1016,3217,2996
+Groceries,Poland,Kraków,515,1517,1413
+Groceries,Poland,Lublin,308,921,879
+Groceries,Poland,Warsaw,462,1468,1416
+Groceries,Poland,Wrocław,301,952,855
+Groceries,Portugal,Braga,460,1551,1459
+Groceries,Portugal,Evora,697,2193,2041
+Groceries,Portugal,Lisbon,536,1659,1537
+Groceries,Portugal,Porto,435,1294,1238
+Groceries,Russia,Chelyabinsk,326,1089,1050
+Groceries,Russia,Moscow,283,1019,991
+Groceries,Russia,Saint Petersburg,351,1119,1098
+Groceries,Russia,Samara,356,1121,1068
+Groceries,Scotland,Aberdeen,521,1643,1580
+Groceries,Scotland,Dundee,432,1389,1333
+Groceries,Scotland,Edenburgh,369,1305,1192
+Groceries,Scotland,Glasgow,511,1613,1490
+Groceries,South Africa,Cape Town,355,1043,997
+Groceries,South Africa,Durban,463,1723,1614
+Groceries,South Africa,Polokwane,229,725,688
+Groceries,South Africa,Pretoria,345,1116,1044
+Groceries,South Korea,Busan,397,1203,1142
+Groceries,South Korea,Daegu,358,1169,1092
+Groceries,South Korea,Incheon,339,1218,1160
+Groceries,South Korea,Seoul,371,1246,1183
+Groceries,Spain,Barcelona,430,1537,1483
+Groceries,Spain,Bilbao,452,1507,1441
+Groceries,Spain,Madrid,376,1249,1211
+Groceries,Spain,Valencia,548,1560,1508
+Groceries,Sweden,Gothenburg,529,1696,1669
+Groceries,Sweden,Helsingborg,544,1712,1621
+Groceries,Sweden,Stockholm,463,1373,1300
+Groceries,Sweden,Uppsala,300,988,934
+Groceries,Turkey,Antalya,334,1184,1120
+Groceries,Turkey,Bursa,311,1012,999
+Groceries,Turkey,Istanbul,354,1162,1073
+Groceries,Turkey,Izmir,387,1297,1257
+Groceries,Ukraine,Kharkiv,323,1039,1004
+Groceries,Ukraine,Kyiv,297,979,922
+Groceries,Ukraine,Mariupol,359,1407,1292
+Groceries,Ukraine,Odesa,373,1159,1108
+Groceries,United Kingdom,Burmingham,533,1790,1703
+Groceries,United Kingdom,Liverpool,585,1844,1752
+Groceries,United Kingdom,London,573,1972,1892
+Groceries,United Kingdom,Manchester,514,1603,1521
+Groceries,United States,Chicago,614,2131,2029
+Groceries,United States,Los Angeles,510,1682,1624
+Groceries,United States,Miami,805,2319,2242
+Groceries,United States,New York City,754,2497,2308
+Groceries,Venezuela,Caracas,403,1179,1115
+Groceries,Venezuela,Guayana City,613,2063,1937
+Groceries,Venezuela,Isla Ratón,516,1641,1610
+Groceries,Venezuela,Maracay,571,1834,1732
+Movie,Argentina,Buenos Aires,645,653,611
+Movie,Argentina,Córdoba,588,598,564
+Movie,Argentina,Mendoza,820,831,783
+Movie,Argentina,Rosario,505,508,478
+Movie,Australia,Canberra,434,440,417
+Movie,Australia,Melbourne,518,523,494
+Movie,Australia,Newcastle,392,394,375
+Movie,Australia,Sidney,280,283,267
+Movie,Belgium,Antwerp,646,651,612
+Movie,Belgium,Brussels,457,463,437
+Movie,Belgium,Leuven,419,427,403
+Movie,Belgium,Namur,678,683,652
+Movie,Brazil,Fortaleza,457,464,436
+Movie,Brazil,Manaus,378,381,362
+Movie,Brazil,Rio de Janeiro,681,686,653
+Movie,Brazil,São Paulo,491,491,468
+Movie,Canada,Calgary,840,851,801
+Movie,Canada,Quebec City,753,762,718
+Movie,Canada,Toronto,549,558,527
+Movie,Canada,Vancouver,1092,1105,1053
+Movie,China,Beijing,1343,1355,1277
+Movie,China,Chengdu,1028,1040,984
+Movie,China,Guangzhou,742,746,700
+Movie,China,Shanghai,1059,1071,1019
+Movie,Colombia,Bogotá,517,519,487
+Movie,Colombia,Cali,622,630,605
+Movie,Colombia,Cartagena,726,735,693
+Movie,Colombia,Santa Marta,551,559,535
+Movie,Egypt,Alexandria,471,474,448
+Movie,Egypt,Cairo,534,541,502
+Movie,Egypt,Giza,427,429,397
+Movie,Egypt,Luxor,518,525,494
+Movie,France,Bordeaux,611,623,592
+Movie,France,Dijon,779,784,749
+Movie,France,Nice,523,532,505
+Movie,France,Paris,663,666,640
+Movie,Germany,Berlin,656,662,631
+Movie,Germany,Cologne,554,560,522
+Movie,Germany,Hamburg,484,488,463
+Movie,Germany,Munich,508,515,482
+Movie,Greece,Athens,473,474,452
+Movie,Greece,Corinth,650,663,630
+Movie,Greece,Patras,537,541,519
+Movie,Greece,Thessaloniki,633,637,603
+Movie,India,Chennai,1313,1322,1269
+Movie,India,Delhi,1367,1381,1310
+Movie,India,Jaipur,1776,1790,1699
+Movie,India,Mumbai,1152,1157,1107
+Movie,Indonesia,Bandung,875,884,834
+Movie,Indonesia,Jakarta,1013,1026,968
+Movie,Indonesia,Makassar,857,863,821
+Movie,Indonesia,Semarang,974,984,941
+Movie,Iran,Kermanshah,474,475,454
+Movie,Iran,Mashhad,313,315,301
+Movie,Iran,Tabriz,422,428,399
+Movie,Iran,Tehran,447,450,432
+Movie,Ireland,Cork,567,571,544
+Movie,Ireland,Dublin,534,538,510
+Movie,Ireland,Galway,576,581,554
+Movie,Ireland,Limerick,627,635,598
+Movie,Israel,Acre,423,428,397
+Movie,Israel,Haifa,366,368,350
+Movie,Israel,Jerusalem,398,400,377
+Movie,Israel,Petah Tikva,484,492,471
+Movie,Italy,Bologna,437,442,421
+Movie,Italy,Florence,633,639,612
+Movie,Italy,Pisa,648,659,621
+Movie,Italy,Rome,391,391,368
+Movie,Japan,Kyoto,365,368,349
+Movie,Japan,Osaka,437,442,416
+Movie,Japan,Tokyo,417,418,390
+Movie,Japan,Yokohama,330,331,313
+Movie,Mexico,Mexico City,654,663,641
+Movie,Mexico,Monterrey,878,886,843
+Movie,Mexico,Mérida,754,765,738
+Movie,Mexico,Puebla,797,808,769
+Movie,Netherlands,Amsterdam,530,534,511
+Movie,Netherlands,Delft,628,633,602
+Movie,Netherlands,Rotterdam,587,595,565
+Movie,Netherlands,Utrecht,516,523,500
+Movie,Norway,Bergen,449,455,433
+Movie,Norway,Osio,589,595,567
+Movie,Norway,Stavanger,559,568,541
+Movie,Norway,Trondheim,693,700,660
+Movie,Pakistan,Faisalabad,1091,1100,1046
+Movie,Pakistan,Karachi,1299,1313,1258
+Movie,Pakistan,Lahore,1162,1176,1109
+Movie,Pakistan,Multan,1199,1213,1159
+Movie,Poland,Kraków,582,592,563
+Movie,Poland,Lublin,427,432,408
+Movie,Poland,Warsaw,544,549,520
+Movie,Poland,Wrocław,368,373,357
+Movie,Portugal,Braga,563,570,537
+Movie,Portugal,Evora,767,778,733
+Movie,Portugal,Lisbon,620,625,591
+Movie,Portugal,Porto,526,531,505
+Movie,Russia,Chelyabinsk,365,371,350
+Movie,Russia,Moscow,320,321,306
+Movie,Russia,Saint Petersburg,440,443,422
+Movie,Russia,Samara,437,443,420
+Movie,Scotland,Aberdeen,644,648,622
+Movie,Scotland,Dundee,493,503,476
+Movie,Scotland,Edenburgh,421,422,395
+Movie,Scotland,Glasgow,661,670,640
+Movie,South Africa,Cape Town,354,356,343
+Movie,South Africa,Durban,611,613,571
+Movie,South Africa,Polokwane,291,295,292
+Movie,South Africa,Pretoria,387,388,365
+Movie,South Korea,Busan,441,444,425
+Movie,South Korea,Daegu,462,466,447
+Movie,South Korea,Incheon,386,389,375
+Movie,South Korea,Seoul,431,441,419
+Movie,Spain,Barcelona,465,468,441
+Movie,Spain,Bilbao,532,538,503
+Movie,Spain,Madrid,427,435,413
+Movie,Spain,Valencia,639,645,615
+Movie,Sweden,Gothenburg,603,611,579
+Movie,Sweden,Helsingborg,687,692,660
+Movie,Sweden,Stockholm,557,557,537
+Movie,Sweden,Uppsala,357,359,344
+Movie,Turkey,Antalya,471,478,452
+Movie,Turkey,Bursa,340,344,327
+Movie,Turkey,Istanbul,451,455,431
+Movie,Turkey,Izmir,429,434,413
+Movie,Ukraine,Kharkiv,337,340,329
+Movie,Ukraine,Kyiv,366,372,348
+Movie,Ukraine,Mariupol,410,413,385
+Movie,Ukraine,Odesa,402,408,389
+Movie,United Kingdom,Burmingham,693,700,670
+Movie,United Kingdom,Liverpool,682,689,648
+Movie,United Kingdom,London,623,629,597
+Movie,United Kingdom,Manchester,646,655,634
+Movie,United States,Chicago,744,754,714
+Movie,United States,Los Angeles,594,598,568
+Movie,United States,Miami,889,895,851
+Movie,United States,New York City,900,913,866
+Movie,Venezuela,Caracas,502,507,480
+Movie,Venezuela,Guayana City,756,768,731
+Movie,Venezuela,Isla Ratón,609,618,585
+Movie,Venezuela,Maracay,696,699,666
+Plants,Argentina,Buenos Aires,531,875,818
+Plants,Argentina,Córdoba,509,792,738
+Plants,Argentina,Mendoza,808,1263,1208
+Plants,Argentina,Rosario,397,549,508
+Plants,Australia,Canberra,456,728,675
+Plants,Australia,Melbourne,515,815,761
+Plants,Australia,Newcastle,360,478,448
+Plants,Australia,Sidney,279,417,395
+Plants,Belgium,Antwerp,636,1036,980
+Plants,Belgium,Brussels,461,721,691
+Plants,Belgium,Leuven,427,693,661
+Plants,Belgium,Namur,681,1064,1022
+Plants,Brazil,Fortaleza,458,761,720
+Plants,Brazil,Manaus,386,735,694
+Plants,Brazil,Rio de Janeiro,685,1057,1003
+Plants,Brazil,São Paulo,472,706,673
+Plants,Canada,Calgary,790,1242,1200
+Plants,Canada,Quebec City,774,1182,1105
+Plants,Canada,Toronto,537,868,827
+Plants,Canada,Vancouver,1048,1652,1543
+Plants,China,Beijing,1226,1880,1783
+Plants,China,Chengdu,1037,1641,1576
+Plants,China,Guangzhou,645,1059,992
+Plants,China,Shanghai,1008,1531,1441
+Plants,Colombia,Bogotá,486,768,737
+Plants,Colombia,Cali,599,963,943
+Plants,Colombia,Cartagena,758,1150,1080
+Plants,Colombia,Santa Marta,517,803,761
+Plants,Egypt,Alexandria,421,658,612
+Plants,Egypt,Cairo,507,743,720
+Plants,Egypt,Giza,379,580,542
+Plants,Egypt,Luxor,533,790,739
+Plants,France,Bordeaux,531,833,798
+Plants,France,Dijon,644,985,948
+Plants,France,Nice,467,730,693
+Plants,France,Paris,645,1020,966
+Plants,Germany,Berlin,631,922,878
+Plants,Germany,Cologne,564,841,808
+Plants,Germany,Hamburg,459,730,704
+Plants,Germany,Munich,520,839,818
+Plants,Greece,Athens,477,717,690
+Plants,Greece,Corinth,601,912,846
+Plants,Greece,Patras,495,770,736
+Plants,Greece,Thessaloniki,625,933,897
+Plants,India,Chennai,1320,2068,1953
+Plants,India,Delhi,1292,2036,1958
+Plants,India,Jaipur,1883,2793,2677
+Plants,India,Mumbai,1085,1660,1594
+Plants,Indonesia,Bandung,831,1351,1289
+Plants,Indonesia,Jakarta,950,1506,1447
+Plants,Indonesia,Makassar,848,1256,1195
+Plants,Indonesia,Semarang,914,1415,1346
+Plants,Iran,Kermanshah,481,724,684
+Plants,Iran,Mashhad,319,443,413
+Plants,Iran,Tabriz,439,688,639
+Plants,Iran,Tehran,384,563,524
+Plants,Ireland,Cork,545,820,790
+Plants,Ireland,Dublin,483,782,751
+Plants,Ireland,Galway,539,793,757
+Plants,Ireland,Limerick,604,921,879
+Plants,Israel,Acre,410,639,604
+Plants,Israel,Haifa,382,612,590
+Plants,Israel,Jerusalem,341,500,468
+Plants,Israel,Petah Tikva,507,740,704
+Plants,Italy,Bologna,410,674,656
+Plants,Italy,Florence,611,957,897
+Plants,Italy,Pisa,637,979,935
+Plants,Italy,Rome,416,646,618
+Plants,Japan,Kyoto,300,463,449
+Plants,Japan,Osaka,383,547,530
+Plants,Japan,Tokyo,406,680,656
+Plants,Japan,Yokohama,311,487,456
+Plants,Mexico,Mexico City,616,869,835
+Plants,Mexico,Monterrey,885,1371,1310
+Plants,Mexico,Mérida,657,1018,955
+Plants,Mexico,Puebla,758,1201,1147
+Plants,Netherlands,Amsterdam,477,790,735
+Plants,Netherlands,Delft,574,887,839
+Plants,Netherlands,Rotterdam,570,876,844
+Plants,Netherlands,Utrecht,534,921,885
+Plants,Norway,Bergen,435,636,607
+Plants,Norway,Osio,547,801,753
+Plants,Norway,Stavanger,501,816,746
+Plants,Norway,Trondheim,626,933,897
+Plants,Pakistan,Faisalabad,1099,1786,1706
+Plants,Pakistan,Karachi,1230,1955,1878
+Plants,Pakistan,Lahore,1081,1730,1666
+Plants,Pakistan,Multan,1196,1709,1598
+Plants,Poland,Kraków,554,837,793
+Plants,Poland,Lublin,397,657,629
+Plants,Poland,Warsaw,503,750,725
+Plants,Poland,Wrocław,358,530,497
+Plants,Portugal,Braga,565,895,836
+Plants,Portugal,Evora,768,1211,1163
+Plants,Portugal,Lisbon,566,824,779
+Plants,Portugal,Porto,528,784,763
+Plants,Russia,Chelyabinsk,386,664,635
+Plants,Russia,Moscow,305,489,466
+Plants,Russia,Saint Petersburg,411,619,589
+Plants,Russia,Samara,407,671,630
+Plants,Scotland,Aberdeen,634,974,928
+Plants,Scotland,Dundee,463,742,712
+Plants,Scotland,Edenburgh,431,725,685
+Plants,Scotland,Glasgow,619,956,917
+Plants,South Africa,Cape Town,359,588,556
+Plants,South Africa,Durban,583,941,898
+Plants,South Africa,Polokwane,266,415,394
+Plants,South Africa,Pretoria,356,588,565
+Plants,South Korea,Busan,448,700,666
+Plants,South Korea,Daegu,415,600,566
+Plants,South Korea,Incheon,384,615,575
+Plants,South Korea,Seoul,392,615,587
+Plants,Spain,Barcelona,435,661,631
+Plants,Spain,Bilbao,491,644,607
+Plants,Spain,Madrid,422,666,638
+Plants,Spain,Valencia,608,913,864
+Plants,Sweden,Gothenburg,589,921,870
+Plants,Sweden,Helsingborg,600,959,916
+Plants,Sweden,Stockholm,503,716,668
+Plants,Sweden,Uppsala,363,605,585
+Plants,Turkey,Antalya,440,679,631
+Plants,Turkey,Bursa,363,570,544
+Plants,Turkey,Istanbul,400,616,588
+Plants,Turkey,Izmir,392,543,523
+Plants,Ukraine,Kharkiv,349,485,463
+Plants,Ukraine,Kyiv,350,503,483
+Plants,Ukraine,Mariupol,414,595,578
+Plants,Ukraine,Odesa,368,604,564
+Plants,United Kingdom,Burmingham,579,886,847
+Plants,United Kingdom,Liverpool,677,1110,1039
+Plants,United Kingdom,London,567,953,891
+Plants,United Kingdom,Manchester,577,895,828
+Plants,United States,Chicago,677,1025,989
+Plants,United States,Los Angeles,551,822,788
+Plants,United States,Miami,884,1432,1367
+Plants,United States,New York City,837,1445,1382
+Plants,Venezuela,Caracas,426,688,648
+Plants,Venezuela,Guayana City,764,1134,1098
+Plants,Venezuela,Isla Ratón,649,1073,1029
+Plants,Venezuela,Maracay,622,975,935
