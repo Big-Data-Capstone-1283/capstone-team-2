@@ -140,6 +140,9 @@ object dateTimeGenerator {
 
   private def getString:String= {
     var dateStr = "UNCOMPUTED-YY-MM-dd HH:mm:ss"
+    if(MM == 3 && dd == 13 && hh == 2){
+      hh = 3
+    }
     var tempDate = (new DateTime)
       .withYear(2022)
       .withMonthOfYear(MM)
