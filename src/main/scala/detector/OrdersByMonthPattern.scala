@@ -15,22 +15,39 @@ object OrdersByMonthPattern {
 	  * @return		Search result as `Option[String]`.  (`None` = no pattern)
 	  */
 	def Go(data: DataFrame): Option[String] = {
-		var newDf = data  // Generate the data
-			.select("datetime")
+		var newDf = data  // Generate the "average_count_per_day" and "average_total_per_day" data
+			.select("datetime", "qty")
 			.withColumn("year_and_month", date_format(col("datetime"), "yyyy-MM"))  // Create a column with the year and month for each date
 			.groupBy("year_and_month")
-			.agg(round(count("year_and_month") / PatternDetector.daysPerMonthCol(col("year_and_month"))).cast(LongType).as("average_orders_per_day"))  // Averages counts per day by length of month
-			.orderBy(col("year_and_month"))
+			.agg(round(count("year_and_month") / PatternDetector.daysPerMonthCol(col("year_and_month"))).cast(LongType).as("average_count_per_day"),  // Averages counts per day by length of month
+				 round(sum("qty") / PatternDetector.daysPerMonthCol(col("year_and_month"))).cast(LongType).as("average_total_per_day"))  // Averages totals per day by length of month
+		var newDfSucc = data  // Generate the "average_total_successful_per_day" data
+			.select("datetime", "qty")
+			.where("payment_txn_success = 'Y'")
+			.withColumn("temp_year_and_month", date_format(col("datetime"), "yyyy-MM"))  // Create a column with the year and month for each date
+			.groupBy("temp_year_and_month")
+			.agg(round(sum("qty") / PatternDetector.daysPerMonthCol(col("temp_year_and_month"))).cast(LongType).as("average_total_successful_per_day"))  // Averages totals per day by length of month
+		newDf = newDf  // Merge the two dataframes
+			.join(newDfSucc, newDf("year_and_month") === newDfSucc("temp_year_and_month"), "full")
+			.drop("temp_year_and_month")
+			.orderBy("year_and_month")
 		if (PatternDetector.testMode)  // If we're in test mode...
-			newDf.show()  // ...show the data
+			newDf.show(false)  // ...show the data
 		val ndev = PatternDetector.deviation1F(newDf)  // Check the data for a pattern
+		var filename = ""
 		if (ndev > 1.0 + PatternDetector.marginOfError) {  // Pattern detected
-			val filename = PatternDetector.saveDataFrameAsCSV(newDf, "AvgOrdersPerDayByMonth.csv")  // Write the data to a file
+			filename = PatternDetector.saveDataFrameAsCSV(newDf, "AvgOrdersPerDayByMonth.csv")  // Write the data to a file
 			if (ndev < 2)
 				Option("Found possible pattern (" + ((ndev - 1) * 100) + "% chance)\nFilename: " + filename)
 			else
 				Option("Found pattern (100% chance)\nFilename: " + filename)
-		} else  // No pattern detedted
+		} else {  // No pattern detected
+			if (PatternDetector.forceCSV) {
+				filename = PatternDetector.saveDataFrameAsCSV(newDf, "AvgOrdersPerDayByMonth.csv")  // Write the data to a file
+				if (PatternDetector.testMode)  // If we're in test mode...
+					println(s"Data force-saved as: $filename\n")  // ...show the filename
+			}
 			None
+		}
 	}
 }

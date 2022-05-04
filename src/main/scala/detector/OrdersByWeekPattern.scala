@@ -15,25 +15,43 @@ object OrdersByWeekPattern {
 	  * @return		Search result as `Option[String]`.  (`None` = no pattern)
 	  */
 	def Go(data: DataFrame): Option[String] = {
-		var newDf = data  // Generate the data
-			.select("datetime")
+		var newDf = data  // Generate the "count" and "total" data
+			.select("datetime", "qty")
 			.withColumn("week", window(col("datetime"), "7 days").cast(StringType))
 			.groupBy("week")
-			.agg(count("week").as("count"))
-			.orderBy(col("week"))
-		val firstRow = newDf.head(1)(0).getString(0)
-		val lastRow = newDf.tail(1)(0).getString(0)
+			.agg(count("week").as("count"), sum("qty").as("total"))
+			.orderBy("week")
+		val firstRow = newDf.head(1)(0).getString(0)  // Get the first week's name
+		val lastRow = newDf.tail(1)(0).getString(0)  // Get the last week's name
 		newDf = newDf.where("week != '" + firstRow + "' AND week != '" + lastRow + "'")  // Remove the first and last rows since they're likely not complete weeks
+		var newDfSucc = data  // Generate the "total_successful" data
+			.select("datetime", "qty")
+			.where("payment_txn_success = 'Y'")
+			.withColumn("temp_week", window(col("datetime"), "7 days").cast(StringType))
+			.groupBy("temp_week")
+			.agg(sum("qty").as("total_successful"))
+		newDfSucc = newDfSucc.where("temp_week != '" + firstRow + "' AND temp_week != '" + lastRow + "'")  // Remove the first and last rows since they're likely not complete weeks
+		newDf = newDf  // Merge the two dataframes
+			.join(newDfSucc, newDf("week") === newDfSucc("temp_week"), "full")
+			.drop("temp_week")
+			.orderBy("week")
 		if (PatternDetector.testMode)  // If we're in test mode...
 			newDf.show(false)  // ...show the data
 		val ndev = PatternDetector.deviation1F(newDf)  // Check the data for a pattern
+		var filename = ""
 		if (ndev > 1.0 + PatternDetector.marginOfError) {  // Pattern detected
-			val filename = PatternDetector.saveDataFrameAsCSV(newDf, "OrdersByWeek.csv")  // Write the data to a file
+			filename = PatternDetector.saveDataFrameAsCSV(newDf, "OrdersByWeek.csv")  // Write the data to a file
 			if (ndev < 2)
 				Option("Found possible pattern (" + ((ndev - 1) * 100) + "% chance)\nFilename: " + filename)
 			else
 				Option("Found pattern (100% chance)\nFilename: " + filename)
-		} else  // No pattern detedted
+		} else {  // No pattern detected
+			if (PatternDetector.forceCSV) {
+				filename = PatternDetector.saveDataFrameAsCSV(newDf, "OrdersByWeek.csv")  // Write the data to a file
+				if (PatternDetector.testMode)  // If we're in test mode...
+					println(s"Data force-saved as: $filename\n")  // ...show the filename
+			}
 			None
+		}
 	}
 }
