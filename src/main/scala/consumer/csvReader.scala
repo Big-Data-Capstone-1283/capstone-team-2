@@ -82,7 +82,8 @@ object csvReader {
     //println(filter6.count())
 
     //Remove rows where the website is wrong
-    val filter7 = filter6.filter(filter6("_c12") === "www.amazon.com.br")
+    // val filter7 = filter6.filter(filter6("_c12") === "www.amazon.com.br")
+	val filter7 = filter6.filter(filter6("_c12").isNotNull)
 
     //Remove rows with bad bank info
     val filter8 = filter7.filter(filter7("_c6") === "Bank" || filter7("_c6") === "Card" ||
